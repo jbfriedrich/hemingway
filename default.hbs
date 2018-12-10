@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+    <head>
+        {{!-- Document Settings --}}
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        {{!-- Base Meta --}}
+        <title>{{meta_title}}</title>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {{!-- Styles'n'Scripts --}}
+        <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.min.css"}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset "css/fontawesome.min.css"}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
+        {{!-- Fontawesome fonts --}}
+        <script defer src="{{asset "js/jquery-3.3.1.min.js"}}"></script>
+        <script defer src="{{asset "js/bootstrap.bundle.min.js"}}"></script>
+        <script data-search-pseudo-elements defer src="{{asset "js/fontawesome.min.js"}}"></script>
+        {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+        {{ghost_head}}
+    </head>
+    <body class="{{body_class}}">
+        {{! background: #3273dc }}
+        <div id='site-wrapper' class='d-flex flex-column h-100 pt-4'>
+            <header id='site-header' class='container'>
+                <h2 class='title'>
+                    {{#if @blog.logo}}
+                    <img class="site-logo" src="{{@blog.logo}}" alt="{{@blog.title}}" />
+                    {{else}}
+                    {{@blog.title}}
+                    {{/if}}
+                </h2>
+                <p class='subtitle'>{{@blog.description}}</p>
+            </header>
+            <nav id='main-nav' class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class="container">
+                    {{!-- <a class="navbar-brand" href="#">Navbar w/ text</a> --}}
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarMain">
+                        {{#if @blog.navigation}}
+                        <ul class="navbar-nav mr-auto">
+                            {{navigation}}
+                        </ul>
+                        {{/if}}
+                        <ul class="navbar-nav">
+                            {{#if @blog.facebook}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{facebook_url @blog.facebook}}" title="Facebook" target="_blank" rel="noopener">Facebook</a>
+                            </li>                
+                            {{/if}}
+                            {{#if @blog.twitter}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{twitter_url @blog.twitter}}" title="Twitter" target="_blank" rel="noopener">Twitter</a>
+                            </li>
+                            {{/if}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://feedly.com/i/subscription/feed/{{@blog.url}}/rss/" title="RSS" target="_blank" rel="noopener">RSS</a>
+                            </li>
+                            {{#if @labs.subscribers}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="#subscribe">Subscribe</a>
+                            </li>
+                            {{/if}}
+                        </ul>
+                        <form class="form-inline my-0 mt-1 my-lg-0 ml-lg-2">
+                            <input class="form-control form-control-sm mt-2 mt-sm-0" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-sm btn-blue mt-2 mt-sm-0 ml-sm-2" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <main id='main-content' class='flex-fill'>
+                {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+                {{{body}}}
+            </main>
+            <!-- Previous/next page links - displayed on every page -->
+            {{pagination}}
+            </section>
+            <footer id='site-footer' class='bg-dark'>
+                <div class="container p-3">
+                    <small><nav id='footer-nav' class="nav">
+                        <a class='nav-item nav-link mr-auto' href="{{@blog.url}}">{{@blog.title}} &copy; {{date format="YYYY"}}</a>
+                        <a class='nav-item nav-link' href="{{@blog.url}}">Latest Posts</a>
+                        {{#if @blog.facebook}}<a class='nav-item nav-link' href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
+                        {{#if @blog.twitter}}<a class='nav-item nav-link' href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
+                    </nav></small>
+                </div>
+            </footer>
+        </div>
+        {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+        {{{block "scripts"}}}
+        {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
+        {{ghost_foot}}
+    </body>
+</html>

@@ -1,0 +1,41 @@
+{
+    "name": "hemingway",
+    "description": "A personal blogging theme for Ghost.",
+    "demo": "https://jason.re",
+    "version": "1.0.0",
+    "engines": {
+        "ghost": ">=2.0.0"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "author": {
+        "name": "Jason Friedrich",
+        "email": "noreply@friedrich.uk",
+        "url": "https://friedrich.uk"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Magazine",
+            "Blog"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme",
+        "blog"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jbfriedrich/hemingway.git"
+    },
+    "bugs": "https://github.com/jbfriedrich/hemingway/issues",
+    "config": {
+        "posts_per_page": 5
+    }
+}
