@@ -1,9 +1,9 @@
-<nav class="pagination text-uppercase d-flex flex-row justify-content-center align-items-stretch mb-4" role="navigation">
-    {{#if prev}}
-        <a class="newer-posts mr-4" href="{{page_url prev}}">&larr; Newer Posts</a>
-    {{/if}}
-    <span class="page-number">Page {{page}} of {{pages}}</span>
-    {{#if next}}
-        <a class="older-posts ml-4" href="{{page_url next}}">Older Posts &rarr;</a>
-    {{/if}}
-</nav>
+<ul class="pagination justify-content-between mb-0">
+    <li class="page-item{{^if prev}} disabled{{/if}}">
+        <a class="page-link newer-posts" href="{{^if prev}}#" tabindex="-1" aria-disabled="true"{{else}}{{page_url prev}}"{{/if}}>&larr; Newer Posts</a>
+    </li>
+    <li class="page-item align-self-center">Page {{page}} of {{pages}}</li>
+    <li class="page-item{{^if next}} disabled{{/if}}">
+        <a class="page-link older-posts" href="{{^if next}}#" tabindex="-1" aria-disabled="true"{{else}}{{page_url next}}"{{/if}}>Older Posts &rarr;</a>
+    </li>
+</ul>

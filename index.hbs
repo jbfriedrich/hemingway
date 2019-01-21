@@ -1,9 +1,11 @@
 {{!< default}}
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
-<div id='post-feed' class='container d-flex flex-column justify-content-around align-items-stretch mt-3 mb-3 mt-sm-4 mb-sm-4'>
-    {{#foreach posts}}
-    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-    {{> "post-card"}}
-    {{/foreach}}
+<div id='post-feed' class="d-flex flex-wrap mt-3 mt-sm-5">
+    {{!-- <div class="col"> --}}
+        {{#foreach posts}}
+        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{> "post-card"}}
+        {{/foreach}}
+    {{!-- </div> --}}
 </div>

@@ -1,21 +1,25 @@
-<article class='post-card {{post_class}}{{#unless feature_image}} no-image{{/unless}} d-flex flex-column flex-sm-row mb-4'>
-    <section id='post-excerpt' class='flex-fill'>
-        <h1 id='post-title'>{{title}}</h1>
-        <p>{{excerpt words=33}}</p>
-    </section>
-    <section id='post-meta' class='d-flex ml-sm-5 pt-sm-3'>
-        <div class='post-meta-icons mr-1'>
-            <div><i class="fas fa-link"></i></div>
-            <div><i class="fas fa-calendar-alt"></i></div>
-            <div><i class="far fa-clock"></i></div>
-            <div><i class="fas fa-hashtag"></i></div>
-        </div>
-        <div class='post-meta-description'>
-            <div>Link
-            <div>{{date format="YYYY-MM-DD"}}</div>
-            <div>{{reading_time}}</div>
-            {{#if primary_tag}}<div>{{primary_tag.name}}</div>{{/if}}
-        </div>
-    </section>
-</article>
-
+<div class="card shadow mb-4 {{post_class}}{{#unless feature_image}} no-image{{/unless}}" style="">
+  {{#has tag="video"}}
+    {{content}}
+    <div class="card-footer text-muted d-flex flex-md-row justify-content-between">
+      <span class="text-capitalize">{{#if primary_tag}}{{primary_tag.name}}{{else}}{{reading_time}}{{/if}}</span>
+      <a href="{{url}}" class="card-link">{{date format="MMMM D, YYYY" timeago="true"}}</a>
+    </div>
+  {{else}}
+  {{#has tag="link"}}
+    {{content}}
+  {{else}}
+    {{!-- <img src="{{feature_image}}" class="card-img-top" alt="Card Header"> --}}
+    {{#if feature_image}}<a href="{{url}}"><div class="card-img-top card-feature-img" style="background-image: url('{{feature_image}}');"></div></a>{{/if}}
+    <div class="card-body">
+      {{#if primary_tag}}<small><strong class="card-subtitle mb-0 text-primary text-uppercase">{{primary_tag.name}}</strong></small>{{/if}}
+      <h4 id="post-title" class="card-title"><a class="card-title" href="{{url}}">{{title}}</a></h4>
+      <p class="card-text text-muted">{{excerpt words=33}}</p>
+    </div>
+    <div class="card-footer text-muted d-flex flex-md-row justify-content-between">
+      <span>{{reading_time}}</span>
+      <a href="{{url}}" class="card-link">{{date format="MMMM D, YYYY" timeago="true"}}</a>
+    </div>
+  {{/has}}
+  {{/has}}
+</div>

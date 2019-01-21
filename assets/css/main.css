@@ -1,13 +1,72 @@
-html, body {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-    overflow-x: hidden;
+/* Web fonts
+/* ---------------------------------------------------------- */
+
+/* Light */
+@font-face {
+    font-family: 'Merriweather';
+    font-weight: light;
+    src:    url('/assets/webfonts/Merriweather-Light.otf') format('opentype');
 }
 
-html {
-    font-size: 16px;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+/* Light italic */
+@font-face {
+    font-family: 'Merriweather';
+    font-weight: light;
+    font-variant: italic;
+    src:    url('/assets/webfonts/Merriweather-LightItalic.otf') format('opentype');
+}
+
+/* Regular */
+@font-face {
+    font-family: 'Merriweather';
+    src:    url('/assets/webfonts/Merriweather-Regular.otf') format('opentype');
+}
+
+/* Regular Italic */
+@font-face {
+    font-family: 'Merriweather';
+    font-style: italic;
+    src:    url('/assets/webfonts/Merriweather-Italic.otf') format('opentype');
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Merriweather';
+    font-weight: bold;
+    src:    url('/assets/webfonts/Merriweather-Bold.otf') format('opentype');
+}
+
+/* Bold italic */
+@font-face {
+    font-family: 'Merriweather';
+    font-weight: bold;
+    font-style: italic;
+    src:    url('/assets/webfonts/Merriweather-BoldItalic.otf') format('opentype');
+}
+
+/* Black */
+@font-face {
+    font-family: 'Merriweather';
+    font-weight: bold;
+    src:    url('/assets/webfonts/Merriweather-Black.otf') format('opentype');
+}
+
+/* Black italic */
+@font-face {
+    font-family: 'Merriweather';
+    font-weight: bold;
+    font-style: italic;
+    src:    url('/assets/webfonts/Merriweather-BlackItalic.otf') format('opentype');
+}
+
+/* Main
+/* ---------------------------------------------------------- */
+
+html, body {
+    /*font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;*/
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    /*overflow-x: hidden;*/
     text-size-adjust: 100%;
 }
 
@@ -15,108 +74,180 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
-.title {
-    color: #363636;
-    font-size: 2rem;
+/* Main navigation
+/* ---------------------------------------------------------- */
+
+.navbar-menutext {
+    font-size: 14px;
+}
+
+.icon {
+    font-size: 1.25em;
+}
+
+.icon-sm {
+    font-size: 80%;
+}
+
+.icon::before,
+.icon-sm::before {
+    display: none;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.mastodon::before {
+    font-family: "Font Awesome 5 Brands";
     font-weight: 400;
-    line-height: 1.125;
+    content: "\f4f6";
 }
 
-.subtitle {
-    color: #b5b5b5;
-    word-break: break-word;
-    font-size: 1.25rem;
-    line-height: 1.25;
-    font-weight: 300;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-    margin-bottom: 2rem;
+.facebook::before {
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400;
+    content: "\f39e";
 }
 
-.bg-blue {
-    background-color: #3273dc;
+.twitter::before {
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400;
+    content: "\f099";
 }
 
-.text-blue {
-    color: #3273dc;
+.rss::before {
+    font-family: "Font Awesome 5 Solid";
+    font-weight: 400;
+    content: "\f09e";
 }
 
-.btn-outline-blue {
-    color: #3273dc;
-    background-color: transparent;
-    background-image: none;
-    border-color: #3273dc;
+.form-control {
+    font-size: 14px;
 }
 
-.btn-blue {
-    color: #fff;
-    background-color: #3273dc;
-    background-image: none;
-    border-color: #3273dc;
+/* Post list
+/* ---------------------------------------------------------- */
+
+.post {
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
 }
 
-.btn-blue:hover {
-    color: #fff;
-    background-color: #275693;
-    border-color: #275693;    
+#post-title a:link,
+#post-title a:visited {
+    color: unset;
+    text-decoration: none;
 }
 
-#footer-nav a {
-    color: rgba(255,255,255,.5)
+#post-title a:hover {
+    color: #0056b3;
 }
 
-#footer-nav a:hover {
-    color: rgba(255,255,255,.75);
+/* Post cards
+/* ---------------------------------------------------------- */
+
+.card {
+    flex: 1 1 400px;
+    min-height: 300px;
+    
 }
 
-#footer-nav a:visited,
-#footer-nav a:active {
-    color: rgba(255,255,255,.5);
+.card-feature-img {
+    width: auto;
+    height: 250px;
+    background: #c5d2d9 no-repeat 50%;
+    background-size: cover;
+    object-fit: cover;
+    object-position: 50% 50%;
 }
+
+.card-text {
+    font-size: 14px;
+}
+
+/* Embedded Video Wrappers (Post Feed)
+/* ---------------------------------------------------------- */
+
+/*#post-feed > .tag-video > .kg-embed-card {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 250px;
+    width: auto;
+}*/
+
+/*#post-feed > .tag-video > .kg-embed-card object,
+#post-feed > .tag-video > .kg-embed-card embed,
+#post-feed > .tag-video > .kg-embed-card iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}*/
+
+.tag-video figure {
+    margin: 0;
+}
+
+.tag-video figure.kg-embed-card {
+    width: auto;
+    height: 100%;
+    max-height: 250px;
+    background: #c5d2d9 no-repeat 50%;
+    background-size: cover;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+#post-feed > .tag-video > p {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #6c757d!important;
+    font-size: 14px;
+}
+
+
+/* Footer navigation
+/* ---------------------------------------------------------- */
+
+#footer-nav {
+    font-size: 80%;
+    background-color: #f5f5f5;
+}
+
+.card-footer {
+    font-size: 80%;
+}
+
+/*
+/* Pagination
+/* ---------------------------------------------------------- */
 
 .pagination {
     font-size: 80%;
 }
 
-#post-title {
-    font-size: 2rem;
-    color: #363636;
-    font-weight: 300;
-}
 
-.post-card > #post-excerpt > p {
-    font-size: 1rem;
-}
+/* Media queries
+/* ---------------------------------------------------------- */
 
-.post-excerpt {
-    flex-basis: 0;
-}
-
-@media (max-width: 576px) {
-    #post-meta {
-        flex-basis: auto !important;
+@media (min-width: 576px) {
+    .page-navigation {
+        margin-top: 1.5rem;
     }
 }
 
-.post-meta-icons,
-.post-meta-description {
-    font-size: 80%;
-}
-
-#post-meta {
-    flex-basis: 0;
-    min-width: 180px;
-}
-
-#site-wrapper {
-    min-height: 100vh;
-}
-/*
-#post-feed {
-    min-height: 100%;
-}*/
-
-svg {
-    color: #3273dc !important;
+@media (min-width: 991.99px) {
+    .card:nth-child(odd) {
+        margin-right: 1.5rem;
+    }
 }
