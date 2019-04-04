@@ -1,0 +1,32 @@
+routes:
+  /links/:
+    controller: channel
+    filter: tag:link
+  /videos/:
+    controller: channel
+    filter: tag:video
+  /audio/:
+    controller: channel
+    filter: tag:audio
+  /chats/:
+    controller: channel
+    filter: tag:chat
+  /quotes/:
+    controller: channel
+    filter: tag:quote
+  /micros/:
+    controller: channel
+    filter: tag:micro
+  /posts/:
+    controller: channel
+    filter: tag:-[link,video,audio,chat,quote,micro]
+
+collections:
+  /:
+    permalink: /{slug}/
+    template:
+      - index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
