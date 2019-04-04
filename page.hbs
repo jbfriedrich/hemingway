@@ -1,0 +1,16 @@
+{{!< default}}
+{{#post}}
+<div class="page-full">
+    <header class="post-meta text-center text-dark mb-5 mt-5">
+        <h1 class="post-title mb-4">{{title}}</h1>
+    </header>
+    {{#if feature_image}}
+    <figure class="feature-image">
+        <img src="{{img_url feature_image}}">
+    </figure>
+    {{/if}}
+    <main class="page-content ml-auto mr-auto{{^if feature_image}} no-feature-image{{/if}}">
+        {{content}}
+    </main>
+</div>
+{{/post}}
