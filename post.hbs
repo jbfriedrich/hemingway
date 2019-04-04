@@ -1,36 +1,69 @@
-<!DOCTYPE html>
-<html class="h-100" lang="{{lang}}">
-    <head>
-        {{!-- Document Settings --}}
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        {{!-- Base Meta --}}
-        <title>{{meta_title}}</title>
-        <meta name="HandheldFriendly" content="True" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {{!-- Styles'n'Scripts --}}
-        <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}" />
-        <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.min.css"}}" />
-        <link rel="stylesheet" type="text/css" href="{{asset "css/fontawesome.min.css"}}" />
-        <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
-        {{!-- Fontawesome fonts --}}
-        <script defer src="{{asset "js/jquery-3.3.1.min.js"}}"></script>
-        <script defer src="{{asset "js/bootstrap.bundle.min.js"}}"></script>
-        <script data-search-pseudo-elements defer src="{{asset "js/fontawesome.min.js"}}"></script>
-        {{!-- This tag outputs SEO meta+structured data and other important settings --}}
-        {{ghost_head}}
-    </head>
-    <body class="h-100 {{body_class}}">
-        <header>
-            
-        </header>
-        <main role="main">
-            <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">    
-            </article>
-        </main>
-        <aside>
-        </aside>
-        <footer>
-        </footer>
-    </body>
-</html>
+{{!< default}}
+{{#post}}
+<div class="post-full my-3 my-sm-5{{#has tag="#micro"}} post-micro{{/has}}{{#has tag="#video"}} post-video{{/has}}">
+    <header class="post-meta text-center text-dark{{^has tag="#link"}} mb-5{{/has}}">
+        <span class="post-date lead text-uppercase">{{date}}</span>
+        {{^has tag="#micro, #video, #link"}}
+        <h1 class="post-title {{!-- display-4 --}}mt-3 mb-4">{{title}}</h1>
+        {{/has}}
+    </header>
+    {{#if feature_image}}
+    <figure class="feature-image">
+        <img src="{{img_url feature_image}}">
+    </figure>
+    {{/if}}
+    <main class="post-content ml-auto mr-auto{{^if feature_image}} no-feature-image{{/if}}{{#has tag="#video"}} post-content-video{{/has}}{{#has tag="#micro"}} post-content-micro{{/has}}{{#has tag="#link"}} post-content-link{{/has}}">
+        {{content}}
+    </main>
+    <div class="meta-author">
+        {{#primary_author}}
+        <div class="author-image">
+            {{#if profile_image}}
+            <img class="post-author-image rounded-circle" alt="{{name}}" src="{{profile_image}}">
+            {{/if}}
+        </div>
+        <div class="author-bio">
+            <h4>{{name}}</h4>
+            <p class="text-muted small">{{bio}}</p>
+        </div>
+        <div class="author-page">
+            {{!-- <a href="{{url}}" role="button" aria-pressed="true" class="btn btn-sm btn-outline-muted">Read more</a> --}}
+            <a href="{{@site.url}}/about/" role="button" aria-pressed="true" class="btn btn-sm btn-outline-muted">About Me</a>
+        </div>
+        {{/primary_author}}
+    </div>
+    <aside class="post-footer">
+        <div class='card-deck mt-5 justify-content-center align-items-stretch flex-nowrap readnext-feed'>
+            <div class="card text-center mb-5 flex-grow-0 flex-shrink-1">
+                {{#if primary_tag}}
+                {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="5" as |related_posts|}}      
+                    <div class="card-body">
+                        {{#../primary_tag}}
+                        <h4 class="card-title text-dark font-weight-normal text-capitalize">- {{name}} -</h4>
+                        <h6 class="card-subtitle font-weight-light mb-3">{{description}}</h6>
+                        <p class="card-text">More posts like this:</p>
+                        {{/../primary_tag}}
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {{#foreach related_posts}}
+                        <li class="list-group-item"><a class="card-link" href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    </ul>
+                    <div class="card-footer small text-muted tag-moreposts">
+                        <a class="card-link text-muted" href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
+                    </div>
+                {{/get}}
+                {{/if}}
+            </div>
+            {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
+            {{#next_post}}
+                {{> "post-footer-card"}}
+            {{/next_post}}
+            {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
+            {{#prev_post}}
+                {{> "post-footer-card"}}
+            {{/prev_post}}
+        </div>
+    </aside>
+</div>
+{{/post}}
