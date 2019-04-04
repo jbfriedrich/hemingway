@@ -1,25 +1,44 @@
-<div class="card shadow mb-4 {{post_class}}{{#unless feature_image}} no-image{{/unless}}" style="">
-  {{#has tag="video"}}
-    {{content}}
-    <div class="card-footer text-muted d-flex flex-md-row justify-content-between">
-      <span class="text-capitalize">{{#if primary_tag}}{{primary_tag.name}}{{else}}{{reading_time}}{{/if}}</span>
-      <a href="{{url}}" class="card-link">{{date format="MMMM D, YYYY" timeago="true"}}</a>
+<div class="card mb-5 {{post_class}}{{#unless feature_image}} no-image{{/unless}}">
+    <div class="card-content d-flex flex-column flex-grow-1">
+        {{#has tag="#video"}}
+            {{content words="1"}}
+            <div class="card-body post-video flex-grow-1">       
+                <span class="card-text text-justify">{{content}}</span>
+            </div>
+        {{else}}
+            {{#has tag="#link"}}
+                <div class="card-body post-link flex-grow-1">
+                    <span class="card-text">{{content}}</span>
+                </div>
+            {{else}}
+                {{#has tag="#micro"}}
+                    <div class="card-body post-micro flex-grow-1">
+                        <span class="card-text text-justify">{{content}}</span>
+                    </div>
+                {{else}}
+                    {{#if feature_image}}
+                         <div>
+                            <a aria-label="Post: {{title}}" href="{{url}}">
+                                <div class="card-img-top card-feature-img" style="background-image: url('{{feature_image}}');"></div>
+                            </a>
+                        </div>
+                    {{/if}}
+                    <div class="card-body post flex-grow-1">
+                        <h3 class="card-title post-title"><a class="card-title" name="Blog post: {{title}}"href="{{url}}" href="{{url}}">{{title}}</a></h3>
+                        <p class="card-text">{{excerpt words=33}}...</p>
+                    </div>
+                {{/has}}
+            {{/has}}
+        {{/has}}
+        <div class="card-footer text-muted d-flex flex-row justify-content-between align-items-baseline">
+            <div class="tags mr-auto mb-2 mb-md-0">
+                {{#primary_tag}}
+                    {{!-- <strong class="card-subtitle mb-0 text-primary text-uppercase"></strong> --}}
+                    <a class="btn btn-outline-secondary btn-sm text-uppercase" style="letter-spacing: 1px; font-size: .666rem" title="{{description}}" href="{{url}}" role="button">{{name}}</a>
+                {{/primary_tag}}
+            </div>
+            <span class="card-readtime text-uppercase mb-2 mb-md-0">{{reading_time}}</span>
+            <a class="card-link text-muted text-uppercase ml-sm-4 ml-md-5" name="Date" href="{{url}}">{{date format="MMMM D, YYYY" timeago="true"}}</a>
+        </div>
     </div>
-  {{else}}
-  {{#has tag="link"}}
-    {{content}}
-  {{else}}
-    {{!-- <img src="{{feature_image}}" class="card-img-top" alt="Card Header"> --}}
-    {{#if feature_image}}<a href="{{url}}"><div class="card-img-top card-feature-img" style="background-image: url('{{feature_image}}');"></div></a>{{/if}}
-    <div class="card-body">
-      {{#if primary_tag}}<small><strong class="card-subtitle mb-0 text-primary text-uppercase">{{primary_tag.name}}</strong></small>{{/if}}
-      <h4 id="post-title" class="card-title"><a class="card-title" href="{{url}}">{{title}}</a></h4>
-      <p class="card-text text-muted">{{excerpt words=33}}</p>
-    </div>
-    <div class="card-footer text-muted d-flex flex-md-row justify-content-between">
-      <span>{{reading_time}}</span>
-      <a href="{{url}}" class="card-link">{{date format="MMMM D, YYYY" timeago="true"}}</a>
-    </div>
-  {{/has}}
-  {{/has}}
 </div>
