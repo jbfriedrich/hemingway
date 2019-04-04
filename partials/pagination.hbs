@@ -1,9 +1,17 @@
-<ul class="pagination justify-content-between mb-0">
-    <li class="page-item{{^if prev}} disabled{{/if}}">
-        <a class="page-link newer-posts" href="{{^if prev}}#" tabindex="-1" aria-disabled="true"{{else}}{{page_url prev}}"{{/if}}>&larr; Newer Posts</a>
-    </li>
-    <li class="page-item align-self-center">Page {{page}} of {{pages}}</li>
-    <li class="page-item{{^if next}} disabled{{/if}}">
-        <a class="page-link older-posts" href="{{^if next}}#" tabindex="-1" aria-disabled="true"{{else}}{{page_url next}}"{{/if}}>Older Posts &rarr;</a>
-    </li>
-</ul>
+<div class="d-flex justify-content-between align-items-baseline text-muted text-uppercase small">
+    <span class="mr-auto" style="letter-spacing: 1px;">Page {{page}} of {{pages}}</span>
+    <a class="newer-posts text-muted{{^if prev}} isDisabled{{/if}}"
+        style="letter-spacing: 1px; border-bottom: 1px solid #007bff;"
+        href="{{page_url prev}}">&larr; Previous
+    </a>
+        {{!-- {{^if prev}} disabled{{/if}} --}}
+
+    <a class="older-posts text-muted ml-3 {{^if next}} isDisabled{{/if}}"
+        style="letter-spacing: 1px; border-bottom: 1px solid #007bff;"
+        href="{{^if next}}#" tabindex="-1"
+        aria-disabled="true"{{else}}{{page_url next}}"{{/if}}>Next &rarr;
+    </a>
+</div>
+
+
+{{!-- btn btn-outline-secondary btn-sm text-uppercase --}}
