@@ -1,1 +1,655 @@
-@font-face{font-family:'Merriweather';font-weight:300;src:url('/assets/webfonts/Merriweather-Light.otf') format('opentype')}@font-face{font-family:'Merriweather';font-weight:300;font-style:italic;src:url('/assets/webfonts/Merriweather-LightItalic.otf') format('opentype')}@font-face{font-family:'Merriweather';src:url('/assets/webfonts/Merriweather-Regular.otf') format('opentype')}@font-face{font-family:'Merriweather';font-style:italic;src:url('/assets/webfonts/Merriweather-Italic.otf') format('opentype')}@font-face{font-family:'Merriweather';font-weight:bold;src:url('/assets/webfonts/Merriweather-Bold.otf') format('opentype')}@font-face{font-family:'Merriweather';font-weight:bold;font-style:italic;src:url('/assets/webfonts/Merriweather-BoldItalic.otf') format('opentype')}@font-face{font-family:'Merriweather';font-weight:bold;src:url('/assets/webfonts/Merriweather-Black.otf') format('opentype')}@font-face{font-family:'Merriweather';font-weight:bold;font-style:italic;src:url('/assets/webfonts/Merriweather-BlackItalic.otf') format('opentype')}body{margin:0;padding:0;overflow-x:hidden}.nav-link.icon{font-size:1.5em}.icon-sm{font-size:80%}.icon::before,.icon-sm::before{display:none;font-style:normal;font-variant:normal;text-rendering:auto;-webkit-font-smoothing:antialiased}.mastodon::before{font-family:"Font Awesome 5 Brands";font-weight:400;content:"\f4f6"}.facebook::before{font-family:"Font Awesome 5 Brands";font-weight:400;content:"\f39e"}.twitter::before{font-family:"Font Awesome 5 Brands";font-weight:400;content:"\f099"}.rss::before{font-family:"Font Awesome 5 Solid";font-weight:400;content:"\f09e"}.isDisabled{cursor:not-allowed;opacity:0.5}.isDisabled > a{color:currentColor;display:inline-block;pointer-events:none;text-decoration:none!important}.older-posts:hover,.newer-posts:hover{text-decoration:none}#post-feed > .tag-link .card-text > p:first-child > a:only-child{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:500!important;font-size:1.75rem;line-height:1.2em;color:#343a40;border-bottom:none}#post-feed > .tag-link .card-text > p:first-child > a:only-child:hover{text-decoration:underline}@media (max-width:1200px){#post-feed .tag-link .card-text > p:first-child > a:only-child{font-size:calc(1.3rem + .6vw)}}#post-feed .tag-link .card-text > p:first-child > a:only-child::before{display:none;font-style:normal;font-variant:normal;text-rendering:auto;-webkit-font-smoothing:antialiased;font-family:"Font Awesome 5 Solid";content:"\f0c1"}#post-feed .card-text > p > a > .fa-link{margin-right:5px}#post-feed .kg-image-card .kg-image{width:100%}.card{min-height:275px}.card-feature-img{width:auto;height:300px;background:#c5d2d9 no-repeat 50%;background-size:cover;object-fit:cover;object-position:50% 50%}.post-video > .card-content figure.kg-embed-card{margin:0!important}a.card-title{color:#343a40}#main-content > #post-feed > .card .card-text{font-family:Merriweather;font-weight:300;font-size:calc(14px + 0.15vw);line-height:1.618}.page-content blockquote,.post-content blockquote,.card-text blockquote{background:#f9f9f9;color:#6c757d;margin-left:10px;margin-right:10px;padding:10px 15px 15px 10px;border-left:5px solid #007bff;font-style:italic;text-align:justify}.page-content blockquote:before,.post-content blockquote:before,.card-text blockquote:before{position:relative;color:#007bff;content:"\201C";font-size:72px;line-height:0.1em;top:40px;left:-5px;height:48px;margin:0!important;padding:0!important;display:inline;opacity:0.3}@media(max-width:576px){.page-content blockquote:before,.post-content blockquote:before,.card-text blockquote:before{font-size:58px;top:30px;left:-5px}}@media(min-width:576px) and (max-width:768px){.page-content blockquote:before,.post-content blockquote:before,.card-text blockquote:before{font-size:62px;top:34px;left:-5px}}.page-content blockquote p,.post-content blockquote p,.card-text blockquote p{display:inline}.card-text a{color:unset;border-bottom:1px solid #007bff}.card-text a:hover{text-decoration:none;color:#0056b3;border-bottom:1px solid #0056b3}.tags .btn:hover{color:unset!important;background-color:unset!important}#main-content > #post-feed > .card > .card-content > .card-footer > .card-link{letter-spacing:1px;font-size:.666rem;border-bottom:1px solid #007bff}#main-content > #post-feed > .card > .card-content > .card-footer > .card-readtime{letter-spacing:1px;font-size:.666rem}@media(max-width:576px){#main-content > #post-feed > .card > .card-content > .card-footer > .card-readtime{display:none}}#post-feed .tag-video > .card-content > p,#post-feed .tag-video > .card-content > .card-body > .card-text > figure{display:none}#post-feed .tag-micro > .card-content > .card-body > .card-text > figure{margin:0 auto;max-width:500px;margin-bottom:1.55em}.post-full .post-title,.page-full .post-title,.post-content.post-content-link > p:first-child > a:only-child{color:#444;font-weight:700;font-size:3.5rem}.post-content.post-content-link > p:first-child{width:500%;margin-left:-200%;text-align:center;margin-top:1rem;margin-bottom:5em}.post-content.post-content-link > p:first-child > a:only-child{line-height:1.2;width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}.post-content.post-content-link > p > a > .fa-link{margin-right:10px}.post-content.post-content-link > p:first-child > a:only-child::before{display:none;font-style:normal;font-variant:normal;text-rendering:auto;-webkit-font-smoothing:antialiased;font-family:"Font Awesome 5 Solid";content:"\f0c1"}.post-full .feature-image,.page-full .feature-image{text-align:center;width:100vw;max-width:100%;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);background:#c5d2d9 no-repeat 50%;background-size:cover;margin-bottom:4em}.post-full .feature-image img,.page-full .feature-image img{height:500px;width:inherit;object-fit:cover;object-position:50% 50%}.page-full{margin-top:5em}.post-date{color:#444}.post-full.post-micro,.post-full.post-video{margin-top:5em!important}.post-micro .post-date,.post-video .post-date{border-bottom:1px solid #444}.post-content,.page-content{max-width:40em;font-family:Merriweather;font-weight:300;font-size:calc(15px + (18 - 15) * ((100vw - 350px) / (1200 - 350)));line-height:1.618;margin-bottom:5em}.post-content.no-feature-image,.page-content.no-feature-image{margin-top:5em}.page-content.no-feature-image{margin-top:6.5em}.post-content.no-feature-image.post-content-link{margin-top:unset}.page-content{margin-bottom:5em}.post-content h1,.post-content h2,.post-content h3,.post-content h4,.post-content h5,.post-content h6,.page-content h1,.page-content h2,.page-content h3,.page-content h4,.page-content h5,.page-content h6{margin-top:1.5em;margin-bottom:1em;font-weight:700;color:#444}.post-content a,.page-content a{color:unset;border-bottom:1px solid #007bff}.post-content a:visited,.page-content a:visited{color:unset;border-bottom:1px solid #007bff}.post-content a:hover,.page-content a:hover{text-decoration:none;color:#0056b3;border-bottom:1px solid #0056b3}.post-content.post-content-video{margin-bottom:8em}.post-content.post-content-micro{margin-bottom:6em}#main-content .post-full .post-content > p > img,.kg-card.kg-image-card img{margin:0 auto;height:auto;width:100%}.footnotes-sep{margin-top:2.5rem}.footnotes{font-size:70%;margin-bottom:4rem}.footnotes-list{padding:0;list-style:none;counter-reset:footnote-counter}.footnotes-list li{list-style-type:none;margin:1em 1em 1em 2em;position:relative;counter-increment:footnote-counter}.footnotes-list li:before{content:counter(footnote-counter) ". ";position:absolute;left:-1.55em;color:#007bff}.meta-author{flex:0 0 25%;flex-direction:row;flex-wrap:nowrap;align-items:center;display:flex;margin:0 auto;max-width:40em;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:calc(16px + (18 - 16) * ((100vw - 350px) / (1200 - 350)));margin-bottom:5em}.meta-author > .author-image{flex-shrink:1;flex-grow:0}.post-author-image{height:90px;width:90px;margin:0;padding:0}.post-author-image.no-image{border:1px solid #ccc}.meta-author > .author-bio{flex-shrink:1;flex-grow:1;padding:20px}.meta-author > .author-bio h4{margin-bottom:0;font-size:1.25rem;font-weight:700;color:#444}.meta-author > .author-page{flex-shrink:0;flex-grow:1}.meta-author > .author-page > .btn-outline-muted{padding:5px 15px;border-radius:20px;color:#6c757d;border:1px solid #6c757d}.post-footer > .card-deck > .card .card-img-top{height:230px;object-fit:cover;object-position:center}.post-content .kg-card.kg-image-card.kg-width-full{text-align:center;width:100vw;max-width:100%;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);background-size:cover;margin-bottom:4em}.post-content .kg-card.kg-image-card.kg-width-full img{width:inherit;object-fit:cover;object-position:50% 50%}.post-content .kg-card.kg-image-card.kg-width-wide > .kg-image{display:block;width:unset;max-width:150%;height:auto;position:relative;left:50%;transform:translateX(-50%)}.kg-image-card figcaption,.kg-gallery-card figcaption{padding:10px 20px;color:#6c757d;font-size:65%;font-style:italic;margin:-8px 0;text-align:center}.kg-image-card.kg-width-full figcaption{width:100vw}.post-content .kg-gallery-card{margin-bottom:4em}.post-content .kg-gallery-card .kg-gallery-container{display:block;position:relative;width:100vw;max-width:150%;left:50%;transform:translateX(-50%)}.kg-gallery-row{display:flex;flex-direction:row;justify-content:center}.kg-gallery-row:not(:first-of-type){margin:0.75em 0 0 0}.kg-gallery-image:not(:first-of-type){margin:0 0 0 0.75em}.kg-gallery-image img{display:block;margin:0;width:100%;height:100%;object-fit:cover}
+/*---
+        1.) Font Defintions
+---*/
+
+    @font-face {
+        font-family: 'Merriweather';
+        font-weight: 300;
+        src: url('/assets/webfonts/Merriweather-Light.otf') format('opentype')
+    }
+
+    @font-face {
+        font-family: 'Merriweather';
+        font-weight: 300;
+        font-style: italic;
+        src: url('/assets/webfonts/Merriweather-LightItalic.otf') format('opentype')
+    }
+
+    @font-face {
+        font-family: 'Merriweather';
+        src: url('/assets/webfonts/Merriweather-Regular.otf') format('opentype')
+    }
+
+    @font-face {
+        font-family: 'Merriweather';
+        font-style: italic;
+        src: url('/assets/webfonts/Merriweather-Italic.otf') format('opentype')
+    }
+
+    @font-face {
+        font-family: 'Merriweather';
+        font-weight: bold;
+        src: url('/assets/webfonts/Merriweather-Bold.otf') format('opentype')
+    }
+
+    @font-face {
+        font-family: 'Merriweather';
+        font-weight: bold;
+        font-style: italic;
+        src: url('/assets/webfonts/Merriweather-BoldItalic.otf') format('opentype')
+    }
+
+    @font-face {
+        font-family: 'Merriweather';
+        font-weight: bold;
+        src: url('/assets/webfonts/Merriweather-Black.otf') format('opentype')
+    }
+
+    @font-face {
+        font-family: 'Merriweather';
+        font-weight: bold;
+        font-style: italic;
+        src: url('/assets/webfonts/Merriweather-BlackItalic.otf') format('opentype')
+    }
+
+/*---
+        2.) HTML & Body
+---*/
+
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+/*---
+        3.) Main Navigation
+---*/
+
+    .nav-link.icon {
+        font-size: 1.5em;
+    }
+
+    .icon-sm {
+        font-size: 80%;
+    }
+
+    .icon::before, .icon-sm::before {
+        display: none;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .mastodon::before {
+        font-family: "Font Awesome 5 Brands";
+        font-weight: 400;
+        content: "\f4f6";
+    }
+
+    .facebook::before {
+        font-family: "Font Awesome 5 Brands";
+        font-weight: 400;
+        content: "\f39e";
+    }
+
+    .twitter::before {
+        font-family: "Font Awesome 5 Brands";
+        font-weight: 400;
+        content: "\f099";
+    }
+
+    .rss::before {
+        font-family: "Font Awesome 5 Solid";
+        font-weight: 400;
+        content: "\f09e";
+    }
+
+/*---
+        4.) Main Navigation
+---*/
+
+    .isDisabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    .isDisabled > a {
+        color: currentColor;
+        display: inline-block;
+        pointer-events: none;
+        text-decoration: none !important;
+    }
+
+    .feed-pagination {
+        letter-spacing: 1px;
+    }
+
+    .newer-posts,
+    .older-posts {
+        letter-spacing: 1px;
+        border-bottom: 1px solid #007bff;
+    }
+
+    .older-posts:hover, .newer-posts:hover {
+        text-decoration: none;
+    }
+
+/*---
+        5.) Post Feed
+---*/
+
+    .post-feed .post-meta-tag,
+    .post-feed .post-meta-date,
+    .post-feed .post-meta-readtime {
+        /*letter-spacing: 1px;*/
+        font-size: .75rem;
+    }
+
+    .post-feed .post-meta-date,
+    .post-feed .post-meta-readtime {
+        min-width: 120px;
+    }
+
+    .post-feed .post-meta-date a {
+        border-bottom: 1px solid #007bff;
+        padding-bottom: 3px;
+    }
+
+    .post-feed .post-meta-date a:hover {
+        text-decoration: none;
+    }
+
+    .post-feed .post-meta-tag:hover {
+        /*color: unset!important;*/
+        color: #007bff;
+        background-color: unset!important;
+    }
+
+    .post-feed > .tag-link .post-content > p:first-child {
+        text-align: left;
+    }
+
+    .post-feed > .tag-link .post-content > p:first-child > a:only-child {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-weight: 500 !important;
+        font-size: 2rem;
+        line-height: 1.2em;
+        /*color: #343a40;*/
+        color: #444;
+        border-bottom: none;
+    }
+
+    @media (max-width:1200px) {
+        .post-feed > .tag-link .post-content > p:first-child > a:only-child {
+            font-size: calc(1.325rem + .9vw);
+        }
+    }
+
+    .post-feed > .tag-link .post-content > p:first-child > a:only-child:hover {
+        text-decoration: underline;
+    }
+
+    .post-feed > .tag-link .post-content > p:first-child > a:only-child::before {
+        display: none;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Solid";
+        content: "\f0c1";
+    }
+
+    .post-feed > .tag-link .post-content > p > a > .fa-link {
+        margin-right: 5px;
+    }
+
+    .post-feed > .post > .post-content {
+        font-family: Merriweather;
+        font-weight: 300;
+        font-size: calc(15px + 0.125vw);
+        line-height: 1.618;
+    }
+
+    .post-feed .post-title {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        text-align: left;
+    }
+
+    .post-feed .post-title a {
+        color: #444;
+    }
+
+    .post-feed .post-content p.post-excerpt > .fa-angle-double-right {
+         margin-left: 5px;
+    }
+
+    .post-feed .post-content .post-excerpt::after {
+        display: none;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Solid";
+        font-weight: lighter;
+        content: "\f101";
+    }
+
+/*---
+        5.) Post and Page Formatting (index feed list and single view)
+---*/
+
+.page-content blockquote, .post-content blockquote {
+    background: #f9f9f9;
+    color: #6c757d;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0px 15px 10px 15px;
+    border-left: 5px solid #007bff;
+    font-style: italic;
+    text-align: justify;
+}
+
+.page-content blockquote:before, .post-content blockquote:before, .card-text blockquote:before {
+    position: relative;
+    color: #007bff;
+    content: "\201C";
+    font-size: 72px;
+    line-height: 0.1em;
+    top: 40px;
+    left: -5px;
+    height: 48px;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline;
+    opacity: 0.3;
+}
+
+@media(max-width:576px) {
+    .page-content blockquote:before, .post-content blockquote:before, .card-text blockquote:before {
+        font-size: 58px;
+        top: 30px;
+        left: -5px;
+    }
+
+}
+
+@media(min-width:576px) and (max-width:768px) {
+    .page-content blockquote:before, .post-content blockquote:before, .card-text blockquote:before {
+        font-size: 62px;
+        top: 34px;
+        left: -5px;
+    }
+
+}
+
+.page-content blockquote p, .post-content blockquote p, .card-text blockquote p {
+    display: inline;
+}
+
+.post-feed .feature-image {
+    width: auto;
+    height: 350px;
+    background: #c5d2d9 no-repeat 50%;
+    background-size: cover;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 5px;
+    margin-bottom: .5rem;
+}
+
+/*
+#post-feed .kg-image-card .kg-image {
+    width: 100%
+}
+
+.card {
+    min-height: 275px
+}
+
+
+
+.post-video > .card-content figure.kg-embed-card {
+    margin: 0 !important
+}
+
+.card-text a {
+    color: unset;
+    border-bottom: 1px solid #007bff
+}
+
+.card-text a:hover {
+    text-decoration: none;
+    color: #0056b3;
+    border-bottom: 1px solid #0056b3
+}
+
+.tags .btn:hover {
+    color: unset !important;
+    background-color: unset !important
+}
+
+#main-content > #post-feed > .card > .card-content > .card-footer > .card-link {
+    letter-spacing: 1px;
+    font-size: .666rem;
+    border-bottom: 1px solid #007bff
+}
+
+#main-content > #post-feed > .card > .card-content > .card-footer > .card-readtime {
+    letter-spacing: 1px;
+    font-size: .666rem
+}
+
+@media(max-width:576px) {
+    #main-content > #post-feed > .card > .card-content > .card-footer > .card-readtime {
+        display: none
+    }
+
+}
+
+#post-feed .tag-video > .card-content > p, #post-feed .tag-video > .card-content > .card-body > .card-text > figure {
+    display: none
+}
+
+#post-feed .tag-micro > .card-content > .card-body > .card-text > figure {
+    margin: 0 auto;
+    max-width: 500px;
+    margin-bottom: 1.55em
+}
+
+.post-full .post-title, .page-full .post-title, .post-content.post-content-link > p:first-child > a:only-child {
+    color: #444;
+    font-weight: 700;
+    font-size: 3.5rem
+}
+
+.post-content.post-content-link > p:first-child {
+    width: 500%;
+    margin-left: -200%;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 5em
+}
+
+.post-content.post-content-link > p:first-child > a:only-child {
+    line-height: 1.2;
+    width: 100%;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+
+.post-content.post-content-link > p > a > .fa-link {
+    margin-right: 10px
+}
+
+.post-content.post-content-link > p:first-child > a:only-child::before {
+    display: none;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Solid";
+    content: "\f0c1"
+}
+
+.post-full .feature-image, .page-full .feature-image {
+    text-align: center;
+    width: 100vw;
+    max-width: 100%;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background: #c5d2d9 no-repeat 50%;
+    background-size: cover;
+    margin-bottom: 4em
+}
+
+.post-full .feature-image img, .page-full .feature-image img {
+    height: 500px;
+    width: inherit;
+    object-fit: cover;
+    object-position: 50% 50%
+}
+
+.page-full {
+    margin-top: 5em
+}
+
+.post-date {
+    color: #444
+}
+
+.post-full.post-micro, .post-full.post-video {
+    margin-top: 5em !important
+}
+
+.post-micro .post-date, .post-video .post-date {
+    border-bottom: 1px solid #444
+}
+
+.post-content, .page-content {
+    max-width: 40em;
+    font-family: Merriweather;
+    font-weight: 300;
+    font-size: calc(15px + (18 - 15) * ((100vw - 350px) / (1200 - 350)));
+    line-height: 1.618;
+    margin-bottom: 5em
+}
+
+.post-content.no-feature-image, .page-content.no-feature-image {
+    margin-top: 5em
+}
+
+.page-content.no-feature-image {
+    margin-top: 6.5em
+}
+
+.post-content.no-feature-image.post-content-link {
+    margin-top: unset
+}
+
+.page-content {
+    margin-bottom: 5em
+}
+
+.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6, .page-content h1, .page-content h2, .page-content h3, .page-content h4, .page-content h5, .page-content h6 {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    font-weight: 700;
+    color: #444
+}
+
+.post-content a, .page-content a {
+    color: unset;
+    border-bottom: 1px solid #007bff
+}
+
+.post-content a:visited, .page-content a:visited {
+    color: unset;
+    border-bottom: 1px solid #007bff
+}
+
+.post-content a:hover, .page-content a:hover {
+    text-decoration: none;
+    color: #0056b3;
+    border-bottom: 1px solid #0056b3
+}
+
+.post-content.post-content-video {
+    margin-bottom: 8em
+}
+
+.post-content.post-content-micro {
+    margin-bottom: 6em
+}
+
+#main-content .post-full .post-content > p > img, .kg-card.kg-image-card img {
+    margin: 0 auto;
+    height: auto;
+    width: 100%
+}
+
+.footnotes-sep {
+    margin-top: 2.5rem
+}
+
+.footnotes {
+    font-size: 70%;
+    margin-bottom: 4rem
+}
+
+.footnotes-list {
+    padding: 0;
+    list-style: none;
+    counter-reset: footnote-counter
+}
+
+.footnotes-list li {
+    list-style-type: none;
+    margin: 1em 1em 1em 2em;
+    position: relative;
+    counter-increment: footnote-counter
+}
+
+.footnotes-list li:before {
+    content: counter(footnote-counter) ". ";
+    position: absolute;
+    left: -1.55em;
+    color: #007bff
+}
+
+.meta-author {
+    flex: 0 0 25%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    max-width: 40em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: calc(16px + (18 - 16) * ((100vw - 350px) / (1200 - 350)));
+    margin-bottom: 5em
+}
+
+.meta-author > .author-image {
+    flex-shrink: 1;
+    flex-grow: 0
+}
+
+.post-author-image {
+    height: 90px;
+    width: 90px;
+    margin: 0;
+    padding: 0
+}
+
+.post-author-image.no-image {
+    border: 1px solid #ccc
+}
+
+.meta-author > .author-bio {
+    flex-shrink: 1;
+    flex-grow: 1;
+    padding: 20px
+}
+
+.meta-author > .author-bio h4 {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #444
+}
+
+.meta-author > .author-page {
+    flex-shrink: 0;
+    flex-grow: 1
+}
+
+.meta-author > .author-page > .btn-outline-muted {
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: #6c757d;
+    border: 1px solid #6c757d
+}
+
+.post-footer > .card-deck > .card .card-img-top {
+    height: 230px;
+    object-fit: cover;
+    object-position: center
+}
+
+.post-content .kg-card.kg-image-card.kg-width-full {
+    text-align: center;
+    width: 100vw;
+    max-width: 100%;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background-size: cover;
+    margin-bottom: 4em
+}
+
+.post-content .kg-card.kg-image-card.kg-width-full img {
+    width: inherit;
+    object-fit: cover;
+    object-position: 50% 50%
+}
+
+.post-content .kg-card.kg-image-card.kg-width-wide > .kg-image {
+    display: block;
+    width: unset;
+    max-width: 150%;
+    height: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.kg-image-card figcaption, .kg-gallery-card figcaption {
+    padding: 10px 20px;
+    color: #6c757d;
+    font-size: 65%;
+    font-style: italic;
+    margin: -8px 0;
+    text-align: center
+}
+
+.kg-image-card.kg-width-full figcaption {
+    width: 100vw
+}
+
+.post-content .kg-gallery-card {
+    margin-bottom: 4em
+}
+
+.post-content .kg-gallery-card .kg-gallery-container {
+    display: block;
+    position: relative;
+    width: 100vw;
+    max-width: 150%;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+
+.kg-gallery-row:not(:first-of-type) {
+    margin: 0.75em 0 0 0
+}
+
+.kg-gallery-image:not(:first-of-type) {
+    margin: 0 0 0 0.75em
+}
+
+.kg-gallery-image img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+*/

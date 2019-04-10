@@ -1,17 +1,9 @@
-<div class="d-flex justify-content-between align-items-baseline text-muted text-uppercase small">
-    <span class="mr-auto" style="letter-spacing: 1px;">Page {{page}} of {{pages}}</span>
-    <a class="newer-posts text-muted{{^if prev}} isDisabled{{/if}}"
-        style="letter-spacing: 1px; border-bottom: 1px solid #007bff;"
-        href="{{page_url prev}}">&larr; Previous
-    </a>
-        {{!-- {{^if prev}} disabled{{/if}} --}}
-
-    <a class="older-posts text-muted ml-3 {{^if next}} isDisabled{{/if}}"
-        style="letter-spacing: 1px; border-bottom: 1px solid #007bff;"
-        href="{{^if next}}#" tabindex="-1"
-        aria-disabled="true"{{else}}{{page_url next}}"{{/if}}>Next &rarr;
-    </a>
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-center align-items-sm-baseline text-muted text-uppercase small">
+    <span class="mr-sm-auto mb-4 mb-sm-0 feed-pagination">Page {{page}} of {{pages}}</span>
+    <div class="mb-3 mb-sm-0{{^if prev}} isDisabled{{/if}}">
+        <a class="text-muted newer-posts" href="{{page_url prev}}">&larr; Previous</a>
+    </div>   
+    <div class="ml-sm-3{{^if next}} isDisabled{{/if}}">
+        <a class="text-muted older-posts" href="{{^if next}}#" tabindex="-1" aria-disabled="true"{{else}}{{page_url next}}"{{/if}}>Next &rarr;</a>
+    </div>    
 </div>
-
-
-{{!-- btn btn-outline-secondary btn-sm text-uppercase --}}
