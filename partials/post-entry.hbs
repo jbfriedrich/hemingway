@@ -1,0 +1,29 @@
+<article class="{{post_class}} row pb-5">
+    <div class="post-meta col-12 col-md-2 offset-md-1 order-2 order-md-1 pt-md-2 d-flex flex-row flex-md-column justify-content-between justify-content-md-start align-items-start text-muted">
+        {{#primary_tag}}
+        <a class="btn btn-outline-primary btn-sm text-uppercase text-uppercase mb-md-4 post-meta-tag" title="{{description}}" href="{{url}}" role="button">{{name}}</a>
+        {{/primary_tag}}
+        <div class="d-none d-sm-block text-uppercase post-meta-readtime text-uppercase mb-md-1">{{reading_time}}</div>
+        <div class="text-uppercase post-meta-date"><a class="text-muted text-uppercase" name="Date" href="{{url}}">{{date format="MMMM D, YYYY" timeago="true"}}</a></div>
+    </div>
+    <div class="post-content text-justify col-12 col-md-8 order-1 order-md-2">
+        {{#has tag="#video"}}
+            {{content}}
+        {{else}}
+            {{#has tag="#link"}}
+                {{content}}
+            {{else}}
+                {{#has tag="#micro"}}
+                    {{content}}
+                {{else}}
+                    {{#if feature_image}}
+                    <div class="feature-image" style="background-image: url('{{feature_image}}');"></div>
+                    {{/if}}
+                    <h2 class="post-title"><a class="stretched-link" name="Blog post: {{title}}" href="{{url}}">{{title}}</a></h2>
+                    <p class="post-excerpt">{{excerpt words=50}}</p>
+                    
+                {{/has}}
+            {{/has}}
+        {{/has}}
+    </div>
+</article>
