@@ -1,7 +1,9 @@
 {{!< default}}
-<div class="post-feed">
-    {{#foreach posts}}
-    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-        {{> "post-entry"}}
-    {{/foreach}}
+<div class="container py-5 h-100">
+    <div class="post-feed">
+        {{#foreach posts}}
+        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{> "post-entry"}}
+        {{/foreach}}
+    </div>
 </div>

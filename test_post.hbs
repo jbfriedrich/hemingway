@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+    <head>
+        {{!-- Document Settings --}}
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="Description" content="Jason Friedrich's blog. And what is good, Phaedrus, and what is not good – Need we ask anyone to tell us these things?">
+        {{!-- Base Meta --}}
+        <title>{{meta_title}}</title>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {{!-- Styles'n'Scripts --}}
+        {{!-- <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}" /> --}}
+        {{!-- <link rel="stylesheet" type="text/css" href="{{asset "css/fontawesome.min.css"}}" /> --}}
+        <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
+        {{!-- <link rel="stylesheet" type="text/css" href="{{asset "css/highlightjs/tomorrow-night.css"}}" /> --}}
+        {{!-- Fontawesome fonts --}}
+        <script src="{{asset "js/jquery-3.3.1.min.js"}}"></script>
+        <script src="{{asset "js/bootstrap.bundle.min.js"}}"></script>
+        <script data-search-pseudo-elements defer src="{{asset "js/fontawesome.min.js"}}"></script>
+        <script src="{{asset "js/highlight.pack.js"}}"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+        {{ghost_head}}
+    </head>
+    <body class=" {{body_class}}">
+        {{#post}}
+        <div class="parent-content-centered">
+            <div class="content-centered">
+                <div class="{{!-- post-content --}} bg-warning">{{content}}</div>
+                <div class="{{!-- post-meta --}} bg-primary">
+                    {{#primary_tag}}
+                    {{!-- <a class="btn btn-outline-primary btn-sm mb-md-4 post-meta-tag" title="{{description}}" href="{{url}}" role="button">{{name}}</a> --}}
+                    <a class="mb-md-4 text-capitalize badge badge-primary post-meta-tag" title="{{description}}" href="{{url}}">{{name}}</a>
+                    {{/primary_tag}}
+                </div>
+                <div class="d-none d-sm-block text-capitalize small post-meta-readtime">{{reading_time}}</div>
+                <div class="post-meta-date small"><a class="text-muted" name="Date" href="{{url}}">{{date format="DD-MMM-YYYY"}}</a></div>
+            </div>
+        </div>
+        {{/post}}
+    </body>
+</html>

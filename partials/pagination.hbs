@@ -1,9 +1,7 @@
-<div class="d-flex flex-column flex-sm-row justify-content-between align-items-center align-items-sm-baseline text-muted text-uppercase small">
-    <span class="mr-sm-auto mb-4 mb-sm-0 feed-pagination">Page {{page}} of {{pages}}</span>
-    <div class="mb-3 mb-sm-0{{^if prev}} isDisabled{{/if}}">
-        <a class="text-muted newer-posts" href="{{page_url prev}}">&larr; Previous</a>
-    </div>   
-    <div class="ml-sm-3{{^if next}} isDisabled{{/if}}">
-        <a class="text-muted older-posts" href="{{^if next}}#" tabindex="-1" aria-disabled="true"{{else}}{{page_url next}}"{{/if}}>Next &rarr;</a>
-    </div>    
-</div>
+<nav aria-label="Main Page Navigation">
+  <ul class="d-flex flex-column flex-sm-row justify-content-between align-items-center align-items-sm-baseline text-muted pagination">
+    <li class="mr-sm-auto mb-4 mb-sm-0 page-item small">Page {{page}} of {{pages}}</li>
+    <li class="page-item mb-3 mb-sm-0{{^if prev}} isDisabled{{/if}}"><a class="page-link text-dark" href="{{page_url prev}}">&larr; Previous</a></li>
+    <li class="page-item ml-sm-3{{^if next}} isDisabled{{/if}}"><a class="page-link text-dark" href="{{page_url next}}">Next &rarr;</a></li>
+  </ul>
+</nav>

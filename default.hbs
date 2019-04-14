@@ -24,11 +24,9 @@
         {{ghost_head}}
     </head>
 
-    <body class="d-flex flex-column h-100 bg-light {{body_class}}">
-        {{! background: #3273dc }}
-        {{! <main role="main" class="flex-shrink-0 flex-grow-1"> }}
-        <main role="main" class="flex-shrink-0">
-            <nav id='main-nav' class='navbar navbar-expand-lg navbar-dark bg-dark'>
+    <body class="d-flex flex-column justify-content-between h-100 {{body_class}}">
+        <nav id='main-nav' class='navbar navbar-expand-lg navbar-dark bg-dark'>
+            <div class="container">
                 {{#if @site.logo}}
                     <a class="navbar-brand" href="/">
                         <img id="site-logo" height="30" src="{{@site.logo}}" alt="{{@site.title}}" />
@@ -81,40 +79,42 @@
                         <input class="form-control" name="q" type="search" placeholder="Search" aria-label="Search">
                     </form>
                 </div>
-            </nav>
-            <div class="container bg-white pt-5">
-                <div class="main-content">
-                    {{{body}}}
-                </div>
-
-                {{#if pagination}}
-                <div class="row pb-5">
+            </div>
+        </nav>
+        <main role="main" class="flex-shrink-0 flex-grow-1">
+            {{{body}}}
+        </main>
+        {{#if pagination}}
+            <!-- Primary pagination begins here -->
+            <div class="container pb-4 pt-4 main-pagination">
+                <div class="row">
                     <div class="col-12 col-md-10 offset-md-1">
-                        <nav class="page-navigation mx-auto" {{!-- style="max-width: 40em;"  --}}role="navigation" aria-label="Page Navigation">
+                        <nav class="page-navigation mx-auto" role="navigation" aria-label="Page Navigation">
                             <!-- Previous/next page links - displayed on every page -->
                             {{pagination}}
                         </nav>
                     </div>
                 </div>
-                {{/if}}
             </div>
-        </main>
-        {{! <footer id='footer-nav' class='flex-shrink-0 navbar navbar-expand navbar-dark bg-dark py-3'> }}
-        <footer id='footer-nav' class='flex-shrink-0 navbar navbar-expand navbar-dark bg-dark mt-auto small'>
-            <div class="collapse navbar-collapse" id="navbarFooter">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class='nav-link' href="{{@site.url}}">{{@site.title}} &copy; {{date format="YYYY"}}</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class='nav-link' href="/legal/">Legal Info</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class='nav-link' href="/privacy/">Privacy</a>
-                    </li>
-                </ul>
+        {{/if}}
+
+        <footer id='footer-nav' class='flex-shrink-0 navbar navbar-expand navbar-dark bg-dark small'>
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarFooter">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class='nav-link' href="{{@site.url}}">{{@site.title}} &copy; {{date format="YYYY"}}</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class='nav-link' href="/legal/">Legal Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class='nav-link' href="/privacy/">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </footer>
         {{!-- Fit embedded videos  --}}
