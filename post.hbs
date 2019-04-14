@@ -2,7 +2,7 @@
     {{#post}}
     {{^has tag="#link,#micro,#video"}}
         <!-- Regular full post starts here -->
-        <div class="container py-5 h-100">
+        <div class="container py-5">
             <div class="main-content">
                 <div class="post-header row">
                     <div class="col-12">
@@ -82,7 +82,8 @@
         </div>
     {{else}}
         <!-- Single post starts here -->
-        <div class="container py-5 h-100 d-flex flex-column justify-content-around main-content">
+        <!-- Removed h-100 because of a bug in Safari rendering -->
+        <div class="container py-5 d-flex flex-column flex-grow-1 justify-content-around main-content">
             <div class="single-post-full">
                 {{> "single-post-entry"}}
             </div>
