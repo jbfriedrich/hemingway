@@ -360,6 +360,7 @@
         }
     }
 
+    .kg-embed-card figcaption,
     .kg-image-card figcaption,
     .kg-gallery-card figcaption {
         padding: 10px 20px;
