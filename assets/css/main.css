@@ -144,7 +144,7 @@
 /*--- 5.) Post Feed ---*/
 
     .post-meta-tag > h6 {
-        padding: 0;
+        padding: 0 6px;
         margin: 0;
     }
 
