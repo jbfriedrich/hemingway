@@ -113,7 +113,7 @@
         content: "\f09e";
     }
 
-/*--- 5.) Main Footer & Pagination ---*/
+/*--- 4.) Main Footer & Pagination ---*/
 
     .isDisabled {
         cursor: not-allowed;
@@ -141,7 +141,12 @@
         text-decoration: none;
     }
 
-/*--- 6.) Post Feed ---*/
+/*--- 5.) Post Feed ---*/
+
+    .post-meta-tag > h6 {
+        padding: 0;
+        margin: 0;
+    }
 
     .post-feed > article:last-of-type {
         padding-bottom: unset !important;
@@ -203,7 +208,11 @@
         margin-right: 5px;
     }
 
-/*--- 7.) Post & Page Text Formatting ---*/
+    .post-feed > .post > .post-content > .kg-image-card {
+        margin-bottom: .5rem !important;
+    }
+
+/*--- 6.) Post & Page Text Formatting ---*/
 
     blockquote {
         /*#007bff*/
@@ -231,7 +240,7 @@
     .dynamic-font {
         font-family: Merriweather;
         font-weight: 300;
-        font-size: calc(15px + 0.15vw);
+        font-size: calc(14px + 0.15vw);
         /*font-size: calc(15px + 0.125vw);*/
         /*font-size: calc(15px + (18 - 15) * ((100vw - 350px) / (1200 - 350)));*/
         line-height: 1.618;
@@ -443,7 +452,7 @@
         max-height: 200px;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         /*font-size: calc(16px + (18 - 16) * ((100vw - 350px) / (1200 - 350)));*/
-        font-size: calc(15px + 0.15vw);
+        font-size: calc(14px + 0.15vw);
         /*margin-top: 5rem;
         margin-bottom: 5rem;*/
     }
