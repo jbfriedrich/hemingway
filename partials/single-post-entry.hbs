@@ -2,31 +2,12 @@
     <div class="post-meta col-12 col-md-2 offset-md-1 order-2 order-md-1 pt-md-3 d-flex flex-row flex-md-column justify-content-between justify-content-md-start align-items-start text-muted">
         {{#primary_tag}}
         {{!-- <a class="btn btn-outline-primary btn-sm mb-md-4 post-meta-tag" title="{{description}}" href="{{url}}" role="button">{{name}}</a> --}}
-        <a class="mb-md-4 text-capitalize badge badge-primary post-meta-tag" title="{{description}}" href="{{url}}">{{name}}</a></h6>
+        <a class="mb-md-4 text-capitalize badge badge-primary post-meta-tag" title="{{description}}" href="{{url}}"><h6>{{name}}</h6></a>
         {{/primary_tag}}
         <div class="d-none d-sm-block text-capitalize small post-meta-readtime">{{reading_time}}</div>
         <div class="post-meta-date small"><a class="text-muted" name="Date" href="{{url}}">{{date format="DD-MMM-YYYY"}}</a></div>
     </div>
     <div class="text-left col-12 col-md-8 order-1 order-md-2 text-dark post-content{{#has tag="#video,#link,#micro"}} dynamic-font{{/has}}">
-        {{#has tag="#video"}}
-            {{content}}
-        {{else}}
-            {{#has tag="#link"}}
-                {{content}}
-            {{else}}
-                {{#has tag="#micro"}}
-                    {{content}}
-                {{else}}
-                    {{#if feature_image}}
-                    {{!-- <figure class="feature-image"> --}}
-                        <div class="feature-image" style="background-image: url('{{feature_image}}');"></div>
-                        {{!-- <img class="img-fluid rounded-9px" src="{{feature_image}}"> --}}
-                    {{!-- </figure> --}}
-                    {{/if}}
-                    <h2 class="post-title"><a class="text-dark text-left stretched-link" name="Blog post: {{title}}" href="{{url}}">{{title}}</a></h2>
-                    <p class="post-excerpt dynamic-font">{{excerpt words=50}}... &raquo;</p>
-                {{/has}}
-            {{/has}}
-        {{/has}}
+        {{content}}
     </div>
 </article>
