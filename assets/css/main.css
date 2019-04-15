@@ -208,8 +208,9 @@
         margin-right: 5px;
     }
 
+    .post-feed > .post > .post-content > .kg-embed-card,
     .post-feed > .post > .post-content > .kg-image-card {
-        margin-bottom: .5rem !important;
+        margin-bottom: .2rem !important;
     }
 
 /*--- 6.) Post & Page Text Formatting ---*/
@@ -325,7 +326,7 @@
     }
 
 
-    .post-content .kg-card.kg-image-card {
+    .post-full .post-content .kg-card.kg-image-card {
         margin-bottom: 3rem;
     }
 
