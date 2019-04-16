@@ -20,6 +20,31 @@
         <script data-search-pseudo-elements defer src="{{asset "js/fontawesome.min.js"}}"></script>
         <script src="{{asset "js/highlight.pack.js"}}"></script>
         <script>hljs.initHighlightingOnLoad();</script>
+        {{!-- DSGVO / GDPR Cookie consent banner --}}
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+        <script>
+        window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+          "palette": {
+            "popup": {
+              "background": "#237afc"
+            },
+            "button": {
+              "background": "transparent",
+              "text": "#fff",
+              "border": "#fff"
+            }
+          },
+          "content": {
+            "message": "This website uses cookies to ensure you get the best experience on our website | Diese Seite benutzt Cookies und tauscht Informationen mit ausgewählten Partnerdiensten aus. Wenn Sie die Webseite weiter benutzen, stimmen Sie der Speicherung und Verwendung der Daten für diesen Zweck zu.",
+            "dismiss": "OK",
+            "link": "Information",
+            "href": "https://jason.re/privacy"
+          }
+        })});
+        </script>
+        </script>
         {{!-- This tag outputs SEO meta+structured data and other important settings --}}
         {{ghost_head}}
     </head>
@@ -109,7 +134,7 @@
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class='nav-link' href="/legal/">Legal Info</a>
+                            <a class='nav-link' href="/impressum/">Impressum</a>
                         </li>
                         <li class="nav-item">
                             <a class='nav-link' href="/privacy/">Privacy</a>
