@@ -143,11 +143,6 @@
 
 /*--- 5.) Post Feed ---*/
 
-    .post-meta-tag > h6 {
-        padding: 0 2px;
-        margin: 0;
-    }
-
     .post-feed > article:last-of-type {
         padding-bottom: unset !important;
     }
@@ -159,7 +154,7 @@
         background-size: cover;
         object-fit: cover;
         object-position: 50% 50%;
-        border-radius: 9px;
+        border-radius: .25rem;
         margin-bottom: .5rem;
     }
 
@@ -221,7 +216,7 @@
         margin-bottom: 1.25rem;
         border: 1px solid #eee;
         border-left-width: .3rem;
-        border-radius: 9px;
+        border-radius: .25rem;
         border-left-color: #007bff;
         color: #6c757d;
         text-align: justify;
@@ -238,7 +233,11 @@
         margin-top: 0;
     }
 
-    .dynamic-font {
+    .post-feed > .post .dynamic-font,
+    .post-full .dynamic-font p,
+    .post-full .dynamic-font blockquote,
+    .single-post-full > .post > .dynamic-font p,
+    .single-post-full > .post > .dynamic-font blockquote {
         font-family: Merriweather;
         font-weight: 300;
         font-size: calc(14px + 0.15vw);
