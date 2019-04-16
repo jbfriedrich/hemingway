@@ -1,8 +1,7 @@
-<article class="{{post_class}} row text-dark pb-5">
-    <div class="post-meta col-12 col-md-2 offset-md-1 order-2 order-md-1 pt-md-3 d-flex flex-row flex-md-column justify-content-between justify-content-md-start align-items-baseline align-items-md-start text-muted">
+<article class="row text-dark pb-5 {{post_class}}">
+    <div class="post-meta col-12 col-md-2 offset-md-1 order-2 order-md-1 pt-md-2 d-flex flex-row flex-md-column justify-content-between justify-content-md-start align-items-baseline align-items-md-center text-muted mr-md-3 mr-0">
         {{#primary_tag}}
-        {{!-- <a class="btn btn-outline-primary btn-sm mb-md-4 post-meta-tag" title="{{description}}" href="{{url}}" role="button">{{name}}</a> --}}
-        <a class="mb-md-4 text-capitalize badge badge-primary post-meta-tag" title="{{description}}" href="{{url}}"><h6>{{name}}</h5></a></h6>
+        <h5><a class="mb-md-4 text-capitalize badge badge-primary post-meta-tag" title="{{description}}" href="{{url}}">{{name}}</a></h5>
         {{/primary_tag}}
         <div class="d-none d-sm-block text-capitalize small post-meta-readtime">{{reading_time}}</div>
         <div class="post-meta-date small"><a class="text-muted" name="Date" href="{{url}}">{{date format="DD-MMM-YYYY"}}</a></div>
