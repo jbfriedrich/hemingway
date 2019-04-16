@@ -236,13 +236,19 @@
     .post-feed > .post .dynamic-font,
     .post-full .dynamic-font p,
     .post-full .dynamic-font blockquote,
+    .post-full .dynamic-font ul,
+    .post-full .dynamic-font ol,
     .page-full .dynamic-font p,
     .page-full .dynamic-font blockquote,
+    .page-full .dynamic-font ul,
+    .page-full .dynamic-font ol,
     .single-post-full > .post > .dynamic-font p,
-    .single-post-full > .post > .dynamic-font blockquote {
+    .single-post-full > .post > .dynamic-font blockquote,
+    .single-post-full > .post > .dynamic-font ul,
+    .single-post-full > .post > .dynamic-font ol {
         font-family: Merriweather;
         font-weight: 300;
-        font-size: calc(14px + 0.15vw);
+        font-size: calc(15px + 0.15vw);
         /*font-size: calc(15px + 0.125vw);*/
         /*font-size: calc(15px + (18 - 15) * ((100vw - 350px) / (1200 - 350)));*/
         line-height: 1.618;
