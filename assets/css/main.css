@@ -158,6 +158,22 @@
         margin-bottom: .5rem;
     }
 
+    @media (max-width:992px) {
+        .post-feed .feature-image {
+            height: 300px;
+        }
+    }
+    @media (max-width:576px) {
+        .post-feed .feature-image {
+            height: 250px;
+        }
+    }
+
+    .post-content .post-title a {
+        font-weight: 700;
+        color: #444;
+    }
+
     .single-post-full > .tag-link .post-content > p:first-child,
     .post-feed > .tag-link .post-content > p:first-child {
         margin-bottom: .5rem;
@@ -167,8 +183,8 @@
     .single-post-full > .tag-link .post-content > p:first-child > a:only-child,
     .post-feed > .tag-link .post-content > p:first-child > a:only-child {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        font-weight: 500 !important;
-        font-size: 2rem;
+        font-weight: 700 !important;
+        font-size: 2.5rem;
         line-height: 1.2em;
         /*color: #343a40;*/
         color: #444;
@@ -178,7 +194,7 @@
     @media (max-width:1200px) {
         .single-post-full > .tag-link .post-content > p:first-child > a:only-child,
         .post-feed > .tag-link .post-content > p:first-child > a:only-child {
-            font-size: calc(1.325rem + .9vw);
+            font-size: calc(1.375rem + 1.5vw);
         }
     }
 
@@ -234,14 +250,14 @@
     }
 
     .post-feed > .post .dynamic-font,
-    .post-full .dynamic-font p,
-    .post-full .dynamic-font blockquote,
-    .post-full .dynamic-font ul,
-    .post-full .dynamic-font ol,
-    .page-full .dynamic-font p,
-    .page-full .dynamic-font blockquote,
-    .page-full .dynamic-font ul,
-    .page-full .dynamic-font ol,
+    .post-full .dynamic-font > p,
+    .post-full .dynamic-font > blockquote,
+    .post-full .dynamic-font > ul,
+    .post-full .dynamic-font > ol,
+    .page-full .dynamic-font > p,
+    .page-full .dynamic-font > blockquote,
+    .page-full .dynamic-font > ul,
+    .page-full .dynamic-font > ol,
     .single-post-full > .post > .dynamic-font p,
     .single-post-full > .post > .dynamic-font blockquote,
     .single-post-full > .post > .dynamic-font ul,
@@ -425,7 +441,10 @@
     }
 
     .footnotes {
-        font-size: 70%;
+        font-size: 80%;
+        font-family: Merriweather;
+        line-height: 1.618;
+        font-weight: 300;
         /*margin-bottom: 4rem;*/
     }
 
@@ -511,7 +530,7 @@
     /* Related stories below the footer */
 
     .post-footer > .card-deck > .card .card-img-top {
-        height: 230px;
+        height: 200px;
         object-fit: cover;
         object-position: center;
     }
