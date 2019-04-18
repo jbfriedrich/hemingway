@@ -1,8 +1,12 @@
 <article class="row text-dark {{post_class}}">
-    <div class="post-meta col-12 col-md-2 offset-md-1 order-2 order-md-1 pt-md-2 d-flex flex-row flex-md-column justify-content-between justify-content-md-start align-items-baseline align-items-md-center text-muted">
-        {{#primary_tag}}
-        <h5><a class="mb-md-4 text-capitalize badge badge-primary post-meta-tag" title="{{description}}" href="{{url}}">{{name}}</a></h5>
-        {{/primary_tag}}
+    <div class="post-meta col-12 col-md-2 offset-md-1 order-2 order-md-1 pt-md-2 d-flex flex-row flex-md-column justify-content-between justify-content-md-start align-items-baseline align-items-md-center text-muted mr-md-3 mr-0 text-center">
+        {{!-- {{#primary_tag}} --}}
+        <h6 class="mb-md-4">
+        {{#foreach tags}}
+        <a class="text-capitalize badge badge-primary post-meta-tag" title="{{description}}" href="{{url}}">{{name}}</a>
+        {{/foreach}}
+        </h6>
+        {{!-- {{/primary_tag}} --}}
         <div class="d-none d-sm-block text-capitalize small post-meta-readtime">{{reading_time}}</div>
         <div class="post-meta-date small"><a class="text-muted" name="Date" href="{{url}}">{{date format="DD-MMM-YYYY"}}</a></div>
     </div>
