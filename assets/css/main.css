@@ -169,6 +169,12 @@
         }
     }
 
+    @media (max-width: 768px) {
+        .post-meta-tag:nth-child(n+2) {
+            display: none;
+        }
+    }
+
     .post-content .post-title a {
         font-weight: 700;
         color: #444;
@@ -184,7 +190,8 @@
     .post-feed > .tag-link .post-content > p:first-child > a:only-child {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         font-weight: 700 !important;
-        font-size: 2.5rem;
+        /*font-size: 2.5rem;*/
+        font-size: 2rem;
         line-height: 1.2em;
         /*color: #343a40;*/
         color: #444;
@@ -194,7 +201,8 @@
     @media (max-width:1200px) {
         .single-post-full > .tag-link .post-content > p:first-child > a:only-child,
         .post-feed > .tag-link .post-content > p:first-child > a:only-child {
-            font-size: calc(1.375rem + 1.5vw);
+            /*font-size: calc(1.375rem + 1.5vw);*/
+            font-size: calc(1.325rem + .9vw);
         }
     }
 
@@ -219,10 +227,10 @@
         margin-right: 5px;
     }
 
-    .post-feed > .post > .post-content > .kg-embed-card,
+    /*.post-feed > .post > .post-content > .kg-embed-card,
     .post-feed > .post > .post-content > .kg-image-card {
         margin-bottom: .2rem !important;
-    }
+    }*/
 
 /*--- 6.) Post & Page Text Formatting ---*/
 
@@ -264,15 +272,10 @@
     .single-post-full > .post > .dynamic-font ol {
         font-family: Merriweather;
         font-weight: 300;
-        font-size: calc(15px + 0.15vw);
-        /*font-size: calc(15px + 0.125vw);*/
+        /*font-size: calc(15px + 0.15vw);*/
         /*font-size: calc(15px + (18 - 15) * ((100vw - 350px) / (1200 - 350)));*/
         line-height: 1.618;
     }
-
-    /*.post-full .dynamic-font {
-        line-height: 1.75;
-    }*/
 
     .almost-black {
         color: #444;
