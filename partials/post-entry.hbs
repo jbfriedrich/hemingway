@@ -10,7 +10,7 @@
         <div class="d-none d-md-block text-capitalize small post-meta-readtime">{{reading_time}}</div>
         <div class="post-meta-date small"><a class="text-muted" name="Date" href="{{url}}">{{date format="DD-MMM-YYYY"}}</a></div>
     </div>
-    <div class="text-justify col-12 col-md-8 order-1 order-md-2 text-dark post-content{{#has tag="#video,#link,#micro"}} dynamic-font{{/has}}">
+    <div class="col-12 col-md-8 order-1 order-md-2 text-dark post-content{{#has tag="#video,#link,#micro"}} text-justify dynamic-font{{/has}}">
         {{#has tag="#video"}}
             {{content}}
         {{else}}
@@ -25,7 +25,7 @@
                         <div class="feature-image" style="background-image: url('{{feature_image}}');"></div>
                     {{!-- </figure> --}}
                     {{/if}}
-                    <h2 class="post-title"><a class="{{!-- text-dark --}}text-left stretched-link" name="Blog post: {{title}}" href="{{url}}">{{title}}</a></h2>
+                    <h2 class="text-left post-title"><a class="stretched-link" name="Blog post: {{title}}" href="{{url}}">{{title}}</a></h2>
                     <p class="post-excerpt text-justify dynamic-font">{{excerpt words=50}}...</p>
                 {{/has}}
             {{/has}}
