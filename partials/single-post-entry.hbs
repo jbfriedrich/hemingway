@@ -1,16 +1,16 @@
 <article class="row text-dark {{post_class}}">
     <div class="post-meta col-12 col-md-2 offset-md-1 order-2 order-md-1 pt-md-2 d-flex flex-row flex-md-column justify-content-between justify-content-md-start align-items-baseline align-items-md-center text-muted mr-md-3 mr-0 text-center">
         {{!-- {{#primary_tag}} --}}
-        <h6 class="mb-md-4">
-        {{#foreach tags}}
-        <a class="text-capitalize badge badge-primary post-meta-tag" title="{{description}}" href="{{url}}">{{name}}</a>
-        {{/foreach}}
-        </h6>
+        <h5 class="mb-md-4 d-md-flex flex-md-column align-items-md-center justify-content-center meta-tag-list">
+            {{#foreach tags}}
+                <a class="text-capitalize badge badge-primary mb-md-1 flex-shrink-1 flex-grow-0 post-meta-tag" title="{{description}}" href="{{url}}">{{name}}</a>
+            {{/foreach}}
+        </h5>
         {{!-- {{/primary_tag}} --}}
         <div class="d-none d-sm-block text-capitalize small post-meta-readtime">{{reading_time}}</div>
         <div class="post-meta-date small"><a class="text-muted" name="Date" href="{{url}}">{{date format="DD-MMM-YYYY"}}</a></div>
     </div>
-    <div class="text-left col-12 col-md-8 order-1 order-md-2 text-dark post-content{{#has tag="#video,#link,#micro"}} dynamic-font{{/has}}">
+    <div class="text-justify col-12 col-md-8 order-1 order-md-2 text-dark post-content{{#has tag="#video,#link,#micro"}} dynamic-font{{/has}}">
         {{content}}
     </div>
 </article>
