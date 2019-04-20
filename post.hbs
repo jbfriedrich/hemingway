@@ -51,7 +51,7 @@
                                 {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="5" as |related_posts|}}      
                                     <div class="card-body">
                                         {{#../primary_tag}}
-                                        <h5 class="card-title text-dark font-weight-bolder text-capitalize">- {{name}} -</h5>
+                                        <h5 class="card-title text-dark font-weight-bolder text-capitalize">{{name}}</h5>
                                         <h6 class="card-subtitle font-weight-light mb-3">{{description}}</h6>
                                         <p class="card-text">More posts like this:</p>
                                         {{/../primary_tag}}
