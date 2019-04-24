@@ -3,6 +3,7 @@
     * {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
 
 /*--- 1.) Font Defintions ---*/
@@ -57,6 +58,32 @@
         src: url('/assets/webfonts/Merriweather-BlackItalic.otf') format('opentype')
     }
 
+    .dynamic-font {
+        font-family: Merriweather;
+        font-weight: 300;
+        /*font-size: calc(15px + 0.15vw);*/
+        /*font-size: calc(15px + (18 - 15) * ((100vw - 350px) / (1200 - 350)));*/
+        line-height: 1.618;
+    }
+
+    .page-content > h1,
+    .page-content > h2,
+    .page-content > h3,
+    .page-content > h4,
+    .page-content > h5,
+    .page-content > h6,
+    .post-content > h1,
+    .post-content > h2,
+    .post-content > h3,
+    .post-content > h4,
+    .post-content > h5,
+    .post-content > h6 {
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        font-weight: bold;
+        color: #444;
+        lline-height: 1.2;
+    }
+
 /*--- 2.) HTML & Body ---*/
 
     html,
@@ -68,6 +95,7 @@
         margin: 0;
         padding: 0;
         overflow-x: hidden;
+        /*background-color: #eee;*/
     }
 
 /*--- 3.) Main Navigation ---*/
@@ -113,106 +141,51 @@
         content: "\f09e";
     }
 
-/*--- 4.) Main Footer & Pagination ---*/
+/*--- 4.) Colors ---*/
 
-    .isDisabled {
-        cursor: not-allowed;
-        opacity: 0.5;
-    }
-
-    .isDisabled > a {
-        color: currentColor;
-        display: inline-block;
-        pointer-events: none;
-        text-decoration: none !important;
-    }
-
-    .feed-pagination {
-        letter-spacing: 1px;
-    }
-
-    .newer-posts,
-    .older-posts {
-        letter-spacing: 1px;
-        border-bottom: 1px solid #007bff;
-    }
-
-    .older-posts:hover, .newer-posts:hover {
-        text-decoration: none;
-    }
-
-/*--- 5.) Post Feed ---*/
-
-    .post-feed > article:last-of-type {
-        padding-bottom: unset !important;
-    }
-
-    .post-feed .feature-image {
-        width: auto;
-        height: 400px;
-        background: #c5d2d9 no-repeat 50%;
-        background-size: cover;
-        object-fit: cover;
-        object-position: 50% 50%;
-        border-radius: .25rem;
-        margin-bottom: .5rem;
-    }
-
-    @media (max-width:992px) {
-        .post-feed .feature-image {
-            height: 300px;
-        }
-    }
-    @media (max-width:576px) {
-        .post-feed .feature-image {
-            height: 250px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .post-meta-tag:nth-child(n+2) {
-            display: none;
-        }
-    }
-
-    .post-content .post-title a {
-        font-weight: 700;
+    /* Almost black (grayblack) for text */
+    .color-grayblack {
         color: #444;
     }
 
-    .single-post-full > .tag-link .post-content > p:first-child,
-    .post-feed > .tag-link .post-content > p:first-child {
-        margin-bottom: .5rem;
+    /* Different colors for different post types, using .warning color scheme from Bootstrap*/
+    .tag-link > .card-body a {
+        color: #17a2b8;
+    }
+    .tag-link > .card-body a:hover {
+        color: #117a8b;
+    }
+    .tag-link > .card-body a:visited {
+        color: #17a2b8;
+    }
+
+    .date:hover {
+        color: #0056b3 !important;
+    } 
+
+/*--- 5.) (Custom) Post type formatting in post feed ---*/
+
+    .post-feed .tag-link .card-body > p:first-child {
         text-align: left;
     }
 
-    .single-post-full > .tag-link .post-content > p:first-child > a:only-child,
-    .post-feed > .tag-link .post-content > p:first-child > a:only-child {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    .post-feed .tag-link .card-body > p:first-child > a:only-child {
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
         font-weight: 700 !important;
-        /*font-size: 2.5rem;*/
         font-size: 2rem;
         line-height: 1.2em;
-        /*color: #343a40;*/
         color: #444;
-        border-bottom: none;
     }
-
     @media (max-width:1200px) {
-        .single-post-full > .tag-link .post-content > p:first-child > a:only-child,
-        .post-feed > .tag-link .post-content > p:first-child > a:only-child {
-            /*font-size: calc(1.375rem + 1.5vw);*/
+        .post-feed .tag-link .card-body > p:first-child > a:only-child {
             font-size: calc(1.325rem + .9vw);
         }
     }
-
-    .single-post-full > .tag-link .post-content > p:first-child > a:only-child:hover
-    .post-feed > .tag-link .post-content > p:first-child > a:only-child:hover {
-        text-decoration: underline;
+    .post-feed .tag-link .card-body > p:first-child > a:only-child:hover {
+        text-decoration: none;
+        color: #117a8b;
     }
-
-    .single-post-full > .tag-link .post-content > p:first-child > a:only-child::before,
-    .post-feed > .tag-link .post-content > p:first-child > a:only-child::before {
+    .post-feed .tag-link .card-body > p:first-child > a:only-child::before {
         display: none;
         font-style: normal;
         font-variant: normal;
@@ -221,21 +194,25 @@
         font-family: "Font Awesome 5 Solid";
         content: "\f0c1";
     }
-
-    .single-post-full > .tag-link .post-content > p > a > .fa-link,
-    .post-feed > .tag-link .post-content > p > a > .fa-link {
+    .post-feed .tag-link .card-body > p > a > .fa-link {
         margin-right: 5px;
     }
 
-    /*.post-feed > .post > .post-content > .kg-embed-card,
-    .post-feed > .post > .post-content > .kg-image-card {
-        margin-bottom: .2rem !important;
-    }*/
+    .post:last-child {
+        margin-bottom: 0!important;
+    }
 
-/*--- 6.) Post & Page Text Formatting ---*/
+    @media (max-width: 992px) {
+        .post-meta-tag:nth-child(n+2) {
+            display: none;
+        }
+    }    
+
+/*--- 4.) Foo ---*/
+
+/*--- 6.) Post, page & list view formatting ---*/
 
     blockquote {
-        /*#007bff*/
         padding: 1rem 1.25rem;
         margin-bottom: 1.25rem;
         border: 1px solid #eee;
@@ -245,77 +222,79 @@
         color: #6c757d;
         text-align: justify;
         font-style: italic;
-        /*line-height: 1.2;*/
+    }
+    .tag-link blockquote {
+        border-left-color: #17a2b8;
+    }
+    .tag-micro blockquote {
+        border-left-color: #6c757d;
     }
 
-    .post-full blockquote,
-    .page-full blockquote {
-        margin-top: 1.25rem;
+    .post-meta .post-date {
+        margin: 0;
     }
 
-    .single-post-full blockquote {
-        margin-top: 0;
+    /* Footnotes */
+
+    .footnotes-sep {
+        margin-top: 2.5rem;
     }
 
-    .post-feed > .post .dynamic-font,
-    .post-full .dynamic-font > p,
-    .post-full .dynamic-font > blockquote,
-    .post-full .dynamic-font > ul,
-    .post-full .dynamic-font > ol,
-    .page-full .dynamic-font > p,
-    .page-full .dynamic-font > blockquote,
-    .page-full .dynamic-font > ul,
-    .page-full .dynamic-font > ol,
-    .single-post-full > .post > .dynamic-font p,
-    .single-post-full > .post > .dynamic-font blockquote,
-    .single-post-full > .post > .dynamic-font ul,
-    .single-post-full > .post > .dynamic-font ol {
+    .footnotes {
+        font-size: 80%;
         font-family: Merriweather;
-        font-weight: 300;
-        /*font-size: calc(15px + 0.15vw);*/
-        /*font-size: calc(15px + (18 - 15) * ((100vw - 350px) / (1200 - 350)));*/
         line-height: 1.618;
+        font-weight: 300;
+        /*margin-bottom: 4rem;*/
     }
 
-    .almost-black {
-        color: #444;
+    .footnotes-list {
+        padding: 0;
+        list-style: none;
+        counter-reset: footnote-counter;
     }
 
-    .post-full .post-content > p {
-        margin-bottom: 2rem;
+    .footnotes-list li {
+        list-style-type: none;
+        margin: 1em 1em 1em 2em;
+        position: relative;
+        counter-increment: footnote-counter;
     }
 
-   .page-full .page-title,
-   .post-header .post-title {
-        font-weight: 700;
+    .footnotes-list li:before {
+        content: counter(footnote-counter) ". ";
+        position: absolute;
+        left: -1.55em;
+        color: #007bff;
     }
 
-    @media (min-width: 576px) {
-        .page-full .page-title,
-        .post-header .post-title {
-            font-size: 3.5rem;
-        }
+    /* Author information */
+
+    .post-author-image {
+        height: 90px;
+        width: 90px;
+        margin: 0;
+        padding: 0;
     }
 
-    .post-full .post-content h1,
-    .post-full .post-content h2,
-    .post-full .post-content h3,
-    .post-full .post-content h4,
-    .post-full .post-content h5,
-    .post-full .post-content h6,
-    .page-full .page-content h1,
-    .page-full .page-content h2,
-    .page-full .page-content h3,
-    .page-full .page-content h4,
-    .page-full .page-content h5,
-    .page-full .page-content h6 {
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        font-weight: 700;
-        color: #444;
+/*    .author-info > .author-bio {
+        max-height: 125px;
+    }*/
+
+    .author-info > .author-bio h4 {
+        font-size: 1.25rem;
     }
 
-    /* Feature image */
+    .post-footer .card {
+        width: 300px;
+        max-width: 300px;
+    }
+
+    .post-footer .card:last-child {
+        margin-right: 0;
+    }
+
+/*--- 7.) Feature image, images and galleries ---*/
 
     .post-full .feature-image,
     .page-full .feature-image {
@@ -338,11 +317,9 @@
     @media (min-width: 576px) {
         .post-full .feature-image img,
         .page-full .feature-image img {
-            height: 600px;
+            height: 500px;
         }
     }
-
-    /* Post/Page images and galleries */
 
     .main-content .post-full .post-content > p > img,
     .kg-card.kg-image-card img {
@@ -351,10 +328,9 @@
         width: 100%
     }
 
-
-    .post-full .post-content .kg-card.kg-image-card {
+    /*    .post-full .post-content .kg-card.kg-image-card {
         margin-bottom: 3rem;
-    }
+    }*/
 
     .post-content .kg-card.kg-image-card.kg-width-full {
         text-align: center;
@@ -435,133 +411,4 @@
         width: 100%;
         height: 100%;
         object-fit: cover
-    }
-
-    /* Footnotes */
-
-    .footnotes-sep {
-        margin-top: 2.5rem;
-    }
-
-    .footnotes {
-        font-size: 80%;
-        font-family: Merriweather;
-        line-height: 1.618;
-        font-weight: 300;
-        /*margin-bottom: 4rem;*/
-    }
-
-    .footnotes-list {
-        padding: 0;
-        list-style: none;
-        counter-reset: footnote-counter;
-    }
-
-    .footnotes-list li {
-        list-style-type: none;
-        margin: 1em 1em 1em 2em;
-        position: relative;
-        counter-increment: footnote-counter;
-    }
-
-    .footnotes-list li:before {
-        content: counter(footnote-counter) ". ";
-        position: absolute;
-        left: -1.55em;
-        color: #007bff;
-    }
-
-    /* Author information */
-
-    .meta-author {
-        flex: 0 0 25%;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        display: flex;
-        margin: 0 auto;
-        max-height: 200px;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        /*font-size: calc(16px + (18 - 16) * ((100vw - 350px) / (1200 - 350)));*/
-        font-size: calc(14px + 0.15vw);
-        /*margin-top: 5rem;
-        margin-bottom: 5rem;*/
-    }
-
-    .meta-author > .author-image {
-        flex-shrink: 1;
-        flex-grow: 0;
-    }
-
-    .post-author-image {
-        height: 90px;
-        width: 90px;
-        margin: 0;
-        padding: 0;
-    }
-
-    .post-author-image.no-image {
-        border: 1px solid #ccc;
-    }
-
-    .meta-author > .author-bio {
-        flex-shrink: 1;
-        flex-grow: 1;
-        padding: 20px 25px;
-        max-height: 125px;
-    }
-
-    .meta-author > .author-bio h4 {
-        margin-bottom: 0;
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #444;
-    }
-
-    .meta-author > .author-page {
-        flex-shrink: 0;
-        flex-grow: 1;
-    }
-
-    .meta-author > .author-page > .btn-outline-muted {
-        padding: 5px 15px;
-        border-radius: 20px;
-        color: #6c757d;
-        border: 1px solid #6c757d;
-    }
-
-    /* Related stories below the footer */
-
-    .post-footer > .card-deck > .card .card-img-top {
-        height: 200px;
-        object-fit: cover;
-        object-position: center;
-    }
-
-    /* Special formatting for short forms */
-
-    .parent-content-centered {
-        text-align: center;
-        background: #c0c0c0;
-        border: #a0a0a0 solid 1px;
-        /*   margin-top: 5px; */
-        box-sizing: border-box;
-        resize: vertical;
-        height: 100vh;
-    }
-    
-    .parent-content-centered::before {
-        content: '\200B';
-        display: inline-block;
-        height: 100%;
-        vertical-align: middle;
-    }
-
-    .content-centered {
-        display: inline-block;
-        vertical-align: middle;
-        max-width: 66.666667%;
-        padding: 10px 15px;
-        border: #a0a0a0 solid 1px;
-        background: #f5f5f5;
     }

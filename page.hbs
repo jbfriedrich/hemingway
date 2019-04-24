@@ -1,19 +1,25 @@
 {{!< default}}
 {{#post}}
-<div class="container py-5 h-100">
-    <div class="page-full row">
-        <div class="col-12 col-md-8 offset-md-2">
-            <header class="post-meta text-center text-dark mb-5{{^if feature_image}} pb-5{{/if}}">
-                <h1 class="page-title almost-black">{{title}}</h1>
-            </header>
-            {{#if feature_image}}
-            <figure class="mb-5 feature-image">
-                <img src="{{img_url feature_image}}">
-            </figure>
-            {{/if}}
-            <main class="page-content dynamic-font pb-3{{^if feature_image}} no-feature-image{{/if}}">
-                {{content}}
-            </main>
+<div class="d-flex justify-content-between align-items-center py-5 h-100 w-100">
+    <div class="container">
+        <div class="page-header row{{^if feature_image}} mb-5{{/if}}">
+            <div class="col-12">
+                <header class="post-meta text-center pb-3">
+                    <h1 class="page-title color-grayblack font-weight-bold" style="font-size: 3.5rem;">{{title}}</h1>
+                </header>
+            </div>
+        </div>
+        <div class="page-full row">
+            <div class="col-12 col-md-8 offset-md-2">
+                {{#if feature_image}}
+                <figure class="feature-image mb-5">
+                    <img src="{{img_url feature_image}}">
+                </figure>
+                {{/if}}
+                <main class="page-content text-justify dynamic-font color-grayblack mb-5{{^if feature_image}} no-feature-image{{/if}}">
+                    {{content}}
+                </main>
+            </div>
         </div>
     </div>
 </div>

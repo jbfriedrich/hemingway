@@ -1,0 +1,35 @@
+<div class="post-footer row">
+    <div class="col-12">
+        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center align-items-lg-stretch">
+            <div class="card text-center rounded-sm mr-0 mr-lg-4 mb-4 mb-lg-0">
+                {{#if primary_tag}}
+                    {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="5" as |related_posts|}}      
+                        <div class="card-body">
+                            {{#../primary_tag}}
+                            <h5 class="card-title color-grayblack font-weight-bolder text-capitalize">{{name}}</h5>
+                            <h6 class="card-subtitle font-weight-light mb-3">{{description}}</h6>
+                            <p class="card-text color-grayblack">More posts like this:</p>
+                            {{/../primary_tag}}
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            {{#foreach related_posts}}
+                            <li class="list-group-item"><a class="card-link" href="{{url}}">{{title}}</a></li>
+                            {{/foreach}}
+                        </ul>
+                        <div class="card-footer small text-muted tag-moreposts">
+                            <a class="card-link text-muted" href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
+                        </div>
+                    {{/get}}
+                {{/if}}
+            </div>
+            {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
+            {{#next_post}}
+                {{> "next-prev-card"}}
+            {{/next_post}}
+            {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
+            {{#prev_post}}
+                {{> "next-prev-card"}}
+            {{/prev_post}}
+        </div>
+    </div>
+</div>

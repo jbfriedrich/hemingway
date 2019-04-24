@@ -1,0 +1,11 @@
+<div class="card rounded-sm mr-0 mr-lg-4 mb-4 mb-lg-0">
+    {{#if feature_image}}
+        <a href="{{url}}"><img class="card-img-top" src="{{feature_image}}" alt="Feature image" style="object-fit: cover; height:200px;"></a>
+    {{/if}}
+    <div class="card-body">
+        <h6 class="card-subtitle text-muted text-uppercase small">{{primary_tag.name}}</h6>
+        <h5 class="card-link card-title"><a class="card-link" href="{{url}}">{{title}}</a></h5>
+        <p class="card-text color-grayblack">{{excerpt words=33}}...</p>
+    </div>
+    <div class="card-footer text-muted text-center small">{{reading_time seconds=(t "< 1 minute read") minute=(t "1 minute read") minutes=(t "% minute read")}}</div>
+</div>

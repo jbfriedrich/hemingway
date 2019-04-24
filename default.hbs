@@ -4,52 +4,64 @@
         {{!-- Document Settings --}}
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="Description" content="Jason Friedrich's blog. And what is good, Phaedrus, and what is not good – Need we ask anyone to tell us these things?">
+        <meta name="Description" content="{{@site.description}}">
         {{!-- Base Meta --}}
         <title>{{meta_title}}</title>
         <meta name="HandheldFriendly" content="True" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {{!-- Styles'n'Scripts --}}
+        {{!-- CSS files --}}
         <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}" />
         <link rel="stylesheet" type="text/css" href="{{asset "css/fontawesome.min.css"}}" />
         <link rel="stylesheet" type="text/css" href="{{asset "css/main.min.css"}}" />
         <link rel="stylesheet" type="text/css" href="{{asset "css/highlightjs/tomorrow-night.css"}}" />
-        {{!-- Fontawesome fonts --}}
+        {{!-- JQuery --}}
         <script src="{{asset "js/jquery-3.3.1.min.js"}}"></script>
+        {{!-- Bootstrap --}}
         <script src="{{asset "js/bootstrap.bundle.min.js"}}"></script>
+        {{!-- Fontawesome fonts --}}
         <script data-search-pseudo-elements defer src="{{asset "js/fontawesome.min.js"}}"></script>
+        {{!-- HighlightJS --}}
         <script src="{{asset "js/highlight.pack.js"}}"></script>
         <script>hljs.initHighlightingOnLoad();</script>
+        {{!-- Infinite scrolling --}}
+        <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
         {{!-- DSGVO / GDPR Cookie consent banner --}}
         <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
         <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
         <script>
-        window.addEventListener("load", function(){
-        window.cookieconsent.initialise({
-          "palette": {
-            "popup": {
-              "background": "#237afc"
-            },
-            "button": {
-              "background": "transparent",
-              "text": "#fff",
-              "border": "#fff"
-            }
-          },
-          "content": {
-            "message": "This website uses cookies to enhance your browsing experience // Diese Seite benutzt Cookies und tauscht Informationen mit ausgewählten Partnerdiensten aus. Wenn Sie die Webseite weiter benutzen, stimmen Sie der Speicherung und Verwendung der Daten für diesen Zweck zu.",
-            "dismiss": "OK",
-            "link": "Privacy Information",
-            "href": "https://jason.re/privacy"
-          }
-        })});
+            window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+              "palette": {
+                "popup": {
+                  "background": "#237afc"
+                },
+                "button": {
+                  "background": "transparent",
+                  "text": "#fff",
+                  "border": "#fff"
+                }
+              },
+              "content": {
+                "message": "This website uses cookies to enhance your browsing experience // Diese Seite benutzt Cookies und tauscht Informationen mit ausgewählten Partnerdiensten aus. Wenn Sie die Webseite weiter benutzen, stimmen Sie der Speicherung und Verwendung der Daten für diesen Zweck zu.",
+                "dismiss": "OK",
+                "link": "Privacy Information",
+                "href": "https://jason.re/privacy"
+              }
+            })});
         </script>
+        {{!-- Fit embedded videos  --}}
+        <script src="{{asset "js/jquery.fitvids.js"}}"></script>
+        <script>
+            $(document).ready(function(){
+                // Target your .container, .wrapper, .post, etc.
+                $(".kg-embed-card").fitVids();
+            });
         </script>
         {{!-- This tag outputs SEO meta+structured data and other important settings --}}
         {{ghost_head}}
     </head>
 
-    <body class="d-flex flex-column justify-content-between h-100 {{body_class}}">
+    <body class="d-flex flex-column justify-content-between {{body_class}}">
         <nav id='main-nav' class='navbar navbar-expand-lg navbar-dark bg-dark flex-shrink-0'>
             <div class="container">
                 {{#if @site.logo}}
@@ -106,25 +118,19 @@
                 </div>
             </div>
         </nav>
+
         <!-- d-flex had to be used to make sure that Safari renders space-between in the sub-elements right -->
-        <main role="main" class="flex-shrink-0 flex-grow-1 d-flex">
-            {{{body}}}
-        </main>
-        {{#if pagination}}
-            <!-- Primary pagination begins here -->
-            <div class="container pb-4 pt-4 main-pagination">
-                <div class="row">
-                    <div class="col-12 col-md-10 offset-md-1">
-                        <nav class="page-navigation mx-auto" role="navigation" aria-label="Page Navigation">
-                            <!-- Previous/next page links - displayed on every page -->
-                            {{pagination}}
-                        </nav>
-                    </div>
-                </div>
+        <main role="main" class="main-content flex-shrink-0 flex-grow-1 d-flex">
+            <div class="container">
+                {{{body}}}
             </div>
+        </main>
+
+        {{#if pagination}}
+            {{pagination}}
         {{/if}}
 
-        <footer id='footer-nav' class='flex-shrink-0 navbar navbar-expand navbar-dark bg-dark small'>
+        <footer id='footer-nav' class='flex-shrink-0 flex-grow-0 navbar navbar-expand navbar-dark bg-dark small'>
             <div class="container">
                 <div class="collapse navbar-collapse" id="navbarFooter">
                     <ul class="navbar-nav mr-auto">
@@ -143,17 +149,11 @@
                 </div>
             </div>
         </footer>
-        {{!-- Fit embedded videos  --}}
-        <script src="{{asset "js/jquery.fitvids.js"}}"></script>
-        <script>
-            $(document).ready(function(){
-                // Target your .container, .wrapper, .post, etc.
-                $(".kg-embed-card").fitVids();
-            });
-        </script>
+
         {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
         {{{block "scripts"}}}
         {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
         {{ghost_foot}}
     </body>
+
 </html>

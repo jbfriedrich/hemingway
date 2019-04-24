@@ -1,34 +1,37 @@
-<article class="row text-dark pb-5 {{post_class}}">
-    <div class="post-meta col-12 col-md-2 offset-md-1 order-2 order-md-1 pt-md-2 d-flex flex-row flex-md-column justify-content-between justify-content-md-start align-items-baseline align-items-md-center text-muted mr-md-3 mr-0 text-center">
-        {{!-- {{#primary_tag}} --}}
-        <h5 class="mb-md-4 d-md-flex flex-md-column align-items-md-center justify-content-center meta-tag-list">
-            {{#foreach tags}}
-                <a class="text-capitalize badge badge-primary mb-md-1 flex-shrink-1 flex-grow-0 post-meta-tag" title="{{description}}" href="{{url}}">{{name}}</a>
-            {{/foreach}}
-        </h5>
-        {{!-- {{/primary_tag}} --}}
-        <div class="d-none d-md-block text-capitalize small post-meta-readtime">{{reading_time}}</div>
-        <div class="post-meta-date small"><a class="text-muted" name="Date" href="{{url}}">{{date format="DD-MMM-YYYY"}}</a></div>
-    </div>
-    <div class="col-12 col-md-8 order-1 order-md-2 text-dark post-content{{#has tag="#video,#link,#micro"}} text-justify dynamic-font{{/has}}">
-        {{#has tag="#video"}}
-            {{content}}
-        {{else}}
-            {{#has tag="#link"}}
-                {{content}}
-            {{else}}
-                {{#has tag="#micro"}}
-                    {{content}}
-                {{else}}
-                    {{#if feature_image}}
-                    {{!-- <figure class="feature-image"> --}}
-                        <div class="feature-image" style="background-image: url('{{feature_image}}');"></div>
-                    {{!-- </figure> --}}
-                    {{/if}}
-                    <h2 class="text-left post-title"><a class="stretched-link" name="Blog post: {{title}}" href="{{url}}">{{title}}</a></h2>
-                    <p class="post-excerpt text-justify dynamic-font">{{excerpt words=50}}...</p>
-                {{/has}}
-            {{/has}}
+<article class="card mb-5 rounded-sm {{post_class}}">
+    {{^has tag="#link,#micro"}}
+        {{#if feature_image}}
+            <img src="{{feature_image}}" alt="Feature image" class="feature-image card-img-top rounded-sm" style="max-height: 300px; object-fit: cover;">
+        {{/if}}
+    {{/has}}
+    <div class="card-body{{#has tag="#link,#micro"}} dynamic-font color-grayblack text-justify{{/has}}">
+        {{^has tag="#link,#micro"}}
+            <h2><a href="{{url}}" class="title card-title color-grayblack text-decoration-none font-weight-bold">{{title}}</a></h2>
         {{/has}}
+        {{!-- <a name="Blog post: {{title}}" href="{{url}}" class="title h1 stretched-link text-decoration-none color-grayblack font-weight-bold">{{title}}</a> --}}
+        {{^has tag="#link,#micro"}}<p class="card-text dynamic-font color-grayblack">{{excerpt}}...</p>{{else}}{{content}}{{/has}}
+    </div>
+    <div class="card-footer">
+        <div class="metadata d-flex justify-content-start align-items-baseline">
+            <div class="tags h5 mb-0 mr-auto">
+                {{#has tag="#micro"}}
+                    {{#foreach tags}}
+                        <a class="text-capitalize badge badge-secondary post-meta-tag mr-1" title="{{description}}" href="{{url}}">{{name}}</a>
+                    {{/foreach}}
+                {{else}}
+                    {{#has tag="#link"}}
+                        {{#foreach tags}}
+                            <a class="text-capitalize badge badge-info post-meta-tag mr-1" title="{{description}}" href="{{url}}">{{name}}</a>
+                        {{/foreach}}
+                    {{else}}
+                        {{#foreach tags}}
+                            <a class="text-capitalize badge badge-primary post-meta-tag mr-1" title="{{description}}" href="{{url}}">{{name}}</a>
+                        {{/foreach}}
+                    {{/has}}
+                {{/has}}
+            </div>
+            {{^has tag="#link,#micro"}}<span class="small text-muted mr-5">{{reading_time}}</span>{{/has}}
+            <span><a class="date card-link small text-muted" name="Blog post: {{title}}" href="{{url}}">{{date format="DD-MMM-YYYY"}}</a></span>
+        </div>
     </div>
 </article>
