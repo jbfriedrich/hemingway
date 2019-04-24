@@ -169,6 +169,7 @@
         text-align: left;
     }
 
+    .main-content .tag-link .card-body > p:first-child > a:only-child,
     .post-feed .tag-link .card-body > p:first-child > a:only-child {
         font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
         font-weight: 700 !important;
@@ -181,10 +182,12 @@
             font-size: calc(1.325rem + .9vw);
         }
     }
+    .main-content .tag-link .card-body > p:first-child > a:only-child:hover,
     .post-feed .tag-link .card-body > p:first-child > a:only-child:hover {
         text-decoration: none;
         color: #117a8b;
     }
+    .main-content .tag-link .card-body > p:first-child > a:only-child::before,
     .post-feed .tag-link .card-body > p:first-child > a:only-child::before {
         display: none;
         font-style: normal;
@@ -194,6 +197,7 @@
         font-family: "Font Awesome 5 Solid";
         content: "\f0c1";
     }
+    .main-content .tag-link .card-body > p > a > .fa-link,
     .post-feed .tag-link .card-body > p > a > .fa-link {
         margin-right: 5px;
     }
