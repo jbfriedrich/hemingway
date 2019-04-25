@@ -2,7 +2,7 @@
     "name": "Hemingway",
     "description": "A personal blogging theme for Ghost.",
     "demo": "https://jason.re",
-    "version": "2.2.1",
+    "version": "2.2.2",
     "engines": {
         "ghost": ">=2.0.0",
         "ghost-api": "v2"
@@ -37,6 +37,6 @@
     },
     "bugs": "https://github.com/jbfriedrich/hemingway/issues",
     "config": {
-        "posts_per_page": 9
+        "posts_per_page": 5
     }
 }
