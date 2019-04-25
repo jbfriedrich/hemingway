@@ -55,8 +55,23 @@
             $(document).ready(function(){
                 // Target your .container, .wrapper, .post, etc.
                 $(".kg-embed-card").fitVids();
+                // Activate infinite scrolling
+                $('.post-column').infiniteScroll({
+                    // options
+                    path: '.page-next',
+                    append: '.post',
+                    history: false,
+                    hideNav: '.main-pagination'
+                });
+                // Execute fitvid.js after new content is fetched but before
+                // the new content is rendered
+                $('.post-column').on('append.infiniteScroll', function( event, response, path, items ) {
+                    $(".kg-embed-card").fitVids();
+                    console.log( 'Loaded: ' + path );
+                });
             });
         </script>
+
         {{!-- This tag outputs SEO meta+structured data and other important settings --}}
         {{ghost_head}}
     </head>
