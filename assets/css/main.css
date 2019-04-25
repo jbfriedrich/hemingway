@@ -8,63 +8,128 @@
 
 /*--- 1.) Font Defintions ---*/
 
-    @font-face {
-        font-family: 'Merriweather';
-        font-weight: 300;
-        src: url('/assets/webfonts/Merriweather-Light.otf') format('opentype')
-    }
+    /* Merriweather */
 
-    @font-face {
-        font-family: 'Merriweather';
-        font-weight: 300;
-        font-style: italic;
-        src: url('/assets/webfonts/Merriweather-LightItalic.otf') format('opentype')
-    }
+        @font-face {
+            font-family: 'Merriweather';
+            font-weight: 300;
+            src: url('/assets/webfonts/Merriweather-Light.otf') format('opentype')
+        }
 
-    @font-face {
-        font-family: 'Merriweather';
-        src: url('/assets/webfonts/Merriweather-Regular.otf') format('opentype')
-    }
+        @font-face {
+            font-family: 'Merriweather';
+            font-weight: 300;
+            font-style: italic;
+            src: url('/assets/webfonts/Merriweather-LightItalic.otf') format('opentype')
+        }
 
-    @font-face {
-        font-family: 'Merriweather';
-        font-style: italic;
-        src: url('/assets/webfonts/Merriweather-Italic.otf') format('opentype')
-    }
+        @font-face {
+            font-family: 'Merriweather';
+            src: url('/assets/webfonts/Merriweather-Regular.otf') format('opentype')
+        }
 
-    @font-face {
-        font-family: 'Merriweather';
-        font-weight: bold;
-        src: url('/assets/webfonts/Merriweather-Bold.otf') format('opentype')
-    }
+        @font-face {
+            font-family: 'Merriweather';
+            font-style: italic;
+            src: url('/assets/webfonts/Merriweather-Italic.otf') format('opentype')
+        }
 
-    @font-face {
-        font-family: 'Merriweather';
-        font-weight: bold;
-        font-style: italic;
-        src: url('/assets/webfonts/Merriweather-BoldItalic.otf') format('opentype')
-    }
+        @font-face {
+            font-family: 'Merriweather';
+            font-weight: bold;
+            src: url('/assets/webfonts/Merriweather-Bold.otf') format('opentype')
+        }
 
-    @font-face {
-        font-family: 'Merriweather';
-        font-weight: bold;
-        src: url('/assets/webfonts/Merriweather-Black.otf') format('opentype')
-    }
+        @font-face {
+            font-family: 'Merriweather';
+            font-weight: bold;
+            font-style: italic;
+            src: url('/assets/webfonts/Merriweather-BoldItalic.otf') format('opentype')
+        }
 
-    @font-face {
-        font-family: 'Merriweather';
-        font-weight: bold;
-        font-style: italic;
-        src: url('/assets/webfonts/Merriweather-BlackItalic.otf') format('opentype')
-    }
+        @font-face {
+            font-family: 'Merriweather';
+            font-weight: 900;
+            src: url('/assets/webfonts/Merriweather-Black.otf') format('opentype')
+        }
 
-    .dynamic-font {
-        font-family: Merriweather;
-        font-weight: 300;
-        /*font-size: calc(15px + 0.15vw);*/
-        /*font-size: calc(15px + (18 - 15) * ((100vw - 350px) / (1200 - 350)));*/
-        line-height: 1.618;
-    }
+        @font-face {
+            font-family: 'Merriweather';
+            font-weight: 900;
+            font-style: italic;
+            src: url('/assets/webfonts/Merriweather-BlackItalic.otf') format('opentype')
+        }
+
+        .font-merriweather-light {
+            font-family: Merriweather;
+            font-weight: 300;
+            /*font-size: calc(15px + 0.15vw);*/
+            /*font-size: calc(15px + (18 - 15) * ((100vw - 350px) / (1200 - 350)));*/
+            line-height: 1.618;
+        }
+
+        .font-merriweather {
+            font-family: Merriweather;
+            /*font-size: calc(15px + 0.15vw);*/
+            /*font-size: calc(15px + (18 - 15) * ((100vw - 350px) / (1200 - 350)));*/
+            line-height: 1.618;
+        }
+
+    /* Open Sans*/
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-weight: 300;
+            src: url('/assets/webfonts/OpenSans-Light.otf') format('opentype')
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-weight: 300;
+            font-style: italic;
+            src: url('/assets/webfonts/OpenSans-LightItalic.otf') format('opentype')
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            src: url('/assets/webfonts/OpenSans-Regular.otf') format('opentype')
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: italic;
+            src: url('/assets/webfonts/OpenSans-Italic.otf') format('opentype')
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-weight: bold;
+            src: url('/assets/webfonts/OpenSans-Bold.otf') format('opentype')
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-weight: bold;
+            font-style: italic;
+            src: url('/assets/webfonts/OpenSans-BoldItalic.otf') format('opentype')
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-weight: 900;
+            src: url('/assets/webfonts/OpenSans-Black.otf') format('opentype')
+        }
+
+        .font-opensans {
+            font-family: 'Open Sans';
+            line-height: 1.618;
+        }
+
+        .font-opensans-light {
+            font-family: 'Open Sans';
+            font-weight: 300;
+            line-height: 1.618;   
+        }
 
     .page-content > h1,
     .page-content > h2,
@@ -146,6 +211,14 @@
     /* Almost black (grayblack) for text */
     .color-grayblack {
         color: #444;
+    }
+
+    /* Custom color for Micro Posts */
+    .color-micro {
+        color: #209cee;
+    }
+    .bg-micro {
+        background-color: #209cee;
     }
 
     /* Different colors for different post types, using .warning color scheme from Bootstrap*/
@@ -281,9 +354,9 @@
         padding: 0;
     }
 
-/*    .author-info > .author-bio {
-        max-height: 125px;
-    }*/
+        /* .author-info > .author-bio {
+            max-height: 125px;
+        }*/
 
     .author-info > .author-bio h4 {
         font-size: 1.25rem;
