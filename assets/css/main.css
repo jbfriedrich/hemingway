@@ -215,10 +215,14 @@
 
     /* Custom color for Micro Posts */
     .color-micro {
-        color: #209cee;
+        color: #F5F6F2;
     }
     .bg-micro {
-        background-color: #209cee;
+        background-color: #B4405C;
+    }
+    .bg-micro:hover {
+        background-color: #710828;
+        color: #F5F6F2;
     }
 
     /* Different colors for different post types, using .warning color scheme from Bootstrap*/
@@ -302,7 +306,7 @@
         border-left-color: #17a2b8;
     }
     .tag-micro blockquote {
-        border-left-color: #6c757d;
+        border-left-color: #B4405C;
     }
 
     .post-meta .post-date {
