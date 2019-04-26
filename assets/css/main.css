@@ -311,10 +311,6 @@
 
     /* Post margins */
 
-    .post-full .post-content p,
-    .page-full .page-content p {
-        margin-bottom: 3rem;
-    }
     .post-full .post-content h1,
     .post-full .post-content h2,
     .post-full .post-content h3,
@@ -327,7 +323,7 @@
     .page-full .page-content h4,
     .page-full .page-content h5,
     .page-full .page-content h6 {
-        margin-top: 2rem;
+        margin-top: 1.75rem;
         margin-bottom: 1rem;
         font-weight: 700;
         color: #444;
