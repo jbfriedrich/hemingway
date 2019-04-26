@@ -7,7 +7,7 @@
                     <div class="col-12">
                         <header class="post-meta text-center{{#if feature_image}} py-4{{else}} pb-5{{/if}}">
                             <h6 class="post-date color-grayblack">{{date}}</h6>
-                            <h1 class="post-title color-grayblack font-weight-bold" style="font-size: 3.5rem;">{{title}}</h1>
+                            <h1 class="post-title color-grayblack font-weight-bold" style="font-size: 3.3rem;">{{title}}</h1>
                         </header>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                             <img src="{{img_url feature_image}}">
                         </figure>
                         {{/if}}
-                        <main class="post-content font-merriweather-light color-grayblack mb-5{{^if feature_image}} no-feature-image{{/if}}">
+                        <main class="post-content color-grayblack mb-5{{^if feature_image}} no-feature-image{{/if}}">
                             {{content}}
                         </main>
                         {{> "author-info"}}

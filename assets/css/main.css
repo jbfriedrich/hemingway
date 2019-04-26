@@ -143,7 +143,6 @@
     .post-content > h4,
     .post-content > h5,
     .post-content > h6 {
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
         font-weight: bold;
         color: #444;
         lline-height: 1.2;
@@ -154,6 +153,7 @@
     html,
     body {
         height: 100%;
+        font-family: 'Open Sans';
     }
 
     body {
@@ -259,7 +259,6 @@
 
     .main-content .tag-link .card-body > p:first-child > a:only-child,
     .post-feed .tag-link .card-body > p:first-child > a:only-child {
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
         font-weight: 700 !important;
         font-size: 2rem;
         line-height: 1.2em;
