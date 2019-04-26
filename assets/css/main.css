@@ -80,44 +80,44 @@
         @font-face {
             font-family: 'Open Sans';
             font-weight: 300;
-            src: url('/assets/webfonts/OpenSans-Light.otf') format('opentype')
+            src: url('/assets/webfonts/OpenSans-Light.woff') format('woff')
         }
 
         @font-face {
             font-family: 'Open Sans';
             font-weight: 300;
             font-style: italic;
-            src: url('/assets/webfonts/OpenSans-LightItalic.otf') format('opentype')
+            src: url('/assets/webfonts/OpenSans-LightItalic.woff') format('woff')
         }
 
         @font-face {
             font-family: 'Open Sans';
-            src: url('/assets/webfonts/OpenSans-Regular.otf') format('opentype')
+            src: url('/assets/webfonts/OpenSans-Regular.woff') format('woff')
         }
 
         @font-face {
             font-family: 'Open Sans';
             font-style: italic;
-            src: url('/assets/webfonts/OpenSans-Italic.otf') format('opentype')
+            src: url('/assets/webfonts/OpenSans-Italic.woff') format('woff')
         }
 
         @font-face {
             font-family: 'Open Sans';
             font-weight: bold;
-            src: url('/assets/webfonts/OpenSans-Bold.otf') format('opentype')
+            src: url('/assets/webfonts/OpenSans-Bold.woff') format('woff')
         }
 
         @font-face {
             font-family: 'Open Sans';
             font-weight: bold;
             font-style: italic;
-            src: url('/assets/webfonts/OpenSans-BoldItalic.otf') format('opentype')
+            src: url('/assets/webfonts/OpenSans-BoldItalic.woff') format('woff')
         }
 
         @font-face {
             font-family: 'Open Sans';
             font-weight: 900;
-            src: url('/assets/webfonts/OpenSans-Black.otf') format('opentype')
+            src: url('/assets/webfonts/OpenSans-Black.woff') format('woff')
         }
 
         .font-opensans {
