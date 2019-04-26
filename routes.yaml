@@ -2,21 +2,12 @@ routes:
   /links/:
     controller: channel
     filter: tag:link
-  /audio/:
-    controller: channel
-    filter: tag:audio
-  /chats/:
-    controller: channel
-    filter: tag:chat
-  /quotes/:
-    controller: channel
-    filter: tag:quote
   /micros/:
     controller: channel
     filter: tag:micro
   /posts/:
     controller: channel
-    filter: tag:-[link,video,audio,chat,quote,micro]
+    filter: tag:-[link,micro]
 
 collections:
   /:
