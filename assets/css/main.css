@@ -225,6 +225,17 @@
         color: #F5F6F2;
     }
 
+    .tag-micro > .card-body a {
+        color: #B4405C;
+    }
+    .tag-micro > .card-body a:hover {
+        color: #710828;
+    }
+    .tag-micro > .card-body a:visited {
+        color: #B4405C;
+    }
+
+
     /* Different colors for different post types, using .warning color scheme from Bootstrap*/
     .tag-link > .card-body a {
         color: #17a2b8;
