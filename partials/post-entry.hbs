@@ -4,11 +4,11 @@
             <img src="{{feature_image}}" alt="Feature image" class="feature-image card-img-top rounded-sm" style="max-height: 300px; object-fit: cover;">
         {{/if}}
     {{/has}}
-    <div class="card-body{{#has tag="#link,#micro"}} text-justify dynamic-font color-grayblack{{/has}}">
+    <div class="card-body{{#has tag="#link,#micro"}} text-justify font-merriweather-light color-grayblack{{/has}}">
         {{^has tag="#link,#micro"}}
             <h2><a href="{{url}}" class="title card-title color-grayblack text-decoration-none font-weight-bold">{{title}}</a></h2>
         {{/has}}
-        {{^has tag="#link,#micro"}}<p class="card-text text-justify dynamic-font color-grayblack">{{excerpt}}...</p>{{else}}{{content}}{{/has}}
+        {{^has tag="#link,#micro"}}<p class="card-text text-justify font-merriweather-light color-grayblack">{{excerpt}}...</p>{{else}}{{content}}{{/has}}
     </div>
     <div class="card-footer">
         <div class="metadata d-flex justify-content-start align-items-baseline">
