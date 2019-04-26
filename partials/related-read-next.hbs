@@ -1,6 +1,6 @@
 <div class="post-footer row">
     <div class="col-12">
-        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center align-items-lg-stretch">
+        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center align-items-lg-stretch small">
             <div class="card text-center rounded-sm mr-0 mr-lg-4 mb-4 mb-lg-0">
                 {{#if primary_tag}}
                     {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="5" as |related_posts|}}      
