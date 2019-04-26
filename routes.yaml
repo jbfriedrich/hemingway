@@ -2,9 +2,6 @@ routes:
   /links/:
     controller: channel
     filter: tag:link
-  /videos/:
-    controller: channel
-    filter: tag:video
   /audio/:
     controller: channel
     filter: tag:audio
