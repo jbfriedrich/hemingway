@@ -285,8 +285,6 @@
         }
     }    
 
-/*--- 4.) Foo ---*/
-
 /*--- 6.) Post, page & list view formatting ---*/
 
     blockquote {
@@ -309,6 +307,30 @@
 
     .post-meta .post-date {
         margin: 0;
+    }
+
+    /* Post margins */
+
+    .post-full .post-content p,
+    .page-full .page-content p {
+        margin-bottom: 3rem;
+    }
+    .post-full .post-content h1,
+    .post-full .post-content h2,
+    .post-full .post-content h3,
+    .post-full .post-content h4,
+    .post-full .post-content h5,
+    .post-full .post-content h6,
+    .page-full .page-content h1,
+    .page-full .page-content h2,
+    .page-full .page-content h3,
+    .page-full .page-content h4,
+    .page-full .page-content h5,
+    .page-full .page-content h6 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        color: #444;
     }
 
     /* Footnotes */
