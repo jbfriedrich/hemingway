@@ -131,23 +131,6 @@
             line-height: 1.618;   
         }
 
-    .page-content > h1,
-    .page-content > h2,
-    .page-content > h3,
-    .page-content > h4,
-    .page-content > h5,
-    .page-content > h6,
-    .post-content > h1,
-    .post-content > h2,
-    .post-content > h3,
-    .post-content > h4,
-    .post-content > h5,
-    .post-content > h6 {
-        font-weight: bold;
-        color: #444;
-        lline-height: 1.2;
-    }
-
 /*--- 2.) HTML & Body ---*/
 
     html,
@@ -301,6 +284,27 @@
 
 /*--- 6.) Post, page & list view formatting ---*/
 
+    /* Post & Page headings */
+
+    .page-content > h1,
+    .page-content > h2,
+    .page-content > h3,
+    .page-content > h4,
+    .page-content > h5,
+    .page-content > h6,
+    .post-content > h1,
+    .post-content > h2,
+    .post-content > h3,
+    .post-content > h4,
+    .post-content > h5,
+    .post-content > h6 {
+        font-weight: 700;
+        color: #444;
+        line-height: 1.2;
+        margin-top: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
     blockquote {
         padding: 1rem 1.25rem;
         margin-bottom: 1.25rem;
@@ -321,26 +325,6 @@
 
     .post-meta .post-date {
         margin: 0;
-    }
-
-    /* Post margins */
-
-    .post-full .post-content h1,
-    .post-full .post-content h2,
-    .post-full .post-content h3,
-    .post-full .post-content h4,
-    .post-full .post-content h5,
-    .post-full .post-content h6,
-    .page-full .page-content h1,
-    .page-full .page-content h2,
-    .page-full .page-content h3,
-    .page-full .page-content h4,
-    .page-full .page-content h5,
-    .page-full .page-content h6 {
-        margin-top: 1.75rem;
-        margin-bottom: 1rem;
-        font-weight: 700;
-        color: #444;
     }
 
     /* Footnotes */
