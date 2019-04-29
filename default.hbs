@@ -11,9 +11,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {{!-- CSS files --}}
         <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}" />
-        <link rel="stylesheet" type="text/css" href="{{asset "css/fontawesome.min.css"}}" />
+        {{!-- <link rel="stylesheet" type="text/css" href="{{asset "css/fontawesome.min.css"}}" /> --}}
         <link rel="stylesheet" type="text/css" href="{{asset "css/main.min.css"}}" />
         <link rel="stylesheet" type="text/css" href="{{asset "css/highlightjs/tomorrow-night.css"}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset "css/cookieconsent.min.css"}}" />
         {{!-- JQuery --}}
         <script src="{{asset "js/jquery-3.3.1.min.js"}}"></script>
         {{!-- Bootstrap --}}
@@ -23,55 +24,17 @@
         {{!-- HighlightJS --}}
         <script src="{{asset "js/highlight.pack.js"}}"></script>
         <script>hljs.initHighlightingOnLoad();</script>
-        {{!-- Infinite scrolling --}}
-        <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
-        {{!-- DSGVO / GDPR Cookie consent banner --}}
-        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-        <script>
-            window.addEventListener("load", function(){
-            window.cookieconsent.initialise({
-              "palette": {
-                "popup": {
-                  "background": "#237afc"
-                },
-                "button": {
-                  "background": "transparent",
-                  "text": "#fff",
-                  "border": "#fff"
-                }
-              },
-              "content": {
-                "message": "This website uses cookies to enhance your browsing experience. By using this site, you consent to the use of cookies • Diese Seite benutzt Cookies und tauscht Informationen mit ausgewählten Partnerdiensten aus. Wenn Sie die Webseite weiter benutzen, stimmen Sie der Speicherung und Verwendung der Daten für diesen Zweck zu",
-                "dismiss": "OK",
-                "link": "Privacy Information",
-                "href": "https://jason.re/privacy"
-              }
-            })});
-        </script>
+        {{!-- Load GDPR Cookie JS  --}}
+        <script src="{{asset "js/cookieconsent.min.js"}}"></script>
+        <script src="{{asset "js/gdprcookie.js"}}"></script>
         {{!-- Fit embedded videos  --}}
         <script src="{{asset "js/jquery.fitvids.js"}}"></script>
         <script>
             $(document).ready(function(){
                 // Target your .container, .wrapper, .post, etc.
                 $(".kg-embed-card").fitVids();
-                // Activate infinite scrolling
-                $('.post-column').infiniteScroll({
-                    // options
-                    path: '.page-next',
-                    append: '.post',
-                    history: false,
-                    hideNav: '.main-pagination'
-                });
-                // Execute fitvid.js after new content is fetched but before
-                // the new content is rendered
-                $('.post-column').on('append.infiniteScroll', function( event, response, path, items ) {
-                    $(".kg-embed-card").fitVids();
-                    //console.log( 'Loaded: ' + path );
-                });
             });
         </script>
-
         {{!-- This tag outputs SEO meta+structured data and other important settings --}}
         {{ghost_head}}
     </head>
