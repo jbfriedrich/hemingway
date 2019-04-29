@@ -251,6 +251,12 @@
 
     /* Post & Page headings */
 
+    @media (min-width: 992px) {
+        .post-title {
+            font-size: 3.3rem;
+        }
+    }
+
     .page-content > h1,
     .page-content > h2,
     .page-content > h3,
