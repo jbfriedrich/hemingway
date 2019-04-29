@@ -10,3 +10,24 @@
         </div>
     </div>
 </div>
+
+{{#contentFor "scripts"}}
+<script src="{{asset "js/infinite-scroll.pkgd.min.js"}}"></script>
+<script>
+    $(document).ready(function(){
+        // Activate infinite scrolling
+        $('.post-column').infiniteScroll({
+            // options
+            path: '.page-next',
+            append: '.post',
+            history: false,
+            hideNav: '.main-pagination'
+        });
+        // Execute fitvid.js after new content is fetched
+        $('.post-column').on('append.infiniteScroll', function(event, response, path, items) {
+            $(".kg-embed-card").fitVids();
+            //console.log( 'Loaded: ' + path );
+        });
+    });
+</script>
+{{/contentFor}}
