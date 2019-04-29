@@ -238,7 +238,11 @@
     }
 
     @media (max-width: 992px) {
-        .post-meta-tag:nth-child(n+2) {
+        .post-meta-tag:nth-child(n+3) {
+            display: none;
+        }
+        .reading-time,
+        .tagdot {
             display: none;
         }
     }    
