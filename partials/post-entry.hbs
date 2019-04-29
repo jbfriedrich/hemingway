@@ -8,29 +8,25 @@
         {{^has tag="#link,#micro"}}
             <h2><a href="{{url}}" class="title card-title color-grayblack text-decoration-none font-weight-bold">{{title}}</a></h2>
         {{/has}}
-        {{^has tag="#link,#micro"}}<p class="card-text color-grayblack">{{excerpt}}...</p>{{else}}{{content}}{{/has}}
+        {{^has tag="#link,#micro"}}
+            <p class="card-text color-grayblack">{{excerpt}}...</p>
+        {{else}}
+            {{content}}
+        {{/has}}
     </div>
     <div class="card-footer">
-        <div class="metadata d-flex justify-content-start align-items-baseline">
-            <div class="tags h5 mb-0 mr-auto">
-                {{#has tag="#micro"}}
-                    {{#foreach tags}}
-                        <a class="text-capitalize badge bg-micro color-micro post-meta-tag mr-1" title="{{description}}" href="{{url}}">{{name}}</a>
-                    {{/foreach}}
-                {{else}}
-                    {{#has tag="#link"}}
-                        {{#foreach tags}}
-                            <a class="text-capitalize badge badge-info post-meta-tag mr-1" title="{{description}}" href="{{url}}">{{name}}</a>
-                        {{/foreach}}
-                    {{else}}
-                        {{#foreach tags}}
-                            <a class="text-capitalize badge badge-primary post-meta-tag mr-1" title="{{description}}" href="{{url}}">{{name}}</a>
-                        {{/foreach}}
-                    {{/has}}
-                {{/has}}
-            </div>
-            {{^has tag="#link,#micro"}}<span class="small text-muted mr-5">{{reading_time}}</span>{{/has}}
-            <span><a class="date card-link small text-muted" name="Blog post: {{title}}" href="{{url}}">{{date format="DD-MMM-YYYY"}}</a></span>
+        <div class="metadata text-muted text-uppercase d-flex justify-content-between align-items-center" style="font-size: .8rem;">
+            <span>
+                <i class="fas fa-tags"></i>&nbsp;
+                {{#foreach tags}}
+                    <a title="{{description}}" class="tag text-muted" href="{{url}}">{{name}}</a>{{^if @last}}&nbsp;•&nbsp;{{/if}}
+                {{/foreach}}
+            </span>
+
+            {{^has tag="#link,#micro"}}<span><i class="fas fa-stream"></i>&nbsp;{{reading_time}}</span>{{/has}}
+            <span>
+                <i class="fas fa-clock"></i>&nbsp;<a class="date text-muted" name="Blog post: {{title}}" href="{{url}}">{{date published_at format="D MMMM YYYY"}}</a>
+            </span>
         </div>
     </div>
 </article>

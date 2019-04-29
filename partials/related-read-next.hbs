@@ -1,35 +1,25 @@
-<div class="post-footer row">
+<div class="read-next row">
     <div class="col-12">
-        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center align-items-lg-stretch small">
-            <div class="card text-center rounded-sm mr-0 mr-lg-4 mb-4 mb-lg-0">
-                {{#if primary_tag}}
-                    {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="5" as |related_posts|}}      
-                        <div class="card-body">
-                            {{#../primary_tag}}
-                            <h5 class="card-title color-grayblack font-weight-bolder text-capitalize">{{name}}</h5>
-                            <h6 class="card-subtitle font-weight-light mb-3">{{description}}</h6>
-                            <p class="card-text color-grayblack">More posts like this:</p>
-                            {{/../primary_tag}}
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            {{#foreach related_posts}}
-                            <li class="list-group-item"><a class="card-link" href="{{url}}">{{title}}</a></li>
-                            {{/foreach}}
-                        </ul>
-                        <div class="card-footer small text-muted tag-moreposts">
-                            <a class="card-link text-muted" href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
-                        </div>
-                    {{/get}}
-                {{/if}}
+        <div style="text-align: center; width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);">
+            <div class="more-posts d-flex flex-column flex-lg-row bg-dark justify-content-center align-items-stretch">
+                {{#next_post}}
+                    {{!-- <a class="read-next-story text-decoration-none flex-grow-0 flex-shrink-1 p-5" href="{{url}}"{{#if feature_image}} style="background: url({{feature_image}}) center center;"{{/if}}> --}}
+                    <a class="read-next-story text-decoration-none flex-grow-1 flex-shrink-1" href="{{url}}"{{#if feature_image}} style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{feature_image}}); background-position: center center;"{{/if}}>
+                        <section class="post-info p-5 h-100">
+                            <h2 class="text-white mt-2 mb-3">{{title}}</h2>
+                            <p class="excerpt">{{excerpt words=30}}...</p>
+                        </section>
+                    </a>
+                {{/next_post}}
+                {{#prev_post}}
+                    <a class="read-next-story prev text-decoration-none flex-grow-1 flex-shrink-1" href="{{url}}"{{#if feature_image}} style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{feature_image}}); background-position: center center;"{{/if}}>
+                        <section class="post-info p-5 h-100">
+                            <h2 class="text-white mt-2 mb-3">{{title}}</h2>
+                            <p class="excerpt">{{excerpt words=30}}...</p>
+                        </section>
+                    </a>
+                {{/prev_post}}
             </div>
-            {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#next_post}}
-                {{> "next-prev-card"}}
-            {{/next_post}}
-            {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#prev_post}}
-                {{> "next-prev-card"}}
-            {{/prev_post}}
         </div>
     </div>
 </div>
