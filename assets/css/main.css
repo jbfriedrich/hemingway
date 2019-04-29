@@ -342,6 +342,10 @@
         margin-right: 0;
     }
 
+    .post-full-footer {
+        overflow-x: hidden;
+    }
+
     /* Read Next / Read Prev */
 
     .read-next-story {

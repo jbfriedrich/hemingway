@@ -110,8 +110,8 @@
                                         <h1 class="post-title color-grayblack font-weight-bold" style="font-size: 3.3rem;">{{title}}</h1>
                                         <div class="post-meta-more d-flex flex-row justify-content-center align-items-baseline small text-muted text-uppercase">
                                             <div class="mr-3"><i class="fas fa-clock"></i>&nbsp;{{date published_at format="D MMMM YYYY"}}</div>
-                                            <div class="mr-3"><i class="fas fa-tags"></i>&nbsp;{{#foreach tags}}<a title="{{description}}" class="text-muted" href="{{url}}">{{name}}</a>{{^if @last}}&nbsp;•&nbsp;{{/if}}{{/foreach}}</div>
-                                            <div class="mr-3"><i class="fas fa-stream"></i>&nbsp;{{reading_time}}</div>
+                                            <div class="mr-3"><i class="fas fa-tags"></i>&nbsp;{{#foreach tags}}<a title="{{description}}" class="post-meta-tag text-muted" href="{{url}}">{{name}}</a>{{^if @last}}<span class="tagdot">&nbsp;•&nbsp;</span>{{/if}}{{/foreach}}</div>
+                                            <div class="mr-3 reading-time"><i class="fas fa-stream"></i>&nbsp;{{reading_time}}</div>
                                         </div>
                                     </header>
                                 </div>
@@ -148,7 +148,7 @@
             </div>
         </main>
 
-        <footer id='footer-nav' class='flex-shrink-0 flex-grow-0 bg-dark '>
+        <footer id='footer-nav' class='post-full-footer flex-shrink-0 flex-grow-0 bg-dark '>
             {{> "related-read-next"}}
         </footer>
         {{/post}}
