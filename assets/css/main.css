@@ -1,9 +1,10 @@
 /*--- 0.) Font Smoothing ---*/
 
     * {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -moz-font-feature-settings: "liga" on;
     }
 
 /*--- 1.) Font Defintions ---*/
@@ -197,29 +198,47 @@
 
 /*--- 5.) (Custom) Post type formatting in post feed ---*/
 
-    .post-feed .tag-link .card-body > p:first-child {
-        text-align: left;
-    }
-
-    .main-content .tag-link .card-body > p:first-child > a:only-child,
-    .post-feed .tag-link .card-body > p:first-child > a:only-child {
-        font-weight: 700 !important;
-        font-size: 2rem;
-        line-height: 1.2em;
+    .post-feed .tag-link .card-text > p:first-child > a:only-child {
         color: #444;
+        /* h1 font size */
+        /*font-size: 2.5rem;*/
+        /* h2 font size */
+        /*font-size: 2rem;*/
+        /* h3 font size */
+        font-size: 1.75rem;
+        font-weight: 700;
+        line-height: 1.2em;
     }
     @media (max-width:1200px) {
-        .post-feed .tag-link .card-body > p:first-child > a:only-child {
-            font-size: calc(1.325rem + .9vw);
+        .post-feed .tag-link .card-text > p:first-child > a:only-child {
+            /*h1 responsive font size */
+            /*font-size: calc(1.375rem + 1.5vw);*/
+            /*h2 responsive font size */
+            /*font-size: calc(1.325rem + .9vw);*/
+            /* h3 responsie font size */
+            font-size: calc(1.3rem + .6vw);
         }
     }
-    .main-content .tag-link .card-body > p:first-child > a:only-child:hover,
-    .post-feed .tag-link .card-body > p:first-child > a:only-child:hover {
-        text-decoration: none;
-        color: #117a8b;
+
+    .tag-link.post-micro-link .post-content > p:first-child > a:only-child {
+        color: #444;
+        /* h1 font size */
+        /*font-size: 2.5rem;*/
+        /* h2 font size */
+        font-size: 2rem;
+        /* h3 font size */
+        /*font-size: 1.75rem;*/
+        font-weight: 700;
+        line-height: 1.2em;
     }
-    .main-content .tag-link .card-body > p:first-child > a:only-child::before,
-    .post-feed .tag-link .card-body > p:first-child > a:only-child::before {
+
+    .post-feed .tag-link .card-text > p:first-child > a:only-child:hover,
+    .post-feed .tag-link .post-content > p:first-child > a:only-child:hover {
+        text-decoration: none;
+        color: #0056b3;
+    }
+    .post-feed .tag-link .card-text > p:first-child > a:only-child::before,
+    .post-feed .tag-link .post-content > p:first-child > a:only-child::before {
         display: none;
         font-style: normal;
         font-variant: normal;
@@ -228,8 +247,8 @@
         font-family: "Font Awesome 5 Solid";
         content: "\f0c1";
     }
-    .main-content .tag-link .card-body > p > a > .fa-link,
-    .post-feed .tag-link .card-body > p > a > .fa-link {
+    .post-feed .tag-link .card-text > p > a > .fa-link,
+    .post-feed .tag-link .post-content > p > a > .fa-link {
         margin-right: 5px;
     }
 
@@ -238,11 +257,11 @@
     }
 
     @media (max-width: 768px) {
-        .post-meta-tag:nth-child(n+3) {
+        .post-tag:nth-child(n+3) {
             display: none;
         }
         .reading-time,
-        .tagdot {
+        .tagsep {
             display: none;
         }
     }    
@@ -251,11 +270,11 @@
 
     /* Post & Page headings */
 
-    @media (min-width: 992px) {
+    /*@media (min-width: 992px) {
         .post-title {
             font-size: 3.3rem;
         }
-    }
+    }*/
 
     .page-content > h1,
     .page-content > h2,
@@ -277,7 +296,17 @@
     }
 
     blockquote {
-        padding: 1rem 1.25rem;
+        /* Newer style */
+        padding: .5rem 1.25rem;
+        margin-top: .5rem;
+        margin-bottom: 1rem;
+        border-left: .25rem solid #007bff;
+        border-radius: .25rem;
+        color: #6c757d;
+        /*font-family: "Merriweather";*/
+        font-style: italic;
+        /* Older style */
+ /*       padding: 1rem 1.25rem;
         margin-bottom: 1.25rem;
         border: 1px solid #eee;
         border-left-width: .3rem;
@@ -285,7 +314,7 @@
         border-left-color: #007bff;
         color: #6c757d;
         text-align: justify;
-        font-style: italic;
+        font-style: italic;*/
     }
 
     /* Footnotes */
