@@ -1,13 +1,12 @@
 {{!< default}}
-<div class="d-flex justify-content-between align-items-center py-5 h-100 w-100">
-    <div class="post-feed container">
-        <div class="row post-row d-flex flex-column justify-content-center align-items-center">
-            <div class="post-column col-12 col-md-10 col-lg-8 p-0">
-            {{#foreach posts}}
-                {{> "post-entry"}}
-            {{/foreach}}
-            </div>
-        </div>
+<div class="row h-100">
+    <div class="post-feed px-4 px-lg-5 pt-5 col-lg-8 col-md-10 mx-auto h-100">
+        {{#foreach posts}}
+            {{> "index-post-entry"}}
+        {{/foreach}}
+        {{#if pagination}}
+            {{pagination}}
+        {{/if}}    
     </div>
 </div>
 
@@ -16,7 +15,7 @@
 <script>
     $(document).ready(function(){
         // Activate infinite scrolling
-        $('.post-column').infiniteScroll({
+        $('.post-feed').infiniteScroll({
             // options
             path: '.page-next',
             append: '.post',
@@ -24,7 +23,7 @@
             hideNav: '.main-pagination'
         });
         // Execute fitvid.js after new content is fetched
-        $('.post-column').on('append.infiniteScroll', function(event, response, path, items) {
+        $('.post-feed').on('append.infiniteScroll', function(event, response, path, items) {
             $(".kg-embed-card").fitVids();
             //console.log( 'Loaded: ' + path );
         });

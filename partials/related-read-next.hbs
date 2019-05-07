@@ -1,25 +1,18 @@
-<div class="read-next row">
-    <div class="col-12">
-        <div style="text-align: center; width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);">
-            <div class="more-posts d-flex flex-column flex-lg-row bg-dark justify-content-center align-items-stretch">
-                {{#next_post}}
-                    {{!-- <a class="read-next-story text-decoration-none flex-grow-0 flex-shrink-1 p-5" href="{{url}}"{{#if feature_image}} style="background: url({{feature_image}}) center center;"{{/if}}> --}}
-                    <a class="read-next-story text-decoration-none flex-grow-1 flex-shrink-1" href="{{url}}"{{#if feature_image}} style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{feature_image}}); background-position: center center;"{{/if}}>
-                        <section class="post-info p-5 h-100">
-                            <h2 class="text-white mt-2 mb-3">{{title}}</h2>
-                            <p class="excerpt">{{excerpt words=30}}...</p>
-                        </section>
-                    </a>
-                {{/next_post}}
-                {{#prev_post}}
-                    <a class="read-next-story prev text-decoration-none flex-grow-1 flex-shrink-1" href="{{url}}"{{#if feature_image}} style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{feature_image}}); background-position: center center;"{{/if}}>
-                        <section class="post-info p-5 h-100">
-                            <h2 class="text-white mt-2 mb-3">{{title}}</h2>
-                            <p class="excerpt">{{excerpt words=30}}...</p>
-                        </section>
-                    </a>
-                {{/prev_post}}
-            </div>
-        </div>
-    </div>
+<div class="read-next d-flex flex-column flex-lg-row bg-dark justify-content-center align-items-stretch text-center">
+    {{#next_post}}
+        <a class="read-next-story text-decoration-none flex-grow-1 flex-shrink-1" href="{{url}}"{{#if feature_image}} style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{feature_image}}); background-position: center center;"{{/if}}>
+            <section class="post-info p-5 h-100">
+                <h2 class="text-white mt-2 mb-3">{{title}}</h2>
+                <p class="excerpt">{{excerpt words=30}}...</p>
+            </section>
+        </a>
+    {{/next_post}}
+    {{#prev_post}}
+        <a class="read-next-story prev text-decoration-none flex-grow-1 flex-shrink-1" href="{{url}}"{{#if feature_image}} style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{feature_image}}); background-position: center center;"{{/if}}>
+            <section class="post-info p-5 h-100">
+                <h2 class="text-white mt-2 mb-3">{{title}}</h2>
+                <p class="excerpt">{{excerpt words=30}}...</p>
+            </section>
+        </a>
+    {{/prev_post}}
 </div>

@@ -39,76 +39,17 @@
         {{ghost_head}}
     </head>
 
-    <body class="d-flex flex-column justify-content-between {{body_class}}">
-        <nav id='main-nav' class='navbar navbar-expand-lg navbar-dark bg-dark flex-shrink-0'>
-            <div class="container">
-                {{#if @site.logo}}
-                    <a class="navbar-brand" href="/">
-                        <img id="site-logo" height="30" src="{{@site.logo}}" alt="{{@site.title}}" />
-                    </a>
-                {{else}}
-                    <a class="navbar-brand" href="/">{{@site.title}}</a>
-                {{/if}}
-                <button class="navbar-toggler mb-1" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarMain">
-                    <ul class="navbar-nav mr-auto">
-                        {{#if @site.navigation}}
-                            {{navigation}}
-                        {{/if}}
-                    </ul>
-                    <ul class="navbar-nav small">
-                        {{#if @site.facebook}}
-                            <li class="nav-item">
-                                <a class="nav-link icon facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener"></a>
-                            </li>                
-                        {{/if}}
-                        {{#if @site.twitter}}
-                            <li class="nav-item">
-                                <a class="nav-link icon twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener"></a>
-                            </li>
-                        {{/if}}
-                        <li class="nav-item">
-                            <a class="nav-link icon mastodon" href="https://mastodon.social/@jbf" title="Mastodon" target="_blank" rel="noopener"></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link icon rss dropdown-toggle" id="navbarDropdownLink" aria-label="Available RSS feeds" href="#" role="button" data-toggle="dropdown"></a>
-                            <div class="dropdown-menu" id="navbarDropdown" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/rss"> Full Site</a>
-                                <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/posts/rss"> Posts</a>
-                                <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/micros/rss"> Micro posts</a>
-                                <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/links/rss"> Links</a>
-                                <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/videos/rss"> Videos</a>
-                            </div>
-                        </li>
-                        {{#if @labs.subscribers}}
-                        <li class="nav-item">
-                            <a class="nav-link" href="#subscribe">Subscribe</a>
-                        </li>
-                        {{/if}}
-                    </ul>
-                    <form class="form-inline my-0 mt-1 my-lg-0 ml-lg-2" method="get" action="https://google.com/cse">
-                        <input class="form-control" name="cx" type="hidden" value="017535604341602901961:grmyjwbjtxe">
-                        <input class="form-control" name="ie" type="hidden" value="UTF-8">
-                        <input class="form-control" name="q" type="search" placeholder="Search" aria-label="Search">
-                    </form>
-                </div>
-            </div>
-        </nav>
+    <body class="d-flex flex-column justify-content-between {{body_class}}" style="background-color: #f4f8fb;">
+        {{> "main-nav"}}
 
         <!-- d-flex had to be used to make sure that Safari renders space-between in the sub-elements right -->
-        <main role="main" class="main-content flex-shrink-0 flex-grow-1 d-flex">
+        <main role="main" class="main-content justify-content-center align-items-center flex-shrink-0 flex-grow-1 d-flex">
             <div class="container">
                 {{{body}}}
             </div>
         </main>
 
-        {{#if pagination}}
-            {{pagination}}
-        {{/if}}
-
-        <footer id='footer-nav' class='flex-shrink-0 flex-grow-0 navbar navbar-expand navbar-dark bg-dark small'>
+        <footer id='footer-nav' class='mt-5 flex-shrink-0 flex-grow-0 navbar navbar-expand navbar-dark bg-dark small'>
             <div class="container">
                 <div class="collapse navbar-collapse" id="navbarFooter">
                     <ul class="navbar-nav mr-auto">

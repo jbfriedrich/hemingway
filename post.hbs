@@ -38,122 +38,92 @@
         {{!-- This tag outputs SEO meta+structured data and other important settings --}}
         {{ghost_head}}
     </head>
-
-    <body class="d-flex flex-column justify-content-between {{body_class}}">
-        <nav id='main-nav' class='navbar navbar-expand-lg navbar-dark bg-dark flex-shrink-0'>
-            <div class="container">
-                {{#if @site.logo}}
-                    <a class="navbar-brand" href="/">
-                        <img id="site-logo" height="30" src="{{@site.logo}}" alt="{{@site.title}}" />
-                    </a>
-                {{else}}
-                    <a class="navbar-brand" href="/">{{@site.title}}</a>
-                {{/if}}
-                <button class="navbar-toggler mb-1" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarMain">
-                    <ul class="navbar-nav mr-auto">
-                        {{#if @site.navigation}}
-                            {{navigation}}
-                        {{/if}}
-                    </ul>
-                    <ul class="navbar-nav small">
-                        {{#if @site.facebook}}
-                            <li class="nav-item">
-                                <a class="nav-link icon facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener"></a>
-                            </li>                
-                        {{/if}}
-                        {{#if @site.twitter}}
-                            <li class="nav-item">
-                                <a class="nav-link icon twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener"></a>
-                            </li>
-                        {{/if}}
-                        <li class="nav-item">
-                            <a class="nav-link icon mastodon" href="https://mastodon.social/@jbf" title="Mastodon" target="_blank" rel="noopener"></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link icon rss dropdown-toggle" id="navbarDropdownLink" aria-label="Available RSS feeds" href="#" role="button" data-toggle="dropdown"></a>
-                            <div class="dropdown-menu" id="navbarDropdown" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/rss"> Full Site</a>
-                                <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/posts/rss"> Posts</a>
-                                <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/micros/rss"> Micro posts</a>
-                                <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/links/rss"> Links</a>
-                                <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/videos/rss"> Videos</a>
-                            </div>
-                        </li>
-                        {{#if @labs.subscribers}}
-                        <li class="nav-item">
-                            <a class="nav-link" href="#subscribe">Subscribe</a>
-                        </li>
-                        {{/if}}
-                    </ul>
-                    <form class="form-inline my-0 mt-1 my-lg-0 ml-lg-2" method="get" action="https://google.com/cse">
-                        <input class="form-control" name="cx" type="hidden" value="017535604341602901961:grmyjwbjtxe">
-                        <input class="form-control" name="ie" type="hidden" value="UTF-8">
-                        <input class="form-control" name="q" type="search" placeholder="Search" aria-label="Search">
-                    </form>
-                </div>
-            </div>
-        </nav>
-
-        {{#post}}
-        <!-- d-flex had to be used to make sure that Safari renders space-between in the sub-elements right -->
-        <main role="main" class="main-content flex-shrink-0 flex-grow-1 d-flex">
-            <div class="container">
-                {{^has tag="#link,#micro,#video"}}
-                    <div class="d-flex justify-content-between align-items-center py-5 pb-1 h-100">
+    {{#post}}
+        {{^has tag="#link,#micro"}}
+            <body class="d-flex flex-column justify-content-between {{body_class}}">
+                <div class="post-full-header{{#if feature_image}} flex-shrink-0 flex-grow-1{{/if}}" style="background-image: url({{feature_image}}); background-position: center center; background-repeat: no-repeat; background-size: cover; height: 45vh;">
+                    <nav id='main-nav' class='navbar navbar-expand-lg navbar-dark{{^if feature_image}} bg-dark'{{else}}' style="background-color: rgba(0,0,0,0.7)"{{/if}}>
                         <div class="container">
-                            <div class="post-header row">
-                                <div class="col-12">
-                                    <header class="post-meta text-center pb-5">
-                                        <h1 class="post-title color-grayblack font-weight-bold">{{title}}</h1>
-                                        <div class="post-meta-more d-flex flex-row justify-content-center align-items-baseline small text-muted text-uppercase">
-                                            <div class="mr-3"><i class="fas fa-clock"></i>&nbsp;{{date published_at format="D MMMM YYYY"}}</div>
-                                            <div class="mr-3"><i class="fas fa-tags"></i>&nbsp;{{#foreach tags}}<a title="{{description}}" class="post-meta-tag text-muted" href="{{url}}">{{name}}</a>{{^if @last}}<span class="tagdot">&nbsp;•&nbsp;</span>{{/if}}{{/foreach}}</div>
-                                            <div class="mr-3 reading-time"><i class="fas fa-stream"></i>&nbsp;{{reading_time}}</div>
-                                        </div>
-                                    </header>
-                                </div>
-                            </div>
-                            <div class="post-full row">
-                                <div class="col-12 col-md-10 col-lg-8 offset-lg-2 offset-md-1">
-                                    {{#if feature_image}}
-                                    <figure class="feature-image mb-5">
-                                        <img src="{{img_url feature_image}}">
-                                    </figure>
+                            <a class="navbar-brand" href="/">{{@site.title}}</a>
+                            <button class="navbar-toggler mb-1" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarMain">
+                                <ul class="navbar-nav mr-auto">
+                                    {{#if @site.navigation}}
+                                        {{navigation}}
                                     {{/if}}
-                                    <main class="post-content color-grayblack mb-5{{^if feature_image}} no-feature-image{{/if}}">
-                                        {{content}}
-                                    </main>
+                                </ul>
+                                <ul class="navbar-nav small">
+                                    {{#if @site.facebook}}
+                                        <li class="nav-item">
+                                            <a class="nav-link icon facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener"></a>
+                                        </li>                
+                                    {{/if}}
+                                    {{#if @site.twitter}}
+                                        <li class="nav-item">
+                                            <a class="nav-link icon twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener"></a>
+                                        </li>
+                                    {{/if}}
+                                    <li class="nav-item">
+                                        <a class="nav-link icon mastodon" href="https://mastodon.social/@jbf" title="Mastodon" target="_blank" rel="noopener"></a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link icon rss dropdown-toggle" id="navbarDropdownLink" aria-label="Available RSS feeds" href="#" role="button" data-toggle="dropdown"></a>
+                                        <div class="dropdown-menu" id="navbarDropdown" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/rss"> Full Site</a>
+                                            <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/posts/rss"> Posts</a>
+                                            <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/micros/rss"> Micro posts</a>
+                                            <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/links/rss"> Links</a>
+                                        </div>
+                                    </li>
+                                    {{#if @labs.subscribers}}
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#subscribe">Subscribe</a>
+                                    </li>
+                                    {{/if}}
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <main role="main" class="main-content flex-shrink-0 flex-grow-1 d-flex align-items-center justify-content-center">
+                    <div class="container h-100">
+                        <div class="row h-100">
+                            <div class="post-feed col-lg-8 col-md-10 mx-auto h-100">
+                                {{> "post-full"}}
+                                {{> "author-info"}}
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer id='footer-nav' class='post-full-footer flex-shrink-0 flex-grow-0 bg-dark '>
+                    {{> "related-read-next"}}
+                </footer>
+                {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
+                {{ghost_foot}}
+            </body>
+        {{else}}
+            <body class="d-flex flex-column justify-content-between {{body_class}}" style="background-color: #f4f8fb;">
+                {{> "main-nav"}}
+                <main role="main" class="main-content flex-shrink-0 flex-grow-1 d-flex align-items-center justify-content-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="post-feed px-5 pt-5 bg-white col-lg-8 col-md-10 mx-auto">
+                                <div class="d-flex flex-column align-items-center justify-content-center">
+                                    {{> "post-micro-link"}}
                                     {{> "author-info"}}
                                 </div>
                             </div>
                         </div>
                     </div>
-                {{else}}
-                    <div class="d-flex justify-content-center align-items-center py-5 h-100">
-                        <div class="container h-100">
-                            <div class="row h-100">
-                                <div class="col-12 col-md-10 col-lg-8 offset-lg-2 offset-md-1 p-0">
-                                    <div class="d-flex flex-column justify-content-center align-items-stretch {{!-- pt-3 --}} h-100">
-                                        {{> "post-entry"}}
-                                        {{> "author-info"}}  
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {{/has}}
-            </div>
-        </main>
-
-        <footer id='footer-nav' class='post-full-footer flex-shrink-0 flex-grow-0 bg-dark '>
-            {{> "related-read-next"}}
-        </footer>
-        {{/post}}
-        {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
-        {{ghost_foot}}
-    </body>
-
+                </main>
+                <footer id='footer-nav' class='post-full-footer flex-shrink-0 flex-grow-0 bg-dark '>
+                    {{> "related-read-next"}}
+                </footer>
+                {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
+                {{ghost_foot}}
+            </body>
+        {{/has}}
+    {{/post}}
 </html>
