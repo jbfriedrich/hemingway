@@ -4,7 +4,7 @@
             <img src="{{feature_image}}" alt="Feature image" class="card-img-top rounded-lg" style="height: auto; max-height: 200px; object-fit: cover;">
         {{/if}}
         <div class="card-body">
-            <h5 class="card-subtitle text-uppercase text-secondary font-weight-bolder small" style="letter-spacing: 1px;">{{#primary_tag}}{{name}}{{/primary_tag}}</h5>
+            <div class="card-subtitle text-uppercase text-secondary" style="letter-spacing: 1px; font-weight: 500; font-size: 0.85rem; line-height: 1.2;">{{#primary_tag}}{{name}}{{/primary_tag}}</div>
             <h3 class="card-title font-weight-bold color-grayblack">{{title}}</h3>
             <p class="card-text">{{excerpt}}...</p>
             <p class="text-primary font-weight-bold">Read more »</p>
@@ -17,7 +17,7 @@
 {{else}}
     <article class="card border-0 shadow-sm mb-5 {{post_class}}" style="border-radius: .5rem;">
         <div class="card-body">
-            <h5 class="card-title text-uppercase text-secondary font-weight-bolder small" style="letter-spacing: 1px;">{{#primary_tag}}{{name}}{{/primary_tag}}</h5>
+            <div class="card-title text-uppercase text-secondary" style="letter-spacing: 1px; font-weight: 500; font-size: 0.85rem; line-height: 1.2; margin-bottom: .5rem;">{{#primary_tag}}{{name}}{{/primary_tag}}</div>
             <div class="card-text">
                 {{content}}
             </div>
