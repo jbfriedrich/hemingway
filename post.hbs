@@ -1,129 +1,46 @@
-<!DOCTYPE html>
-<html lang="{{@site.lang}}">
-    <head>
-        {{!-- Document Settings --}}
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="Description" content="{{@site.description}}">
-        {{!-- Base Meta --}}
-        <title>{{meta_title}}</title>
-        <meta name="HandheldFriendly" content="True" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {{!-- CSS files --}}
-        <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}" />
-        {{!-- <link rel="stylesheet" type="text/css" href="{{asset "css/fontawesome.min.css"}}" /> --}}
-        <link rel="stylesheet" type="text/css" href="{{asset "css/main.min.css"}}" />
-        <link rel="stylesheet" type="text/css" href="{{asset "css/highlightjs/tomorrow-night.css"}}" />
-        <link rel="stylesheet" type="text/css" href="{{asset "css/cookieconsent.min.css"}}" />
-        {{!-- JQuery --}}
-        <script src="{{asset "js/jquery-3.3.1.min.js"}}"></script>
-        {{!-- Bootstrap --}}
-        <script src="{{asset "js/bootstrap.bundle.min.js"}}"></script>
-        {{!-- Fontawesome fonts --}}
-        <script data-search-pseudo-elements defer src="{{asset "js/fontawesome.min.js"}}"></script>
-        {{!-- HighlightJS --}}
-        <script src="{{asset "js/highlight.pack.js"}}"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
-        {{!-- Load GDPR Cookie JS  --}}
-        <script src="{{asset "js/cookieconsent.min.js"}}"></script>
-        <script src="{{asset "js/gdprcookie.js"}}"></script>
-        {{!-- Fit embedded videos  --}}
-        <script src="{{asset "js/jquery.fitvids.js"}}"></script>
-        <script>
-            $(document).ready(function(){
-                // Target your .container, .wrapper, .post, etc.
-                $(".kg-embed-card").fitVids();
-            });
-        </script>
-        {{!-- This tag outputs SEO meta+structured data and other important settings --}}
-        {{ghost_head}}
-    </head>
-    {{#post}}
-        {{^has tag="#link,#micro"}}
-            <body class="d-flex flex-column justify-content-between {{body_class}}">
-                <div class="post-full-header{{#if feature_image}} flex-shrink-0 flex-grow-1{{/if}}" style="background-image: url({{feature_image}}); background-position: center center; background-repeat: no-repeat; background-size: cover; height: 500px;">
-                    <nav id='main-nav' class='navbar navbar-expand-lg navbar-dark{{^if feature_image}} bg-dark{{else}}' style="background-color: rgba(0,0,0,0.7)"{{/if}}'>
-                        <div class="container">
-                            <a class="navbar-brand" href="/">{{@site.title}}</a>
-                            <button class="navbar-toggler mb-1" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarMain">
-                                <ul class="navbar-nav mr-auto">
-                                    {{#if @site.navigation}}
-                                        {{navigation}}
-                                    {{/if}}
-                                </ul>
-                                <ul class="navbar-nav small">
-                                    {{#if @site.facebook}}
-                                        <li class="nav-item">
-                                            <a class="nav-link icon facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener"></a>
-                                        </li>                
-                                    {{/if}}
-                                    {{#if @site.twitter}}
-                                        <li class="nav-item">
-                                            <a class="nav-link icon twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener"></a>
-                                        </li>
-                                    {{/if}}
-                                    <li class="nav-item">
-                                        <a class="nav-link icon mastodon" href="https://mastodon.social/@jbf" title="Mastodon" target="_blank" rel="noopener"></a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link icon rss dropdown-toggle" id="navbarDropdownLink" aria-label="Available RSS feeds" href="#" role="button" data-toggle="dropdown"></a>
-                                        <div class="dropdown-menu" id="navbarDropdown" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/rss"> Full Site</a>
-                                            <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/posts/rss"> Posts</a>
-                                            <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/micros/rss"> Micro posts</a>
-                                            <a class="dropdown-item icon rss{{!--  small --}}" href="{{@site.url}}/links/rss"> Links</a>
-                                        </div>
-                                    </li>
-                                    {{#if @labs.subscribers}}
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#subscribe">Subscribe</a>
-                                    </li>
-                                    {{/if}}
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-                <main role="main" class="main-content flex-shrink-0 flex-grow-1 d-flex align-items-center justify-content-center">
-                    <div class="container h-100">
-                        <div class="row h-100">
-                            <div class="post-feed col-lg-8 col-md-10 mx-auto h-100">
-                                {{> "post-full"}}
-                                {{> "author-info"}}
-                            </div>
-                        </div>
-                    </div>
-                </main>
-                <footer id='footer-nav' class='post-full-footer flex-shrink-0 flex-grow-0 bg-dark '>
-                    {{> "related-read-next"}}
-                </footer>
-                {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
-                {{ghost_foot}}
-            </body>
-        {{else}}
-            <body class="d-flex flex-column justify-content-between {{body_class}}" style="background-color: #f4f8fb;">
-                {{> "main-nav"}}
-                <main role="main" class="main-content flex-shrink-0 flex-grow-1 d-flex align-items-center justify-content-center">
-                    <div class="container">
-                        <div class="row">
-                            <div class="post-feed px-5 pt-5 bg-white col-lg-8 col-md-10 mx-auto">
-                                <div class="d-flex flex-column align-items-center justify-content-center">
-                                    {{> "post-micro-link"}}
-                                    {{> "author-info"}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
-                <footer id='footer-nav' class='post-full-footer flex-shrink-0 flex-grow-0 bg-dark '>
-                    {{> "related-read-next"}}
-                </footer>
-                {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
-                {{ghost_foot}}
-            </body>
-        {{/has}}
-    {{/post}}
-</html>
+{{!< default}}
+{{#post}}
+{{^has tag='#link,#micro'}}
+{{#if feature_image}}
+<header class="bg-dark d-flex flex-column flex-shrink-0 flex-grow-0 mb-5" style="height: 45vh; background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url({{feature_image}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;">
+    {{> "trans-nav" }}
+    <div class="container d-flex flex-column justify-content-center align-items-center h-100" style="margin-top: -56px;">
+        <h4 class="post-date lead text-white-50 font-weight-bold" >{{date published_at format="MMMM DD, YYYY"}}</h4>
+        <h1 class="text-white font-weight-bold display-4">{{title}}</h1>
+    </div>
+{{else}}
+<header class="d-flex flex-column flex-shrink-0 flex-grow-0">
+    {{> "dark-nav" }}
+    <div class="container d-flex flex-column justify-content-center align-items-center my-5">
+        <h4 class="post-date lead text-black-50 font-weight-bold" >{{date published_at format="MMMM D, YYYY"}}</h4>
+        <h1 class="color-grayblack font-weight-bold display-4">{{title}}</h1>
+    </div>
+{{/if}}
+</header>
+<div class="post-content container flex-grow-1 flex-shrink-0 d-flex align-items-center">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            {{content}}
+            {{> "taglist" }}
+            {{> "author-info"}}
+        </div>
+    </div>
+</div>
+<aside class="next-prev-posts">
+{{> "related-read-next"}}
+</aside>
+{{else}}
+<header class="main-nav">
+    {{> "dark-nav" }}
+</header>
+<div class="post-content container flex-grow-1 flex-shrink-0 d-flex align-items-center">
+    <div class="row">
+        <div class="post-micro col-md-8 mx-auto">
+            <div class="post-mico-header my-5 h5 text-black-50 text-center">{{date published_at format="LLL"}}</div>
+            {{content}}
+            {{> "author-info"}}
+        </div>
+    </div>
+</div>
+{{/has}}
+{{/post}}

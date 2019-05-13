@@ -1,8 +1,12 @@
 <!-- Primary pagination begins here -->
-<nav class="main-pagination" aria-label="Main page navigation">
-    <ul class="pagination m-0 p-0 justify-content-center align-items-center">
-        <li class="page-item flex-grow-1 shadow-sm{{^if prev}} disabled{{/if}}"><a class="page-link page-previous rounded-sm text-center font-weight-bold lead" href="{{page_url prev}}">&laquo;</a></li>
-        <li class="page-item small px-5">Page {{page}} of {{pages}}</li>
-        <li class="page-item flex-grow-1 shadow-sm{{^if next}} disabled{{/if}}"><a class="page-link{{#if next}} page-next{{/if}} rounded-sm text-center font-weight-bold lead" href="{{page_url next}}">&raquo;</a></li>
-    </ul>
+<nav class="main-pagination container mb-5" aria-label="Main page navigation">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <ul class="pagination m-0 p-0 justify-content-center align-items-center">
+                <li class="page-item flex-grow-1{{^if prev}} disabled{{/if}}"><a class="page-link page-previous rounded-sm text-center font-weight-bold lead" href="{{page_url prev}}">&laquo;</a></li>
+                <li class="page-item small px-5">Page {{page}} of {{pages}}</li>
+                <li class="page-item flex-grow-1{{^if next}} disabled{{/if}}"><a class="page-link{{#if next}} page-next{{/if}} rounded-sm text-center font-weight-bold lead" href="{{page_url next}}">&raquo;</a></li>
+            </ul>
+        </div>
+    </div>
 </nav>

@@ -1,0 +1,10 @@
+<aside class="taglist my-5 text-black-50">
+    {{#if updated_at}}
+        <p class="update_notification font-italic m-0 p-0 mb-1">This article was updated on <span class="update_tstamp">{{date updated_at format="MMMM D YYYY, HH:MM"}}</span></p>
+        <ul class="list-inline">
+            {{#foreach tags}}
+            <li class="list-inline-item"><a class="post-tag text-black-50 btn btn-light btn-sm text-lowercase" href="{{url}}" title="Posts tagged with {{name}}">{{name}}</a></li>
+            {{/foreach}}
+        </ul>
+    {{/if}}
+</aside>

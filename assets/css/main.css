@@ -146,60 +146,18 @@
         /*background-color: #eee;*/
     }
 
-/*--- 3.) Main Navigation ---*/
-
-    .nav-link.icon {
-        font-size: 1.5em;
-        text-rendering: optimizeLegibility;
-    }
-
-    .icon-sm {
-        font-size: 80%;
-    }
-
-    .icon::before, .icon-sm::before {
-        display: none;
-        font-style: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-    }
-
-    .mastodon::before {
-        font-family: "Font Awesome 5 Brands";
-        font-weight: 400;
-        content: "\f4f6";
-    }
-
-    .facebook::before {
-        font-family: "Font Awesome 5 Brands";
-        font-weight: 400;
-        content: "\f39e";
-    }
-
-    .twitter::before {
-        font-family: "Font Awesome 5 Brands";
-        font-weight: 400;
-        content: "\f099";
-    }
-
-    .rss::before {
-        font-family: "Font Awesome 5 Solid";
-        font-weight: 400;
-        content: "\f09e";
-    }
-
-/*--- 4.) Colors ---*/
+/*--- 3.) Colors ---*/
 
     /* Almost black (grayblack) for text */
     .color-grayblack {
-        color: #444;
+        color: #444!important;
     }
 
-/*--- 5.) (Custom) Post type formatting in post feed ---*/
+/*--- 4.) (Custom) Post type formatting in post feed ---*/
 
-    .post-feed .tag-link .card-text > p:first-child > a:only-child {
-        color: #444;
+    .post-feed .tag-link .post-content > p:first-child > a:only-child,
+    .tag-link .post-content .post-micro > p:nth-child(2) > a:only-child {
+        color: #343a40;
         /* h1 font size */
         /*font-size: 2.5rem;*/
         /* h2 font size */
@@ -210,7 +168,8 @@
         line-height: 1.2em;
     }
     @media (max-width:1200px) {
-        .post-feed .tag-link .card-text > p:first-child > a:only-child {
+        .post-feed .tag-link .post-content > p:first-child > a:only-child,
+        .tag-link .post-content .post-micro > p:nth-child(2) > a:only-child {
             /*h1 responsive font size */
             /*font-size: calc(1.375rem + 1.5vw);*/
             /*h2 responsive font size */
@@ -220,25 +179,8 @@
         }
     }
 
-    .tag-link.post-micro-link .post-content > p:first-child > a:only-child {
-        color: #444;
-        /* h1 font size */
-        /*font-size: 2.5rem;*/
-        /* h2 font size */
-        font-size: 2rem;
-        /* h3 font size */
-        /*font-size: 1.75rem;*/
-        font-weight: 700;
-        line-height: 1.2em;
-    }
-
-    .post-feed .tag-link .card-text > p:first-child > a:only-child:hover,
-    .post-feed .tag-link .post-content > p:first-child > a:only-child:hover {
-        text-decoration: none;
-        color: #0056b3;
-    }
-    .post-feed .tag-link .card-text > p:first-child > a:only-child::before,
-    .post-feed .tag-link .post-content > p:first-child > a:only-child::before {
+    .post-feed .tag-link .post-content > p:first-child > a:only-child::before,
+    .tag-link .post-content .post-micro > p:nth-child(2) > a:only-child::before {
         display: none;
         font-style: normal;
         font-variant: normal;
@@ -247,66 +189,26 @@
         font-family: "Font Awesome 5 Solid";
         content: "\f0c1";
     }
-    .post-feed .tag-link .card-text > p > a > .fa-link,
-    .post-feed .tag-link .post-content > p > a > .fa-link {
+    .post-feed .tag-link .post-content > p > a > .fa-link,
+    .tag-link .post-content .post-micro > p > a > .fa-link {
         margin-right: 5px;
     }
 
-    .post:last-child {
-        margin-bottom: 0!important;
-    }
-
-    @media (max-width: 768px) {
-        .post-tag:nth-child(n+3) {
-            display: none;
-        }
-        .reading-time,
-        .tagsep {
-            display: none;
-        }
-    }    
-
-/*--- 6.) Post, page & list view formatting ---*/
-
-    /* Post & Page headings */
-
-    /*@media (min-width: 992px) {
-        .post-title {
-            font-size: 3.3rem;
-        }
-    }*/
-
-    .page-content > h1,
-    .page-content > h2,
-    .page-content > h3,
-    .page-content > h4,
-    .page-content > h5,
-    .page-content > h6,
-    .post-content > h1,
-    .post-content > h2,
-    .post-content > h3,
-    .post-content > h4,
-    .post-content > h5,
-    .post-content > h6 {
-        font-weight: 700;
-        color: #444;
-        line-height: 1.2;
-        margin-top: 1.75rem;
-        margin-bottom: 1rem;
-    }
+/*--- 5.) Post, page and list view formatting ---*/
 
     blockquote {
         /* Newer style */
-        padding: .5rem 1.25rem;
+        padding: .25rem 1.25rem;
         margin-top: .5rem;
         margin-bottom: 1rem;
         border-left: .25rem solid #007bff;
         border-radius: .25rem;
         color: #6c757d;
         /*font-family: "Merriweather";*/
+        font-size: 110%;
         font-style: italic;
         /* Older style */
- /*       padding: 1rem 1.25rem;
+        /*padding: 1rem 1.25rem;
         margin-bottom: 1.25rem;
         border: 1px solid #eee;
         border-left-width: .3rem;
@@ -317,147 +219,33 @@
         font-style: italic;*/
     }
 
-    /* Footnotes */
-
-    .footnotes-sep {
-        margin-top: 2.5rem;
+    .page-content h1,
+    .page-content h2,
+    .page-content h3,
+    .page-content h4,
+    .page-content h5,
+    .page-content h6,
+    .post-content h1,
+    .post-content h2,
+    .post-content h3,
+    .post-content h4,
+    .post-content h5,
+    .post-content h6 {
+        font-weight: 700;
+        color: #444;
+        line-height: 1.2;
+        margin-top: 1.75rem;
+        margin-bottom: 1rem;
     }
 
-    .footnotes {
-        font-size: 80%;
-        font-family: Merriweather;
-        line-height: 1.618;
-        font-weight: 300;
-        /*margin-bottom: 4rem;*/
-    }
+    /* ----- Image formatting ----- */
 
-    .footnotes-list {
-        padding: 0;
-        list-style: none;
-        counter-reset: footnote-counter;
-    }
-
-    .footnotes-list li {
-        list-style-type: none;
-        margin: 1em 1em 1em 2em;
-        position: relative;
-        counter-increment: footnote-counter;
-    }
-
-    .footnotes-list li:before {
-        content: counter(footnote-counter) ". ";
-        position: absolute;
-        left: -1.55em;
-        color: #007bff;
-    }
-
-    /* Author information */
-
-    .post-author-image {
-        height: 90px;
-        width: 90px;
-        margin: 0;
-        padding: 0;
-    }
-
-        /* .author-info > .author-bio {
-            max-height: 125px;
-        }*/
-
-    .author-info > .author-bio h4 {
-        font-size: 1.25rem;
-    }
-
-    .post-footer .card {
-        width: 300px;
-        max-width: 300px;
-    }
-
-    .post-footer .card:last-child {
-        margin-right: 0;
-    }
-
-    .post-full-footer {
-        overflow-x: hidden;
-    }
-
-    /* Read Next / Read Prev */
-
-    .read-next-story {
-        min-width: 50%;
-        color: #fff;
-        background-size: cover;
-        object-fit: cover;
-        overflow: hidden;
-    }
-
-    .read-next-story:hover .post-info {
-        background-color: rgba(0,0,0,0.6) !important;
-        transition: all 0.5s ease;
-    }
-
-    .read-next-story .post-info {
-        color: rgba(255,255,255,0.8);
-    }
-
-    .read-next-story .post-info:before {
-        content: "Read This Next";
-        padding: 4px 10px 5px;
-        text-transform: uppercase;
-        font-size: .8rem;
-        color: rgba(255,255,255,0.8);
-        border: rgba(255,255,255,0.5) 1px solid;
-        border-radius: 4px;
-        transition: all 0.5s ease;
-    }
-
-    .read-next-story.prev .post-info:before {
-        content: "You might enjoy";
-    }
-
-    .read-next-story:hover .post-info:before {
-        color: #222;
-        background: #fff;
-        transition: all 0.2s ease;
-    }
-
-/*--- 7.) Feature image, images and galleries ---*/
-
-    .post-full .feature-image,
-    .page-full .feature-image {
-        text-align: center;
-        width: 100vw;
-        max-width: 100%;
-        margin-left: calc(50% - 50vw);
-        margin-right: calc(50% - 50vw);
-        background: #c5d2d9 no-repeat 50%;
-        background-size: cover;
-    }
-
-    .post-full .feature-image img,
-    .page-full .feature-image img {
-        width: inherit;
-        object-fit: cover;
-        object-position: 50% 50%
-    }
-
-    @media (min-width: 576px) {
-        .post-full .feature-image img,
-        .page-full .feature-image img {
-            height: 500px;
-        }
-    }
-
-    .main-content .post-full .post-content > p > img,
+    .post-content > p > img,
     .kg-card.kg-image-card img {
         margin: 0 auto;
         height: auto;
         width: 100%
     }
-
-    /*    .post-full .post-content .kg-card.kg-image-card {
-        margin-bottom: 3rem;
-    }*/
 
     .post-content .kg-card.kg-image-card.kg-width-full {
         text-align: center;
@@ -538,4 +326,108 @@
         width: 100%;
         height: 100%;
         object-fit: cover
+    }
+
+    /* ----- Author information ----- */
+
+    .post-author-image {
+        height: 90px;
+        width: 90px;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* .author-info > .author-bio {
+        max-height: 125px;
+    }*/
+
+    .author-info > .author-bio h4 {
+        font-size: 1.25rem;
+    }
+
+    .post-footer .card {
+        width: 300px;
+        max-width: 300px;
+    }
+
+    .post-footer .card:last-child {
+        margin-right: 0;
+    }
+
+    .post-full-footer {
+        overflow-x: hidden;
+    }
+
+    /* ----- Footnotes ----- */
+
+    .footnotes-sep {
+        margin-top: 2.5rem;
+    }
+
+    .footnotes {
+        font-size: 80%;
+        font-family: Merriweather;
+        line-height: 1.618;
+        font-weight: 300;
+        /*margin-bottom: 4rem;*/
+    }
+
+    .footnotes-list {
+        padding: 0;
+        list-style: none;
+        counter-reset: footnote-counter;
+    }
+
+    .footnotes-list li {
+        list-style-type: none;
+        margin: 1em 1em 1em 2em;
+        position: relative;
+        counter-increment: footnote-counter;
+    }
+
+    .footnotes-list li:before {
+        content: counter(footnote-counter) ". ";
+        position: absolute;
+        left: -1.55em;
+        color: #007bff;
+    }
+
+    /* ----- Read Next / Read Prev ----- */
+
+    .read-next-story {
+        min-width: 50%;
+        color: #fff;
+        background-size: cover;
+        object-fit: cover;
+        overflow: hidden;
+    }
+
+    .read-next-story:hover .post-info {
+        background-color: rgba(0,0,0,0.6) !important;
+        transition: all 0.5s ease;
+    }
+
+    .read-next-story .post-info {
+        color: rgba(255,255,255,0.8);
+    }
+
+    .read-next-story .post-info:before {
+        content: "Read This Next";
+        padding: 4px 10px 5px;
+        text-transform: uppercase;
+        font-size: .8rem;
+        color: rgba(255,255,255,0.8);
+        border: rgba(255,255,255,0.5) 1px solid;
+        border-radius: 4px;
+        transition: all 0.5s ease;
+    }
+
+    .read-next-story.prev .post-info:before {
+        content: "You might enjoy";
+    }
+
+    .read-next-story:hover .post-info:before {
+        color: #222;
+        background: #fff;
+        transition: all 0.2s ease;
     }
