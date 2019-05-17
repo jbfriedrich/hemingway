@@ -1,20 +1,12 @@
 <article class="{{post_class}}">
     {{^has tag="#link,#micro"}}
-    <div class="author media">
-        {{#primary_author}}<img src="{{profile_image}}" class="align-self-center m-0 p-0 mr-2 rounded-circle" style="width: 30px;">
-        <div class="m-0 p-0 align-self-center text-black-50">
-            <a class="color-grayblack font-weight-bold" href="{{url}}">{{name}}</a>{{/primary_author}}<span class="ml-2">&nbsp;—&nbsp;</span><a class="m-0 p-0 text-black-50 font-italic" href="{{url}}">{{date published_at format="MMMM D, YYYY"}}</a>
-        </div>
-    </div>
+    <div class="m-0 p-0 text-black-50"><a class="m-0 p-0 text-black-50" href="{{url}}">{{date published_at format="MMMM D, YYYY"}}</a></div>
     <h1 class="font-weight-bold my-1"><a href="{{url}}" class="text-dark">{{title}}</a></h1>
     <p class="post-excerpt">{{excerpt}}</p>
     <a href="{{url}}" class="font-weight-light font-italic text-black-50"><u>Continue reading »</u></a>
     {{else}}
     <div class="author media">
-        {{#primary_author}}<img src="{{profile_image}}" class="align-self-center m-0 p-0 mr-2 rounded-circle" style="width: 30px;">
-        <div class="m-0 p-0 align-self-center text-black-50">
-            <a class="text-dark font-weight-bold" href="{{url}}">{{name}}</a>{{/primary_author}}<span class="ml-2">&nbsp;—&nbsp;</span><a class="m-0 p-0 text-black-50 font-italic" href="{{url}}">{{#has tag="#micro"}}{{date published_at format="MMMM D, YYYY - HH:MM"}}{{else}}{{date published_at format="MMMM DD, YYYY"}}{{/has}}</a>
-        </div>
+    <div class="m-0 p-0 text-black-50"><a class="m-0 p-0 text-black-50" href="{{url}}">{{date published_at format="LLL"}}</a></div>
     </div>
     <div class="post-content mt-3">
         {{content}}

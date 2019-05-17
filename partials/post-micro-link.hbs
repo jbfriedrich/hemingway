@@ -1,8 +1,0 @@
-<article class="{{post_class}} post-micro-link">
-    <div class="post-header pb-2 text-muted lead">
-        <span class="post-date">{{date published_at format="D MMMM YYYY"}}</span>&nbsp;•&nbsp;<span class="post-tags text-lowercase">{{#foreach tags}}<a class="post-tag text-muted" href="{{url}}" title="Posts tagged with {{name}}">{{name}}</a>{{^if @last}}<span class="tagsep">,&nbsp;</span>{{/if}}{{/foreach}}
-    </div>
-    <div class="post-content">
-        {{content}}
-    </div>
-</article>

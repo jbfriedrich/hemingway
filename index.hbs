@@ -1,44 +1,24 @@
 {{!< default}}
-<header class="bg-dark d-flex flex-column" style="height: 45vh; min-height: 270px;{{#if @site.cover_image}} background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url({{@site.cover_image}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;{{/if}}">
+<header class="{{#if @site.cover_image}}bg-dark{{else}}bg-primary{{/if}} d-flex flex-column flex-grow-0 flex-shrink-0" style="height: 45vh; min-height: 270px;{{#if @site.cover_image}} background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url({{@site.cover_image}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;{{/if}}">
     {{> "trans-nav" }}
     <div class="container d-flex flex-column justify-content-center align-items-center h-100" style="margin-top: -56px;">
-        <img src="{{asset "img/logo_sm.png"}}">
+        {{#if @site.logo}}<img src="{{@site.logo}}">{{/if}}
         <h1 class="text-white font-weight-bold ">{{@site.title}}</h1>
         <p class="lead text-white-50 font-weight-bold">{{@site.description}}</p>
     </div>
 </header>
 
-<div class="post-feed container mt-5">
-    <div class="row">
-        <div class="col-md-8 mx-auto">
-            {{#foreach posts}}
-            {{> "index-post-entry"}}
-            {{/foreach}}
+<main class="flex-shrink-0 flex-grow-1 d-flex align-items-center justify-content-center">
+    <div class="row flex-grow-1">
+        <div class="container">
+            <div class="post-feed col-md-7 mx-auto my-5">
+                {{#foreach posts}}
+                {{> "index-post-entry"}}
+                {{/foreach}}
+                {{#if pagination}}
+                {{pagination}}
+                {{/if}}
+            </div>
         </div>
     </div>
-</div>
-
-{{#if pagination}}
-    {{pagination}}
-{{/if}}
-
-{{!-- {{#contentFor "scripts"}}
-<script src="{{asset "js/infinite-scroll.pkgd.min.js"}}"></script>
-<script>
-$(document).ready(function() {
-    // Activate infinite scrolling
-    $('.post-feed').infiniteScroll({
-        // options
-        path: '.page-next',
-        append: '.post',
-        history: false,
-        hideNav: '.main-pagination'
-    });
-    // Execute fitvid.js after new content is fetched
-    $('.post-feed').on('append.infiniteScroll', function(event, response, path, items) {
-        $(".kg-embed-card").fitVids();
-        //console.log( 'Loaded: ' + path );
-    });
-});
-</script>
-{{/contentFor}} --}}
+</main>

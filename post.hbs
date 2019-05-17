@@ -1,25 +1,29 @@
 {{!< default}}
 {{#post}}
+{{!-- Blog post template --}}
 {{^has tag='#link,#micro'}}
+{{!-- This is a full, long post --}}
 {{#if feature_image}}
-<header class="bg-dark d-flex flex-column flex-shrink-0 flex-grow-0 mb-5" style="height: 45vh; background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url({{feature_image}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;">
+{{!-- With feature image --}}
+<header class="bg-dark d-flex flex-column flex-shrink-0 flex-grow-0 mb-5" style="height: 45vh; background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url({{feature_image}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;">
     {{> "trans-nav" }}
     <div class="container d-flex flex-column justify-content-center align-items-center h-100" style="margin-top: -56px;">
         <h4 class="post-date lead text-white-50 font-weight-bold" >{{date published_at format="MMMM DD, YYYY"}}</h4>
-        <h1 class="text-white font-weight-bold display-4">{{title}}</h1>
+        <h1 class="text-white font-weight-bold display-4 text-center text-xl-left">{{title}}</h1>
     </div>
 {{else}}
+{{!-- Without feature image --}}
 <header class="d-flex flex-column flex-shrink-0 flex-grow-0">
     {{> "dark-nav" }}
-    <div class="container d-flex flex-column justify-content-center align-items-center my-5">
+    <div class="container text-center my-5">
         <h4 class="post-date lead text-black-50 font-weight-bold" >{{date published_at format="MMMM D, YYYY"}}</h4>
         <h1 class="color-grayblack font-weight-bold display-4">{{title}}</h1>
     </div>
 {{/if}}
 </header>
-<div class="post-content container flex-grow-1 flex-shrink-0 d-flex align-items-center">
-    <div class="row">
-        <div class="col-md-8 mx-auto">
+<div class="post-content container flex-grow-1 flex-shrink-0">
+    <div class="row align-items-center">
+        <div class="col-md-7 mx-auto">
             {{content}}
             {{> "taglist" }}
             {{> "author-info"}}
@@ -30,17 +34,19 @@
 {{> "related-read-next"}}
 </aside>
 {{else}}
+{{!-- This is a micro post or a link post --}}
 <header class="main-nav">
     {{> "dark-nav" }}
 </header>
-<div class="post-content container flex-grow-1 flex-shrink-0 d-flex align-items-center">
+<div class="post-content container flex-grow-1 flex-shrink-0 d-flex justify-content-center align-items-center">
     <div class="row">
-        <div class="post-micro col-md-8 mx-auto">
-            <div class="post-mico-header my-5 h5 text-black-50 text-center">{{date published_at format="LLL"}}</div>
+        <div class="post-micro col-md-7 mx-auto">
+            <div class="post-micro-header my-5 h5 text-black-50 text-center">{{date published_at format="LLL"}}</div>
             {{content}}
             {{> "author-info"}}
         </div>
     </div>
 </div>
 {{/has}}
+
 {{/post}}

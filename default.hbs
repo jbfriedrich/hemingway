@@ -37,15 +37,18 @@
         $(".kg-embed-card").fitVids();
     });
     </script>
+    {{!-- Offcanvas Menu for Small Screens --}}
+    <script type="text/javascript" src="{{asset "js/offcanvas.js"}}"></script>
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 </head>
 
 <body name="top" class="d-flex flex-column h-100 {{body_class}}">
-    <main class="flex-shrink-0 flex-grow-1 d-flex flex-column">
-        {{{body}}}
-    </main>
+    {{{body}}}
     <footer class="mt-auto bg-dark">
+        {{#is "post"}}
+        {{> "related-read-next"}}
+        {{/is}}
         {{> "default-footer" }}
     </footer>
 </body>

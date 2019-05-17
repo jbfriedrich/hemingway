@@ -1,22 +1,23 @@
 {{!< default}}
 {{#post}}
 {{#if feature_image}}
-<header class="bg-dark d-flex flex-column" style="height: 45vh; background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url({{feature_image}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;">
+<header class="bg-dark d-flex flex-column flex-shrink-0 flex-grow-0 mb-5" style="height: 45vh; background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url({{feature_image}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;">
     {{> "trans-nav" }}
     <div class="container d-flex flex-column justify-content-center align-items-center h-100" style="margin-top: -56px;">
-        <h1 class="text-white font-weight-bold display-4">{{title}}</h1>
+        <h1 class="text-white font-weight-bold display-4 text-center text-xl-left">{{title}}</h1>
     </div>
 {{else}}
-<header class="d-flex flex-column">
+{{!-- Without feature image --}}
+<header class="d-flex flex-column flex-shrink-0 flex-grow-0">
     {{> "dark-nav" }}
-    <div class="container d-flex flex-column justify-content-center align-items-center mt-5">
+    <div class="container text-center my-5">
         <h1 class="color-grayblack font-weight-bold display-4">{{title}}</h1>
     </div>
 {{/if}}
 </header>
-<div class="post-content container my-5">
+<div class="post-content container mb-5">
     <div class="row">
-        <div class="col-md-8 mx-auto">
+        <div class="col-md-7 mx-auto">
             {{content}}
         </div>
     </div>
