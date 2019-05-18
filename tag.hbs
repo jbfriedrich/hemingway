@@ -1,10 +1,11 @@
 {{!< default}}
-{{> header background=@site.cover_image}}
-
-<main class="flex-shrink-0 flex-grow-1 d-flex align-items-center justify-content-center">
+{{#tag}}
+{{> header background=feature_image total_posts=../pagination.total}}
+{{/tag}}
+<main class="flex-shrink-0 flex-grow-1 d-flex align-items-center justify-content-center mb-5">
     <div class="row flex-grow-1">
         <div class="container">
-            <div class="post-feed col-md-7 mx-auto my-5">
+            <div class="post-feed col-md-7 mx-auto">
                 {{#foreach posts}}
                 {{> "index-post-entry"}}
                 {{/foreach}}

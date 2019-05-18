@@ -1,0 +1,67 @@
+{{#if background}}
+
+<header class="bg-dark d-flex flex-column flex-grow-0 flex-shrink-0 mb-5" style="height: 45vh; min-height: 270px; background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url({{background}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;">
+    {{> "trans-nav" }}
+    <div class="container d-flex flex-column justify-content-center align-items-center h-100" style="margin-top: -56px;">
+    {{#is 'index'}}
+        {{#if @site.logo}}<img src="{{@site.logo}}">{{/if}}
+        <h1 class="text-white font-weight-bold ">{{@site.title}}</h1>
+        <p class="lead text-white-50 font-weight-bold">{{@site.description}}</p>
+    {{/is}}
+
+    {{#is 'page'}}
+        <h1 class="text-white font-weight-bold display-4 text-center text-xl-left">{{title}}</h1>
+    {{/is}}
+
+    {{#is 'post'}}
+        <h4 class="post-date text-white-50 font-weight-bold" >{{date published_at format="MMMM DD, YYYY"}}</h4>
+        <h1 class="text-white font-weight-bold display-4 text-center text-xl-left">{{title}}</h1>iv>
+    {{/is}}
+
+    {{#is 'tag'}}
+        <h1 class="text-white font-weight-bold text-capitalize">{{name}} <span class="badge badge-primary">{{total_posts}}</span></h1>
+        {{#if description}}<p class="lead text-white-50 font-weight-bold">{{description}}</p>{{/if}}
+    {{/is}}    
+    </div>
+
+{{else}}
+
+    {{#is 'index'}}
+        <header class="bg-primary d-flex flex-column flex-grow-0 flex-shrink-0" style="height: 45vh; min-height: 270px;">
+            {{> "trans-nav" }}
+            <div class="container d-flex flex-column justify-content-center align-items-center h-100" style="margin-top: -56px;">
+                {{#if @site.logo}}<img src="{{@site.logo}}">{{/if}}
+                <h1 class="text-white font-weight-bold ">{{@site.title}}</h1>
+                <p class="lead text-white-50 font-weight-bold">{{@site.description}}</p>
+            </div>
+    {{/is}}
+
+    {{#is 'page'}}
+        <header class="d-flex flex-column flex-shrink-0 flex-grow-0">
+            {{> "dark-nav" }}
+            <div class="container text-center my-5">
+                <h1 class="color-grayblack font-weight-bold display-4">{{title}}</h1>
+            </div>
+    {{/is}}
+
+    {{#is 'post'}}
+        <header class="d-flex flex-column flex-shrink-0 flex-grow-0">
+            {{> "dark-nav" }}
+            <div class="container text-center my-5">
+                <h4 class="post-date text-black-50 font-weight-bold" >{{date published_at format="MMMM D, YYYY"}}</h4>
+                <h1 class="color-grayblack font-weight-bold display-4">{{title}}</h1>
+            </div>
+    {{/is}}
+
+    {{#is 'tag'}}
+        <header class="bg-primary d-flex flex-column flex-grow-0 flex-shrink-0 mb-5" style="height: 45vh; min-height: 270px;">
+            {{> "trans-nav" }}
+            <div class="container d-flex flex-column justify-content-center align-items-center h-100" style="margin-top: -56px;">
+                <h1 class="text-white font-weight-bold text-capitalize">{{name}} <span class="badge badge-light">{{total_posts}}</span></h1>
+                {{#if description}}<p class="lead text-white-50 font-weight-bold">{{description}}</p>{{/if}}
+            </div>
+    {{/is}}
+
+{{/if}}
+
+</header>
