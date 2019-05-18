@@ -5,6 +5,12 @@ routes:
   /micros/:
     controller: channel
     filter: tag:micro
+  /de/:
+    controller: channel
+    filter: tag:de
+  /en/:
+    controller: channel
+    filter: tag:en
   /posts/:
     controller: channel
     filter: tag:-[link,micro]
