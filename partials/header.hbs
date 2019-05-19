@@ -1,11 +1,14 @@
 {{#if background}}
 
-<header class="bg-dark d-flex flex-column flex-grow-0 flex-shrink-0 mb-5" style="height: 45vh; min-height: 270px; background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url({{background}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;">
+<header class="bg-dark d-flex flex-column flex-grow-0 flex-shrink-0 mb-5" style="height: 45vh; min-height: 300px; background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url({{background}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;">
     {{> "trans-nav" }}
     <div class="container d-flex flex-column justify-content-center align-items-center h-100" style="margin-top: -56px;">
     {{#is 'index'}}
-        {{#if @site.logo}}<img src="{{@site.logo}}">{{/if}}
-        <h1 class="text-white font-weight-bold ">{{@site.title}}</h1>
+        {{#if @site.logo}}
+            <img src="{{@site.logo}}">
+        {{else}}
+            <h1 class="text-white font-weight-bold ">{{@site.title}}</h1>
+        {{/if}}
         <p class="lead text-white-50 font-weight-bold">{{@site.description}}</p>
     {{/is}}
 
@@ -30,8 +33,11 @@
         <header class="bg-primary d-flex flex-column flex-grow-0 flex-shrink-0" style="height: 45vh; min-height: 270px;">
             {{> "trans-nav" }}
             <div class="container d-flex flex-column justify-content-center align-items-center h-100" style="margin-top: -56px;">
-                {{#if @site.logo}}<img src="{{@site.logo}}">{{/if}}
-                <h1 class="text-white font-weight-bold ">{{@site.title}}</h1>
+                {{#if @site.logo}}
+                    <img src="{{@site.logo}}">
+                {{else}}
+                    <h1 class="text-white font-weight-bold ">{{@site.title}}</h1>
+                {{/if}}
                 <p class="lead text-white-50 font-weight-bold">{{@site.description}}</p>
             </div>
     {{/is}}
