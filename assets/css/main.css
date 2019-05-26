@@ -258,6 +258,10 @@
 
 /*--- 5.) (Custom) Post type formatting in post feed ---*/
 
+    .post-feed .tag-link .post-content > p:first-child {
+        text-align: left !important;
+    }
+
     .post-feed .tag-link .post-content > p:first-child > a:only-child,
     .tag-link .post-content .post-micro > p:nth-child(2) > a:only-child {
         color: #343a40;
@@ -272,7 +276,6 @@
         font-weight: 700;
         font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
         line-height: 1.2em;
-        text-align: left !important;
     }
     @media (max-width:1200px) {
         .post-feed .tag-link .post-content > p:first-child > a:only-child,
