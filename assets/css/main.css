@@ -272,6 +272,7 @@
         font-weight: 700;
         font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
         line-height: 1.2em;
+        text-align: left !important;
     }
     @media (max-width:1200px) {
         .post-feed .tag-link .post-content > p:first-child > a:only-child,
