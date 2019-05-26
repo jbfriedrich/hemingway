@@ -1,17 +1,20 @@
 {{!< default}}
-{{> header background=@site.cover_image}}
-
-<main class="flex-shrink-0 flex-grow-1 d-flex align-items-center justify-content-center">
-    <div class="row flex-grow-1">
-        <div class="container">
-            <div class="post-feed col-md-7 mx-auto mb-5">
+{{#is 'index'}}
+    {{> header background=@site.cover_image}}
+{{else}}
+    {{> header background=@site.cover_image print_default=true }}
+{{/is}}
+<div class="container">
+    <div class="row">
+        <div class="post-feed col-md-8 col-lg-7 mx-auto" style="margin-bottom: 5rem; margin-top: 5rem;">
+            <ul class="post-list list-unstyled">
                 {{#foreach posts}}
                 {{> "index-post-entry"}}
                 {{/foreach}}
-                {{#if pagination}}
-                {{pagination}}
-                {{/if}}
-            </div>
+            </ul>
+            {{#if pagination}}
+            {{pagination}}
+            {{/if}}
         </div>
     </div>
-</main>
+</div>

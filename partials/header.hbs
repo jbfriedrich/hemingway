@@ -1,73 +1,51 @@
-{{#if background}}
+<header class="hero{{^if no_hero}} bg-light{{/if}}{{#if no_hero}} mt-5{{/if}}"{{^if no_hero}} style="height: 40vh;{{#if background}} background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.5)),url({{background}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;{{/if}}"{{/if}}>
 
-<header class="bg-dark d-flex flex-column flex-grow-0 flex-shrink-0 mb-5" style="height: 45vh; min-height: 300px; background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url({{background}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;">
-    {{> "trans-nav" }}
-    <div class="container d-flex flex-column justify-content-center align-items-center h-100" style="margin-top: -56px;">
-    {{#is 'index'}}
-        {{#if @site.logo}}
-            <img src="{{@site.logo}}">
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center h-100">
+        {{#if print_default}}
+
+            {{#if @site.logo}}
+                <img src="{{@site.logo}}">
+                {{#if @site.description}}
+                    <p class="{{#if background}}text-white {{else}}color-grayblack {{/if}}font-weight-bold lead">{{@site.description}}</p>
+                {{/if}}
+            {{else}}
+                <h1 class="{{#if background}}text-white {{else}}color-grayblack {{/if}}font-weight-bold display-4">{{@site.title}}</h1>
+                {{#if @site.description}}
+                    <p class="{{#if background}}text-white-50 {{else}}text-black-50 {{/if}}font-weight-bold lead">{{@site.description}}</p>
+                {{/if}}
+            {{/if}}
+
         {{else}}
-            <h1 class="text-white font-weight-bold ">{{@site.title}}</h1>
-        {{/if}}
-        <p class="lead text-white-50 font-weight-bold">{{@site.description}}</p>
-    {{/is}}
 
-    {{#is 'page'}}
-        <h1 class="text-white font-weight-bold display-4 text-center text-xl-left">{{title}}</h1>
-    {{/is}}
-
-    {{#is 'post'}}
-        <h4 class="post-date text-white-50 font-weight-bold" >{{date published_at format="MMMM DD, YYYY"}}</h4>
-        <h1 class="text-white font-weight-bold display-4 text-center text-xl-left">{{title}}</h1>
-    {{/is}}
-
-    {{#is 'tag'}}
-        <h1 class="text-white font-weight-bold text-capitalize">{{name}} <span class="badge badge-primary">{{total_posts}}</span></h1>
-        {{#if description}}<p class="lead text-white-50 font-weight-bold">{{description}}</p>{{/if}}
-    {{/is}}    
-    </div>
-
-{{else}}
-
-    {{#is 'index'}}
-        <header class="bg-primary d-flex flex-column flex-grow-0 flex-shrink-0" style="height: 45vh; min-height: 270px;">
-            {{> "trans-nav" }}
-            <div class="container d-flex flex-column justify-content-center align-items-center h-100" style="margin-top: -56px;">
+            {{#is 'index'}}
                 {{#if @site.logo}}
                     <img src="{{@site.logo}}">
+                    {{#if @site.description}}
+                        <p class="{{#if background}}text-white {{else}}color-grayblack {{/if}}font-weight-bold lead">{{@site.description}}</p>
+                    {{/if}}
                 {{else}}
-                    <h1 class="text-white font-weight-bold ">{{@site.title}}</h1>
+                    <h1 class="{{#if background}}text-white {{else}}color-grayblack {{/if}}font-weight-bold display-4">{{@site.title}}</h1>
+                    {{#if @site.description}}
+                        <p class="{{#if background}}text-white-50 {{else}}text-black-50 {{/if}}font-weight-bold lead">{{@site.description}}</p>
+                    {{/if}}
                 {{/if}}
-                <p class="lead text-white-50 font-weight-bold">{{@site.description}}</p>
-            </div>
-    {{/is}}
+            {{/is}}
 
-    {{#is 'page'}}
-        <header class="d-flex flex-column flex-shrink-0 flex-grow-0">
-            {{> "dark-nav" }}
-            <div class="container text-center my-5">
-                <h1 class="color-grayblack font-weight-bold display-4">{{title}}</h1>
-            </div>
-    {{/is}}
+            {{#is 'tag'}}
+                <h1 class="{{#if background}}text-white {{else}}color-grayblack {{/if}}font-weight-bold text-capitalize">{{name}} <span class="badge badge-primary">{{total_posts}}</span></h1>
+                {{#if description}}<p class="{{#if background}}text-white-50 {{else}}text-black-50 {{/if}}font-weight-bold lead">{{description}}</p>{{/if}}
+            {{/is}}
 
-    {{#is 'post'}}
-        <header class="d-flex flex-column flex-shrink-0 flex-grow-0">
-            {{> "dark-nav" }}
-            <div class="container text-center my-5">
-                <h4 class="post-date text-black-50 font-weight-bold" >{{date published_at format="MMMM D, YYYY"}}</h4>
-                <h1 class="color-grayblack font-weight-bold display-4">{{title}}</h1>
-            </div>
-    {{/is}}
+            {{#is 'page'}}
+                <h1 class="{{#if background}}text-white {{else}}color-grayblack {{/if}}font-weight-bold display-4">{{title}}</h1>
+            {{/is}}  
 
-    {{#is 'tag'}}
-        <header class="bg-primary d-flex flex-column flex-grow-0 flex-shrink-0 mb-5" style="height: 45vh; min-height: 270px;">
-            {{> "trans-nav" }}
-            <div class="container d-flex flex-column justify-content-center align-items-center h-100" style="margin-top: -56px;">
-                <h1 class="text-white font-weight-bold text-capitalize">{{name}} <span class="badge badge-light">{{total_posts}}</span></h1>
-                {{#if description}}<p class="lead text-white-50 font-weight-bold">{{description}}</p>{{/if}}
-            </div>
-    {{/is}}
+            {{#is 'post'}}
+                <h4 class="post-date{{#if background}} text-white-70{{else}} text-black-50{{/if}} font-weight-bold" >{{date published_at format="MMMM DD, YYYY"}}</h4>
+                <h1 class="{{#if background}}text-white {{else}}color-grayblack {{/if}}font-weight-bold display-4">{{title}}</h1>
+            {{/is}}
 
-{{/if}}
+        {{/if}}
+    </div>
 
 </header>

@@ -1,31 +1,31 @@
 {{!< default}}
-<main class="full-post flex-shrink-0 flex-grow-1">
+<div class="full-post text-lg d-flex flex-column h-100">
 {{#post}}
     {{!-- Blog post template --}}
     {{^has tag='#link,#micro'}}
         {{!-- This is a full, long post --}}
-        {{> header background=feature_image}}
-        <div class="post-content container">
-            <div class="row align-items-center">
-                <div class="col-md-7 mx-auto">
+        {{#if feature_image}}
+            {{> header background=feature_image}}
+        {{else}}
+            {{> header no_hero=true}}
+        {{/if}}
+        <div class="container flex-grow-1 flex-shrink-0">
+            <div class="row">
+                <div class="col-md-8 col-lg-7 mx-auto">
+                    <div class="post-content mt-5">
                     {{content}}
                     {{> "taglist" }}
                     {{> "author-info"}}
+                    </div>
                 </div>
             </div>
         </div>
-        <aside class="next-prev-posts">
-        {{> "related-read-next"}}
-        </aside>
     {{else}}
         {{!-- This is a micro post or a link post --}}
-        <header class="main-nav">
-            {{> "dark-nav" }}
-        </header>
         <div class="post-content container">
             <div class="row mt-lg-5">
-                <div class="post-micro col-md-7 mx-auto mt-xl-5">
-                    <div class="post-micro-header my-5 h5 text-black-50 text-center">{{date published_at format="LLL"}}</div>
+                <div class="post-micro col-md-8 col-lg-7 mx-auto mt-xl-5">
+                    <div class="post-micro-header my-5 {{!-- lead --}} text-black-50 text-center text-uppercase">{{date published_at format="LLL"}}</div>
                     {{content}}
                     {{> "author-info"}}
                 </div>
@@ -33,4 +33,4 @@
         </div>
     {{/has}}
 {{/post}}
-</main>
+</div>

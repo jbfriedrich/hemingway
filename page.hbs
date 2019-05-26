@@ -1,14 +1,13 @@
 {{!< default}}
-<main class="full-page flex-shrink-0 flex-grow-1">
-{{#post}}
-{{> header background=feature_image}}
-</header>
-<div class="post-content container mb-5">
-    <div class="row">
-        <div class="col-md-7 mx-auto">
-            {{content}}
+<div class="full-page">
+    {{#post}}
+    {{> header background=feature_image}}
+    <div class="post-content container">
+        <div class="row">
+            <div class="col-md-8 col-lg-7 mx-auto text-lg my-5"{{!--  style="margin-bottom: 5rem; margin-top: 5rem;" --}}>
+                {{content}}
+            </div>
         </div>
     </div>
 </div>
-</main>
 {{/post}}

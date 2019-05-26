@@ -1,0 +1,16 @@
+{{!< default}}
+<div class="picture-overview">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 mx-auto text-lg my-5">
+                <div class="d-flex flex-row flex-wrap justify-content-center align-items-stretch">
+                    {{#foreach posts}}
+                        <div class="card flex-grow-1 mb-2 mr-2" style="max-width: 160px !important; max-height: 160px !important;">
+                            <a href="{{url}}" alt="{{title}}" name="{{title}}" class="picture-post-link">{{content}}</a>
+                        </div>    
+                    {{/foreach}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

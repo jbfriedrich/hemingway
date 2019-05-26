@@ -2,7 +2,7 @@
     "name": "Hemingway",
     "description": "A personal blogging theme for Ghost.",
     "demo": "https://jason.re",
-    "version": "4.3.1",
+    "version": "5.0",
     "engines": {
         "ghost": ">=2.0.0",
         "ghost-api": "v2"
@@ -37,6 +37,29 @@
     },
     "bugs": "https://github.com/jbfriedrich/hemingway/issues",
     "config": {
-        "posts_per_page": 5
+        "posts_per_page": 8,
+        "image_sizes": {
+            "xxs": {
+                "width": 30
+            },
+            "xs": {
+                "width": 100
+            },
+            "thmb": {
+                "width": 160
+            },
+            "s": {
+                "width": 300
+            },
+            "m": {
+                "width": 600
+            },
+            "l": {
+                "width": 1000
+            },
+            "xl": {
+                "width": 2000
+            }
+        }
     }
 }

@@ -1,9 +1,0 @@
-<article class="{{post_class}}">
-    <h1 class="title font-weight-bold color-grayblack p-0 m-0{{#if feature_image}} mt-3{{else}} mt-5{{/if}}">{{title}}</h1>
-    <div class="post-header text-muted lead">
-        <span class="post-date">{{date published_at format="D MMMM, YYYY"}}</span>&nbsp;•&nbsp;<span class="post-reading-time">{{reading_time}}</span>&nbsp;•&nbsp;<span class="post-tags text-lowercase">{{#foreach tags}}<a class="post-tag text-muted" href="{{url}}" title="Posts tagged with {{name}}">{{name}}</a>{{^if @last}}<span class="tagsep">,&nbsp;</span>{{/if}}{{/foreach}}
-    </div>
-    <div class="post-content pt-5">
-        {{content}}
-    </div>
-</article>

@@ -1,11 +1,15 @@
-{{!-- Default translucent top navigation --}}
-<nav class="navbar navbar-expand-lg navbar-dark navbar-bg-trans" style="background-color: rgba(0,0,0,0.5)">
-    <a href="{{@site.url}}/" class="navbar-brand"><strong>{{@site.title}}</strong></a>
-    <button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="true" aria-label="Toggle navigation">
+{{!-- Default dark top navigation --}}
+<nav class="navbar navbar-expand-lg navbar-light bg-light small">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-collapse offcanvas-collapse offcanvas-trans-collapse" id="mainNavbar">
-        <ul class="navbar-nav mr-auto">
+    <div class="navbar-collapse collapse" id="mainNavbar">
+        <ul class="navbar-nav ml-auto">
+            {{^is 'index'}}
+            <li class="nav-item nav-home">
+                <a class="nav-link" href="/"><span class="font-weight-bolder">&larr;</span> Home</a>
+            </li>
+            {{/is}}
             {{#if @site.navigation}}
             {{navigation}}
             {{/if}}
@@ -27,10 +31,10 @@
             <li class="nav-item dropdown">
                 <a class="nav-link icon rss dropdown-toggle" id="navbarDropdownLink" aria-label="Available RSS feeds" href="#" role="button" data-toggle="dropdown"><i class="fas fa-rss" data-fa-transform="grow-6"></i></a>
                 <div class="dropdown-menu" id="navbarDropdown" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item icon rss" href="{{@site.url}}/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Full Site</a>
-                    <a class="dropdown-item icon rss" href="{{@site.url}}/posts/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Posts</a>
-                    <a class="dropdown-item icon rss" href="{{@site.url}}/micros/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Micro posts</a>
-                    <a class="dropdown-item icon rss" href="{{@site.url}}/links/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Links</a>
+                    <a class="dropdown-item small icon rss" href="{{@site.url}}/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Full Site</a>
+                    <a class="dropdown-item small icon rss" href="{{@site.url}}/posts/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Posts</a>
+                    <a class="dropdown-item small icon rss" href="{{@site.url}}/micros/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Micro posts</a>
+                    <a class="dropdown-item small icon rss" href="{{@site.url}}/links/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Links</a>
                 </div>
             </li>
             {{#if @labs.subscribers}}
@@ -39,7 +43,7 @@
             </li>
             {{/if}}
         </ul>
-        <form class="form-inline my-0 mt-1 my-lg-0 ml-lg-2" method="get" action="https://google.com/cse">
+        <form class="form-inline my-0 mt-1 my-lg-0 ml-lg-2 small" method="get" action="https://google.com/cse">
             <input class="form-control" name="cx" type="hidden" value="017535604341602901961:grmyjwbjtxe">
             <input class="form-control" name="ie" type="hidden" value="UTF-8">
             <input class="form-control" name="q" type="search" placeholder="Search" aria-label="Search">

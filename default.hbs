@@ -37,17 +37,23 @@
         $(".kg-embed-card").fitVids();
     });
     </script>
-    {{!-- Offcanvas Menu for Small Screens --}}
-    <script type="text/javascript" src="{{asset "js/offcanvas.js"}}"></script>
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 </head>
 
 <body name="top" class="d-flex flex-column h-100 {{body_class}}">
-    {{{body}}}
-    <footer class="mt-auto bg-dark">
-        {{#is "post"}}
-        {{> "related-read-next"}}
+    {{> "top-nav"}}
+    {{!-- Height of 1px is required because otherwise Safari does not "grow" content --}}
+    <main class="flex-shrink-0">
+        {{{body}}}
+    </main>
+    <footer class="mt-auto bg-light">
+        {{#is 'post'}}
+            {{#post}}
+            {{^has tag="#micro,#link"}}
+                {{> "related-read-next"}}
+            {{/has}}
+            {{/post}}
         {{/is}}
         {{> "default-footer" }}
     </footer>
