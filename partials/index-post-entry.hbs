@@ -3,10 +3,10 @@
     {{^has tag="#link,#micro"}}
         <h2 class="font-weight-bold my-1"><a href="{{url}}" class="text-dark">{{title}}</a></h2>
         <a class="text-black-50 text-uppercase" href="{{url}}">{{date published_at format="MMMM D, YYYY"}}</a>
-        <p class="post-excerpt mt-3 text-lg">{{excerpt}}…</p>
+        <p class="post-excerpt mt-3">{{excerpt}}…</p>
         <a href="{{url}}" class="font-weight-light font-italic text-black-50"><u>Continue reading »</u></a>
     {{else}}
-        <div class="post-content post-micro-content text-lg mb-5 text-justify">
+        <div class="post-content post-micro-content mb-5 text-justify">
             {{content}}
         </div>
         <a class="text-black-50 text-uppercase" href="{{url}}">&rarr; {{date published_at format="LLL"}}</a>

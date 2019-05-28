@@ -1,5 +1,5 @@
 {{!< default}}
-<div class="full-post text-lg d-flex flex-column h-100">
+<div class="full-post d-flex flex-column h-100">
 {{#post}}
     {{!-- Blog post template --}}
     {{^has tag='#link,#micro'}}
@@ -25,7 +25,7 @@
         <div class="post-content container">
             <div class="row mt-lg-5">
                 <div class="post-micro col-md-8 col-lg-7 mx-auto mt-xl-5">
-                    <div class="post-micro-header my-5 {{!-- lead --}} text-black-50 text-center text-uppercase">{{date published_at format="LLL"}}</div>
+                    <div class="post-micro-header my-5 text-black-50 text-center text-uppercase">{{date published_at format="LLL"}}</div>
                     {{content}}
                     {{> "author-info"}}
                 </div>

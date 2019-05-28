@@ -18,7 +18,7 @@ routes:
     controller: channel
     template:
       - pictures
-    filter: tag:pictures
+    filter: tag:picture
 
 collections:
   /:

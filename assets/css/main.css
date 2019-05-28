@@ -7,6 +7,13 @@
         -moz-font-feature-settings: "liga" on;
     }
 
+    html, body {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -moz-font-feature-settings: "liga" on;
+    }
+
 /*--- 1.) Font Defintions ---*/
 
     /* Merriweather */
@@ -306,27 +313,15 @@
         margin-right: 5px;
     }
 
-    /*.post-feed .post-content figure.kg-image-card {
-        margin-bottom: 3rem !important;
+    .tag-picture .kg-image-card {
+        margin-bottom: 2rem !important;
     }
-
-    .full-post .post-content .post-micro figure {
-        margin-bottom: 3rem !important;
-    }*/
 
     .post-feed .post-content .kg-image-card > figcaption,
     .full-post .post-content .post-micro figcaption {
         color: #444;
         /*font-size: 80%;*/
     }
-
-    /*.full-post .post-content .post-micro figcaption {
-        font-size: 80%;
-        font-style: normal;
-        color: #444;
-        text-align: left;
-        padding: 10px;
-    }*/
 
 /*--- 6.) Picture Micro Post Formatting (pictures.hbs) ---*/
 
