@@ -306,18 +306,18 @@
         margin-right: 5px;
     }
 
-    .post-feed .post-content figure.kg-image-card {
+    /*.post-feed .post-content figure.kg-image-card {
         margin-bottom: 3rem !important;
     }
 
     .full-post .post-content .post-micro figure {
         margin-bottom: 3rem !important;
-    }
+    }*/
 
     .post-feed .post-content .kg-image-card > figcaption,
     .full-post .post-content .post-micro figcaption {
         color: #444;
-        font-size: 80%;
+        /*font-size: 80%;*/
     }
 
     /*.full-post .post-content .post-micro figcaption {
