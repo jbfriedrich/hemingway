@@ -270,7 +270,7 @@
     }
 
     .post-feed .tag-link .post-content > p:first-child > a:only-child,
-    .tag-link .post-content .post-micro > p:nth-child(2) > a:only-child {
+    .tag-link .post-content .post-micro .post-micro-text > p:nth-child(1) > a:only-child {
         color: #343a40;
         /* h1 font size */
         /*font-size: 2.5rem;*/
@@ -286,7 +286,7 @@
     }
     @media (max-width:1200px) {
         .post-feed .tag-link .post-content > p:first-child > a:only-child,
-        .tag-link .post-content .post-micro > p:nth-child(2) > a:only-child {
+        .tag-link .post-content .post-micro .post-micro-text > p:nth-child(1) > a:only-child {
             /*h1 responsive font size */
             /*font-size: calc(1.375rem + 1.5vw);*/
             /*h2 responsive font size */
@@ -299,7 +299,7 @@
     }
 
     .post-feed .tag-link .post-content > p:first-child > a:only-child::before,
-    .tag-link .post-content .post-micro > p:nth-child(2) > a:only-child::before {
+    .tag-link .post-content .post-micro .post-micro-text > p:nth-child(1) > a:only-child::before {
         display: none;
         font-style: normal;
         font-variant: normal;
@@ -309,7 +309,7 @@
         content: "\f35d";
     }
     .post-feed .tag-link .post-content > p > a > .fa-external-link-alt,
-    .tag-link .post-content .post-micro > p > a > .fa-external-link-alt {
+    .tag-link .post-content .post-micro .post-micro-text > p > a > .fa-external-link-alt {
         margin-right: 5px;
     }
 
