@@ -2,7 +2,7 @@
     "name": "Hemingway",
     "description": "A personal blogging theme for Ghost.",
     "demo": "https://jason.re",
-    "version": "5.0.6",
+    "version": "5.0.7",
     "engines": {
         "ghost": ">=2.0.0",
         "ghost-api": "v2"
