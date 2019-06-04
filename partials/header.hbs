@@ -1,4 +1,4 @@
-<header class="hero text-center{{^if no_hero}} bg-light{{/if}}{{#if no_hero}} mt-5{{/if}}"{{^if no_hero}} style="height: 40vh; min-height: 250px;{{#if background}} background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.5)),url({{background}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;{{/if}}"{{/if}}>
+<header class="hero text-center{{^if no_hero}} bg-light{{/if}}{{#if no_hero}} mt-5{{/if}}"{{^if no_hero}} style="height: 450px;{{#if background}} background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url({{background}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;{{/if}}"{{/if}}>
 
     <div class="container-fluid d-flex flex-column justify-content-center align-items-center h-100">
         {{#if print_default}}
@@ -41,7 +41,7 @@
             {{/is}}  
 
             {{#is 'post'}}
-                <h4 class="post-date{{#if background}} text-white-70{{else}} text-black-50{{/if}} font-weight-bold" >{{date published_at format="MMMM DD, YYYY"}}</h4>
+                <h5 class="post-date{{#if background}} text-white-70{{else}} text-black-50{{/if}} font-weight-bold" >{{date published_at format="MMMM DD, YYYY"}}</h5>
                 <h1 class="{{#if background}}text-white {{else}}color-grayblack {{/if}}font-weight-bold display-4">{{title}}</h1>
             {{/is}}
 
