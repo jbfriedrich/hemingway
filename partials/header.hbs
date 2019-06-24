@@ -1,4 +1,4 @@
-<header class="hero text-center{{^if no_hero}} bg-light{{/if}}{{#if no_hero}} mt-5{{/if}}"{{^if no_hero}} style="height: 450px;{{#if background}} background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url({{background}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;{{/if}}"{{/if}}>
+<header class="hero mt-5 text-center{{^if no_hero}} bg-light{{/if}}"{{^if no_hero}} style="height: 500px;{{#if background}} background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url({{background}}); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;{{/if}}"{{/if}}>
 
     <div class="container-fluid d-flex flex-column justify-content-center align-items-center h-100">
         {{#if print_default}}
@@ -34,15 +34,6 @@
             {{#is 'tag'}}
                 <h1 class="{{#if background}}text-white {{else}}color-grayblack {{/if}}font-weight-bold text-capitalize">{{name}} <span class="badge badge-primary">{{total_posts}}</span></h1>
                 {{#if description}}<p class="{{#if background}}text-white-50 {{else}}text-black-50 {{/if}}font-weight-bold lead">{{description}}</p>{{/if}}
-            {{/is}}
-
-            {{#is 'page'}}
-                <h1 class="{{#if background}}text-white {{else}}color-grayblack {{/if}}font-weight-bold display-4">{{title}}</h1>
-            {{/is}}  
-
-            {{#is 'post'}}
-                <h5 class="post-date{{#if background}} text-white-70{{else}} text-black-50{{/if}} font-weight-bold" >{{date published_at format="MMMM DD, YYYY"}}</h5>
-                <h1 class="{{#if background}}text-white {{else}}color-grayblack {{/if}}font-weight-bold display-4">{{title}}</h1>
             {{/is}}
 
         {{/if}}
