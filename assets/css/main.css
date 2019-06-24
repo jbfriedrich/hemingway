@@ -8,6 +8,8 @@
     }
 
     html, body {
+        font-family: 'Open Sans';
+        font-size: 110%;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -139,6 +141,61 @@
             line-height: 1.618;   
         }
 
+    /* Source Sans Pro */
+        @font-face {
+            font-family: 'Open Sans';
+            font-weight: 300;
+            src: url('/assets/webfonts/SourceSansPro-Light.ttf') format('truetype')
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-weight: 300;
+            font-style: italic;
+            src: url('/assets/webfonts/SourceSansPro-LightItalic.ttf') format('truetype')
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            src: url('/assets/webfonts/SourceSansPro-Regular.ttf') format('truetype')
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: italic;
+            src: url('/assets/webfonts/SourceSansPro-Italic.ttf') format('truetype')
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-weight: bold;
+            src: url('/assets/webfonts/SourceSansPro-Bold.ttf') format('truetype')
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-weight: bold;
+            font-style: italic;
+            src: url('/assets/webfonts/SourceSansPro-BoldItalic.ttf') format('truetype')
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-weight: 900;
+            src: url('/assets/webfonts/SourceSansPro-Black.ttf') format('truetype')
+        }
+
+        .font-opensans {
+            font-family: 'Open Sans';
+            line-height: 1.618;
+        }
+
+        .font-opensans-light {
+            font-family: 'Open Sans';
+            font-weight: 300;
+            line-height: 1.618;   
+        }
+
     /* System Font */
 
         .font-system {
@@ -224,48 +281,10 @@
         color: rgba(255,255,255,.7)!important
     }
 
-/*--- 4.) Off-canvas navigation ---*/
-
-    @media (max-width: 991.98px) {
-
-        .offcanvas-collapse.open {
-            visibility: visible;
-            -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-            z-index: 1080;
-        }
-
-        .offcanvas-collapse {
-            position: fixed;
-            top: 56px;
-            bottom: 0;
-            left: 100%;
-            width: 100%;
-            padding-right: 1rem;
-            padding-left: 1rem;
-            overflow-y: auto;
-            visibility: visible;
-            background-color: #343a40;
-            transition: visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
-            transition: transform .3s ease-in-out, visibility .3s ease-in-out;
-            transition: transform .3s ease-in-out, visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
-            z-index: 1080;
-        }
-
-        .offcanvas-trans-collapse {
-            background-color: rgba(0,0,0,0.85);
-        }
-
-        .darker {
-            background-color: rgba(0,0,0,0.85) !important;
-            transition: background-color .3s ease-in-out;
-        }
-
-    }
-
 /*--- 5.) (Custom) Post type formatting in post feed ---*/
 
-    .post-feed .tag-link .post-content > p:first-child {
+    .post-feed .tag-link .post-content > p:first-child,
+    .tag-link .post-content .post-micro .post-micro-text > p:first-child {
         text-align: left !important;
     }
 
@@ -281,7 +300,8 @@
         /* h4 font size */
         font-size: 1.5rem;
         font-weight: 700;
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        /*font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";*/
+        font-family: 'Open Sans';
         line-height: 1.2em;
     }
     @media (max-width:1200px) {
@@ -347,13 +367,29 @@
 
 /*--- 7.) Post, page and list view formatting ---*/
 
+    .header-image img {
+        width: 100%;
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    @media (min-width: 768px) {
+        .header-content-wrap {
+            margin-top: -8rem;
+        }
+
+        .header-image img {
+            height: 600px;
+        }
+    }
+
     blockquote {
         /* Newer style */
-        padding: 0 1.25rem;
+        padding: .2rem 1rem;
         margin-top: .5rem;
         margin-bottom: 2rem;
-        border-left: .25rem solid #007bff;
-        border-radius: .25rem;
+        border-left: 5px solid #007bff;
+        /*border-radius: .25rem;*/
         color: #6c757d;
         /*font-family: "Merriweather";*/
         /*font-size: 110%;*/
@@ -383,8 +419,9 @@
     .post-content h4,
     .post-content h5,
     .post-content h6 {
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-        font-weight: 700;
+        /*font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";*/
+        font-family: 'Open Sans';
+        /*font-weight: 700;*/
         color: #444;
         line-height: 1.2;
         margin-top: 1.75rem;
