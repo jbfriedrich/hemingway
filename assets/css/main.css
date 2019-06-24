@@ -281,7 +281,7 @@
         color: rgba(255,255,255,.7)!important
     }
 
-/*--- 5.) (Custom) Post type formatting in post feed ---*/
+/*--- 4.) (Custom) Post type formatting in post feed ---*/
 
     .post-feed .tag-link .post-content > p:first-child,
     .tag-link .post-content .post-micro .post-micro-text > p:first-child {
@@ -343,7 +343,7 @@
         /*font-size: 80%;*/
     }
 
-/*--- 6.) Picture Micro Post Formatting (pictures.hbs) ---*/
+/*--- 5.) Picture Micro Post Formatting (pictures.hbs) ---*/
 
     .picture-overview figcaption {
         display: none;
@@ -365,7 +365,7 @@
         padding: 10px;
     }
 
-/*--- 7.) Post, page and list view formatting ---*/
+/*--- 6.) Post, page and list view formatting ---*/
 
     .header-image img {
         width: 100%;
