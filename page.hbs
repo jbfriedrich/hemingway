@@ -1,11 +1,20 @@
 {{!< default}}
 <div class="full-page">
     {{#post}}
-    {{> header background=feature_image}}
-    <div class="post-content container">
-        <div class="row">
-            <div class="col-md-8 col-lg-7 mx-auto my-5"{{!--  style="margin-bottom: 5rem; margin-top: 5rem;" --}}>
-                {{content}}
+    <div class="container">
+        {{#if feature_image}}
+        <div class="row mt-5">
+            <div class="header-image col-12 mx-auto px-md-0">
+                <img class="img" alt="Header Image" src="{{feature_image}}">
+            </div>
+        </div>
+        {{/if}}
+        <div class="row {{^if feature_image}}mt-md-5{{/if}} mb-5">
+            <div class="{{#if feature_image}}col-md-9{{else}}col-md-8{{/if}} p-md-0 mx-auto bg-white{{#if feature_image}} header-content-wrap{{/if}}">
+                <div class="post-content{{#if feature_image}} mt-3 mt-md-5 px-md-5{{else}} mt-5{{/if}} mb-5">
+                    <h1 class="post-title mt-2 mt-md-3 mb-4 mb-md-5 color-grayblack display-4">{{title}}</h1>
+                    {{content}}
+                </div>
             </div>
         </div>
     </div>
