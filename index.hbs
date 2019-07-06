@@ -1,12 +1,12 @@
 {{!< default}}
-{{#is 'index'}}
-    {{> header background=@site.cover_image}}
-{{else}}
-    {{> header background=@site.cover_image print_default=true }}
-{{/is}}
 <div class="container">
     <div class="row">
-        <div class="post-feed my-4 my-md-5 col-md-8 mx-auto">
+        <div class="post-feed mb-4 mb-md-5 col-md-8 mx-auto">
+            <div class="blog-info mb-4 mb-md-5 text-center" style="padding: 6rem 0;">
+                {{#if @site.logo}}<img src="{{@site.logo}}" alt="{{@site.title}}"/>{{/if}}
+                <h2 class="font-weight-bold" style="font-size: 2.25rem;">{{@site.title}}</h2>
+                <h4 class="font-weight-light">{{@site.description}}</h4>
+            </div>
             <ul class="post-list list-unstyled">
                 {{#foreach posts}}
                 {{> "index-post-entry"}}
