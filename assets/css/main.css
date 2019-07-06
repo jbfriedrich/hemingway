@@ -8,8 +8,6 @@
     }
 
     html, body {
-        font-family: 'Open Sans';
-        font-size: 110%;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -17,190 +15,6 @@
     }
 
 /*--- 1.) Font Defintions ---*/
-
-    /* Merriweather */
-
-        @font-face {
-            font-family: 'Merriweather';
-            font-weight: 300;
-            src: url('/assets/webfonts/Merriweather-Light.otf') format('opentype')
-        }
-
-        @font-face {
-            font-family: 'Merriweather';
-            font-weight: 300;
-            font-style: italic;
-            src: url('/assets/webfonts/Merriweather-LightItalic.otf') format('opentype')
-        }
-
-        @font-face {
-            font-family: 'Merriweather';
-            src: url('/assets/webfonts/Merriweather-Regular.otf') format('opentype')
-        }
-
-        @font-face {
-            font-family: 'Merriweather';
-            font-style: italic;
-            src: url('/assets/webfonts/Merriweather-Italic.otf') format('opentype')
-        }
-
-        @font-face {
-            font-family: 'Merriweather';
-            font-weight: bold;
-            src: url('/assets/webfonts/Merriweather-Bold.otf') format('opentype')
-        }
-
-        @font-face {
-            font-family: 'Merriweather';
-            font-weight: bold;
-            font-style: italic;
-            src: url('/assets/webfonts/Merriweather-BoldItalic.otf') format('opentype')
-        }
-
-        @font-face {
-            font-family: 'Merriweather';
-            font-weight: 900;
-            src: url('/assets/webfonts/Merriweather-Black.otf') format('opentype')
-        }
-
-        @font-face {
-            font-family: 'Merriweather';
-            font-weight: 900;
-            font-style: italic;
-            src: url('/assets/webfonts/Merriweather-BlackItalic.otf') format('opentype')
-        }
-
-        .font-merriweather-light {
-            font-family: Merriweather;
-            font-weight: 300;
-            /*font-size: calc(15px + 0.15vw);*/
-            /*font-size: calc(15px + (18 - 15) * ((100vw - 350px) / (1200 - 350)));*/
-            line-height: 1.618;
-        }
-
-        .font-merriweather {
-            font-family: Merriweather;
-            /*font-size: calc(15px + 0.15vw);*/
-            /*font-size: calc(15px + (18 - 15) * ((100vw - 350px) / (1200 - 350)));*/
-            line-height: 1.618;
-        }
-
-    /* Open Sans*/
-
-        @font-face {
-            font-family: 'Open Sans';
-            font-weight: 300;
-            src: url('/assets/webfonts/OpenSans-Light.woff') format('woff')
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            font-weight: 300;
-            font-style: italic;
-            src: url('/assets/webfonts/OpenSans-LightItalic.woff') format('woff')
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            src: url('/assets/webfonts/OpenSans-Regular.woff') format('woff')
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            font-style: italic;
-            src: url('/assets/webfonts/OpenSans-Italic.woff') format('woff')
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            font-weight: bold;
-            src: url('/assets/webfonts/OpenSans-Bold.woff') format('woff')
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            font-weight: bold;
-            font-style: italic;
-            src: url('/assets/webfonts/OpenSans-BoldItalic.woff') format('woff')
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            font-weight: 900;
-            src: url('/assets/webfonts/OpenSans-Black.woff') format('woff')
-        }
-
-        .font-opensans {
-            font-family: 'Open Sans';
-            line-height: 1.618;
-        }
-
-        .font-opensans-light {
-            font-family: 'Open Sans';
-            font-weight: 300;
-            line-height: 1.618;   
-        }
-
-    /* Source Sans Pro */
-        @font-face {
-            font-family: 'Open Sans';
-            font-weight: 300;
-            src: url('/assets/webfonts/SourceSansPro-Light.ttf') format('truetype')
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            font-weight: 300;
-            font-style: italic;
-            src: url('/assets/webfonts/SourceSansPro-LightItalic.ttf') format('truetype')
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            src: url('/assets/webfonts/SourceSansPro-Regular.ttf') format('truetype')
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            font-style: italic;
-            src: url('/assets/webfonts/SourceSansPro-Italic.ttf') format('truetype')
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            font-weight: bold;
-            src: url('/assets/webfonts/SourceSansPro-Bold.ttf') format('truetype')
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            font-weight: bold;
-            font-style: italic;
-            src: url('/assets/webfonts/SourceSansPro-BoldItalic.ttf') format('truetype')
-        }
-
-        @font-face {
-            font-family: 'Open Sans';
-            font-weight: 900;
-            src: url('/assets/webfonts/SourceSansPro-Black.ttf') format('truetype')
-        }
-
-        .font-opensans {
-            font-family: 'Open Sans';
-            line-height: 1.618;
-        }
-
-        .font-opensans-light {
-            font-family: 'Open Sans';
-            font-weight: 300;
-            line-height: 1.618;   
-        }
-
-    /* System Font */
-
-        .font-system {
-            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-        }
 
     /* Font sizes */
 
@@ -300,8 +114,6 @@
         /* h4 font size */
         font-size: 1.5rem;
         font-weight: 700;
-        /*font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";*/
-        font-family: 'Open Sans';
         line-height: 1.2em;
     }
     @media (max-width:1200px) {
@@ -352,10 +164,6 @@
     .picture-overview .card > .picture-post-link p {
         display: none;
     }
-
-    /*.picture-overview .card > .picture-post-link p:first-child {
-        display: block;
-    }*/
 
     .picture-overview .kg-image-card img {
         width: 160px !important;
@@ -419,9 +227,6 @@
     .post-content h4,
     .post-content h5,
     .post-content h6 {
-        /*font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";*/
-        font-family: 'Open Sans';
-        /*font-weight: 700;*/
         color: #444;
         line-height: 1.2;
         margin-top: 1.75rem;
