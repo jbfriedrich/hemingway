@@ -13,7 +13,7 @@
             </div>
             {{/if}}
             <div class="row {{^if feature_image}}mt-md-5{{/if}}">
-                <div class="{{#if feature_image}}col-md-9{{else}}col-md-8{{/if}} p-md-0 mx-auto bg-white{{#if feature_image}} header-content-wrap{{/if}}">
+                <div class="{{#if feature_image}}col-md-8{{else}}col-md-7{{/if}} p-md-0 mx-auto bg-white{{#if feature_image}} header-content-wrap{{/if}}">
                     <div class="post-content{{#if feature_image}} mt-3 mt-md-5 px-md-5{{else}} mt-5{{/if}}">
                         <h5 class="post-date mt-0 mb-0 text-black-50" >{{date published_at format="MMMM DD, YYYY"}}</h5>
                         <h1 class="post-title mt-2 mt-md-3 mb-4 mb-md-5 color-grayblack display-4">{{title}}</h1>
@@ -27,8 +27,8 @@
     {{else}}
         {{!-- This is a micro post or a link post --}}
         <div class="post-content container">
-            <div class="row mt-lg-5">
-                <div class="post-micro col-md-8 mx-auto mt-xl-5">
+            <div class="row">
+                <div class="post-micro col-md-7 mx-auto">
                     <div class="post-micro-header my-5 text-black-50 text-center text-uppercase">{{date published_at format="LLL"}}</div>
                     <div class="post-micro-text text-justify">
                         {{content}}
