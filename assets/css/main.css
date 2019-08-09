@@ -56,7 +56,8 @@
 
     /* Font Style for Post and Page Content */
     .page-content,
-    .post-content {
+    .post-content,
+    .post-title {
         font-family: 'Lato', sans-serif;
     }
 
