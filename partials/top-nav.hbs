@@ -6,11 +6,6 @@
     </button>
     <div class="navbar-collapse collapse" id="mainNavbar">
         <ul class="navbar-nav ml-auto text-nowrap">
-            {{^is 'index'}}
-            <li class="nav-item nav-home">
-                <a class="nav-link" href="/"><span class="font-weight-bolder">&larr;</span> Home</a>
-            </li>
-            {{/is}}
             {{#if @site.navigation}}
             {{navigation}}
             {{/if}}
