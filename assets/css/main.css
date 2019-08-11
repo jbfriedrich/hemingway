@@ -74,10 +74,17 @@
         overflow-x: hidden;
         /*background-color: #eee;*/
         /* Font Smoothing */
+        font-size: calc(1.6em + 0.5vw);
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         -moz-font-feature-settings: "liga" on;
+    }
+
+    @media (min-width: 820px) {
+        body {
+            font-size: calc(0.9em + 0.9vw);
+        }
     }
 
 /*--- 3.) Colors ---*/
@@ -226,12 +233,6 @@
         line-height: 1.2;
         margin-top: 1.75rem;
         margin-bottom: 1rem;
-    }
-
-    /* ----- Stretch Twitter Embeds ----- */
-    .EmbeddedTweet {
-        width: 100% !important;
-        max-width: 100% !important;
     }
 
     /* ----- Image formatting ----- */
