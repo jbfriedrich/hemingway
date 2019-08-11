@@ -54,20 +54,6 @@
             line-height: 2;
         }
 
-    /* Font Style for Post and Page Content */
-    .page-content,
-    .post-content,
-    .post-list .post-article {
-        font-family: 'Source Sans Pro', sans-serif;
-    }
-
-    /* Bigger Font for Post and Page Content */
-    .page-content,
-    .post-content,
-    .post-list .post-article {
-        font-size: 1.0625rem;
-    }
-
 /*--- 2.) HTML & Body ---*/
 
     html,
@@ -80,7 +66,8 @@
         padding: 0;
         overflow-x: hidden;
         /*background-color: #eee;*/
-        /* Font Smoothing */
+        /* Default Font and Antialiasing */
+        font-family: 'Source Sans Pro', sans-serif;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
