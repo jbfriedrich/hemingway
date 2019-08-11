@@ -228,6 +228,12 @@
         margin-bottom: 1rem;
     }
 
+    /* ----- Stretch Twitter Embeds ----- */
+    .EmbeddedTweet {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
     /* ----- Image formatting ----- */
 
         .post-content > p > img,
