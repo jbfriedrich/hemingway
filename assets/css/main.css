@@ -61,6 +61,12 @@
         font-family: 'Source Sans Pro', sans-serif;
     }
 
+    /* Bigger Font for Post and Page Content */
+    .page-content,
+    .post-content {
+        font-size: 1.1rem;
+    }
+
 /*--- 2.) HTML & Body ---*/
 
     html,
@@ -74,17 +80,10 @@
         overflow-x: hidden;
         /*background-color: #eee;*/
         /* Font Smoothing */
-        font-size: calc(1.6em + 0.5vw);
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         -moz-font-feature-settings: "liga" on;
-    }
-
-    @media (min-width: 820px) {
-        body {
-            font-size: calc(0.9em + 0.9vw);
-        }
     }
 
 /*--- 3.) Colors ---*/
