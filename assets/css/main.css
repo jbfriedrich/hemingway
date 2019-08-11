@@ -63,7 +63,8 @@
 
     /* Bigger Font for Post and Page Content */
     .page-content,
-    .post-content {
+    .post-content,
+    .post-list .post-article {
         font-size: 1.1rem;
     }
 
