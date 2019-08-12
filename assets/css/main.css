@@ -204,6 +204,11 @@
         /*font-style: italic;*/
     }
 
+    .hljs {
+        font-size: .875rem !important;
+        white-space: pre-line !important;
+    }
+
     .page-content h1,
     .page-content h2,
     .page-content h3,
