@@ -261,7 +261,7 @@
         }
 
         @media (min-width: 576px) {
-            .post-content .kg-card.kg-image-card.kg-width-wide > .kg-image {
+            .post-template .post-content .kg-card.kg-image-card.kg-width-wide > .kg-image {
                 width: unset;
                 max-width: 150%;
             }
@@ -271,7 +271,8 @@
         .kg-image-card figcaption,
         .kg-gallery-card figcaption {
             padding: 10px 20px;
-            color: #6c757d;
+            /*color: #6c757d;*/
+            color: rgba(0,0,0,.5);
             font-size: 75%;
             /*font-style: italic;*/
             margin: -8px 0;
