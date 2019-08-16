@@ -14,11 +14,13 @@
                 <div class="post-content{{#if feature_image}} mt-3 mt-md-5 px-md-5{{else}} mt-5{{/if}} mb-5">
                     <h1 class="post-title mt-2 mt-md-3 mb-4 mb-md-5 color-grayblack display-4">{{title}}</h1>
                     {{content}}
+                    <div class="card-columns">
                     {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
                     {{#foreach tags}}
-                        <a href="{{ url }}" name="tag-{{ name }}" class="text-decoration-none"><h3 class="color-grayblack font-weight-bold text-capitalize">{{name}} <span class="badge badge-primary">{{ count.posts }}</span></h3></a>
+                        <a href="{{ url }}" name="tag-{{ name }}" class="card text-decoration-none d-inline-block" style="border: none; border-radius: none;"><h5 class="card-body color-grayblack font-weight-bold text-capitalize m-0 p-0">{{name}} <span class="badge badge-primary">{{ count.posts }}</span></h5></a>
                     {{/foreach}}
                     {{/get}}
+                    </div>
                 </div>
             </div>
         </div>
