@@ -74,6 +74,12 @@
         -moz-font-feature-settings: "liga" on;
     }
 
+    @media (min-width: 992px) {
+        body {
+            font-size: 1.0625rem;
+        }
+    }
+
 /*--- 3.) Colors ---*/
 
     /* Almost black (grayblack) for text */
