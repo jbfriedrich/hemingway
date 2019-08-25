@@ -93,11 +93,11 @@
 
 /*--- 4.) Micro single post view ---*/
 
-@media (min-width:768px) {
-    .post-template .post-content .post-micro {
-        margin-top: 5vw;
-    }    
-}
+    @media (min-width:768px) {
+        .post-template .post-content .post-micro {
+            margin-top: 7vw;
+        }    
+    }
 
 /*--- 5.) (Custom) Post type formatting in post feed ---*/
 
