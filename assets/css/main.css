@@ -142,8 +142,7 @@
         font-variant: normal;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
-        font-family: "Font Awesome 5 Solid";
-        content: "\f35d";
+        content: "9854";
     }
     .post-feed .tag-link .post-content > p > a > .fa-external-link-alt,
     .tag-link .post-content .post-micro .post-micro-text > p > a > .fa-external-link-alt {
