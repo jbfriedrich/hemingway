@@ -91,7 +91,15 @@
         color: rgba(255,255,255,.7)!important
     }
 
-/*--- 4.) (Custom) Post type formatting in post feed ---*/
+/*--- 4.) Micro single post view ---*/
+
+@media (min-width:768px) {
+    .post-template .post-content .post-micro {
+        margin-top: 5vw;
+    }    
+}
+
+/*--- 5.) (Custom) Post type formatting in post feed ---*/
 
     .post-feed .tag-link .post-content > p:first-child,
     .tag-link .post-content .post-micro .post-micro-text > p:first-child {
@@ -151,7 +159,7 @@
         /*font-size: 80%;
     }*/
 
-/*--- 5.) Picture Micro Post Formatting (pictures.hbs) ---*/
+/*--- 6.) Picture Micro Post Formatting (pictures.hbs) ---*/
 
     .picture-overview figcaption {
         display: none;
@@ -169,7 +177,7 @@
         padding: 10px;
     }
 
-/*--- 6.) Post, page and list view formatting ---*/
+/*--- 7.) Post, page and list view formatting ---*/
 
     .header-image img {
         width: 100%;
