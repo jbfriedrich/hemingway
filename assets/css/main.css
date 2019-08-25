@@ -137,16 +137,11 @@
 
     .post-feed .tag-link .post-content > p:first-child > a:only-child::before,
     .tag-link .post-content .post-micro .post-micro-text > p:nth-child(1) > a:only-child::before {
-        display: none;
-        font-style: normal;
-        font-variant: normal;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
-        content: "9854";
-    }
-    .post-feed .tag-link .post-content > p > a > .fa-external-link-alt,
-    .tag-link .post-content .post-micro .post-micro-text > p > a > .fa-external-link-alt {
+        content: "\1F517";
         margin-right: 5px;
+        font-size: 22px;
     }
 
     .tag-picture .kg-image-card {
