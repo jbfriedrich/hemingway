@@ -13,27 +13,27 @@
         <ul class="navbar-nav ml-auto">
             {{#if @site.facebook}}
             <li class="nav-item">
-                <a class="nav-link icon facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">Facebook</a>
+                <a class="nav-link" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">Facebook</a>
             </li>
             {{/if}}
             {{#if @site.twitter}}
             <li class="nav-item">
-                <a class="nav-link icon twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter" data-fa-transform="grow-6"></i></a>
+                <a class="nav-link" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">Twitter</a>
             </li>
             {{/if}}
             <li class="nav-item">
-                <a class="nav-link icon mastodon" href="https://mastodon.social/@jbf" title="Mastodon" target="_blank" rel="noopener"><i class="fab fa-mastodon" data-fa-transform="grow-6"></i></a>
+                <a class="nav-link" href="https://mastodon.social/@jbf" title="Mastodon" target="_blank" rel="noopener">Mastodon</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link icon rss dropdown-toggle" id="navbarDropdownLink" aria-label="Available RSS feeds" href="#" role="button" data-toggle="dropdown"><i class="fas fa-rss" data-fa-transform="grow-6"></i></a>
+                <a class="nav-link icon rss dropdown-toggle" id="navbarDropdownLink" aria-label="Available RSS feeds" href="#" role="button" data-toggle="dropdown">RSS</a>
                 <div class="dropdown-menu" id="navbarDropdown" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item icon rss small" href="{{@site.url}}/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Full Site</a>
-                    <a class="dropdown-item icon rss small" href="{{@site.url}}/posts/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Posts</a>
-                    <a class="dropdown-item icon rss small" href="{{@site.url}}/micros/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Micro Posts</a>
-                    <a class="dropdown-item icon rss small" href="{{@site.url}}/links/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Links</a>
-                    <a class="dropdown-item icon rss small" href="{{@site.url}}/pictures/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Pictures</a>
-                    <a class="dropdown-item icon rss small" href="{{@site.url}}/de/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Deutsche Inhalte</a>
-                    <a class="dropdown-item icon rss small" href="{{@site.url}}/en/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>English Content</a>
+                    <a class="dropdown-item small" href="{{@site.url}}/rss">Full Site</a>
+                    <a class="dropdown-item small" href="{{@site.url}}/posts/rss">Posts</a>
+                    <a class="dropdown-item small" href="{{@site.url}}/micros/rss">Micro Posts</a>
+                    <a class="dropdown-item small" href="{{@site.url}}/links/rss">Links</a>
+                    <a class="dropdown-item small" href="{{@site.url}}/pictures/rss">Pictures</a>
+                    <a class="dropdown-item small" href="{{@site.url}}/de/rss">Deutsche Inhalte</a>
+                    <a class="dropdown-item small" href="{{@site.url}}/en/rss">English Content</a>
                 </div>
             </li>
             {{#if @labs.subscribers}}
