@@ -304,9 +304,15 @@
             display: block;
             position: relative;
             width: 100vw;
-            max-width: 150%;
+            max-width: 100%;
             left: 50%;
             transform: translateX(-50%)
+        }
+
+        @media (min-width: 575.98px) {
+            .post-content .kg-gallery-card .kg-gallery-container {
+                max-width: 150%;
+            }
         }
 
         .kg-gallery-row {
