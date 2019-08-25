@@ -139,8 +139,7 @@
     .tag-link .post-content .post-micro .post-micro-text > p:nth-child(1) > a:only-child::before {
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
-        content: "\1F517";
-        margin-right: 5px;
+        content: "\1F517\2009";
         font-size: 22px;
     }
 
