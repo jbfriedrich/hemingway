@@ -1,5 +1,5 @@
 {{!-- Default dark top navigation --}}
-<nav class="flex-shrink-0 flex-grow-0 navbar navbar-expand-lg navbar-dark bg-dark text-base">
+<nav class="flex-shrink-0 flex-grow-0 navbar navbar-expand-lg navbar-dark bg-dark small">
     {{!-- <a class="navbar-brand" href="/">{{@site.title}}</a> --}}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -27,13 +27,13 @@
             <li class="nav-item dropdown">
                 <a class="nav-link icon rss dropdown-toggle" id="navbarDropdownLink" aria-label="Available RSS feeds" href="#" role="button" data-toggle="dropdown"><i class="fas fa-rss" data-fa-transform="grow-6"></i></a>
                 <div class="dropdown-menu" id="navbarDropdown" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item icon rss" href="{{@site.url}}/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Full Site</a>
-                    <a class="dropdown-item icon rss" href="{{@site.url}}/posts/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Posts</a>
-                    <a class="dropdown-item icon rss" href="{{@site.url}}/micros/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Micro Posts</a>
-                    <a class="dropdown-item icon rss" href="{{@site.url}}/links/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Links</a>
-                    <a class="dropdown-item icon rss" href="{{@site.url}}/pictures/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Pictures</a>
-                    <a class="dropdown-item icon rss" href="{{@site.url}}/de/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Deutsche Inhalte</a>
-                    <a class="dropdown-item icon rss" href="{{@site.url}}/en/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>English Content</a>
+                    <a class="dropdown-item icon rss small" href="{{@site.url}}/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Full Site</a>
+                    <a class="dropdown-item icon rss small" href="{{@site.url}}/posts/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Posts</a>
+                    <a class="dropdown-item icon rss small" href="{{@site.url}}/micros/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Micro Posts</a>
+                    <a class="dropdown-item icon rss small" href="{{@site.url}}/links/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Links</a>
+                    <a class="dropdown-item icon rss small" href="{{@site.url}}/pictures/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Pictures</a>
+                    <a class="dropdown-item icon rss small" href="{{@site.url}}/de/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>Deutsche Inhalte</a>
+                    <a class="dropdown-item icon rss small" href="{{@site.url}}/en/rss"><i class="fas fa-rss mr-2" data-fa-transform="grow-6"></i>English Content</a>
                 </div>
             </li>
             {{#if @labs.subscribers}}
