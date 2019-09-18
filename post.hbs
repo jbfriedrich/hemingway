@@ -4,19 +4,19 @@
     {{!-- Blog post template --}}
     {{^has tag='#link,#micro'}}
         {{!-- This is a full, long post --}}
-        <div class="container flex-grow-1 flex-shrink-0">
+        <div class="flex-grow-1 flex-shrink-0">
             {{#if feature_image}}
-            <div class="row mt-5">
-                <div class="header-image col-12 col-md-11 col-lg-10 mx-auto px-md-0">
+            <div class="row mt-sm-4 mt-md-5">
+                <div class="header-image col-12 px-0">
                     <img class="img" alt="Header Image" src="{{feature_image}}">
                 </div>
             </div>
             {{/if}}
-            <div class="row {{^if feature_image}}mt-md-5{{/if}}">
-                <div class="col-12 col-md-11 col-lg-8 p-lg-0 mx-auto bg-white{{#if feature_image}} header-content-wrap{{/if}}">
-                    <div class="post-content{{#if feature_image}} mt-3 mt-lg-5 px-lg-5{{else}} mt-5{{/if}}">
+            <div class="row{{^if feature_image}} mt-sm-4 mt-md-5{{/if}}">
+                <div class="post col-12 col-lg-9 bg-white mx-auto{{#if feature_image}} header-content-wrap rounded-lg{{/if}}">
+                    <div class="post-content text-sm-justify pt-4 pt-md-5 px-sm-3 px-md-4 px-lg-5">
                         <h5 class="post-date mt-0 mb-0 text-black-50" >{{date published_at format="MMMM DD, YYYY"}}</h5>
-                        <h1 class="post-title mt-2 mt-md-3 mb-4 mb-md-5 color-grayblack display-4">{{title}}</h1>
+                        <h1 class="post-title mt-2 mb-4 mb-md-5 color-grayblack text-left display-4">{{title}}</h1>
                         {{content}}
                         {{> "taglist" }}
                         {{> "author-info"}}
@@ -26,14 +26,15 @@
         </div>
     {{else}}
         {{!-- This is a micro post or a link post --}}
-        <div class="post-content container">
+        <div class="post-content">
             <div class="row">
-                <div class="post-micro col-12 col-md-9 col-lg-7 mt-lg-5 mx-auto">
-                    <h5 class="post-micro-header my-5 text-black-50 text-center text-uppercase">{{date published_at format="LLL"}}</h5>
-                    <div class="post-micro-text">
+                <div class="post-micro col-12 col-md-10 col-lg-8 mx-auto pt-3 pt-sm-4 pt-md-5 px-3 px-sm-4 px-md-5">
+                    <div class="post-micro-text text-sm-justify">
                         {{content}}
+                        <p class="post-micro-header text-secondary text-sm text-uppercase mt-4 mb-0">&rarr; {{date published_at format="LLL"}}</p>
+                        {{> "taglist" }}
+                        {{> "author-info"}}
                     </div>
-                    {{> "author-info"}}
                 </div>
             </div>
         </div>

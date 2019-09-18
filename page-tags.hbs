@@ -1,29 +1,30 @@
 {{!< default}}
-<div class="full-page">
-    {{#post}}
-    <div class="container">
+<div class="full-page d-flex flex-column h-100">
+{{#post}}
+    {{!-- This is a full, long post --}}
+    <div class="flex-grow-1 flex-shrink-0">
         {{#if feature_image}}
-        <div class="row mt-5">
-            <div class="header-image col-12 mx-auto px-md-0">
+        <div class="row">
+            <div class="header-image col-12 px-0">
                 <img class="img" alt="Header Image" src="{{feature_image}}">
             </div>
         </div>
         {{/if}}
-        <div class="row {{^if feature_image}}mt-md-5{{/if}} mb-5">
-            <div class="col-md-7 p-md-0 mx-auto bg-white{{#if feature_image}} header-content-wrap{{/if}}">
-                <div class="post-content{{#if feature_image}} mt-3 mt-md-5 px-md-5{{else}} mt-5{{/if}} mb-5">
-                    <h1 class="post-title mt-2 mt-md-3 mb-4 mb-md-5 color-grayblack display-4">{{title}}</h1>
+        <div class="row">
+            <div class="post col-12 bg-white col-lg-9 mx-auto{{#if feature_image}} header-content-wrap rounded-lg{{/if}}">
+                <div class="post-content text-sm-justify py-4 py-md-5 px-sm-3 px-md-4 px-lg-5">
+                    <h1 class="post-title mt-2 mb-4 mb-md-5 color-grayblack text-left display-4">{{title}}</h1>
                     {{content}}
                     <div class="card-columns">
-                    {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
-                    {{#foreach tags}}
-                        <a href="{{ url }}" name="tag-{{ name }}" class="card text-decoration-none d-inline-block" style="border: none; border-radius: none;"><h5 class="card-body color-grayblack font-weight-bold text-capitalize m-0 p-0">{{name}} <span class="badge badge-primary">{{ count.posts }}</span></h5></a>
-                    {{/foreach}}
-                    {{/get}}
+                        {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+                        {{#foreach tags}}
+                            <a href="{{ url }}" name="tag-{{ name }}" class="card text-decoration-none d-inline-block" style="border: none; border-radius: none;"><h5 class="card-body color-grayblack font-weight-bold text-capitalize m-0 p-0">{{name}} <span class="badge badge-primary">{{ count.posts }}</span></h5></a>
+                        {{/foreach}}
+                        {{/get}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 {{/post}}
+</div>

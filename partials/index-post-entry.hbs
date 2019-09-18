@@ -2,14 +2,14 @@
     <article class="post-article {{post_class}}">
     {{^has tag="#link,#micro"}}
         <h3 class="post-title my-1"><a href="{{url}}" class="text-dark">{{title}}</a></h3>
-        <a class="text-black-50 text-uppercase" href="{{url}}">{{date published_at format="MMMM D, YYYY"}}</a>
+        {{!-- <span class="text-black-50 text-uppercase">{{date published_at format="MMMM D, YYYY"}}</span> --}}
         <p class="post-excerpt mt-3">{{excerpt}}…</p>
-        <a href="{{url}}" class="text-black-50"><u>Continue reading »</u></a>
+        <a href="{{url}}" class="text-secondary text-sm text-uppercase">{{!--»--}}&rarr; {{date published_at format="LLL"}}</a>
     {{else}}
         <div class="post-content post-micro-content mb-4">
             {{content}}
         </div>
-        <a class="text-black-50 text-uppercase font-weight-bold text-sm" href="{{url}}">&rarr; {{date published_at format="LLL"}}</a>
+        <a class="post-micro-header text-secondary text-sm text-uppercase" href="{{url}}">&rarr; {{date published_at format="LLL"}}</a>
     {{/has}}
     </article>
 </li>

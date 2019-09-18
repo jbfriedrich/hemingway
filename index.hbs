@@ -1,15 +1,18 @@
 {{!< default}}
-<div class="container">
-    <div class="row">
-        <div class="post-feed my-4 my-md-5 col-12 col-md-9 col-lg-7 mx-auto">
-            <ul class="post-list list-unstyled">
-                {{#foreach posts}}
-                {{> "index-post-entry"}}
-                {{/foreach}}
-            </ul>
-            {{#if pagination}}
-            {{pagination}}
-            {{/if}}
-        </div>
+<div class="row">
+    <div class="col-12 col-md-10 col-lg-8 mx-auto bg-white rounded-lg{{!-- mt-sm-5 mb-4 mb-md-5 --}} py-3 p-sm-4 p-md-5">
+        <ul class="post-list list-unstyled">
+            {{#foreach posts}}
+            {{> "index-post-entry"}}
+            {{/foreach}}
+        </ul>
+        
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-10 col-lg-8 mx-auto{{!-- p-sm-0 mb-sm-5 mb-4 --}} px-3 px-sm-4 px-md-5 pb-4 pb-md-5">
+        {{#if pagination}}
+        {{pagination}}
+        {{/if}}
     </div>
 </div>
