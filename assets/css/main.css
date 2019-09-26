@@ -1,4 +1,4 @@
-/*--- Font Defintions ---*/
+/*--- Fonts ---*/
 
     /* Font sizes */
 
@@ -67,8 +67,8 @@
         overflow-x: hidden;
         /*background-color: #eee;*/
         /* Default Font and Antialiasing */
-        color: #444;
-        font-display: swap;
+        /*color: #444;
+        font-display: swap;*/
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -104,17 +104,21 @@
         color: #bbb !important;
     }
 
-/*--- Heights & Widths ---*/
-
-    /*.mw600 {
-        max-width: 600px;
+    .rss-item:hover{
+        background-color: var(--pink);
+        color: var(--white);
     }
 
-    .mw900 {
-        max-width: 900px;
+    /*.separator hr {
+        border-top: 1px solid var(--pink);
     }*/
 
 /*--- Picture Micro Post Formatting (pictures.hbs) ---*/
+
+    .card {
+        border: unset !important;
+        border-radius: unset !important;
+    }
 
     .picture-overview figcaption {
         display: none;
@@ -129,10 +133,11 @@
         height: 160px !important;
         object-fit: cover !important;
         object-position: center !important;
-        padding: 10px;
+        /*padding: 10px;*/
+        border-radius: .25rem;
     }
 
-/*--- Post, page and list view formatting ---*/
+/*--- General formatting (post/page/list) ---*/
 
     .tag-header-image {
         object-fit: cover;
@@ -194,7 +199,7 @@
         border-radius: .25rem;
         border-left-color: #007bff;
         color: #6c757d;*/
-        text-align: justify;
+        /*text-align: justify;*/
         /*font-style: italic;*/
     }
 
@@ -203,7 +208,7 @@
         white-space: pre-line !important;
     }
 
-    /* ----- Page/Post Content Headings ----- */
+    /* ----- Heading formatting (page/post view) ----- */
 
         .page-content h1,
         .page-content h2,
@@ -217,27 +222,25 @@
         .post-content h4,
         .post-content h5,
         .post-content h6 {
-            color: #444;
+            /*color: #444;*/
             line-height: 1.2;
             margin-top: 1.75rem;
             margin-bottom: 1rem;
         }
 
-    /* ----- Bookmark card formatting ----- */
+    /* ----- Bookmark cards ----- */
 
         .kg-bookmark-container {
             display: flex;
             flex-wrap: wrap;
-            /*color: #595959;*/
             text-decoration: none;
-            /*border: 1px solid rgba(0,0,0,.1);*/
             border: 1px solid #eee;
+            /*border: 1px solid var(--info);*/
             border-radius: .25rem;
             font-size: .875rem;
         }
 
         .kg-bookmark-container:hover {
-            border: 1px solid #ccc;
             text-decoration: none;
         }
 
@@ -246,11 +249,17 @@
             flex-grow: 999;
             min-width: 50%;
             padding: 20px;
+            /*padding-right: 20px;*/
         }
 
         .kg-bookmark-title {
+            /*color: #17a2b8;*/
             font-weight: 600;
         }
+
+        /*.kg-bookmark-title:hover {
+            color: #117a8b;
+        }*/
 
         .kg-bookmark-description,
         .kg-bookmark-metadata {
@@ -291,16 +300,10 @@
         }
 
         .kg-bookmark-card figcaption {
-            padding: 10px 0;
-            /*font-style: italic;*/
-            /*color: #979797;*/
-            margin: -5px 0 0;
-            padding-left: .25rem;
-            padding-right: .25rem;
-            /*text-align: justify;*/
+            padding: 10px 10px;
         }
 
-    /* ----- Image formatting ----- */
+    /* ----- Gallery & image cards ----- */
 
         .kg-image-card img {
             height: auto;
@@ -343,7 +346,7 @@
         @media (min-width: 992px) {
             .kg-width-wide img,
             .kg-width-wide .kg-gallery-container {
-                max-width: 140%;
+                max-width: 47em;
             }
 
             .kg-width-full img {
@@ -373,8 +376,7 @@
             width: 100vw
         }
 
-
-    /* ----- Index View Link Title Formatting ----- */
+    /* ----- Post type: Link (index view) ----- */
 
         .post-list .tag-link .post-content > p:first-child > a:only-child,
         .tag-link .full-post .post-micro-text > p:first-child > a:only-child {

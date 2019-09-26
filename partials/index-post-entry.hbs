@@ -1,20 +1,20 @@
-<li class="post-item">
+<li class="post-item px-md-3">
     <article class="post-article {{post_class}}">
     {{^has tag="#link,#micro"}}
         <h3 class="post-title my-1"><a href="{{url}}" class="text-dark">{{title}}</a></h3>
         {{!-- <span class="text-black-50 text-uppercase">{{date published_at format="MMMM D, YYYY"}}</span> --}}
         <p class="post-excerpt mt-3">{{excerpt}}…</p>
-        <a href="{{url}}" class="text-secondary text-sm text-uppercase">{{!--»--}}&rarr; {{date published_at format="LLL"}}</a>
+        <a href="{{url}}" class="text-secondary text-sm text-uppercase">{{!--»--}}<span style="color: var(--pink);">&rarr;</span> {{date published_at format="LLL"}}</a>
     {{else}}
         <div class="post-content post-micro-content mb-4">
             {{content}}
         </div>
-        <a class="post-micro-header text-secondary text-sm text-uppercase" href="{{url}}">&rarr; {{date published_at format="LLL"}}</a>
+        <a class="post-micro-header text-secondary text-sm text-uppercase" href="{{url}}"><span style="color: var(--pink);">&rarr;</span> {{date published_at format="LLL"}}</a>
     {{/has}}
     </article>
 </li>
 {{^if @last}}
-<li class="separator my-4 my-md-5">
+<li class="separator my-5">
     <hr>
 </li>
 {{/if}}

@@ -1,16 +1,15 @@
 {{!< default}}
 <div class="row">
-    <div class="col-12 col-md-10 col-lg-8 mx-auto bg-white rounded-lg{{!-- mt-sm-5 mb-4 mb-md-5 --}} py-3 p-sm-4 p-md-5">
+    <div class="col-12 mx-auto p-5 rounded border bg-white" style="max-width: 47em;">
         <ul class="post-list list-unstyled">
             {{#foreach posts}}
             {{> "index-post-entry"}}
             {{/foreach}}
         </ul>
-        
     </div>
 </div>
 <div class="row">
-    <div class="col-12 col-md-10 col-lg-8 mx-auto{{!-- p-sm-0 mb-sm-5 mb-4 --}} px-3 px-sm-4 px-md-5 pb-4 pb-md-5">
+    <div class="col-12 mx-auto px-3 px-sm-0 mt-3 mt-sm-5" style="max-width: 47em;">
         {{#if pagination}}
         {{pagination}}
         {{/if}}

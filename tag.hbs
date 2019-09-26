@@ -19,9 +19,8 @@
     {{ghost_head}}
 </head>
 
-<body name="top" class="{{body_class}} h-100 d-flex flex-column {{!-- bg-light --}}">
+<body name="top" class="{{body_class}} h-100 d-flex flex-column bg-light">
     {{> "top-nav"}}
-
     {{!-- Height of 1px is required because otherwise Safari does not "grow" content --}}
     <main class="flex-shrink-0">
         <div class="container-fluid">
@@ -36,9 +35,9 @@
             </div>
             {{/tag}}
         </div>
-        <div class="container">
+        <div class="container my-3 my-sm-5">
             <div class="row">
-                <div class="col-12 col-md-10 col-lg-8 mx-auto bg-white rounded-lg{{!-- mt-sm-5 mb-4 mb-md-5 --}} py-3 p-sm-4 p-md-5">
+                <div class="col-12 mx-auto p-5 rounded border bg-white" style="max-width: 47em;">
                     <ul class="post-list list-unstyled">
                         {{#foreach posts}}
                         {{> "index-post-entry"}}
@@ -47,7 +46,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-10 col-lg-8 mx-auto{{!-- p-sm-0 mb-sm-5 mb-4 --}} px-3 px-sm-4 px-md-5 pb-4 pb-md-5">
+                <div class="col-12 mx-auto px-3 px-sm-0 mt-3 mt-sm-5" style="max-width: 47em;">
                     {{#if pagination}}
                     {{pagination}}
                     {{/if}}
@@ -76,8 +75,8 @@
 {{!-- HighlightJS --}}
 <script src="{{asset "js/highlight.pack.js"}}"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-{{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
 {{{block "scripts"}}}
 {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
 {{ghost_foot}}
+
 </html>
