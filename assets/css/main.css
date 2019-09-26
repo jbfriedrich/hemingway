@@ -301,9 +301,8 @@
 
         .kg-bookmark-card figcaption {
             padding: 10px 10px;
-            font-size: .875rem;
+            font-style: italic;
             margin: -5px 0;
-            color: var(--dark);
         }
 
     /* ----- Gallery & image cards ----- */
