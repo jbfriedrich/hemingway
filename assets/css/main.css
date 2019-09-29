@@ -106,7 +106,7 @@
 
     .rss-item:hover{
         background-color: var(--pink);
-        color: var(--white);
+        color: var(--white) !important;
     }
 
     /*.separator hr {
@@ -210,6 +210,10 @@
 
     /* ----- Heading formatting (page/post view) ----- */
 
+        .post-title {
+            margin-top: unset !important;
+        }
+
         .page-content h1,
         .page-content h2,
         .page-content h3,
@@ -299,12 +303,6 @@
             margin: 0 6px;
         }
 
-        .kg-bookmark-card figcaption {
-            padding: 10px 10px;
-            font-style: italic;
-            margin: -5px 0;
-        }
-
     /* ----- Gallery & image cards ----- */
 
         .kg-image-card img {
@@ -359,12 +357,15 @@
                 position: relative;
                 right: 50%;
                 width: 100vw;
+                max-height: 700px;
+                object-fit: cover;
             }
         }
 
         .kg-embed-card figcaption,
         .kg-image-card figcaption,
-        .kg-gallery-card figcaption {
+        .kg-gallery-card figcaption,
+        .kg-bookmark-card figcaption {
             padding: 10px 10px;
             /*color: #6c757d;*/
             color: rgba(0,0,0,.5);
