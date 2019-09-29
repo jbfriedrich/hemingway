@@ -54,6 +54,26 @@
             line-height: 2;
         }
 
+/*--- Icons ---*/
+
+    .icon::before {
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .post-list .post-micro-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']):after,
+    .post-micro-text > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']):after {
+        content: '\f35d';
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: .875rem;
+        padding-left: .3rem;
+        display: inline-block;
+    }
+
 /*--- HTML & Body ---*/
 
     html,
@@ -384,41 +404,6 @@
 
         .kg-image-card.kg-width-full figcaption {
             width: 100vw
-        }
-
-    /* ----- Post type: Link (index view) ----- */
-
-        .post-list .tag-link .post-content > p:first-child > a:only-child,
-        .tag-link .full-post .post-micro-text > p:first-child > a:only-child {
-            color: var(--dark);
-            font-weight: 500;
-            font-size: 1.75rem;
-            line-height: 1.2em;
-        }
-
-        .post-list .tag-link .post-content > p:first-child > a:only-child:before,
-        .tag-link .full-post .post-micro-text > p:first-child > a:only-child:before {
-            content: "Link";
-            color: var(--white);
-            background-color: var(--primary);
-            display: inline-block;
-            padding: .25em .4em;
-            margin-right: .5rem;
-            margin-top: -4px;
-            font-size: .875rem;
-            font-weight: 500;
-            line-height: 1.2;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: middle;
-            border-radius: .25rem;
-            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-        }
-
-        @media (max-width: 1200px) {
-            .post-list .tag-link .post-content > p:first-child > a:only-child {
-                font-size: calc(1.3rem + .6vw);
-            }
         }
 
     /* ----- Author information ----- */
