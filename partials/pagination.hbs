@@ -1,8 +1,8 @@
 <!-- Primary pagination begins here -->
-<nav class="main-pagination mt-3 mt-sm-5" aria-label="Main page navigation">
+<nav class="main-pagination mt-5" aria-label="Main page navigation">
     <ul class="pagination m-0 p-0 justify-content-center align-items-center">
-        <li class="page-item flex-grow-1{{^if prev}} disabled{{/if}}"><a class="page-link page-previous rounded-sm text-center" href="{{page_url prev}}">&laquo; Newer</a></li>
-        <li class="page-item text-secondary small px-5">Page {{page}} of {{pages}}</li>
-        <li class="page-item flex-grow-1{{^if next}} disabled{{/if}}"><a class="page-link{{#if next}} page-next{{/if}} rounded-sm text-center" href="{{page_url next}}">Older &raquo;</a></li>
+        <li class="page-item flex-grow-1{{^if prev}} disabled{{/if}}"><a class="page-link page-previous rounded-sm text-center text-nowrap" href="{{page_url prev}}">&laquo; Newer</a></li>
+        <li class="page-item text-secondary small px-3 px-md-5"><span class="d-none d-md-inline">Page&nbsp;</span>{{page}} of {{pages}}</li>
+        <li class="page-item flex-grow-1{{^if next}} disabled{{/if}}"><a class="page-link{{#if next}} page-next{{/if}} rounded-sm text-center text-nowrap" href="{{page_url next}}">Older &raquo;</a></li>
     </ul>
 </nav>
