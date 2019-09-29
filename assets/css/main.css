@@ -150,6 +150,12 @@
         object-fit: cover;
     }
 
+    @media (min-width: 576px) {
+        .header-image img {
+            border-radius: .25rem .25rem 0 0;
+        }
+    }
+
     @media (min-width: 768px) {
         .tag-header-image {
             height: 500px;
@@ -163,6 +169,7 @@
 
         .header-image img {
             max-height: 500px;
+            border-radius: .25rem;
         }
     }
 
