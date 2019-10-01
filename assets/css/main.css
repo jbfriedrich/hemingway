@@ -56,22 +56,19 @@
 
 /*--- Icons ---*/
 
-    .icon::before {
-        display: inline-block;
-        font-style: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-    }
-
     .post-list .post-micro-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']):after,
     .post-micro-text > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']):after {
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
         content: '\f35d';
         font-family: "Font Awesome 5 Free";
-        font-weight: 900;
         font-size: .875rem;
+        font-weight: 900;
+        font-style: normal;
+        font-variant: normal;
         padding-left: .3rem;
-        display: inline-block;
+        vertical-align: baseline;
     }
 
 /*--- HTML & Body ---*/
