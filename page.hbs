@@ -2,7 +2,6 @@
 <div class="full-page d-flex flex-column h-100">
 {{#post}}
     {{!-- This is a full, long post --}}
-
     <div class="flex-grow-1 flex-shrink-0">
         {{#if feature_image}}
         <div class="row">
@@ -13,16 +12,12 @@
         {{/if}}
         <div class="row">
             <div class="post col-12 border rounded bg-white mx-auto{{#if feature_image}} header-content-wrap{{/if}}" style="max-width: 47em;">
-                <div class="post-page page-content text-sm-justify py-4 py-md-5 px-sm-3 px-md-4 px-lg-5">
+                <div class="post-page page-content text-justify text-md-left p-5">
                     <h1 class="post-title mb-4 mb-md-5 color-grayblack text-left font-weight-light">{{title}}</h1>
                     {{content}}
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
 {{/post}}
 </div>

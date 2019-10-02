@@ -56,6 +56,11 @@
 
 /*--- Icons ---*/
 
+    .post-list .post-micro-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']),
+    .post-micro-text > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']) {
+        white-space: nowrap;
+    }
+
     .post-list .post-micro-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']):after,
     .post-micro-text > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']):after {
         display: inline-block;

@@ -14,8 +14,8 @@
             {{/if}}
             <div class="row">
                 <div class="post col-12 border rounded bg-white mx-auto{{#if feature_image}} header-content-wrap{{/if}}" style="max-width: 47em;">
-                    <div class="post-content text-sm-justify pt-4 pt-md-5 px-sm-3 px-md-4 px-lg-5">
-                        <h5 class="post-date mt-0 mb-0 font-weight-light text-black-50" >{{date published_at format="MMMM DD, YYYY"}}</h5>
+                    <div class="post-content text-justify text-md-left{{#if feature_image}} px-5 py-4 py-md-5{{else}} p-5{{/if}}">
+                        <h5 class="post-date mt-0 mb-0 font-weight-light text-black-50 text-left" >{{date published_at format="MMMM DD, YYYY"}}</h5>
                         <h1 class="post-title mt-2 mb-4 mb-md-5 color-grayblack text-left font-weight-light">{{title}}</h1>
                         {{content}}
                         {{> "taglist" }}
@@ -26,15 +26,13 @@
         </div>
     {{else}}
         {{!-- This is a micro post or a link post --}}
-        <div class="post-content">
-            <div class="row">
-                <div class="post-micro col-12 border rounded bg-white mx-auto" style="max-width: 47em;">
-                    <div class="post-micro-text pt-4 pt-md-5 px-sm-3 px-md-4 px-lg-5">
-                        {{content}}
-                        <p class="post-micro-header text-secondary text-sm text-uppercase mt-4 mb-0"><span style="color: var(--pink);">&rarr;</span> {{date published_at format="LLL"}}</p>
-                        {{> "taglist" }}
-                        {{> "author-info"}}
-                    </div>
+        <div class="row">
+            <div class="post-micro col-12 border rounded bg-white mx-auto" style="max-width: 47em;">
+                <div class="post-content post-micro-text text-justify text-md-left p-5">
+                    {{content}}
+                    <p class="post-micro-header text-secondary text-sm text-uppercase mt-4 mb-0"><span style="color: var(--pink);">&rarr;</span> {{date published_at format="LLL"}}</p>
+                    {{> "taglist" }}
+                    {{> "author-info"}}
                 </div>
             </div>
         </div>
