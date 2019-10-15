@@ -1,0 +1,18 @@
+<div class="read-next d-flex flex-column flex-lg-row bg-dark justify-content-center align-items-stretch text-center">
+    {{ if .NextInSection }}
+        <a class="read-next-story prev text-decoration-none flex-grow-1 flex-shrink-1" href="{{ .NextInSection.Permalink }}"{{ if .NextInSection.Params.feature_image }} style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{ .NextInSection.Params.feature_image }}); background-position: center center; background-size: cover;"{{ end }}>
+            <section class="post-info p-5 h-100">
+                <h2 class="color-white mt-2 mb-3">{{ .NextInSection.Title }}</h2>
+                <p class="excerpt text-base">{{ slicestr .NextInSection.Summary 0 120 }}...</p>
+            </section>
+        </a>
+    {{ end }}
+    {{ if .PrevInSection }}
+        <a class="read-next-story text-decoration-none flex-grow-1 flex-shrink-1" href="{{ .PrevInSection.Permalink }}"{{ if .PrevInSection.Params.feature_image }} style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{ .PrevInSection.Params.feature_image }}); background-position: center center; background-size: cover;"{{ end }}>
+            <section class="post-info p-5 h-100">
+                <h2 class="color-white mt-2 mb-3">{{ .PrevInSection.Title }}</h2>
+                <p class="excerpt text-base">{{ slicestr .PrevInSection.Summary 0 120 }}...</p>
+            </section>
+        </a>
+    {{ end }}
+</div>

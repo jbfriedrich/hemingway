@@ -1,0 +1,22 @@
+{{ define "title" }}
+    {{ .Title }} | {{ .Site.Title }}
+{{ end }}
+{{ define "main" }}
+<div class="picture-overview">
+    <div class="row">
+        <div class="col-12 mx-auto p-5 rounded border bg-white" style="max-width: 47em;">
+            <div class="d-flex flex-row flex-wrap justify-content-center align-items-stretch">
+                {{ range .Pages }}
+                    <div class="card flex-grow-1 mb-2 mr-2">
+                        <a href="{{ .Page.RelPermalink }}" alt="{{ .Page.Title }}" name="{{ .Page.Title }}" class="picture-post-link">
+                            <figure class='image-card'>
+                                <img src='{{ .Page.Params.imgsrc }}' alt='{{ .Page.Params.imgcaption }}'>
+                            </figure>
+                        </a>
+                    </div>    
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

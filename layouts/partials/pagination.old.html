@@ -1,0 +1,5 @@
+<ul class="main-pagination pagination m-0 p-0 justify-content-center align-items-center">
+    <li class="page-item flex-grow-1{{ if not .HasPrev }} disabled{{ end }}"><a class="page-link page-previous rounded-sm text-center text-nowrap" href="{{ if .HasPrev }}{{ .Prev.URL }}{{ end }}">&laquo; Newer</a></li>
+    <li class="page-item text-secondary small px-3 px-md-5"><span class="d-none d-md-inline">Page&nbsp;</span>{{ .PageNumber }} of {{ .TotalPages }}</li>
+    <li class="page-item flex-grow-1{{ if not .HasNext }} disabled{{ end }}"><a class="page-link page-next rounded-sm text-center text-nowrap" href="{{ if .HasNext }}{{ .Next.URL }}{{ end }}">Older &raquo;</a></li>
+</ul>

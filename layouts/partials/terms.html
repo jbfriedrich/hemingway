@@ -1,0 +1,18 @@
+<div class="full-page d-flex flex-column h-100">
+    <!-- This is a full, long post -->
+    <div class="flex-grow-1 flex-shrink-0">
+        <div class="row">
+            <div class="post col-12 border rounded bg-white mx-auto{{if .Params.feature_image }} header-content-wrap{{ end }}" style="max-width: 47em;">
+                <div class="post-page page-content text-justify text-md-left py-4 px-sm-3 px-sm-4 p-lg-5">
+                    <h1 class="post-title mb-4 mb-md-5 color-grayblack text-left font-weight-light display-4">Topics</h1>
+                    {{ .Content }}
+                    <div class="card-columns">
+                        {{ $data := .Data }} {{ range $key, $value := .Data.Terms.ByCount }}
+                        <a href="{{ $.Site.BaseURL }}" name="tag-{{ $value.Name }}" class="card text-decoration-none d-inline-block" style="border: none; border-radius: none;"><h5 class="card-body color-grayblack font-weight-bold text-capitalize m-0 p-0">{{ $value.Name }} <span class="badge badge-primary">{{ $value.Count }}</span></h5></a>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

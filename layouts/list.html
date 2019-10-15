@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="row">
+    <div class="col-12 mx-auto border rounded bg-white" style="max-width: 47em;">
+        <div class="p-sm-3 p-md-5 my-4 my-sm-0">
+            <ul class="post-list list-unstyled m-0">
+                {{ $paginator := .Paginate (where $.Site.RegularPages ".Params.type" "!=" "page") }}
+                {{ range $paginator.Pages }}
+                {{ partial "list-item.html" (dict "Page" . ) }}
+                {{ end }}
+            {{ template "_internal/pagination.html" . }}
+            {{/* partial "pagination.old.html" $paginator */}}
+            </ul>
+        </div>
+    </div>
+</div>
+{{ end }}
