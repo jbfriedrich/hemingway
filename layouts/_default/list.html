@@ -10,8 +10,9 @@
                 {{ partial "list-item.html" (dict "Page" . ) }}
                 {{ end }}
             </ul>
-            {{ template "_internal/pagination.html" . }}
-             {{/* partial "pagination.old.html" $paginator */}}
+            <div class="text-center">
+                {{ template "_internal/pagination.html" . }}
+            </div>
         </div>
     </div>
 </div>

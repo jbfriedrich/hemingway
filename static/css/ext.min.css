@@ -1,0 +1,276 @@
+/* Body settings */
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        /*color: #444;*/
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -moz-font-feature-settings: "liga" on;
+        font-size-adjust: 0.5;
+    }
+
+/* Font sizes */
+
+    .text-xs {
+        font-size: .75rem;
+    }
+    .text-sm {
+        font-size: .875rem;
+    }
+    .text-base {
+        font-size: 1rem;
+    }
+    .text-lg {
+        font-size: 1.125rem;
+    }
+    .text-xl {
+        font-size: 1.25rem;
+    }
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+    .text-3xl {
+        font-size: 1.875rem;
+    }
+    .text-4xl {
+        font-size: 2.25rem;
+    }
+    .text-5xl {
+        font-size: 3rem;
+    }
+    .text-6xl {
+        font-size: 4rem;
+    }
+
+/* Line heights */
+
+    .leading-none {
+        line-height: 1;
+    }  
+    .leading-tight {
+        line-height: 1.25;
+    } 
+    .leading-snug {
+        line-height: 1.375;
+    }
+    .leading-normal {
+        line-height: 1.5;
+    }
+    .leading-relaxed {
+        line-height: 1.625;
+    }
+    .leading-loose {
+        line-height: 2;
+    }
+
+/* Symbol after external links */
+
+    .post-list .tag-micro .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']),
+    .post-micro-text > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']) {
+        white-space: nowrap;
+    }
+
+    .post-list .tag-micro .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']):after,
+    .post-micro-text > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']):after {
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        content: '\f35d';
+        font-family: "Font Awesome 5 Pro";
+        font-size: .875rem;
+        font-weight: 900;
+        font-style: normal;
+        font-variant: normal;
+        padding-left: .3rem;
+        vertical-align: baseline;
+    }
+
+/* Picture List View */
+
+    .card {
+        border: unset !important;
+        border-radius: unset !important;
+    }
+
+    .picture-overview figcaption {
+        display: none;
+    }
+
+    .picture-overview .card > .picture-post-link p {
+        display: none;
+    }
+
+    .picture-overview .kg-image-card img {
+        width: 160px !important;
+        height: 160px !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        /*padding: 10px;*/
+        border-radius: .25rem;
+    }
+
+/* Singe Post View */
+
+    .post-item:last-child {
+        border-bottom: unset !important;
+    }
+
+    .tag-header-image {
+        object-fit: cover;
+        height: 60vw;
+    }
+
+    .header-image img {
+        width: 100%;
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    @media (min-width: 576px) {
+        .header-image img {
+            border-radius: .25rem .25rem 0 0;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .tag-header-image {
+            height: 500px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .header-content-wrap {
+            margin-top: -7rem;
+        }
+
+        .header-image img {
+            max-height: 500px;
+            border-radius: .25rem;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .header-image img {
+            max-height: 600px;
+        }
+
+        .tag-header-image {
+            object-fit: cover;
+            height: 600px;
+        }
+    }
+
+    blockquote {
+        /* Newer style */
+        margin: 7px 0 15px;
+        padding: 1rem;
+        border: 1px solid #eee;
+        border-radius: .25rem;
+        border-left-width: .25rem;
+        border-left-color: var(--pink);
+        /*border-radius: .25rem;*/
+        /*color: #595959;*/
+        color: var(--secondary);
+        /*font-family: "Merriweather";*/
+        /*font-size: 1.0625rem;*/
+        /*font-weight: 300;*/
+        /* Older style */
+        /*padding: 1rem 1.25rem;
+        margin-bottom: 1.25rem;
+        border: 1px solid #eee;
+        border-left-width: .3rem;
+        border-radius: .25rem;
+        border-left-color: #007bff;
+        color: #6c757d;*/
+        /*text-align: justify;*/
+        /*font-style: italic;*/
+    }
+
+    .hljs {
+        font-size: .875rem !important;
+        white-space: pre-line !important;
+    }
+
+/* Images & Galleries */
+
+    .kg-image-card img {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .kg-width-wide img,
+    .kg-width-wide .kg-gallery-container {
+        display: block;
+        position: relative;
+        width: 100vw;
+        max-width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .kg-gallery-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .kg-gallery-image:not(:first-of-type) {
+        margin: 0 0 0 0.25em;
+    }
+
+    .kg-gallery-row:not(:first-of-type) {
+        margin: 0.25em 0 0 0;
+    }
+
+    .kg-gallery-image img {
+        display: block;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media (min-width: 992px) {
+        .kg-width-wide img,
+        .kg-width-wide .kg-gallery-container {
+            max-width: 47em;
+        }
+
+        .kg-width-full img {
+            left: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            max-width: 100vw;
+            position: relative;
+            right: 50%;
+            width: 100vw;
+            max-height: 700px;
+            object-fit: cover;
+        }
+    }
+
+    .kg-embed-card figcaption,
+    .kg-image-card figcaption,
+    .kg-gallery-card figcaption,
+    .kg-bookmark-card figcaption {
+        padding: 10px 10px;
+        /*color: #6c757d;*/
+        color: rgba(0,0,0,.5);
+        font-size: 80%;
+        /*font-style: italic;*/
+        margin: -5px 0;
+        text-align: center;
+    }
+
+    .kg-image-card.kg-width-full figcaption {
+        width: 100vw
+    }

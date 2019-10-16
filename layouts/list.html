@@ -7,8 +7,7 @@
                 {{ range $paginator.Pages }}
                 {{ partial "list-item.html" (dict "Page" . ) }}
                 {{ end }}
-            {{ template "_internal/pagination.html" . }}
-            {{/* partial "pagination.old.html" $paginator */}}
+                {{ template "_internal/pagination.html" . }}
             </ul>
         </div>
     </div>
