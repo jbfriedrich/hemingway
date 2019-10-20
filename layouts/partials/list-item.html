@@ -1,13 +1,20 @@
-<li class="post-item pb-4 pb-md-5 mb-4 mb-md-5 border-bottom">
+<li class="post-item mb-5">
     <article class="post-article tag-{{ .Page.Params.type }}">
         {{ $date := .Page.Date.Format "January 2, 2006 15:04 MST" }}
-        {{ if or (eq .Page.Params.Type "micro") (eq .Page.Params.Type "link") (eq .Page.Params.Type "picture") }}
-            <div class="post-content">{{ .Page.Content }}</div>
-            <a href="{{ .Page.RelPermalink }}" class="text-secondary text-sm text-uppercase"><span style="color: var(--pink);">&rarr;</span> {{ $date }}</a>
+        {{ if or (eq .Page.Params.Type "micro") (eq .Page.Params.Type "picture") }}
+            <hr class="mx-0 mt-3 mb-4 pink" style="width: 48px; height: 2px;">
+            <div class="post-content{{ if lt (len .Page.Content) 140}} text-xl{{ else if (and (lt (len .Page.Content) 280) (gt (len .Page.Content) 140) ) }} text-lg{{ end }}">{{ .Page.Content }}</div>
+            <a href="{{ .Page.RelPermalink }}" class="text-secondary text-sm text-uppercase"><span class="pink-text">&rarr;</span> {{ $date }}</a>
+        {{ else if eq .Page.Params.Type "link" }}
+            <h2 class="post-title my-1"><a href="{{ .Page.Params.link_url }}" class="text-dark text-decoration-none" target="_blank">{{ .Page.Params.link_title }}</a></h2>
+            <hr class="mx-0 mt-3 mb-4 pink" style="width: 48px; height: 2px;">
+            {{ with .Page.Params.link_comment }}<p class="post-content">{{ . }}</p>{{ end }}
+            <a href="{{ .Page.RelPermalink }}" class="text-secondary text-sm text-uppercase"><span class="pink-text">&rarr;</span> {{ $date }}</a>
         {{ else }}
-            <h2 class="post-title my-1"><a href="{{ .Page.RelPermalink }}" class="text-dark">{{ .Page.Title }}</a></h2>
+            <h2 class="post-title my-1"><a href="{{ .Page.RelPermalink }}" class="text-dark text-decoration-none">{{ .Page.Title }}</a></h2>
+            <hr class="mx-0 mt-3 mb-4 pink" style="width: 48px; height: 2px;">
             <p class="post-excerpt">{{ .Page.Summary }}</p>
-            <span class="text-secondary text-sm text-uppercase"><span style="color: var(--pink);">&rarr;</span> {{ $date }}</span>
+            <span class="text-secondary text-sm text-uppercase"><span class="pink-text">&rarr;</span> {{ $date }}</span>
         {{ end }}      
     </article>
 </li>

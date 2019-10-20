@@ -5,7 +5,8 @@
 <div class="row my-5">
     <div class="col-12 mx-auto rounded" style="max-width: 47em;">
         <ul class="post-list list-unstyled m-0">
-            {{ range .Paginator.Pages }}
+            {{ $paginator := .Paginate (where $.Site.RegularPages ".Params.type" "!=" "page") }}
+            {{ range $paginator.Pages }}
             {{ partial "list-item.html" (dict "Page" . ) }}
             {{ end }}
         </ul>

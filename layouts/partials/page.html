@@ -9,9 +9,10 @@
         </div>
         {{ end }}
         <div class="row">
-            <div class="post col-12 border rounded bg-white mx-auto{{if .Params.feature_image }} header-content-wrap{{ end }}" style="max-width: 47em;">
-                <div class="post-page page-content text-justify text-md-left py-4 px-sm-3 px-sm-4 p-lg-5">
-                    <h1 class="post-title mb-4 mb-md-5 color-grayblack text-left font-weight-light">{{ .Title }}</h1>
+            <div class="post col-12 rounded bg-white mx-auto{{if .Params.feature_image }} header-content-wrap{{ end }}" style="max-width: 47em;">
+                <div class="post-page page-content text-justify text-md-left py-4 p-lg-5">
+                    <h1 class="post-title m-0 color-grayblack text-left font-weight-light">{{ .Title }}</h1>
+                     <hr class="mx-0 mt-3 mb-4 pink" style="width: 48px; height: 2px;">
                     {{ .Content }}
                 </div>
             </div>

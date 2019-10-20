@@ -1,7 +1,7 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>All content on {{ .Site.Params.friendly_url }}</title>
+    <title>This is mostherfucking test Micro Posts on {{ .Site.Params.friendly_url }}</title>
     <link>{{ .Permalink }}</link>
     <description>Most recent content on {{ .Site.Params.friendly_url }}</description>
     <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
@@ -15,7 +15,7 @@
     {{ end }}
     {{ range .Pages }}
     <item>
-      <title>{{ .Title }}</title>
+      <title>{{ htmlUnescape .Summary | truncate 50 }}</title>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{ with .Site.Params.email }}<author>{{.}}{{ with $.Site.Params.author.display_name }} ({{.}}){{end}}</author>{{end}}

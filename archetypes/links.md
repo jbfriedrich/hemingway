@@ -7,8 +7,7 @@ images:
   - 
 tags:
   -
+link_url:
+link_title:
+link_comment:
 ---
-
-[Link description](https://l.nk)
-
-Insert text here

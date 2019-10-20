@@ -1,9 +1,9 @@
 {{ $currentPage := . }}
 {{ $currentPageSlug := .Slug }}
 <div class="container-fluid p-0 small">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <ul class="navbar-nav mr-lg-5">
-            <li class="nav-item" style="color: var(--pink);">{{ .Site.Params.author.display_name }} © {{ .Date.Format "2006" }}</li>
+            <li class="nav-item text-black-50">{{ .Site.Params.copyright }}</li>
         </ul>
         <div class="navbar-collapse collapse">    
             <ul class="navbar-nav">
@@ -16,15 +16,27 @@
                 {{ range .Site.Menus.footermiddle }}
                 <li class="nav-item"><a class='nav-link{{if or ($currentPage.IsMenuCurrent "footermiddle" .) ($currentPage.HasMenuCurrent "footermiddle" .) }} active{{end}}' href="{{ .URL }}">{{ .Name }}</a></li>
                 {{ end }}
+                {{ if .Site.Params.author.social.twitter }}<li class="nav-item"><a class="nav-link" href="{{ .Site.Params.author.social.twitter }}" title="Twitter" target="_blank" rel="noopener">Twitter</a></li>{{ end }}
+                {{ if .Site.Params.author.social.mastodon }}<li class="nav-item"><a class="nav-link" href="{{ .Site.Params.author.social.mastodon }}">Mastodon</a></li>{{ end }}
             </ul>
             <ul class="navbar-nav ml-lg-4">
-                <li class="nav-item"><a class="nav-link" href="{{ .Site.Params.author.social.twitter }}" title="Twitter" target="_blank" rel="noopener">Twitter</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ .Site.Params.author.social.mastodon }}">Mastodon</a></li>
+                <li class="nav-item dropup">
+                    <a class="nav-link icon rss dropdown-toggle" id="navbarDropdownLink" aria-label="Available RSS feeds" href="#" role="button" data-toggle="dropdown">RSS</a>
+                    <div class="dropdown-menu" id="navbarDropdown" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item rss-item small" href="{{ .Site.BaseURL }}rss/all">Everything</a>
+                        <a class="dropdown-item rss-item small" href="{{ .Site.BaseURL }}rss/posts">Posts</a>
+                        <a class="dropdown-item rss-item small" href="{{ .Site.BaseURL }}rss/micros">Micro Posts</a>
+                        <a class="dropdown-item rss-item small" href="{{ .Site.BaseURL }}rss/links">Links</a>
+                        <a class="dropdown-item rss-item small" href="{{ .Site.BaseURL }}rss/pictures">Pictures</a>
+                        <a class="dropdown-item rss-item small" href="{{ .Site.BaseURL }}rss/de">Deutsch</a>
+                        <a class="dropdown-item rss-item small" href="{{ .Site.BaseURL }}rss/en">English</a>
+                    </div>
+                </li>
             </ul>
         </div>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">Back to Top ↑</a>
+                <a class="nav-link text-dark" href="#">Back to Top ↑</a>
             </li>
         </ul>
     </nav>
