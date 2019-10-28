@@ -1,19 +1,17 @@
 <div class="full-page d-flex flex-column h-100">
-    <!-- This is a full, long post -->
+    <!-- This is a full page -->
     <div class="flex-grow-1 flex-shrink-0">
-        {{if .Params.feature_image }}
         <div class="row">
-            <div class="header-image col-12 px-0">
-                <img class="img" alt="Header Image" src="{{ .Params.feature_image }}">
-            </div>
-        </div>
-        {{ end }}
-        <div class="row">
-            <div class="post col-12 rounded bg-white mx-auto{{if .Params.feature_image }} header-content-wrap{{ end }}" style="max-width: 47em;">
-                <div class="post-page page-content text-justify text-md-left py-4 p-lg-5">
-                    <h1 class="post-title m-0 color-grayblack text-left font-weight-light">{{ .Title }}</h1>
-                     <hr class="mx-0 mt-3 mb-4 pink" style="width: 48px; height: 2px;">
-                    {{ .Content }}
+            <div class="col-12">
+                {{if .Params.feature_image }}        
+                <img class="header-image img rounded mt-4 mt-md-5" alt="Header Image" src="{{ .Params.feature_image }}">
+                {{ end }}
+                <div class="post-page page-content text-justify text-md-left">
+                    <div class="content-wrap py-3 py-md-4 py-lg-5 mx-auto" style="max-width: 45rem;">
+                        <h1 class="post-title m-0 color-grayblack text-left font-weight-light">{{ .Title }}</h1>
+                        <hr class="mx-0 mt-3 mb-4 mb-sm-5 pink" style="width: 4em; height: 2px;">
+                        {{ .Content }}
+                    </div>
                 </div>
             </div>
         </div>

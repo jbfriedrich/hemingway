@@ -1,22 +1,23 @@
 <div class="full-post d-flex flex-column h-100">
-    <div class="flex-grow-1 flex-shrink-0">
-        {{if .Params.feature_image }}
-        <div class="row p-0">
-            <div class="header-image col-12 px-0">
-                <img class="img" alt="Header Image" src="{{ .Params.feature_image }}">
-            </div>
-        </div>
-        {{ end }}
+     <!-- This is a full, long post -->
+    <!-- <div class="flex-grow-1 flex-shrink-0"> -->
+    <div class="container">
         <div class="row">
-            <div class="post col-12 border rounded bg-white mx-auto{{if .Params.feature_image }} header-content-wrap{{ end }}" style="max-width: 47em;">
-                <div class="post-content text-justify text-md-left py-4 px-sm-3 p-md-5">
-                    <h5 class="post-date mt-0 mb-0 font-weight-light text-black-50 text-left" >{{ .Page.Date.Format "January 2, 2006" }}</h5>
-                    <h1 class="post-title mt-2 mb-4 mb-md-5 color-grayblack text-left font-weight-light">{{ .Title }}</h1>
-                    {{ .Content }}
-                    {{ partial "taglist.html" . }}
-                    {{ partial "author-info" . }}
+            <div class="col-12">
+                {{if .Params.feature_image }}
+                <img class="header-image img rounded mb-4 mb-md-5" alt="Header Image" src="{{ .Params.feature_image }}">
+                {{ end }}
+                <div class="post post-content">
+                    <div class="content-wrap mx-auto" style="max-width: 45rem;">
+                        <h5 class="post-date mt-0 mb-0 font-weight-light text-black-50 text-left" >{{ .Page.Date.Format "January 2, 2006" }}</h5>
+                        <h1 class="post-title mt-1 color-grayblack text-left font-weight-light">{{ .Title }}</h1>
+                        <hr class="mx-0 mt-3 mb-4 mb-sm-5 pink" style="width: 4em; height: 2px;">
+                        {{ .Content }}
+                        {{ partial "taglist.html" . }}
+                        {{ partial "author-info" . }}
+                    </div>
                 </div>
-            </div>
+            </div>      
         </div>
     </div>
 </div>

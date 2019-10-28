@@ -73,22 +73,16 @@
 
 /* Symbol after external links */
 
-    .tag-micro .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']),
-    .tag-micro .post-micro > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']) {
+    .post-list .tag-micro .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']),
+    .post-micro.tag-micro .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']) {
         white-space: nowrap;
     }
 
-    .tag-micro .post-content > p > a > .fa-external-link-alt,
-    .tag-micro .post-micro > p > a > .fa-external-link-alt {
-        margin-left: .3rem;
-        font-size: .875rem;
-        vertical-align: baseline;
-        /*height: 1rem;*/
-    }
-
-    .tag-micro .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/'])::after,
-    .tag-micro .post-micro > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/'])::after {
-        display: none;
+    .post-list .tag-link .card-title > a:not([href*='jason.re']):not([href^='#']):not([href^='/']):after,
+    .post-micro .post-content h3 > a:not([href*='jason.re']):not([href^='#']):not([href^='/']):after,
+    .post-list .tag-micro .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']):after,
+    .post-micro.tag-micro .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']):after {
+        display: inline-block;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
         content: '\f35d';
@@ -96,8 +90,14 @@
         font-weight: 900;
         font-style: normal;
         font-variant: normal;
+        vertical-align: baseline;
+        padding-left: .3rem;
     }
 
+    .post-list .tag-micro .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']):after,
+    .post-micro.tag-micro .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']):after {
+        font-size: .875rem;
+    }
 
 /* Singe Post View */
 

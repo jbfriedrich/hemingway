@@ -15,7 +15,7 @@
     {{ template "_internal/opengraph.html" . }}
     <link rel="canonical" href="{{ .Permalink }}">
     <!-- Font Awesome -->
-    <script data-search-pseudo-elements defer src="https://kit.fontawesome.com/8e970ba8ec.js" crossorigin="anonymous"></script>
+    <script data-search-pseudo-elements src="https://kit.fontawesome.com/8e970ba8ec.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Material Design Bootstrap -->
@@ -30,16 +30,14 @@
     {{ hugo.Generator }}
 </head>
 
-<body name="top" class="h-100 d-flex flex-column">
+<body id="top" name="top" class="h-100 d-flex flex-column">
     {{- partial "top-nav.html" . -}}
 
-    <main class="flex-shrink-0">
-        <div class="container">
-            {{- block "main" . }}{{- end }}
-        </div>
+    <main class="flex-shrink-0 my-5">
+        {{- block "main" . }}{{- end }}
     </main>
 
-    <footer class="mt-auto bg-white">
+    <footer class="mt-auto">
         {{- block "related-next-prev" . }}{{- end }}
         {{- partial "footer.html" . -}}
     </footer>

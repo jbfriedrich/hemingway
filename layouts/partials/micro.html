@@ -1,10 +1,31 @@
-<div class="row">
-    <div class="post-micro tag-{{ .Page.Params.type }} col-12 border rounded bg-white mx-auto" style="max-width: 47em;">
-        <div class="post-content post-micro-text text-justify text-md-left py-4 px-sm-3 p-md-5">
-            {{ .Content }}
-            <p class="post-micro-header text-secondary text-sm text-uppercase mt-4 mb-0"><span style="color: var(--pink);">&rarr;</span> {{ .Page.Date.Format "January 2, 2006 15:04 MST" }}</p>
-            {{ partial "taglist.html" . }}
-            {{ partial "author-info.html" . }}
+<div class="full-page d-flex flex-column h-100">
+    <!-- This is a micro page -->
+    <!-- <div class="flex-grow-1 flex-shrink-0"> -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="tag-{{ .Page.Params.type }} mx-auto">
+                    <div class="post-content text-md-left">
+                        <div class="content-wrap mx-auto" style="max-width: 45rem;">
+                            {{ if eq .Page.Section "micros" }}
+                            <span class="text-secondary text-uppercase font-weight-light">{{ .Page.Date.Format "January 2, 2006 • 15:04 MST" }}</span>
+                            <hr class="mx-0 mt-3 mb-4 pink" style="width: 4em; height: 2px;">
+                            <div class="post-micro{{ if lt (len .Page.Content) 140}} text-xl{{ else if (and (lt (len .Page.Content) 280) (gt (len .Page.Content) 140) ) }} text-lg{{ end }}">
+                                {{ .Content }}
+                            </div>
+                            {{ else if eq .Page.Section "links" }}
+                            <h2><i class="fas fa-external-link-alt" data-fa-transform="shrink-5"></i><a class="link-title text-dark" href="{{ .Page.Params.link_url }}" target="_blank">{{ .Page.Params.link_title }}</a></h2>
+                            <span class="text-secondary text-uppercase font-weight-light">{{ .Page.Date.Format "January 2, 2006 • 15:04 MST" }}</span>
+                            <hr class="mx-0 mt-3 mb-4 pink" style="width: 4em; height: 2px;">
+                            {{ with .Page.Params.link_comment }}<p class="post-content">{{ . }}</p>{{ end }}
+                            {{ end }}
+                            {{ partial "taglist.html" . }}
+                            {{ partial "author-info.html" . }}
+                        </div>
+                    </div>
+                </div>    
+            </div>       
         </div>
     </div>
+    <!-- </div> -->
 </div>

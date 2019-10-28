@@ -2,16 +2,16 @@
     {{ .Title }} | {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
-<div class="row my-5">
-    <div class="col-12 mx-auto rounded" style="max-width: 47em;">
-        <ul class="post-list list-unstyled m-0">
-            {{ range .Paginator.Pages }}
-            {{ partial "list-item.html" (dict "Page" . ) }}
-            {{ end }}
-        </ul>
-        <div class="text-center my-5">
+<div class="container">
+    <div class="row">
+        <div class="col-12 mx-auto rounded" style="max-width: 45rem;">
+            <ul class="post-list list-unstyled m-0">
+                {{ range .Paginator.Pages }}
+                {{ partial "list-item.html" (dict "Page" . ) }}
+                {{ end }}
+            </ul>
             {{ template "_internal/pagination.html" . }}
         </div>
     </div>
-</div>
+<div class="container">
 {{ end }}

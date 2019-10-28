@@ -1,6 +1,18 @@
 {{ define "title" }}
     {{ .Title }} | {{ .Site.Title }}
 {{ end }}
+
 {{ define "main" }}
-    {{ partial "page.html" . }}
+    {{ if eq .Page.Section "posts" }}
+        {{ partial "post.html" . }}  
+    {{ else if (or (eq .Page.Section "micros") (eq .Page.Section "links") ) }}
+        {{ partial "micro.html" . }}
+    {{ else }}
+        {{ partial "page.html" . }}
+    {{ end }}
+{{ end }}
+{{ define "related-next-prev" }}
+    {{ if eq .Page.Section "posts" }}
+        {{ partial "related-read-next.html" . }}
+    {{ end }}
 {{ end }}
