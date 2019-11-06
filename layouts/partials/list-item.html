@@ -1,22 +1,35 @@
 <li class="post-item">
-    <article class="post-article{{ with .Page.Params.type }} tag-{{ . }}{{ end }}" style="margin-bottom: 5rem;">
-            {{ if or (eq .Page.Params.Type "micro") (eq .Page.Params.Type "picture") }}
-                {{ $date := .Page.Date.Format "January 2, 2006 • 15:04 MST" }}
-                <a href="{{ .Page.RelPermalink }}" class="text-secondary text-uppercase text-decoration-none font-weight-light">{{ $date }}</a>&nbsp;<i class="fas fa-link text-secondary"></i>
-                <hr class="mx-0 mt-3 mb-4 pink" style="width: 4em; height: 2px;">
-                <div class="post-content {{ if lt (len .Page.Content) 140}} text-xl{{ else if (and (lt (len .Page.Content) 280) (gt (len .Page.Content) 140) ) }} text-lg{{ end }}">{{ .Page.Content }}</div>
-            {{ else if eq .Page.Params.Type "link" }}
-                {{ $date := .Page.Date.Format "January 2, 2006 • 15:04 MST" }}
-                <h2><i class="fas fa-external-link-alt" data-fa-transform="shrink-5"></i><a class="link-title text-dark" href="{{ .Page.Params.link_url }}" target="_blank">{{ .Page.Params.link_title }}</a></h2>
-                <a href="{{ .Page.RelPermalink }}" class="text-secondary text-uppercase text-decoration-none font-weight-light">{{ $date }}</a><i class="fas fa-link text-secondary ml-2"></i>
-                <hr class="mx-0 mt-3 mb-4 pink" style="width: 4em; height: 2px;">
-                {{ with .Page.Params.link_comment }}<p class="post-content">{{ . }}</p>{{ end }}
-            {{ else }}
-                {{ $date := .Page.Date.Format "January 2, 2006" }}
-                <h2 class="mb-1"><a href="{{ .Page.RelPermalink }}" class="text-dark">{{ .Page.Title }}</a></h2>
-                <span class="text-secondary text-uppercase font-weight-light">{{ $date }}</span>
-                <hr class="mx-0 mt-3 mb-4 pink" style="width: 4em; height: 2px;">
-                <p class="post-excerpt">{{ .Page.Summary }}</p>
+    <article class="post-excerpt{{ with .Page.Params.type }} type-{{ . }}{{else}} type-post{{ end }}">
+        {{ if or (eq .Page.Params.Type "micro") (eq .Page.Params.Type "picture") }}
+            {{ $date := .Page.Date.Format "January 2, 2006 • 15:04 MST" }}
+            <header class="post-header">
+                <a href="{{ .Page.RelPermalink }}" class="post-item-date">{{ $date }}<i class="fas fa-link"></i></a>
+            </header>
+            <section class="post-item-content{{ if lt (len .Page.Content) 140}} text-xl{{ else if (and (lt (len .Page.Content) 280) (gt (len .Page.Content) 140) ) }} text-lg{{ end }}">
+                {{ .Page.Content }}
+            </section>
+        {{ else if eq .Page.Params.Type "link" }}
+            {{ $date := .Page.Date.Format "January 2, 2006 • 15:04 MST" }}
+            <header class="post-header">
+                <h2><a class="post-item-title" href="{{ .Page.Params.link_url }}" target="_blank"><i class="fas fa-external-link-alt" data-fa-transform="shrink-4"></i>{{ .Page.Params.link_title }}</a></h2>
+                <a href="{{ .Page.RelPermalink }}" class="post-item-date">{{ $date }}</a><i class="fas fa-link"></i>
+            </header>
+            {{ with .Page.Params.link_comment }}
+            <section class="post-item-content">
+                <p class="">{{ . }}</p>
+            </section>
             {{ end }}
+        {{ else }}
+            {{ $date := .Page.Date.Format "January 2, 2006" }}
+            <a href="{{ .Page.RelPermalink }}" class="post-item-title">
+                <header class="post-header">
+                    <h2>{{ .Page.Title }}</h2>
+                    <span class="post-item-date">{{ $date }}</span>
+                </header>
+                <section class="post-item-content">
+                    <p class="">{{ .Page.Summary }}</p>
+                </section>
+            </a>
+        {{ end }}
     </article>
 </li>

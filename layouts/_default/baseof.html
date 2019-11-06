@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<html id="top" lang="en">
 
 <head>
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
@@ -16,39 +16,41 @@
     <link rel="canonical" href="{{ .Permalink }}">
     <!-- Font Awesome -->
     <script data-search-pseudo-elements src="https://kit.fontawesome.com/8e970ba8ec.js" crossorigin="anonymous"></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Material Design Bootstrap -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/reboot.min.css" /> 
     <link rel="stylesheet" type="text/css" href="/css/highlightjs/tomorrow-night.css" /> 
     <link rel="stylesheet" type="text/css" href="/css/mdb-colors.min.css" >
-    <link rel="stylesheet" type="text/css" href="/css/ext.min.css" /> 
+    <link rel="stylesheet" type="text/css" href="/css/style.min.css" /> 
     <base href="{{ .Site.BaseURL }}">
     <link rel="shortcut icon" href="/favicon.png" type="image/png">
-    {{ range .AlternativeOutputFormats -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-    {{ end -}}
+    <link rel="alternate" type="application/rss+xml" href="index.xml" title="All Content">
+    <link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="Blog Posts">
+    <link rel="alternate" type="application/rss+xml" href="/micros/index.xml" title="Micro Posts">
+    <link rel="alternate" type="application/rss+xml" href="/links/index.xml" title="Links">
     {{ hugo.Generator }}
 </head>
 
-<body id="top" name="top" class="h-100 d-flex flex-column">
-    {{- partial "top-nav.html" . -}}
+<body name="top">
+    <header id="main-header">
+        {{- partial "top-nav.html" . -}}
+    </header>
 
-    <main class="flex-shrink-0 my-5">
+    <main id="main-content">
         {{- block "main" . }}{{- end }}
     </main>
 
-    <footer class="mt-auto">
-        {{- block "related-next-prev" . }}{{- end }}
+    <footer id="main-footer">
         {{- partial "footer.html" . -}}
     </footer>
 </body>
 
 <!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 <!-- Bootstrap tooltips -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
 <!-- Bootstrap core JavaScript -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
 <!-- HighlightJS -->
 <script src="/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>

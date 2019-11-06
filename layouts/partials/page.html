@@ -1,19 +1,15 @@
-<div class="full-page d-flex flex-column h-100">
-    <!-- This is a full page -->
-    <div class="flex-grow-1 flex-shrink-0">
-        <div class="row">
-            <div class="col-12">
-                {{if .Params.feature_image }}        
-                <img class="header-image img rounded mt-4 mt-md-5" alt="Header Image" src="{{ .Params.feature_image }}">
-                {{ end }}
-                <div class="post-page page-content text-justify text-md-left">
-                    <div class="content-wrap py-3 py-md-4 py-lg-5 mx-auto" style="max-width: 45rem;">
-                        <h1 class="post-title m-0 color-grayblack text-left font-weight-light">{{ .Title }}</h1>
-                        <hr class="mx-0 mt-3 mb-4 mb-sm-5 pink" style="width: 4em; height: 2px;">
-                        {{ .Content }}
-                    </div>
-                </div>
+<!-- This is a full page -->
+<div class="full-page type-page{{if .Params.feature_image }} has-feature-image{{ end }}">
+    <header class="page-header">
+        <h1 class="page-title">{{ .Title }}</h1>
+        {{if .Params.feature_image }}
+            <div class="page-feature-image">
+                <img alt="Header Image" src="{{ .Params.feature_image }}">
             </div>
-        </div>
-    </div>
+        {{ end }}
+    </header>
+    <section class="page-content">
+        {{ .Content }}
+    </section>
+    <!-- <footer class="page-footer"></footer> -->
 </div>

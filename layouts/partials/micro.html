@@ -1,31 +1,26 @@
-<div class="full-page d-flex flex-column h-100">
-    <!-- This is a micro page -->
-    <!-- <div class="flex-grow-1 flex-shrink-0"> -->
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="tag-{{ .Page.Params.type }} mx-auto">
-                    <div class="post-content text-md-left">
-                        <div class="content-wrap mx-auto" style="max-width: 45rem;">
-                            {{ if eq .Page.Section "micros" }}
-                            <span class="text-secondary text-uppercase font-weight-light">{{ .Page.Date.Format "January 2, 2006 • 15:04 MST" }}</span>
-                            <hr class="mx-0 mt-3 mb-4 pink" style="width: 4em; height: 2px;">
-                            <div class="post-micro{{ if lt (len .Page.Content) 140}} text-xl{{ else if (and (lt (len .Page.Content) 280) (gt (len .Page.Content) 140) ) }} text-lg{{ end }}">
-                                {{ .Content }}
-                            </div>
-                            {{ else if eq .Page.Section "links" }}
-                            <h2><i class="fas fa-external-link-alt" data-fa-transform="shrink-5"></i><a class="link-title text-dark" href="{{ .Page.Params.link_url }}" target="_blank">{{ .Page.Params.link_title }}</a></h2>
-                            <span class="text-secondary text-uppercase font-weight-light">{{ .Page.Date.Format "January 2, 2006 • 15:04 MST" }}</span>
-                            <hr class="mx-0 mt-3 mb-4 pink" style="width: 4em; height: 2px;">
-                            {{ with .Page.Params.link_comment }}<p class="post-content">{{ . }}</p>{{ end }}
-                            {{ end }}
-                            {{ partial "taglist.html" . }}
-                            {{ partial "author-info.html" . }}
-                        </div>
-                    </div>
-                </div>    
-            </div>       
-        </div>
-    </div>
-    <!-- </div> -->
+<!-- This is a full post -->
+<div class="full-post{{ with .Page.Params.type }} type-{{ . }}{{else}} type-post{{ end }}">
+    {{ if eq .Page.Section "micros" }}
+    <header class="post-header">
+        <div class="post-date">{{ .Page.Date.Format "January 2, 2006 • 15:04 MST" }}</div>
+    </header>
+    <section class="post-content">
+        {{ .Content }}
+    </section>
+    {{ else if eq .Page.Section "links" }}
+    <header class="post-header">
+        <div class="post-date">{{ .Page.Date.Format "January 2, 2006 • 15:04 MST" }}</div>
+        <h2 class="post-title">
+            <a class="link-title text-dark" href="{{ .Page.Params.link_url }}" target="_blank"><i class="fas fa-external-link-alt" data-fa-transform="shrink-4"></i>{{ .Page.Params.link_title }}</a>
+        </h2>
+    </header>
+    {{ with .Page.Params.link_comment }}<section class="post-content">{{ . }}</section>{{ end }}
+    {{ end }}
+    <aside class="related-content">
+        {{ partial "taglist.html" . }}
+        {{ partial "author-info" . }} 
+    </aside>
+    <footer class="post-footer">
+        {{/*- partial "related-read-next" . */}}
+    </footer>
 </div>

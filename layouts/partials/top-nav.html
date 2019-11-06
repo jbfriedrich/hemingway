@@ -1,10 +1,7 @@
-<nav class="py-3 flex-shrink-0 flex-grow-0 navbar navbar-expand-md navbar-light border-bottom bg-white">
-    <a class="navbar-brand small black-text" href="/">{{ .Site.Title }}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="true" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse" id="mainNavbar">
-        <ul class="navbar-nav text-nowrap ml-auto mt-1 mt-lg-0">
+<nav id="top-nav" class="nav">
+    <h4 class="site-title"><a href="/">{{ .Site.Title }}</a></h4>
+    <div class="navbar-navitems">
+        <ul class="item-list">
             <!-- Loop through the navigation items -->
             {{ $currentPage := . }}
             {{ $currentPageSlug := .Slug }}
@@ -15,10 +12,5 @@
             {{ end }}
             <!-- End the loop -->
         </ul>
-        <form class="form-inline my-0 mt-1 my-lg-0 ml-lg-2 small" method="get" action="https://google.com/cse">
-            <input class="form-control" name="cx" type="hidden" value="017535604341602901961:grmyjwbjtxe">
-            <input class="form-control" name="ie" type="hidden" value="UTF-8">
-            <input class="form-control" name="q" type="search" placeholder="Search" aria-label="Search">
-        </form>
     </div>
 </nav>

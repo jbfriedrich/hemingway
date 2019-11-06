@@ -1,18 +1,18 @@
-<div class="read-next d-flex flex-column flex-lg-row bg-dark justify-content-center align-items-stretch text-center">
+<div class="read-next-prev">
+    <div class="read-next">
     {{ if .NextInSection }}
-        <a class="read-next-story prev text-decoration-none flex-grow-1 flex-shrink-1" href="{{ .NextInSection.Permalink }}"{{ if .NextInSection.Params.feature_image }} style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{ .NextInSection.Params.feature_image }}); background-position: center center; background-size: cover;"{{ end }}>
-            <section class="post-info p-5 h-100">
-                <h2 class="color-white mt-2 mb-3">{{ .NextInSection.Title }}</h2>
-                <p class="excerpt text-base">{{ slicestr .NextInSection.Summary 0 120 }}...</p>
-            </section>
+        <a class="read-next-story" href="{{ .NextInSection.Permalink }}">
+            <span class="read-next-label">Read this next</span>
+            <h5 class="read-next-title">» {{ .NextInSection.Title }} «</h5>
         </a>
+    </div>
     {{ end }}
     {{ if .PrevInSection }}
-        <a class="read-next-story text-decoration-none flex-grow-1 flex-shrink-1" href="{{ .PrevInSection.Permalink }}"{{ if .PrevInSection.Params.feature_image }} style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{ .PrevInSection.Params.feature_image }}); background-position: center center; background-size: cover;"{{ end }}>
-            <section class="post-info p-5 h-100">
-                <h2 class="color-white mt-2 mb-3">{{ .PrevInSection.Title }}</h2>
-                <p class="excerpt text-base">{{ slicestr .PrevInSection.Summary 0 120 }}...</p>
-            </section>
+    <div class="read-prev">
+        <a class="read-prev-story" href="{{ .PrevInSection.Permalink }}">
+            <span class="read-prev-label">You might enjoy</span>
+            <h5 class="read-prev-title">» {{ .PrevInSection.Title }} «</h5>
         </a>
+    </div>
     {{ end }}
 </div>

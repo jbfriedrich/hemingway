@@ -1,10 +1,10 @@
 {{ $baseurl := .Site.BaseURL }}
 {{ if .Params.tags }}
-<aside class="taglist mt-4 mt-lg-5 text-black-50">
-    <ul class="list-inline">        
+<aside class="tags">
+    <ul class="taglist">        
         {{ range .Params.tags }}
-            <li class="list-inline-item">
-                <a class="post-tag text-black-50 btn btn-light btn-sm text-lowercase" href="{{ $baseurl }}tags/{{ . | urlize }}" title="Posts tagged with {{ . }}">{{ . }}</a>
+            <li class="taglist-item">
+                <a class="tag tag-link" href="{{ $baseurl }}tags/{{ . | urlize }}" title="Posts tagged with {{ . }}">{{ . }}</a>
             </li>
         {{ end }}            
     </ul>

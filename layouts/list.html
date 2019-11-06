@@ -2,17 +2,13 @@
     {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
-<div class="container">
-    <div class="row">
-        <div class="col-12 mx-auto rounded" style="max-width: 45rem;">
-            <ul class="post-list list-unstyled m-0">
-                {{ $paginator := .Paginate (where $.Site.RegularPages ".Params.type" "!=" "page") }}
-                {{ range $paginator.Pages }}
-                {{ partial "list-item.html" (dict "Page" . ) }}
-                {{ end }}
-            </ul>
-            {{ template "_internal/pagination.html" . }}
-        </div>
+    <div class="wrap">
+        <ul class="post-list">
+            {{ $paginator := .Paginate (where $.Site.RegularPages ".Params.type" "!=" "page") }}
+            {{ range $paginator.Pages }}
+            {{ partial "list-item.html" (dict "Page" . ) }}
+            {{ end }}
+        </ul>
+        {{ template "_internal/pagination.html" . }}
     </div>
-</div>
 {{ end }}
