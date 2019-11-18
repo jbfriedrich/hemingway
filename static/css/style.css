@@ -74,7 +74,7 @@
     }
 
     #main-header {
-        margin: 1.5rem auto 3rem;
+        margin: 2rem auto 3rem;
         width: 45em;
         font-family: 'Open Sans', sans-serif;
         font-weight: 600;
@@ -122,6 +122,12 @@
         margin: 5rem auto 1rem;
     }
 
+    @media (min-width: 1200px) {
+        .site-title {
+            font-size: 2rem;
+        }        
+    }
+
     @media (max-width: 50em) {
         #top-nav {
             flex-direction: column;
@@ -129,12 +135,12 @@
 
         #main-header {
             width: 100% !important;
-            margin: 1.5rem auto 2rem;
+            margin: 2.5rem auto 2rem;
         }
 
         .site-title {
             margin-bottom: .5rem !important;
-            font-size: 2rem;
+            /*font-size: 2rem;*/
         }
 
         #main-content .wrap,
@@ -223,6 +229,10 @@
     
     .pagination .page-item.active {
         background-color: #2196f3;
+    }
+
+    .pagination .page-item .page-link {
+        display: block;
     }
 
     .pagination .page-item.active .page-link {
@@ -332,6 +342,10 @@
         color: #444;
     }
 
+    .post-item .post-item-content p:last-of-type {
+        margin-bottom: 0;
+    }
+
     .post-list .post-item-date {
         color: #757575;
     }
@@ -353,9 +367,14 @@
         vertical-align: baseline;
     }
 
+    .type-micro .post-item-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']),
+    .full-post.type-micro .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']) {
+        white-space: nowrap;
+    }
+
     .type-micro .post-item-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/'])::after,
     .full-post.type-micro .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/'])::after {
-        white-space: nowrap;
+        /*white-space: nowrap;*/
         display: none;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
