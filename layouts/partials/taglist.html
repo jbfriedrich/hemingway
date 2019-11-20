@@ -4,7 +4,7 @@
     <ul class="taglist">        
         {{ range .Params.tags }}
             <li class="taglist-item">
-                <a class="tag tag-link" href="{{ $baseurl }}tags/{{ . | urlize }}" title="Posts tagged with {{ . }}">{{ . }}</a>
+                <a class="tag tag-link" href="{{ $baseurl }}/tags/{{ . | urlize }}" title="Posts tagged with {{ . }}">{{ . }}</a>
             </li>
         {{ end }}            
     </ul>
