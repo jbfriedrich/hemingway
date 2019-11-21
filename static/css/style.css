@@ -587,8 +587,8 @@
         border: 1px solid #eee;
         border-radius: .25rem;
         border-left-width: .25rem;
-        border-left-color: var(--pink);
-        color: var(--secondary);
+        border-left-color: #2196f3;
+        color: #6c757d;
     }
 
     .hljs {
