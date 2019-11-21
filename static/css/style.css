@@ -544,6 +544,15 @@
       }
     }
 
+    .page-content hr,
+    .post-content hr {
+        height: 1px;
+        overflow: visible;
+        background-color: #eee;
+        border: none;
+        margin: 1.5rem 0 !important;
+    }
+
     .page-content img,
     .post-content img {
         border-radius: .5rem;
