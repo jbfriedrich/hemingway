@@ -342,10 +342,6 @@
         color: #444;
     }
 
-    .post-item .post-item-content p:last-of-type {
-        margin-bottom: 0;
-    }
-
     .post-list .post-item-date {
         color: #757575;
     }
@@ -670,6 +666,10 @@
         color: #007bff;
     }
 
+    .twitter-tweet.twitter-tweet-rendered {
+        margin: 10px auto !important;
+    }
+
 /* Images & Galleries */
 
     .image-card img {
@@ -744,6 +744,10 @@
 
     .image-card.width-full figcaption {
         width: 100vw
+    }
+
+    .kg-video-card {
+        margin-bottom: 1rem;
     }
 
 /* Author information */
