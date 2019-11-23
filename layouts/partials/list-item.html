@@ -16,7 +16,7 @@
             </header>
             {{ with .Page.Params.link_comment }}
             <section class="post-item-content">
-                <p class="">{{ . }}</p>
+                <p class="">{{ . | markdownify }}</p>
             </section>
             {{ end }}
         {{ else }}
