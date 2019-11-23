@@ -4,7 +4,7 @@
     <header class="post-header">
         <div class="post-date">{{ .Page.Date.Format "January 2, 2006 • 15:04 MST" }}</div>
     </header>
-    <section class="post-content">
+    <section class="post-content{{ if lt (len .Content) 140}} text-xl{{ else if (and (lt (len .Content) 280) (gt (len .Content) 140) ) }} text-lg{{ end }}">
         {{ .Content }}
     </section>
     {{ else if eq .Page.Section "links" }}
@@ -14,7 +14,7 @@
         </h2>
         <div class="post-date">{{ .Page.Date.Format "January 2, 2006 • 15:04 MST" }}</div>
     </header>
-    {{ with .Page.Params.link_comment }}<section class="post-content">{{ . | markdownify }}</section>{{ end }}
+    {{ with .Page.Params.link_comment }}<section class="post-content{{ if lt (len .) 140}} text-xl{{ else if (and (lt (len .) 280) (gt (len .) 140) ) }} text-lg{{ end }}">{{ . | markdownify }}</section>{{ end }}
     {{ end }}
     <aside class="related-content">
         {{ partial "taglist.html" . }}
