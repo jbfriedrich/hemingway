@@ -14,7 +14,7 @@
             <a class="link-title text-dark" href="{{ .Page.Params.link_url }}" target="_blank"><i class="fas fa-external-link-alt" data-fa-transform="shrink-4"></i>{{ .Page.Params.link_title }}</a>
         </h2>
     </header>
-    {{ with .Page.Params.link_comment }}<section class="post-content">{{ . }}</section>{{ end }}
+    {{ with .Page.Params.link_comment }}<section class="post-content">{{ . | markdownify }}</section>{{ end }}
     {{ end }}
     <aside class="related-content">
         {{ partial "taglist.html" . }}
