@@ -9,10 +9,10 @@
     </section>
     {{ else if eq .Page.Section "links" }}
     <header class="post-header">
-        <div class="post-date">{{ .Page.Date.Format "January 2, 2006 • 15:04 MST" }}</div>
         <h2 class="post-link-title">
             <a class="link-title text-dark" href="{{ .Page.Params.link_url }}" target="_blank"><i class="fas fa-external-link-alt" data-fa-transform="shrink-4"></i>{{ .Page.Params.link_title }}</a>
         </h2>
+        <div class="post-date">{{ .Page.Date.Format "January 2, 2006 • 15:04 MST" }}</div>
     </header>
     {{ with .Page.Params.link_comment }}<section class="post-content">{{ . | markdownify }}</section>{{ end }}
     {{ end }}
