@@ -1,5 +1,9 @@
 {{ define "title" }}
-    {{ .Title }} | {{ .Site.Title }}
+    {{ if eq .Page.Section "micros" }}
+        {{ .Page.Params.date }} | {{ .Site.Title }}
+    {{ else }}
+        {{ .Title }} | {{ .Site.Title }}
+    {{ end }}
 {{ end }}
 
 {{ define "main" }}
