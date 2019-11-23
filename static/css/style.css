@@ -334,7 +334,8 @@
         font-weight: bold;
     }
 
-    .post-list .post-item-date:hover {
+    .post-list .type-micro .post-item-date:hover,
+    .post-list .type-link .post-item-date:hover {
         color: #212121;
     }
 
