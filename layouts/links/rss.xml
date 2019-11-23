@@ -1,9 +1,9 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Micro Posts on {{ .Site.Params.friendly_url }}</title>
+    <title>Links on {{ .Site.Params.friendly_url }}</title>
     <link>{{ .Permalink }}</link>
-    <description>Most recent content on {{ .Site.Params.friendly_url }}</description>
+    <description>Most recent links on {{ .Site.Params.friendly_url }}</description>
     <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
     <language>{{.}}</language>{{end}}{{ with .Site.Author.email }}
     <managingEditor>{{.}}{{ with $.Site.Params.author.display_name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Params.email }}
