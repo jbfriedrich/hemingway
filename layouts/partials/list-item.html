@@ -15,8 +15,8 @@
                 <a href="{{ .Page.RelPermalink }}" class="post-item-date">{{ $date }}</a><i class="fas fa-link"></i>
             </header>
             {{ with .Page.Params.link_comment }}
-            <section class="post-item-content">
-                <p class="">{{ . | markdownify }}</p>
+            <section class="post-item-content{{ if lt (len .) 140}} text-xl{{ else if (and (lt (len .) 280) (gt (len .) 140) ) }} text-lg{{ end }}">
+                <p>{{ . | markdownify }}</p>
             </section>
             {{ end }}
         {{ else }}
