@@ -11,13 +11,13 @@
   </author>{{end}}
   <generator>Hugo -- gohugo.io</generator>{{ range .Data.Pages }}
   <entry>
-    <title>{{ .Title | htmlEscape }}</title>
+    <title>{{ .Title }}</title>
     <link rel="related" href="{{ .Permalink }}"/>
     <id>{{ .Permalink }}</id>{{ with $.Site.Params.author.display_name }}
     <author>
       <name>{{.}}</name>
     </author>{{end}}
-    <published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
+    <updated>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
     {{ `<content type="html"><![CDATA[` | safeHTML }}{{ .Content }}]]></content>
   </entry>{{ end }}
 </feed>
