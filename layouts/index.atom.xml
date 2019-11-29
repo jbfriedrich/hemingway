@@ -25,7 +25,7 @@
   </entry>
   {{ else if eq .Section "links" }}
   <entry>
-    <title>{{ .Params.link_title | htmlEscape }}</title>
+    <title>{{ .Params.link_title }}</title>
     <link rel="related" href="{{ .Params.link_url }}"/>
     <link rel="alternate" href="{{ .Permalink }}"/>
     <id>{{ .Permalink }}</id>{{ with $.Site.Params.author.display_name }}
@@ -39,7 +39,7 @@
   </entry>
   {{ else }}
   <entry>
-    <title>{{ .Title | htmlEscape }}</title>
+    <title>{{ .Title }}</title>
     <link rel="related" href="{{ .Permalink }}"/>
     <id>{{ .Permalink }}</id>{{ with $.Site.Params.author.display_name }}
     <author>
