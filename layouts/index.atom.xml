@@ -1,0 +1,55 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ .Site.Params.friendly_url }}</title>
+  <link href="{{ .Permalink }}index.xml" rel="self"/>
+  <link href="{{ .Permalink }}" rel="alternate"/>{{ if not .Date.IsZero }}
+  <updated>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>{{ end }}
+  <id>{{ .Permalink }}</id>{{ with $.Site.Params.author.display_name }}
+  <author>
+    <name>{{.}}</name>{{ with $.Site.Params.email }}
+    <email>{{.}}</email>{{end}}
+  </author>{{end}}
+  <generator>Hugo -- gohugo.io</generator>{{ range where .Site.RegularPages ".Params.type" "!=" "page"  }}
+  {{ if eq .Section "micros" }}
+  <entry>
+    <title>{{ htmlUnescape .Summary | truncate 60 }}</title>
+    <link rel="related" href="{{ .Permalink }}"/>
+    <id>{{ .Permalink }}</id>{{ with $.Site.Params.author.display_name }}
+    <author>
+      <name>{{.}}</name>
+    </author>{{end}}
+    <published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
+    <updated>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+    {{ with .Content }}
+    {{ `<content type="html"><![CDATA[` | safeHTML }}{{ . }}]]></content>
+    {{ end }}
+  </entry>
+  {{ else if eq .Section "links" }}
+  <entry>
+    <title>{{ .Params.link_title | htmlEscape }}</title>
+    <link rel="related" href="{{ .Params.link_url }}"/>
+    <link rel="alternate" href="{{ .Permalink }}"/>
+    <id>{{ .Permalink }}</id>{{ with $.Site.Params.author.display_name }}
+    <author>
+      <name>{{.}}</name>
+    </author>{{end}}
+    <published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
+    <updated>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+    {{ with .Params.link_comment }}
+    {{ `<content type="html"><![CDATA[` | safeHTML }}{{ . | markdownify }}]]></content>
+    {{ end }}
+  </entry>
+  {{ else }}
+  <entry>
+    <title>{{ .Title | htmlEscape }}</title>
+    <link rel="related" href="{{ .Permalink }}"/>
+    <id>{{ .Permalink }}</id>{{ with $.Site.Params.author.display_name }}
+    <author>
+      <name>{{.}}</name>
+    </author>{{end}}
+    <published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
+    <updated>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+    {{ `<content type="html"><![CDATA[` | safeHTML }}{{ .Content }}]]></content>
+  </entry>
+  {{ end }}
+  {{ end }}
+</feed>
