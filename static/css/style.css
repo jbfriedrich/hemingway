@@ -53,6 +53,11 @@
 
 /* Post List */
 
+    .post-item-content ul {
+        list-style-type: disc;
+        margin-bottom: 1rem;
+    }
+
     .fullwidth-wrap {
         width: 100%;
         padding: 0;
@@ -357,19 +362,19 @@
 
 /* External link symbols */
 
-    .type-micro .post-item-content > p > a > .fa-external-link-alt,
+    .type-micro .post-item-content a > .fa-external-link-alt,
     .full-post.type-micro .post-content > p > a > .fa-external-link-alt {
         margin-left: .3rem;
         font-size: .875rem;
         vertical-align: baseline;
     }
 
-    .type-micro .post-item-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']),
+    .type-micro .post-item-content a:not([href*='jason.re']):not([href^='#']):not([href^='/']),
     .full-post.type-micro .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']) {
         white-space: nowrap;
     }
 
-    .type-micro .post-item-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/'])::after,
+    .type-micro .post-item-content a:not([href*='jason.re']):not([href^='#']):not([href^='/'])::after,
     .full-post.type-micro .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/'])::after {
         /*white-space: nowrap;*/
         display: none;
