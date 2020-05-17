@@ -1,6 +1,0 @@
-{{ if .Get "src" }}
-<figure class='image-card{{ if (eq (.Get "width") "wide" ) }} width-wide{{ end }}'>
-    <img src='{{ .Get "src" }}' alt='{{ .Get "caption" }}'>
-    {{ with .Get "caption" }}<figcaption>{{.}}</figcaption>{{ end }}
-</figure>
-{{ end }}

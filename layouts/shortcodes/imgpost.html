@@ -1,6 +1,0 @@
-{{ if ( and ($.Page.Params.imgsrc) ($.Page.Params.imgcaption) ) }}
-<figure class='image-card{{ if (eq (.Get "width") "wide" ) }} width-wide{{ end }}'>
-    <img src='{{ $.Page.Params.imgsrc }}'>
-    <figcaption>{{ $.Page.Params.imgcaption }}</figcaption>
-</figure>
-{{ end }}

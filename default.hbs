@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html id="top" lang="{{@site.lang}}">
+
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    {{!-- Base Meta --}}
+    {{#unless page}}
+    {{#if tag}}
+    <title>{{#tag}}{{meta_title}}{{/tag}}</title>
+    <meta charset="utf-8" name="description" content="{{#tag}}{{meta_description}}{{/tag}}">
+    {{else}}
+    <title>{{meta_title}}</title>
+    {{/if}}
+    {{else}}
+    {{#page}}
+    <title>{{meta_title}}</title>
+    <meta charset="utf-8" name="description" content="{{meta_description}}">
+    {{/page}}
+    {{/unless}}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "/css/reboot.min.css"}}" /> 
+    <link rel="stylesheet" type="text/css" href="{{asset "/css/highlightjs/tomorrow-night.css"}}" /> 
+    <link rel="stylesheet" type="text/css" href="{{asset "/css/mdb-colors.min.css"}}" >
+    <link rel="stylesheet" type="text/css" href="{{asset "/css/style.min.css"}}" /> 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script data-search-pseudo-elements src="https://kit.fontawesome.com/8e970ba8ec.js" crossorigin="anonymous"></script>
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+</head>
+
+<body name="top">
+    <header id="main-header">
+        {{> "top-nav"}}
+    </header>
+
+    <main id="main-content">
+        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+        {{{body}}}
+    </main>
+
+    <footer id="main-footer">
+        {{> "footer"}}
+    </footer>
+
+    <!-- Fit Embedded Videos -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="{{asset "/js/jquery.fitvids.min.js"}}"></script>
+    <script>$(document).ready(function(){$(".kg-embed-card").fitVids();});</script>
+    <!-- HighlightJS -->
+    <script src="{{asset "/js/highlight.pack.js"}}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+    {{{block "scripts"}}}
+    {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
+    {{ghost_foot}}
+
+</body>
+</html>

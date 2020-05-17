@@ -1,0 +1,29 @@
+{{!< default}}
+{{#post}}
+<!-- This is a full page -->
+<div class="full-page type-page{{#if feature_image}} has-feature-image{{/if}}">
+    <header class="page-header">
+        <h1 class="page-title">{{title}}</h1>
+        {{#if feature_image}}
+            <div class="page-feature-image">
+                <img alt="Header Image" src="{{img_url feature_image size="m"}}">
+            </div>
+        {{/if}}
+    </header>
+    <section class="page-content">
+        {{content}}
+    </section>
+</div>
+{{/post}}
+{{#contentFor "scripts"}}
+    <script>
+        var images = document.querySelectorAll('.kg-gallery-image img');
+        images.forEach(function (image) {
+            var container = image.closest('.kg-gallery-image');
+            var width = image.attributes.width.value;
+            var height = image.attributes.height.value;
+            var ratio = width / height;
+            container.style.flex = ratio + ' 1 0%';
+        });
+    </script>
+{{/contentFor}}

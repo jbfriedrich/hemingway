@@ -1,0 +1,56 @@
+{{!< default}}
+{{#post}}
+{{#has tag="status"}}
+    <!-- This is a full status post -->
+    <div class="full-post type-status">
+        <header class="post-header">
+            <div class="post-date">{{date published_at format="LLL"}}</div>
+        </header>
+        <section class="post-content">
+            {{ content }}
+        </section>
+        <aside class="related-content">
+            {{> "taglist" }}
+            {{> "author-info" }} 
+        </aside>
+        <footer class="post-footer">
+            {{> "read-next-prev"}}
+        </footer>
+    </div>
+{{else}}
+    <!-- This is a full regular post -->
+    <div class="full-post type-post{{#if feature_image}} has-feature-image{{/if}}">
+        <header class="post-header">
+            <div class="post-date">{{date published_at format="LL"}}</div>
+            <h1 class="post-title">{{title}}</h1>
+            {{#if feature_image}}
+                <div class="post-feature-image">
+                    <img alt="Header Image" src="{{img_url feature_image size="m"}}">
+                </div>
+            {{/if}}
+        </header>
+        <section class="post-content">
+            {{ content }}
+        </section>
+        <aside class="related-content">
+            {{> "taglist" }}
+            {{> "author-info" }}
+        </aside>
+        <footer class="post-footer">
+            {{> "read-next-prev"}}
+        </footer>
+    </div>
+{{/has}}
+{{/post}}
+{{#contentFor "scripts"}}
+    <script>
+        var images = document.querySelectorAll('.kg-gallery-image img');
+        images.forEach(function (image) {
+            var container = image.closest('.kg-gallery-image');
+            var width = image.attributes.width.value;
+            var height = image.attributes.height.value;
+            var ratio = width / height;
+            container.style.flex = ratio + ' 1 0%';
+        });
+    </script>
+{{/contentFor}}

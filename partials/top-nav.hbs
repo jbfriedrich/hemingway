@@ -1,0 +1,12 @@
+<nav id="top-nav" class="nav">
+    <h2 class="site-title"><a href="/">{{@site.title}}</a></h2>
+    <div class="navbar-navitems">
+        <ul class="item-list">
+            <!-- Loop through the navigation items -->
+            {{#if @site.navigation}}
+            {{navigation}}
+            {{/if}}
+            <!-- End the loop -->
+        </ul>
+    </div>
+</nav>

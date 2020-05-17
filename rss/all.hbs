@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Thoughts, links and short (micro) posts on {{@site.url}}</title>
+    <link href="{{@site.url}}/status/rss/" rel="self"/>
+    <link href="{{@site.url}}" rel="alternate"/>
+    <updated>{{date format="ddd, DD MMM YYYY HH:mm:ss ZZ"}}</updated>
+    <id>{{@site.url}}</id>
+    <author>
+        <name>Jason Friedrich</name>
+        <email>blog@jason.re</email>
+    </author>
+    <generator>Ghost -- https://ghost.org</generator>
+    {{#get "posts" include="tags,authors" limit="all"}}
+        {{#foreach posts}}
+            <entry>
+                {{#has tag="status"}}
+                <title>{{excerpt words="6"}}...</title>
+                {{else}}
+                <title>{{title}}</title>
+                {{/has}}
+                <link rel="related" href="{{url absolute="true"}}"/>
+                <id>{{id}}</id>
+                <author>
+                    <name>Jason Friedrich</name>
+                </author>
+                <updated>{{date format="ddd, DD MMM YYYY HH:mm:ss ZZ"}}</updated>
+                <content type="html"><![CDATA[ {{content}} ]]></content>
+            </entry>
+        {{/foreach}}
+    {{/get}}
+</feed>
