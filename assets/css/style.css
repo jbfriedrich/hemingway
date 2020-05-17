@@ -397,10 +397,10 @@
         vertical-align: baseline;
     }
 
-    .type-status .post-item-content a:not([href*='jason.re']):not([href^='#']):not([href^='/']),
+    /*.type-status .post-item-content a:not([href*='jason.re']):not([href^='#']):not([href^='/']),
     .full-post.type-status .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']) {
         white-space: nowrap;
-    }
+    }*/
 
     .type-status .post-item-content a:not([href*='jason.re']):not([href^='#']):not([href^='/'])::after,
     .full-post.type-status .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/'])::after {
@@ -436,7 +436,7 @@
         .page-feature-image img,
         .post-feature-image img {
             width: 100%;
-            border-radius: .5rem;
+            /*border-radius: .5rem;*/
         }
     }
 
