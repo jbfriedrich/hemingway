@@ -207,9 +207,9 @@
         }
     }
 
-    #main-content .post-excerpt img {
+    /*#main-content .post-excerpt img {
         border-radius: .5rem;
-    }
+    }*/
 
     .navbar-navitems .item-list,
     #footer-nav .item-list,
@@ -473,7 +473,7 @@
 
     .full-post .post-header .post-title,
     .full-page .page-header .page-title {
-        margin-bottom: 1rem;
+        margin-bottom: 3rem;
     }
 
     .full-post.has-feature-image .post-header .post-title,
