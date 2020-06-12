@@ -343,8 +343,10 @@
         margin-right: 3rem;
     }
 
-    .post-list .type-status .post-item-content p {
-        margin-bottom: 1rem
+    .post-list .type-status .post-item-content p,
+    .full-post.type-post .post-content p
+     {
+        margin-bottom: 2rem
     }
 
     .post-list .type-post .post-header {
