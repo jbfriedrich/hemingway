@@ -343,6 +343,10 @@
         margin-right: 3rem;
     }
 
+    .post-list .type-status .post-item-content p {
+        margin-bottom: 1rem
+    }
+
     .post-list .type-post .post-header {
         font-family: 'Open Sans', sans-serif;
         margin-bottom: .5rem;
@@ -606,15 +610,15 @@
         margin-bottom: 1rem;
     }
 
+    code, kbd, pre, samp {
+        font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+        font-size: 1em;
+    }
+
     code {
         font-size: 87.5%;
         color: #e83e8c;
         word-break: break-word;
-    }
-
-    code, kbd, pre, samp {
-        font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-        font-size: 1em;
     }
 
     blockquote {
@@ -727,6 +731,10 @@
 
     .full-post figure img {
         margin: 0;
+    }
+
+    .kg-image-card img {
+        width: 100%;
     }
 
     .kg-embed-card figcaption,
