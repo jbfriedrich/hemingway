@@ -396,12 +396,17 @@
 
 /* External link symbols */
 
+    .post-header .fa-link {
+        margin-left: .3rem;
+        color: #757575;
+    }
+
     .type-status .post-item-content a:not([href*='jason.re']):not([href^='#']):not([href^='/']),
     .full-post.type-status .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']){
         /*white-space: nowrap;*/
         background: url('/assets/img/external-link.svg') no-repeat 100% 60% transparent;
-        background-size: 16px 16px;
-        padding-right: 20px;
+        background-size: 14px 25px;
+        padding-right: 16px;
         font-weight: normal;
     }
 
