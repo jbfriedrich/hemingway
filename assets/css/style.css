@@ -404,8 +404,8 @@
     .type-status .post-item-content a:not([href*='jason.re']):not([href^='#']):not([href^='/']),
     .full-post.type-status .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']){
         /*white-space: nowrap;*/
-        background: url('/assets/img/external-link.svg') no-repeat 100% 60% transparent;
-        background-size: 14px 25px;
+        background: url('/assets/img/external-link.svg') no-repeat 100% 50% transparent;
+        background-size: 14px 14px;
         padding-right: 16px;
         font-weight: normal;
     }
