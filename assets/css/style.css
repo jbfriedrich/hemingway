@@ -346,7 +346,7 @@
     .post-list .type-status .post-item-content p,
     .full-post.type-post .post-content p
      {
-        margin-bottom: 2rem
+        margin-bottom: 1.5rem
     }
 
     .post-list .type-post .post-header {
@@ -396,34 +396,18 @@
 
 /* External link symbols */
 
-    .type-status .post-item-content a > .fa-external-link-alt,
-    .full-post.type-status .post-content > p > a > .fa-external-link-alt {
-        margin-left: .3rem;
-        font-size: .875rem;
-        vertical-align: baseline;
-    }
-
-    /*.type-status .post-item-content a:not([href*='jason.re']):not([href^='#']):not([href^='/']),
-    .full-post.type-status .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']) {
-        white-space: nowrap;
-    }*/
-
-    .type-status .post-item-content a:not([href*='jason.re']):not([href^='#']):not([href^='/'])::after,
-    .full-post.type-status .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/'])::after {
+    .type-status .post-item-content a:not([href*='jason.re']):not([href^='#']):not([href^='/']),
+    .full-post.type-status .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']){
         /*white-space: nowrap;*/
-        display: none;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        content: '\f35d';
-        font-family: "Font Awesome 5 Pro";
-        font-weight: 900;
-        font-style: normal;
-        font-variant: normal;
+        background: url('/assets/img/external-link.svg') no-repeat 100% 60% transparent;
+        background-size: 16px 16px;
+        padding-right: 20px;
+        font-weight: normal;
     }
 
-    .post-header .fa-link {
-        margin-left: .3rem;
-        color: #757575;
+    .type-status .post-item-content a:not([href*='jason.re']):not([href^='#']):not([href^='/']):hover,
+    .full-post.type-status .post-content > p > a:not([href*='jason.re']):not([href^='#']):not([href^='/']):hover{
+        background-image: url('/assets/img/external-link-hover.svg')
     }
 
     .page-feature-image img,
@@ -447,6 +431,14 @@
     }
 
 /* Single Post & Page View */
+
+    .full-post .post-content a {
+        font-weight: normal;
+    }
+
+    figure {
+        margin: 0 0 2rem;
+    }
 
     .page-header .page-title,
     .post-header .post-title {
