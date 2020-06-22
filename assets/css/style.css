@@ -748,6 +748,7 @@
         margin: .25rem 0 1rem;
     }
 
+    .full-page .kg-width-full,
     .full-post .kg-width-full {
         width: 100vw;
         position: relative;
@@ -761,6 +762,7 @@
             max-width: 960px;
             width: 100vw;            
         }
+        .full-page .kg-width-wide,
         .full-post .kg-width-wide {
             width: 100vw;
             max-width: 960px;
@@ -768,6 +770,7 @@
             left: calc(-1 * (960px - 100%) / 2);
         }
 
+        .full-page .kg-width-wide .kg-image,
         .full-post .kg-width-wide .kg-image {
             max-width: 960px;
         }
