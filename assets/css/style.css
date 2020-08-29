@@ -10,6 +10,8 @@
     --nc-lg-1: #fe5186;
     --nc-qu-bo-1: #2196f3;
     --nc-d-qu-bo-1: var(--nc-lg-1);
+    --nc-hljs-1: var(--nc-tx-2);
+    --nc-d-hljs-1: var(--nc-d-tx-3);
 }
 
 body {
@@ -46,6 +48,7 @@ img {
         --nc-tag-bg-1: var(--nc-d-tag-bg-1);
         --nc-tag-hv-bg-1: var(--nc-d-tag-hv-bg-1);
         --nc-qu-bo-1: var(--nc-d-qu-bo-1);
+        --nc-hljs-1: var(--nc-d-hljs-1);
     }
 }
 
@@ -254,7 +257,7 @@ header {
 /* #region post */
 
 .full-post .post-header {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .full-post .post-date {
@@ -290,7 +293,7 @@ header {
 /* #region page */
 
 .full-page .page-header {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .full-page .page-date {
@@ -340,10 +343,15 @@ blockquote {
 
 /* #region code-hljs */
 
+code {
+    color: var(--nc-qu-bo-1);
+}
+
 .hljs {
     font-size: .875rem !important;
     white-space: pre-line !important;
-    background: unset;
+    color: var(--nc-hljs-1);
+    background-color: var(--nc-bg-2);
     padding: unset;
 }
 
@@ -614,27 +622,65 @@ blockquote {
 }
 
 /* .read-prev-story:hover, .read-next-story:hover  */
+
 .read-prev-title:hover, .read-next-title:hover {
     color: var(--nc-tx-3);
 }
 
 /* #endregion */
 
+/* #region footnotes */
+
+.footnotes-sep {
+    margin-top: 2.5rem;
+}
+
+.footnotes ol li br {
+    display: none;
+}
+
+.footnotes {
+    font-size: 80%;
+    /*font-family: Merriweather;*/
+    line-height: 1.618;
+    font-weight: 300;
+    margin-top: 2.5rem;
+    /*margin-bottom: 4rem;*/
+    /*color: #6c757d!important;*/
+}
+
+.footnotes ol {
+    padding: 0 .5rem 0 1.5rem;
+    list-style: none;
+    counter-reset: footnote-counter;
+}
+
+.footnotes ol li {
+    list-style-type: none;
+    margin: 1em 1em 1em 2em;
+    position: relative;
+    counter-increment: footnote-counter;
+}
+
+.footnotes ol li:before {
+    content: counter(footnote-counter) ". ";
+    position: absolute;
+    left: -1.55em;
+    /* #endregion */
+
 /* #region mobile view */
-
-@media (max-width: 600px) {
-    #footer-nav .nav-link:not(:last-child) {
-        display: none;
+    @media (max-width: 600px) {
+        #footer-nav .nav-link:not(:last-child) {
+            display: none;
+        }
+        #main-header {
+            text-align: center;
+        }
     }
-    #main-header {
-        text-align: center;
+    @media (max-width: 500px) {
+        #main-header .blog-title {
+            font-size: 2rem;
+        }
     }
 }
-
-@media (max-width: 500px) {
-    #main-header .blog-title {
-        font-size: 2rem;
-    }
-}
-
 /* #endregion */
