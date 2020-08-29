@@ -340,6 +340,10 @@ blockquote {
 
 /* #region code-hljs */
 
+code {
+    color: var(--nc-qu-bo-1);
+}
+
 .hljs {
     font-size: .875rem !important;
     white-space: pre-line !important;
