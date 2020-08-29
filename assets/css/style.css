@@ -667,6 +667,7 @@ code {
     position: absolute;
     left: -1.55em;
     /* #endregion */
+}
 
 /* #region mobile view */
     @media (max-width: 600px) {
@@ -682,5 +683,5 @@ code {
             font-size: 2rem;
         }
     }
-}
+
 /* #endregion */
