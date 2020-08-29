@@ -1,14 +1,12 @@
 {{!< default}}
 
-<div class="wrap">
-    <ul class="post-list">
-        {{#foreach posts}}
-            {{#has tag="status"}}
-                {{> "status-entry"}}
-            {{else}}
-                {{> "post-entry"}}
-            {{/has}}
-        {{/foreach}}
-    </ul>
-    {{pagination}}
-</div>
+<ul class="post-list">
+    {{#foreach posts}}
+        {{#has tag="status"}}
+            {{> "status-entry"}}
+        {{else}}
+            {{> "post-entry"}}
+        {{/has}}
+    {{/foreach}}
+</ul>
+{{pagination}}

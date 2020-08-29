@@ -1,5 +1,11 @@
+{{#if isSecondary}}
 {{#foreach navigation}}
-<li class='nav-item nav-{{slug}}'>
-    <a class='nav-link{{#if current}} active{{/if}}' href="{{url absolute="true"}}">{{label}}</a>
-</li>
+{{!-- {{#if current}} active{{/if}} --}}
+<a class='nav-link' href="{{url absolute="true"}}">{{label}}</a>
 {{/foreach}}
+{{else}}
+{{#foreach navigation}}
+{{!-- {{#if current}} active{{/if}} --}}
+<a class='nav-link' href="{{url absolute="true"}}">{{label}}</a>{{^if @last}} <span class="menu-sep">/</span> {{/if}}
+{{/foreach}}
+{{/if}}
