@@ -124,9 +124,9 @@ header {
     margin-bottom: 0;
 }
 
-/* #main-content .post-list .post-item .post-item-title {
-    padding: 0;
-} */
+#main-content .post-list .post-item .post-item-title {
+    padding-top: 0;
+}
 
 #main-content .post-list .post-item .post-item-title-link {
     text-decoration: none;
