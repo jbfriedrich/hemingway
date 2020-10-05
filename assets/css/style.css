@@ -29,6 +29,10 @@ img {
     border-radius: 8px;
 }
 
+.btn-toggle {
+    cursor: pointer;
+}
+
 /* #endregion base */
 
 /* #region fontsmoothing */
