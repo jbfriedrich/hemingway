@@ -259,14 +259,14 @@
     --hm-d-def-accent-color4: var(--color-gray-100);
     --hm-d-def-link-color: var(--color-pink-500);
     --hm-d-def-link-hover-color: var(--color-pink-600);
-    --hm-d-def-link-deco-color: var(--color-indigo-500);
+    --hm-d-def-link-deco-color: var(--color-pink-600);
     --hm-d-def-border-color: var(--color-gray-700);
     --hm-d-header-bg-color: var(--color-gray-900);
     --hm-d-footer-bg-color: var(--color-gray-900);
     --hm-d-footer-color: var(--color-gray-500);
-    --hm-d-tag-border-color: var(--color-gray-500);
-    --hm-d-tag-text-color: var(--color-gray-400);
-    --hm-d-tag-hover-color: var(--color-gray-200);
+    --hm-d-tag-border-color: var(--color-gray-600);
+    --hm-d-tag-text-color: var(--color-gray-500);
+    --hm-d-tag-hover-color: var(--color-gray-300);
     --hm-d-blockquote-border-color: var(--color-indigo-500);
     --hm-d-def-code-color: var(--color-amber-500);
     --hm-d-post-summary-color: var(--color-gray-300);
