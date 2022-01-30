@@ -1,0 +1,19 @@
+{{ $img := (.Resources.ByType "image").GetMatch "images/*feature*" }}
+{{if or (.Params.feature_image) ($img) }}
+<figure class="figure feature-figure">
+    {{ if .Params.feature_image }}
+    <img alt="Page Feature Image" class="feature-image" src="{{ .Params.feature_image }}">
+    {{ end }}
+    {{ with $img }}
+    {{ $regular := .Resize "900x" }}
+    {{ $mid := .Resize "1400x" }}
+    {{ $big := .Resize "1800x" }}
+    <img class="feature-image"
+         srcset="{{ $regular.RelPermalink }},
+                 {{ $mid.RelPermalink }} 1.5x,
+                 {{ $big.RelPermalink }} 2x"
+         alt="Page Feature Image"
+         src="{{ $big.RelPermalink }}">
+    {{ end }}
+</figure>
+{{ end }}

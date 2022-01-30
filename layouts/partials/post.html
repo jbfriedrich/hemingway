@@ -1,0 +1,16 @@
+<!-- This is a full post -->
+{{ $img := (.Resources.ByType "image").GetMatch "images/*feature*" }}
+<article class="full-post type-post">
+    <header class="post-header grid-canvas">
+        <h5 class="post-date">{{ .Page.Date.Format "January 2, 2006" }}</h5>
+        <h1 class="post-title{{ if .Params.summary }} has-summary{{ end }}{{ if or (.Params.feature_image) ($img) }} has-feature-image{{ end }}">{{ .Title }}</h1>
+        {{ if .Params.summary }}
+        <div class="post-summary{{ if or (.Params.feature_image) ($img) }} has-feature-image{{ end }}">{{ .Params.summary }}</div>
+        {{ end }}
+        {{ partial "post_feature_image.html" . }}
+    </header>
+    <main class="post-content grid-canvas">
+        {{ .Content }}
+    </main>
+    {{ partial "taglist.html" . }}
+</article>

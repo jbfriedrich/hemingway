@@ -1,0 +1,10 @@
+<!-- This is a full page -->
+<article class="full-page type-page">
+    <header class="post-header grid-canvas">
+        <h1 class="page-title{{if .Params.feature_image }} has-feature-image{{ end }}">{{ .Title }}</h1>
+        {{ partial "post_feature_image.html" . }}
+    </header>
+    <main class="post-content grid-canvas">
+        {{ .Content }}
+    </main>
+</article>

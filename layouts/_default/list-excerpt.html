@@ -1,0 +1,31 @@
+{{ define "title" }}
+    {{ .Site.Title }}
+{{ end }}
+{{ define "main" }}
+    <div class="post-list">
+        {{ $pages := .Paginate ( where .Site.RegularPages "Type" "in" site.Params.mainSections ) }}
+        {{ range $pages.Pages }}
+            <article class="post type-{{ .Section }}">
+            {{ if eq .Section "posts" }}
+            <a class="post-full-link" href="{{ .RelPermalink }}">
+                <h4 class="post-date">{{ .Page.Date.Format "2 Jan 2006, 15:04 MST" }}</h4>
+                <h1 class="post-title">{{ .Title }}</h1>
+                <div class="post-summary">
+                    {{ .Page.Summary }}
+                </div>
+                {{ if .Truncated }}<h5 class="post-readmore">Read more »</h5>{{ end }}
+            </a>
+            {{ else if eq .Section "status" }}
+                <a class="post-full-link" href="{{ .RelPermalink }}">
+                    <h4 class="post-date">{{ .Page.Date.Format "2 Jan 2006, 15:04 MST" }}</h4>
+                    <div class="post-summary">
+                        {{ .Page.Summary }}
+                    </div>
+                    <h5 class="post-readmore">Read more »</h5>
+                </a>
+            {{ end }}
+            </article>
+        {{ end }}
+    </div>
+    {{ template "partials/pagination.html" . }}
+{{ end }}
