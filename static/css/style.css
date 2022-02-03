@@ -1,10 +1,7 @@
 :root {
-    /* Standard Font Settings */
-    /* --std-font-sans: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
     --std-font-sans: system-ui, -apple-system, "Helvetica Neue", Arial, "Noto Sans", "Segoe UI", Roboto, "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --std-font-mono: 'Fira Code', Consolas, monaco, 'Ubuntu Mono', 'Liberation Mono', 'Courier New', Courier, monospace;
     --hm-def-fontsize-wide: 17px;
-    /* Colors from Tailwind CSS */
     --color-transparent: transparent;
     --color-black: rgb(0 0 0);
     --color-white: rgb(255 255 255);
@@ -228,8 +225,7 @@
     --color-rose-700: rgb(190 18 60);
     --color-rose-800: rgb(159 18 57);
     --color-rose-900: rgb(136 19 55);
-    /* Default Hemingway Color -- Light Theme */
-    --hm-def-color: var(--color-gray-700);
+    --hm-def-color: var(--color-gray-800);
     --hm-def-bgcolor: var(--color-white);
     --hm-def-accent-color1: var(--color-gray-500);
     --hm-def-accent-color2: var(--color-gray-400);
@@ -237,10 +233,10 @@
     --hm-def-accent-color4: var(--color-gray-600);
     --hm-def-link-color: var(--color-blue-500);
     --hm-def-link-hover-color: var(--color-blue-700);
-    --hm-def-link-deco-color: var(--color-cyan-500);
+    --hm-def-link-deco-color: var(--color-blue-700);
     --hm-def-border-color: var(--color-gray-200);
-    --hm-header-bg-color: var(--color-gray-50);
-    --hm-footer-bg-color: var(--color-gray-50);
+    --hm-header-bg-color: var(--color-gray-100);
+    --hm-footer-bg-color: var(--color-gray-100);
     --hm-footer-color: var(--color-gray-400);
     --hm-tag-border-color: var(--color-gray-300);
     --hm-tag-text-color: var(--color-gray-400);
@@ -250,9 +246,8 @@
     --hm-post-summary-color: var(--color-gray-500);
     --hm-postlist-color: var(--color-gray-50);
     --hm-pagination-disabled-color: var(--color-slate-500);
-    /* Default Hemingway Color -- Dark Theme */
     --hm-d-def-color: var(--color-gray-200);
-    --hm-d-def-bgcolor: var(--color-gray-800);
+    --hm-d-def-bgcolor: var(--color-neutral-900);
     --hm-d-def-accent-color1: var(--color-gray-400);
     --hm-d-def-accent-color2: var(--color-gray-500);
     --hm-d-def-accent-color3: var(--color-gray-600);
@@ -261,8 +256,8 @@
     --hm-d-def-link-hover-color: var(--color-pink-600);
     --hm-d-def-link-deco-color: var(--color-pink-600);
     --hm-d-def-border-color: var(--color-gray-700);
-    --hm-d-header-bg-color: var(--color-gray-900);
-    --hm-d-footer-bg-color: var(--color-gray-900);
+    --hm-d-header-bg-color: var(--color-gray-800);
+    --hm-d-footer-bg-color: var(--color-gray-800);
     --hm-d-footer-color: var(--color-gray-500);
     --hm-d-tag-border-color: var(--color-gray-600);
     --hm-d-tag-text-color: var(--color-gray-500);
@@ -270,11 +265,11 @@
     --hm-d-blockquote-border-color: var(--color-indigo-500);
     --hm-d-def-code-color: var(--color-amber-500);
     --hm-d-post-summary-color: var(--color-gray-300);
-    --hm-d-postlist-color: var(--color-gray-700);
+    --hm-d-postlist-color: var(--color-gray-800);
     --hm-d-pagination-disabled-color: var(--color-slate-300);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme:dark) {
      :root {
         --hm-def-color: var(--hm-d-def-color);
         --hm-def-bgcolor: var(--hm-d-def-bgcolor);
@@ -296,12 +291,9 @@
         --hm-def-code-color: var(--hm-d-def-code-color);
         --hm-post-summary-color: var(--hm-d-post-summary-color);
         --hm-postlist-color: var(--hm-d-postlist-color);
-        --hm-pagination-disabled-color: var(--hm-d-pagination-disabled-color);
+        --hm-pagination-disabled-color: var(--hm-d-pagination-disabled-color)
     }
 }
-
-
-/* General fuckery */
 
 html {
     height: 100%;
@@ -350,7 +342,7 @@ a:hover {
     background-color: var(--hm-footer-bg-color);
     border-top: 1px solid var(--hm-def-border-color);
     padding: 1rem;
-    font-size: 0.75rem;
+    font-size: .75rem;
     line-height: 1;
 }
 
@@ -363,9 +355,6 @@ a:hover {
     flex-wrap: nowrap;
     justify-content: space-between;
 }
-
-
-/* Header fuckery */
 
 .header {
     background-color: var(--hm-header-bg-color);
@@ -392,11 +381,9 @@ a:hover {
 a.header-nav-entry {
     color: var(--hm-def-accent-color2);
     text-decoration: none;
-    /* font-size: 18px; */
     display: inline-flex;
     gap: 5px;
-    vertical-align: middle;
-    /* text-transform: uppercase; */
+    vertical-align: middle
 }
 
 a.header-nav-entry:not(:last-child) {
@@ -412,9 +399,6 @@ a.header-nav-entry:hover {
     height: 1em;
     width: 1em;
 }
-
-
-/* Pagination fuckery */
 
 .pagination {
     list-style: none;
@@ -432,8 +416,8 @@ a.header-nav-entry:hover {
 }
 
 .page-item:first-child {
-    border-top-left-radius: 0.25rem;
-    border-bottom-left-radius: 0.25rem;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
 }
 
 .page-item:not(:first-child) {
@@ -441,8 +425,8 @@ a.header-nav-entry:hover {
 }
 
 .page-item:last-child {
-    border-top-right-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
 }
 
 .page-link,
@@ -461,12 +445,9 @@ a.header-nav-entry:hover {
     font-size: 2.5em;
 }
 
-
-/* Tag list fuckery */
-
 .tags {
     margin: 1.5rem 0 0 0;
-    font-size: 0.875rem;
+    font-size: .875rem;
     line-height: 1.25;
 }
 
@@ -479,7 +460,7 @@ a.header-nav-entry:hover {
 .tag {
     display: inline;
     border: 1px solid var(--hm-tag-border-color);
-    border-radius: 0.33rem;
+    border-radius: .33rem;
     padding: 1px 5px;
 }
 
@@ -500,17 +481,10 @@ a.tag-link {
     margin-right: 2px;
 }
 
-
-/* Index list fuckery */
-
 .post-year {
-    /* font-weight: 500; */
     color: var(--hm-def-accent-color1);
     margin-bottom: 2rem;
-}
-
-.post-list {
-    margin-left: 2rem;
+    font-size: 1.75rem;
 }
 
 .post-year:first-child {
@@ -520,7 +494,6 @@ a.tag-link {
 .post-list-item {
     margin: 0;
     padding: 0;
-    /* font-weight: bold; */
     font-size: var(--hm-def-fontsize-wide);
     border-bottom: 1px dashed var(--hm-def-accent-color3);
 }
@@ -552,9 +525,6 @@ a.tag-link {
 .post-year:not(:first-child) {
     margin-top: 3rem;
 }
-
-
-/* Post & Page View Fuckery */
 
 .grid-canvas {
     display: grid;
@@ -593,6 +563,7 @@ a.tag-link {
 .post-header .post-summary {
     font-size: 1.25rem;
     color: var(--hm-post-summary-color);
+    line-height: 1.5;
 }
 
 .post-header .post-summary.has-feature-image {
@@ -618,7 +589,7 @@ a.tag-link {
 .post-content {
     color: var(--hm-def-color);
     font-size: var(--hm-def-fontsize-wide);
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .post-content>p,
@@ -636,8 +607,8 @@ a.tag-link {
     margin: 0 0 1.75rem;
     padding: 1.25rem 1.5rem;
     border: 1px solid var(--hm-def-border-color);
-    border-radius: 0.25rem;
-    border-left-width: 0.33rem;
+    border-radius: .25rem;
+    border-left-width: .33rem;
     border-left-color: var(--hm-blockquote-border-color);
     color: var(--hm-def-accent-color1);
 }
@@ -685,7 +656,6 @@ code.hljs {
 code,
 kbd,
 samp {
-    /* font-size: .875rem; */
     color: var(--hm-def-code-color);
     font-family: var(--std-font-mono);
 }
@@ -711,33 +681,27 @@ iframe {
     margin-bottom: 1.5rem;
 }
 
-
-/* Fuck with the small and mobile screen */
-
-@media (max-width: 40rem) {
+@media (max-width:40rem) {
     .blog-title {
-        font-size: 1.75rem;
+        font-size: 1.75rem
     }
     .content {
-        padding: 3rem 1rem;
+        padding: 3rem 1rem
     }
     .posts.grid-canvas>* {
-        grid-column: full-start/full-end;
-    }
-    .post-list {
-        margin-left: unset;
+        grid-column: full-start/full-end
     }
     .post-list-item,
     .post-content {
-        font-size: unset;
+        font-size: unset
     }
     a.desktop-nav-entry {
-        display: none;
+        display: none
     }
     .full-post .post-header {
-        margin: 0 0 2rem;
+        margin: 0 0 2rem
     }
     .full-post .post-title.has-feature-image {
-        margin: 0 0 2rem;
+        margin: 0 0 2rem
     }
 }
