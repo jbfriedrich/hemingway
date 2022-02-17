@@ -238,7 +238,7 @@
     --hm-header-bg-color: var(--color-gray-100);
     --hm-footer-bg-color: var(--color-gray-100);
     --hm-footer-color: var(--color-gray-400);
-    --hm-tag-border-color: var(--color-gray-300);
+    --hm-tag-border-color: var(--color-gray-400);
     --hm-tag-text-color: var(--color-gray-400);
     --hm-tag-hover-color: var(--color-gray-600);
     --hm-blockquote-border-color: var(--color-pink-400);
@@ -576,6 +576,12 @@ a.tag-link {
     padding: 0;
 }
 
+.figure-caption {
+    font-size: .875rem;
+    color: var(--hm-def-accent-color1);
+    text-align: center;
+}
+
 .feature-figure {
     grid-column: wide-start/wide-end;
     margin: 0;
@@ -598,9 +604,14 @@ a.tag-link {
     margin: 0 0 1.5rem
 }
 
+.post-content>ul,
+.post-content>ol {
+    padding-left: 1.5em;
+}
+
 .post-content>ul li,
 .post-content>ol li {
-    margin-bottom: .25rem;
+    margin-bottom: .75rem;
 }
 
 .post-content blockquote {
@@ -649,8 +660,9 @@ img {
 }
 
 code.hljs {
-    white-space: pre-line;
+    white-space: pre;
     font-size: .875rem;
+    white-space: pre-line;
 }
 
 code,
@@ -658,6 +670,11 @@ kbd,
 samp {
     color: var(--hm-def-code-color);
     font-family: var(--std-font-mono);
+    font-size: .875rem;
+}
+
+pre {
+    margin-top: 0;
 }
 
 iframe {
