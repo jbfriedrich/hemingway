@@ -598,6 +598,15 @@ a.tag-link {
     line-height: 1.5;
 }
 
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    color: var(--hm-def-accent-color4);
+}
+
 .post-content>p,
 .post-content>ul,
 .post-content>ol {
@@ -657,6 +666,21 @@ img {
 .full-page .page-title.has-feature-image:not(.has-summary),
 .full-post .post-title.has-feature-image:not(.has-summary) {
     margin: 0 0 2.5rem;
+}
+
+.full-page.page404 .post-header,
+.full-page.page404 .post-content {
+    text-align: center;
+}
+
+.full-page.page404 .page-title {
+    font-size: 5rem;
+}
+
+.full-page.page404 .page-subtitle {
+    font-size: 2rem;
+    margin-top: .5rem;
+    color: var(--hm-def-accent-color4);
 }
 
 code.hljs {
