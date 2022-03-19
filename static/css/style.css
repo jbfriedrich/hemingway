@@ -294,7 +294,7 @@
         --hm-post-summary-color: var(--hm-d-post-summary-color);
         --hm-postlist-color: var(--hm-d-postlist-color);
         --hm-pagination-color: var(--hm-d-pagination-color);
-        --hm-pagination-disabled-color: var(--hm-d-pagination-disabled-color);
+        --hm-pagination-disabled-color: var(--hm-d-pagination-disabled-color)
     }
 }
 
@@ -448,8 +448,7 @@ a.header-nav-entry:hover {
 }
 
 .page-item.active {
-    background-color: var(--hm-postlist-color);
-    /*color: var(--hm-pagination-active-color);*/
+    background-color: var(--hm-postlist-color)
 }
 
 .type-page .title {
@@ -751,6 +750,23 @@ iframe {
     }
     a.desktop-nav-entry {
         display: none
+    }
+    .page-item.page-first,
+    .page-item.page-last,
+    .page-item.page-filler,
+    .page-item.page-next-prev {
+        display: none;
+    }
+    .page-item.page-prev,
+    .page-item.page-next {
+        flex-grow: 1;
+        text-align: center;
+    }
+    .page-item.page-prev {
+        margin-right: 25px;
+    }
+    .page-item.page-next {
+        margin-left: 25px;
     }
     .full-post .post-header {
         margin: 0 0 2rem
