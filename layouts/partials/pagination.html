@@ -1,6 +1,4 @@
-{{ $pag := $.Paginator }}
-{{ if gt $pag.TotalPages 1 }}
-{{ $.Scratch.Set "dot_rendered" false }}
+{{ $pag := $.Paginator }} {{ if gt $pag.TotalPages 1 }} {{ $.Scratch.Set "dot_rendered" false }}
 
 <ul class="pagination">
     <!-- Don't show on 1st and 2nd page -->
@@ -8,31 +6,24 @@
     <li class="page-item"><a href="{{ $pag.First.URL }}" rel="first" class="page-link">« First</a></li>
     {{ else }}
     <li class="page-item disabled"><a href="" rel="first" class="page-link">« First</a></li>
-    {{ end }}
-
-    {{ if $pag.HasPrev  }}
+    {{ end }} {{ if $pag.HasPrev }}
     <li class="page-item"><a href="{{ $pag.Prev.URL }}" rel="prev" class="page-link">‹ Prev</a></li>
     {{ else }}
     <li class="page-item disabled"><a href="" rel="prev" class="page-link">‹ Prev</a></li>
-    {{ end }}
+    {{ end }} {{ range $pag.Pagers }} {{ if eq . $pag }}
+    <!-- Current Page -->
+    <li class="page-item active"><a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a></li>
 
-    {{ range $pag.Pagers }}
-        {{ if eq . $pag }} <!-- Current Page -->
-        <li class="page-item active"><a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a></li>
+    {{ else if and (ge .PageNumber (sub $pag.PageNumber 1)) (le .PageNumber (add $pag.PageNumber 1)) }} {{ $.Scratch.Set "dot_rendered" false }}
+    <!-- Render prev 2 page and next 2 pages -->
+    <li class="page-item"><a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a></li>
 
-        {{ else if and (ge .PageNumber (sub $pag.PageNumber 1)) (le .PageNumber (add $pag.PageNumber 1)) }}
+    {{ else if eq ($.Scratch.Get "dot_rendered") false }}
+    <!-- render skip pages -->
 
-        {{ $.Scratch.Set "dot_rendered" false }} <!-- Render prev 2 page and next 2 pages -->
-        <li class="page-item"><a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a></li>
-
-        {{ else if eq ($.Scratch.Get "dot_rendered") false }} <!-- render skip pages -->
-
-        {{ $.Scratch.Set "dot_rendered" true }}
-        <li class="page-item disabled"><a class="page-link">...</a></li>
-        {{ end }}
-    {{ end }}
-
-    {{ if $pag.HasNext }}
+    {{ $.Scratch.Set "dot_rendered" true }}
+    <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
+    {{ end }} {{ end }} {{ if $pag.HasNext }}
     <li class="page-item"><a href="{{ $pag.Next.URL }}" rel="next" class="page-link">Next ›</a></li>
     {{ else }}
     <li class="page-item disabled"><a href="" rel="next" class="page-link">Next ›</a></li>
