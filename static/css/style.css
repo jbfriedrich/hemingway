@@ -225,31 +225,32 @@
     --color-rose-700: rgb(190 18 60);
     --color-rose-800: rgb(159 18 57);
     --color-rose-900: rgb(136 19 55);
-    --hm-def-color: var(--color-gray-800);
+    --hm-def-color: var(--color-gray-700);
     --hm-def-bgcolor: var(--color-white);
-    --hm-def-accent-color1: var(--color-gray-500);
-    --hm-def-accent-color2: var(--color-gray-400);
+    --hm-def-accent-color1: var(--color-gray-600);
+    --hm-def-accent-color2: var(--color-gray-500);
     --hm-def-accent-color3: var(--color-gray-300);
-    --hm-def-accent-color4: var(--color-gray-600);
-    --hm-def-link-color: var(--color-blue-500);
+    --hm-def-accent-color4: var(--color-gray-800);
+    --hm-def-link-color: var(--color-blue-600);
     --hm-def-link-hover-color: var(--color-blue-700);
     --hm-def-link-deco-color: var(--color-blue-700);
     --hm-def-border-color: var(--color-gray-200);
-    --hm-header-bg-color: var(--color-gray-100);
-    --hm-footer-bg-color: var(--color-gray-100);
-    --hm-footer-color: var(--color-gray-400);
-    --hm-tag-border-color: var(--color-gray-400);
-    --hm-tag-text-color: var(--color-gray-400);
-    --hm-tag-hover-color: var(--color-gray-600);
+    --hm-header-bg-color: var(--color-gray-50);
+    --hm-footer-bg-color: var(--color-gray-50);
+    --hm-footer-color: var(--color-gray-600);
+    --hm-tag-border-color: var(--color-gray-500);
+    --hm-tag-text-color: var(--color-gray-500);
+    --hm-tag-hover-color: var(--color-gray-800);
     --hm-blockquote-border-color: var(--color-pink-400);
     --hm-def-code-color: var(--color-pink-500);
     --hm-post-summary-color: var(--color-gray-500);
-    --hm-postlist-color: var(--color-gray-50);
-    --hm-pagination-disabled-color: var(--color-slate-500);
+    --hm-postlist-color: var(--color-gray-100);
+    --hm-pagination-color: var(--color-gray-700);
+    --hm-pagination-disabled-color: var(--color-gray-500);
     --hm-d-def-color: var(--color-gray-200);
     --hm-d-def-bgcolor: var(--color-neutral-900);
-    --hm-d-def-accent-color1: var(--color-gray-400);
-    --hm-d-def-accent-color2: var(--color-gray-500);
+    --hm-d-def-accent-color1: var(--color-gray-300);
+    --hm-d-def-accent-color2: var(--color-gray-400);
     --hm-d-def-accent-color3: var(--color-gray-600);
     --hm-d-def-accent-color4: var(--color-gray-100);
     --hm-d-def-link-color: var(--color-pink-500);
@@ -258,15 +259,16 @@
     --hm-d-def-border-color: var(--color-gray-700);
     --hm-d-header-bg-color: var(--color-gray-800);
     --hm-d-footer-bg-color: var(--color-gray-800);
-    --hm-d-footer-color: var(--color-gray-500);
-    --hm-d-tag-border-color: var(--color-gray-600);
-    --hm-d-tag-text-color: var(--color-gray-500);
-    --hm-d-tag-hover-color: var(--color-gray-300);
-    --hm-d-blockquote-border-color: var(--color-indigo-500);
+    --hm-d-footer-color: var(--color-gray-400);
+    --hm-d-tag-border-color: var(--color-gray-400);
+    --hm-d-tag-text-color: var(--color-gray-400);
+    --hm-d-tag-hover-color: var(--color-gray-200);
+    --hm-d-blockquote-border-color: var(--color-pink-500);
     --hm-d-def-code-color: var(--color-amber-500);
     --hm-d-post-summary-color: var(--color-gray-300);
     --hm-d-postlist-color: var(--color-gray-800);
-    --hm-d-pagination-disabled-color: var(--color-slate-300);
+    --hm-d-pagination-color: var(--color-gray-100);
+    --hm-d-pagination-disabled-color: var(--color-gray-400);
 }
 
 @media (prefers-color-scheme:dark) {
@@ -291,7 +293,8 @@
         --hm-def-code-color: var(--hm-d-def-code-color);
         --hm-post-summary-color: var(--hm-d-post-summary-color);
         --hm-postlist-color: var(--hm-d-postlist-color);
-        --hm-pagination-disabled-color: var(--hm-d-pagination-disabled-color)
+        --hm-pagination-color: var(--hm-d-pagination-color);
+        --hm-pagination-disabled-color: var(--hm-d-pagination-disabled-color);
     }
 }
 
@@ -406,7 +409,7 @@ a.header-nav-entry:hover {
     display: flex;
     flex-flow: nowrap;
     justify-content: center;
-    margin: 3rem 0;
+    margin: 5rem 0 1rem;
 }
 
 .page-item {
@@ -434,9 +437,19 @@ a.header-nav-entry:hover {
     text-decoration: none;
 }
 
+.page-item .page-link,
+.page-item .page-link:hover {
+    color: var(--hm-pagination-color);
+}
+
 .page-item.disabled .page-link {
     pointer-events: none;
     color: var(--hm-pagination-disabled-color);
+}
+
+.page-item.active {
+    background-color: var(--hm-postlist-color);
+    /*color: var(--hm-pagination-active-color);*/
 }
 
 .type-page .title {
