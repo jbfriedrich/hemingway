@@ -10,8 +10,13 @@
       {{ with .Site.Params.author.display_name }}<meta name="author" content="{{ . }}">{{ end }}
       {{ with .Site.Params.description }}<meta name="description" content="{{ block "description" . }}{{ . }}{{ end }}">{{ end }}
       {{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
+      <link rel="alternate" type="application/rss+xml" href="https://example.com/index.xml" title="">
+      <link rel="alternate" type="application/rss+xml" href="https://example.com/index.xml" title="Site Title">
       {{ template "_internal/twitter_cards.html" . }}
       {{ template "_internal/opengraph.html" . }}
+      <!-- RSS Feed -->
+      <link rel="alternate" type="application/rss+xml" href="https://jason.re/index.xml" title="All posts on {{ .Site.Params.friendly_url }}">
+      <link rel="alternate" type="application/rss+xml" href="https://jason.re/status/index.xml" title="Status posts on {{ .Site.Params.friendly_url }}">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&display=swap" rel="stylesheet">
