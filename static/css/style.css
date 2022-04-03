@@ -458,7 +458,7 @@ a.header-nav-entry:hover {
 }
 
 .tags {
-    margin: 1.5rem 0 0 0;
+    margin: 0.5rem 0 0 0;
     font-size: .875rem;
     line-height: 1.25;
 }
@@ -714,7 +714,11 @@ pre {
 }
 
 iframe {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.twitter-tweet>iframe {
+    margin-bottom: 0;
 }
 
 .footnotes {
@@ -755,18 +759,18 @@ iframe {
     .page-item.page-last,
     .page-item.page-filler,
     .page-item.page-next-prev {
-        display: none;
+        display: none
     }
     .page-item.page-prev,
     .page-item.page-next {
         flex-grow: 1;
-        text-align: center;
+        text-align: center
     }
     .page-item.page-prev {
-        margin-right: 25px;
+        margin-right: 25px
     }
     .page-item.page-next {
-        margin-left: 25px;
+        margin-left: 25px
     }
     .full-post .post-header {
         margin: 0 0 2rem
