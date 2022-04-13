@@ -3,7 +3,7 @@
 {{ end }}
 {{ define "main" }}
     <div class="posts wrapper43">
-        <h1><i class="bi bi-tag"></i> {{ .Name | title }}</h1>
+        <h1 class="tag-section"><i class="bi bi-tag tag-section-icon"></i> {{ .Name | title }}</h1>
         {{ range .Pages.GroupByDate "2006" }}
             <h2 class="post-year">{{ .Key }}</h2>
             <div class="post-list">
