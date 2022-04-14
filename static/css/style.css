@@ -717,10 +717,6 @@ iframe {
     margin-bottom: 1.5rem;
 }
 
-.twitter-tweet>iframe {
-    margin-bottom: 0;
-}
-
 .footnotes {
     font-size: .875rem;
     color: var(--hm-def-accent-color1);
@@ -740,26 +736,26 @@ iframe {
 
 @media (max-width:40rem) {
     .blog-title {
-        font-size: 1.75rem
+        font-size: 1.75rem;
     }
     .content {
-        padding: 3rem 1rem
+        padding: 3rem 1rem;
     }
     .posts.grid-canvas>* {
         grid-column: full-start/full-end
     }
     .post-list-item,
     .post-content {
-        font-size: unset
+        font-size: unset;
     }
     a.desktop-nav-entry {
-        display: none
+        display: none;
     }
     .page-item.page-first,
     .page-item.page-last,
     .page-item.page-filler,
     .page-item.page-next-prev {
-        display: none
+        display: none;
     }
     .page-item.page-prev,
     .page-item.page-next {
@@ -774,9 +770,9 @@ iframe {
         margin-right: 0;
     }
     .full-post .post-header {
-        margin: 0 0 2rem
+        margin: 0 0 2rem;
     }
     .full-post .post-title.has-feature-image {
-        margin: 0 0 2rem
+        margin: 0 0 2rem;
     }
 }
