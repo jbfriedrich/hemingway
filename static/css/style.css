@@ -255,6 +255,7 @@ a.header-nav-entry:hover {
     width: 100px;
     text-align: center;
     font-size: var(--hm-def-fontsize-wide);
+    position: relative;
 }
 
 .page-item.page-prev {
@@ -267,14 +268,20 @@ a.header-nav-entry:hover {
     margin-right: 10px;
 }
 
-.page-link,
-.page-link:hover {
-    text-decoration: none;
-}
-
 .page-item .page-link,
 .page-item .page-link:hover {
     color: var(--hm-pagination-color);
+    text-decoration: none;
+}
+
+.page-item .page-link:after {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
 }
 
 .page-item.disabled .page-link {
@@ -583,38 +590,38 @@ iframe {
 
 @media (max-width:40rem) {
     .blog-title {
-        font-size: 1.75rem;
+        font-size: 1.75rem
     }
     .content {
-        padding: 3rem 1rem;
+        padding: 3rem 1rem
     }
     .posts.grid-canvas>* {
-        grid-column: full-start/full-end;
+        grid-column: full-start/full-end
     }
     .post-list-item,
     .post-content {
-        font-size: unset;
+        font-size: unset
     }
     a.desktop-nav-entry {
-        display: none;
+        display: none
     }
     .page-item.page-first,
     .page-item.page-last,
     .page-item.page-filler,
     .page-item.page-next-prev {
-        display: none;
+        display: none
     }
     .page-item.page-prev,
     .page-item.page-next {
-        flex-grow: 1;
+        flex-grow: 1
     }
     .page-item.page-prev {
         margin-left: 0;
-        margin-right: 25px;
+        margin-right: 25px
     }
     .page-item.page-next {
         margin-left: 25px;
-        margin-right: 0;
+        margin-right: 0
     }
     .full-post .post-header {
         margin: 0 0 2rem
