@@ -10,7 +10,7 @@
     <li class="page-item page-prev"><a href="{{ $pag.Prev.URL }}" rel="prev" class="page-link">‹ Prev</a></li>
     {{ else }}
     <li class="page-item page-prev disabled"><a href="" rel="prev" class="page-link">‹ Prev</a></li>
-    {{ end }} {{ range $pag.Pagers }} {{ if eq . $pag }}
+    {{ end }} {{/* range $pag.Pagers }} {{ if eq . $pag }}
     <!-- Current Page -->
     <li class="page-item active"><a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a></li>
     {{ else if and (ge .PageNumber (sub $pag.PageNumber 1)) (le .PageNumber (add $pag.PageNumber 1)) }} {{ $.Scratch.Set "dot_rendered" false }}
@@ -20,7 +20,7 @@
     <!-- render skip pages -->
     {{ $.Scratch.Set "dot_rendered" true }}
     <li class="page-item page-filler disabled"><a class="page-link" href="#">...</a></li>
-    {{ end }} {{ end }} {{ if $pag.HasNext }}
+    {{ end }} {{ end */}} {{ if $pag.HasNext }}
     <li class="page-item page-next"><a href="{{ $pag.Next.URL }}" rel="next" class="page-link">Next ›</a></li>
     {{ else }}
     <li class="page-item page-next disabled"><a href="" rel="next" class="page-link">Next ›</a></li>

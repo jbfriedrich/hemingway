@@ -245,7 +245,7 @@
     --hm-def-code-color: var(--color-pink-500);
     --hm-post-summary-color: var(--color-gray-500);
     --hm-postlist-color: var(--color-gray-100);
-    --hm-pagination-color: var(--color-gray-700);
+    --hm-pagination-color: var(--color-gray-800);
     --hm-pagination-disabled-color: var(--color-gray-500);
     --hm-d-def-color: var(--color-gray-200);
     --hm-d-def-bgcolor: var(--color-neutral-900);
@@ -408,28 +408,28 @@ a.header-nav-entry:hover {
     padding: 0;
     display: flex;
     flex-flow: nowrap;
-    justify-content: center;
+    justify-content: space-between;
     margin: 5rem 0 1rem;
 }
 
 .page-item {
     display: inline;
     border: 1px solid var(--hm-def-border-color);
+    border-radius: .25rem;
     padding: .375rem .75rem;
+    width: 100px;
+    text-align: center;
+    font-size: var(--hm-def-fontsize-wide);
 }
 
-.page-item:first-child {
-    border-top-left-radius: .25rem;
-    border-bottom-left-radius: .25rem;
+.page-item.page-prev {
+    margin-right: auto;
+    margin-left: 10px;
 }
 
-.page-item:not(:first-child) {
-    margin-left: -1px;
-}
-
-.page-item:last-child {
-    border-top-right-radius: .25rem;
-    border-bottom-right-radius: .25rem;
+.page-item.page-next {
+    margin-left: auto;
+    margin-right: 10px;
 }
 
 .page-link,
@@ -458,7 +458,7 @@ a.header-nav-entry:hover {
 }
 
 .tags {
-    margin: 0.5rem 0 0 0;
+    margin: .5rem 0 0 0;
     font-size: .875rem;
     line-height: 1.25;
 }
@@ -526,7 +526,7 @@ a.tag-link {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    padding: .75rem .25rem;
+    padding: .75rem 0;
 }
 
 .post-list-item .post-item:hover {
@@ -764,13 +764,14 @@ iframe {
     .page-item.page-prev,
     .page-item.page-next {
         flex-grow: 1;
-        text-align: center
     }
     .page-item.page-prev {
-        margin-right: 25px
+        margin-left: 0;
+        margin-right: 25px;
     }
     .page-item.page-next {
-        margin-left: 25px
+        margin-left: 25px;
+        margin-right: 0;
     }
     .full-post .post-header {
         margin: 0 0 2rem
