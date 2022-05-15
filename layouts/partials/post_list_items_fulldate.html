@@ -1,6 +1,8 @@
 <article class="post-list-item">
-    <a href="{{ .RelPermalink }}" class="post-item" title="{{ .Title }}">
-        <span class="post-title">{{ if eq .Section "posts" }}{{ .Title }}{{ else if eq .Section "status" }}{{ .Content | truncate 60 | plainify | htmlUnescape}}{{end}}</span>
+    <div class="post-item">
+        <span class="post-title">
+            <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="post-title-link">{{ if eq .Section "posts" }}{{ .Title }}{{ else if eq .Section "status" }}{{ .Content | truncate 60 | plainify | htmlUnescape}}{{end}}</a>
+        </span>
         <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
-    </a>
+    </div>
 </article>
