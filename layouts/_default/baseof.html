@@ -49,7 +49,7 @@
             {{ $len := (len $menuitems) }}
             {{ range $index, $element := $menuitems }}
             {{ $id := .Identifier }}
-            <a class="header-nav-entry{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" title="{{ .Name }}" href="{{ .URL }}">{{ .Pre }}<span>{{ .Name }}</span></a>
+            <a class="header-nav-entry{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" {{if eq $id "mastodon"}}rel="me" {{end}}title="{{ .Name }}" href="{{ .URL }}">{{ .Pre }}<span>{{ .Name }}</span></a>
             {{ end }}
           </div>
         </div>
