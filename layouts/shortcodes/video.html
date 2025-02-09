@@ -1,9 +1,0 @@
-{{ if .Get "src" }}
-<figure class="kg-card kg-embed-card kg-video-card">
-    <div class="fluid-width-video-wrapper">
-        <video controls{{ with .Get "bg"}} style="max-width: 100%; background: transparent url('{{.}}') no-repeat center center; background-size: cover;"{{ end }} poster="https://rmbr.eu/file/dstore/static/video/transparent.png">
-            <source src="{{ .Get "src" }}" type="video/mp4">
-        </video>
-    </div>
-</figure>
-{{ end }}

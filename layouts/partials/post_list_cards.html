@@ -1,0 +1,22 @@
+<div class="col">
+<article class="card h-100">
+    {{ if eq .Section "status"}}
+    <div class="card-header fw-bold">{{ .Date.Format "January 1, 2006" }}</div>
+    <div class="card-body">
+        <p class="card-text">
+            {{ .Content | truncate 200 | plainify | htmlUnescape}}
+        </p>
+        <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="stretched-link link-offset-3 link-underline link-underline-opacity-25">Read more…</a>
+    </div>
+    {{ else if eq .Section "posts" }}
+    <div class="card-header fw-bold">{{ .Date.Format "January 1, 2006 " }}</div>
+    <div class="card-body">
+        <h4 class="card-title fw-bold mb-3">{{ .Title }}</h4>
+        <p class="card-text">
+            {{ .Content | truncate 200 | plainify | htmlUnescape}}
+        </p>
+        <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="stretched-link link-offset-3 link-underline link-underline-opacity-25">Read more…</a>
+    </div>
+    {{ end }}
+</article>
+</div>

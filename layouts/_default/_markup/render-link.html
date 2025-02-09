@@ -1,0 +1,8 @@
+{{- $u := urls.Parse .Destination -}}
+<a href="{{ .Destination | safeURL }}" class="link-offset-3 link-underline link-underline-opacity-25"
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+  {{- if $u.IsAbs }} rel="external"{{ end -}}
+>
+  {{- with .Text }}{{ . }}{{ end -}}
+</a>
+{{- /* chomp trailing newline */ -}}

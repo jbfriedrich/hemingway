@@ -1,21 +1,29 @@
 {{ define "title" }}
-    {{ .Site.Title }}
+    Tags | {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
-    <div class="posts wrapper43">
-        {{ if ne (len $.Site.Taxonomies.tags) 0 }}
+    {{ if ne (len $.Site.Taxonomies.tags) 0 }}
+        <h3 class="post-title mb-4"><i class="bi bi-tags"></i> Tags</h3>
+        <div class="tag-cloud text-center pb-5 mb-4 border-bottom">
             {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
                 {{ $tagCount := len $taxonomy.Pages }}
-                {{/* <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}/" class="tagcloud-item"></a> */}}
-                <h2 class="post-year"><i class="bi bi-tag"></i> {{ $name | title}}</h2>
-                <div class="post-list">
-                {{ range .Pages }}
-                    {{ partial "post_list_items_fulldate.html" . }}
-                {{ end }}
-                </div>
+                {{/*  <a href="#{{ $name }}" class="tagcloud-item text-lowercase btn btn-sm rounded-2 btn-primary position-relative m-2"><i class="bi bi-tag"></i> {{ $name | title }}<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ $tagCount }}<span class="visually-hidden">number of tags</span></a>  */}}
+                <a href="#{{ $name }}" class="tagcloud-item d-inline-block text-lowercase text-nowrap link-offset-3 link-underline link-underline-opacity-25 mx-2 my-2"><i class="bi bi-tag"></i> {{ $name | title }} ({{ $tagCount }})</a>
             {{ end }}
-        {{ else }}
-        <h1>No tags</h1>
+        </div>
+        {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
+            {{ $tagCount := len $taxonomy.Pages }}
+            <div class="tag fs-4 pb-3 pt-4 text-lowercase d-flex flex-row justify-content-between align-items-center" id="{{ $name }}">
+                <span><i class="bi bi-tag"></i> {{ $name | title}}</span>
+                <a class="backlink fs-6 link-body-emphasis link-underline-emphasis link-underline-opacity-25 link-underline-opacity-50-hover link-offset-3" title="Back to top" href="#top">Up &#8593;</a>
+            </div>
+            <div class="post-list">
+            {{ range .Pages }}
+                {{ partial "post_list_items_fulldate.html" . }}
+            {{ end }}
+            </div>
         {{ end }}
-    </div>
+    {{ else }}
+        <h3>No tags available</h3>
+    {{ end }}
 {{ end }}

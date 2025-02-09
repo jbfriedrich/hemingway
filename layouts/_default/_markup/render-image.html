@@ -1,0 +1,14 @@
+{{- if .IsBlock -}}
+  <figure class="figure mt-3 mb-5">
+    <img class="figure-img img-fluid border border-secondary-subtle
+     border-1 rounded-3" src="{{ .Destination | safeURL }}"
+      {{- with .PlainText }} alt="{{ . }}"{{ end -}}
+    >
+    {{- with .Title }}<figcaption class="figure-caption text-end fst-italic">"{{ . }}"</figcaption>{{ end -}}
+  </figure>
+{{- else -}}
+  <img class="img-fluid rounded" src="{{ .Destination | safeURL }}"
+    {{- with .PlainText }} alt="{{ . }}"{{ end -}}
+    {{- with .Title }} title="{{ . }}"{{ end -}}
+  >
+{{- end -}}

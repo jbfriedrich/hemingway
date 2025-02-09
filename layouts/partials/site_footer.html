@@ -1,0 +1,46 @@
+<footer class="footer navbar border-top py-3 mt-5 small">
+    <ul class="navbar-nav nav-underline flex-row align-items-center justify-content-start justify-content-sm-between flex-grow-1">
+        <li class="nav-item d-none d-sm-inline-block me-auto">{{ .Site.Params.copyright }}</li>
+        {{ $currentPage := . }}
+        {{ $menuitems := (.Site.Menus.footer) }}
+        {{ $len := (len $menuitems) }}
+        {{ range $index, $element := $menuitems }}
+        {{ $id := .Identifier }}
+        {{ $entryno :=add $index 1 }}
+        <li class="nav-item">
+            {{/*  <a class="nav-link{{if ($currentPage.IsMenuCurrent "main" .) }} active{{end}}{{if not (eq $entryno $len)}} me-3{{end}}" {{if eq $id "mastodon"}}rel="me" {{end}}title="{{ .Name }}" href="{{ .URL }}"><span>{{ .Name }}</span></a>  */}}
+            {{/*  <a class="nav-link link-body-emphasis link-underline link-underline-opacity-100 link-offset-3{{if ($currentPage.IsMenuCurrent "footer" .) }} active{{end}}{{if eq $entryno $len}} pe-0{{end}}" {{if eq $id "mastodon"}}rel="me" {{end}}title="{{ .Name }}" href="{{ .URL }}">{{ .Name }}</a>  */}}
+            <a class="nav-link{{if ($currentPage.IsMenuCurrent "footer" .) }} active{{end}}{{if eq $entryno $len}} me-3{{end}}" {{if eq $id "mastodon"}}rel="me" {{end}}title="{{ .Name }}" href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+    </ul>
+    <div class="dropup bd-mode-toggle">
+        <button class="btn btn-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+            <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                    <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+                    Light
+                    <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                    <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+                    Dark
+                    <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="true">
+                    <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                    Auto
+                    <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                </button>
+            </li>
+        </ul>
+    </div>
+</footer>

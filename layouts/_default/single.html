@@ -1,6 +1,6 @@
 {{ define "title" }}
     {{ if eq .Page.Section "status" }}
-        {{ htmlUnescape .Page.Summary | truncate 60 }} | {{ .Site.Title }}
+        {{ transform.Plainify .Page.Summary | truncate 60 }} | {{ .Site.Title }}
     {{ else }}
         {{ .Title }} | {{ .Site.Title }}
     {{ end }}

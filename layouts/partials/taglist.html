@@ -1,11 +1,10 @@
 {{ $baseurl := .Site.BaseURL }}
 {{ if .Params.tags }}
-<aside class="tags grid-canvas">
-    <ul class="taglist">
-        {{ range $key, $value := .Params.tags }}
-            <li class="tag"><a class="tag-link" href="/tags/{{ . | urlize }}" title="Posts tagged with {{ . }}"><i class="bi bi-tag"></i>{{ . }}</a></li>
-            <!--{{ if ne $key (sub (len $.Page.Params.tags) 1) }},&nbsp;{{ else }}{{ end }}-->
-        {{ end }}
-    </ul>
+<aside class="post-tags mt-5">
+    {{ range $key, $value := .Params.tags }}
+    {{/*  <a class="tag-link btn btn-outline-primary btn-sm rounded-2 me-1 px-2 py-0" href="/tags/{{ . | urlize }}" title="Posts tagged with {{ . }}"><i class="bi bi-tag me-1"></i>{{ . }}</a></li>  */}}
+    <a class="tag-link text-lowercase text-nowrap link-offset-3 link-underline link-underline-opacity-25 me-3" href="/tags/{{ . | urlize }}" title="Posts tagged with {{ . }}"><i class="bi bi-tag me-1"></i>{{ . }}</a></li>
+    <!--{{ if ne $key (sub (len $.Page.Params.tags) 1) }},&nbsp;{{ else }}{{ end }}-->
+    {{ end }}
 </aside>
 {{ end }}

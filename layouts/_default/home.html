@@ -1,0 +1,24 @@
+{{ define "title" }}
+    {{ .Title }}
+{{ end }}
+{{ define "main" }}
+{{ $pages := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ $paginator := .Paginate $pages }}
+    <div class="px-4 py-4 mb-5 bg-body-tertiary rounded-3">
+        <div class="container-fluid py-2">
+            <h2 class="fw-bold pb-3">Hi, I'm <a href="https://friedrich.uk" class="link-offset-3 link-underline link-underline-opacity-25">Jason</a>.</h2>
+            <div class="lead">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+    <h2 class="fw-bold mb-4">Recent Posts</h2>
+    <div class="postlist row row-cols-1 row-cols-md-3 g-3">
+    {{ $counter := 0}}
+    {{ range $paginator.Pages }}
+    {{ $counter = add $counter 1 }}
+    {{ .Scratch.Set "counter" $counter}}
+        {{ partial "post_list_cards.html" . }}
+    {{ end }}
+    </div>
+{{ end }}

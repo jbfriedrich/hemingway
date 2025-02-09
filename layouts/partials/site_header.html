@@ -1,0 +1,15 @@
+<header class="navbar flex-column flex-md-row justify-content-center justify-content-md-between border-bottom py-3 mb-5">
+    <span class="navbar-brand fs-3"><img src="/images/logo.svg" height="40" alt="Logo" class="d-inline-block me-1">{{ .Site.Title }}</span>
+    <ul class="navbar-nav nav-underline flex-row">
+        {{ $currentPage := . }}
+        {{ $menuitems := (.Site.Menus.main) }}
+        {{ $len := (len $menuitems) }}
+        {{ range $index, $element := $menuitems }}
+        {{ $id := .Identifier }}
+        {{ $entryno :=add $index 1 }}
+        <li class="nav-item">
+            <a class="nav-link{{if ($currentPage.IsMenuCurrent "main" .) }} active{{end}}{{if not (eq $entryno $len)}}{{end}}" {{if eq $id "mastodon"}}rel="me" {{end}}title="{{ .Name }}" href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+    </ul>
+</header>

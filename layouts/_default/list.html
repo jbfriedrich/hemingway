@@ -1,15 +1,13 @@
 {{ define "title" }}
-    {{ .Site.Title }}
+{{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
-    <div class="posts wrapper43">
-        {{ range .Pages.GroupByDate "2006" }}
-            <h2 class="post-year">{{ .Key }}</h2>
-            <div class="post-list">
-            {{ range .Pages }}
-                {{ partial "post_list_items.html" . }}
-            {{ end }}
-            </div>
-        {{ end }}
-    </div>
+{{ range .Pages.GroupByDate "2006" }}
+<h2 class="mt-5 mb-4">{{ .Key }}</h2>
+<div class="post-list">
+    {{ range .Pages }}
+    {{ partial "post_list_items.html" . }}
+    {{ end }}
+</div>
+{{ end }}
 {{ end }}
