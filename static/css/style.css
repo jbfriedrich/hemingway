@@ -35,6 +35,16 @@ body {
     max-width: 900px;
 }
 
+/* Blockquote – Elegant Classic Style */
+blockquote {
+    font-style: italic;
+    border-left: 5px solid var(--bs-code-color);
+    padding: 15px 20px;
+    margin: 20px 0;
+    background-color: rgba(128, 208, 224, 0.1); /* Light Aqua Tint */
+    border-radius: 5px;
+}
+
 .bi {
     /* vertical-align: -.125em; */
     fill: currentColor;
@@ -48,30 +58,6 @@ body {
 .post-content p {
     margin-bottom: 1.5rem;
 }
-
-/* .long-post .post-header,
-.long-post .post-content,
-.full-page .page-content {
-    display: grid;
-    grid-template-columns:
-        [full-start] minmax(4vmin,auto)
-        [wide-start] minmax(auto,300px)
-        [main-start] min(900px,calc(100% - 8vw))
-        [main-end] minmax(auto,300px)
-        [wide-end] minmax(4vmin,auto)
-        [full-end];
-} */
-
-/* .long-post .post-header > *,
-.long-post .post-content > * {
-    grid-column: main-start/main-end;
-} */
-
-/* footer .nav-link.active {
-    color: var(--bs-navbar-active-color) !important;
-    font-weight: 700;
-    border-bottom-color: currentColor;
-} */
 
 .bd-mode-toggle .dropdown-menu .active .bi {
     display: block !important;
