@@ -7,8 +7,8 @@
         <div class="tag-cloud text-center pb-5 mb-4 border-bottom">
             {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
                 {{ $tagCount := len $taxonomy.Pages }}
-                {{/*  <a href="#{{ $name }}" class="tagcloud-item text-lowercase btn btn-sm rounded-2 btn-primary position-relative m-2"><i class="bi bi-tag"></i> {{ $name | title }}<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ $tagCount }}<span class="visually-hidden">number of tags</span></a>  */}}
-                <a href="#{{ $name }}" class="tagcloud-item d-inline-block text-lowercase text-nowrap link-offset-3 link-underline link-underline-opacity-25 mx-2 my-2"><i class="bi bi-tag"></i> {{ $name | title }} ({{ $tagCount }})</a>
+                <a href="#{{ $name }}" class="tagcloud-item text-lowercase btn btn-sm rounded-2 btn-primary m-2"><i class="bi bi-tag"></i> {{ $name | title }} <span class="badge bg-secondary">{{ $tagCount }}<span class="visually-hidden">number of tags</span></a>
+                {{/*  <a href="#{{ $name }}" class="tagcloud-item d-inline-block text-lowercase text-nowrap link-offset-3 link-underline link-underline-opacity-25 mx-2 my-2"><i class="bi bi-tag"></i> {{ $name | title }} ({{ $tagCount }})</a>  */}}
             {{ end }}
         </div>
         {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
