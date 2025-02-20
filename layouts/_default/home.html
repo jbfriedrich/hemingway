@@ -13,12 +13,12 @@
         </div>
     </div>
     <h2 class="fw-bold mb-4">Most recent posts</h2>
-    <div class="postlist row row-cols-1 row-cols-md-3 g-3">
+    <div class="postlist">
     {{ $counter := 0}}
     {{ range $paginator.Pages }}
     {{ $counter = add $counter 1 }}
     {{ .Scratch.Set "counter" $counter}}
-        {{ partial "post_list_cards.html" . }}
+        {{ partial "post_list_items_fulldate.html" . }}
     {{ end }}
     </div>
 {{ end }}
