@@ -1,5 +1,11 @@
-{{ define "title" }}
-{{ .Site.Title }}
+{{- define "title" -}}
+    {{- if eq .Section "status" -}}
+        Micro posts and updates
+    {{- else if eq .Section "posts" -}}
+        Blog posts
+    {{- else -}}
+        {{- .Site.Title -}}
+    {{- end -}}
 {{ end }}
 {{ define "main" }}
 {{ range .Pages.GroupByDate "2006" }}

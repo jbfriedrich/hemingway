@@ -1,5 +1,5 @@
 {{ define "title" }}
-    Tagged with "{{ .Name | title }}" | {{ .Site.Title }}
+    Posts tagged as "{{ .Name }}"
 {{ end }}
 {{ define "main" }}
     <h3 class="post-title mb-4"><i class="bi bi-tags"></i> {{ .Title | title }}</h3>

@@ -1,8 +1,8 @@
 {{ define "title" }}
     {{ if eq .Page.Section "status" }}
-        {{ transform.Plainify .Page.Summary | truncate 60 }} | {{ .Site.Title }}
+        {{ transform.Plainify .Page.Summary | truncate 60 }}
     {{ else }}
-        {{ .Title }} | {{ .Site.Title }}
+        {{ .Title }}
     {{ end }}
 {{ end }}
 {{ define "main" }}
