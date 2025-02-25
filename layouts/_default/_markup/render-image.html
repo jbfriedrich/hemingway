@@ -4,7 +4,7 @@
      border-1 rounded-3" src="{{ .Destination | safeURL }}"
       {{- with .PlainText }} alt="{{ . }}"{{ end -}}
     >
-    {{- with .Title }}<figcaption class="figure-caption text-end fst-italic">"{{ . }}"</figcaption>{{ end -}}
+    {{- with .Title }}<figcaption class="figure-caption text-start">&raquo; {{ . }} &laquo;</figcaption>{{ end -}}
   </figure>
 {{- else -}}
   <img class="img-fluid rounded" src="{{ .Destination | safeURL }}"
