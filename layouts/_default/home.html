@@ -20,5 +20,6 @@
     {{ .Scratch.Set "counter" $counter}}
         {{ partial "post_list_items_fulldate.html" . }}
     {{ end }}
+    {{ partial "pagination.html" . }}
     </div>
 {{ end }}
