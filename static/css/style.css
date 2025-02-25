@@ -127,3 +127,14 @@ blockquote {
     color: var(--tag-hover-color) !important;
     border-color: rgba(var(--tag-hover-color-rgb), 0.25) !important;
 }
+
+.pagination {
+    --bs-pagination-color: var(--tag-color) !important;
+    --bs-pagination-hover-color: var(--tag-hover-color) !important;
+}
+
+.active>.page-link, .page-link.active {
+    /* color: var(--bs-pagination-active-color); */
+    background-color: rgba(var(--tag-color-rgb), .5);
+    border-color: var(--bs-pagination-border-color);
+}
