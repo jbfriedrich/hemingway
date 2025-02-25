@@ -88,8 +88,12 @@ blockquote {
     border-left: 5px solid var(--bs-code-color);
     padding: 15px 20px;
     margin: 20px 0;
-    background-color: rgba(128, 208, 224, 0.1); /* Light Aqua Tint */
+    background-color: rgba(230, 133, 181, .1); /* Light Aqua Tint */
     border-radius: 5px;
+}
+
+blockquote > p:last-of-type {
+    margin-bottom: 0;
 }
 
 .bi {
