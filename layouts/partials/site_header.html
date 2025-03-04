@@ -1,5 +1,10 @@
 <header class="navbar flex-column flex-md-row justify-content-center justify-content-md-between border-bottom py-3 mb-5">
-    <span class="navbar-brand fs-3"><img srcset="/images/author_bw_40.jpg 1x, /images/author_bw_80.jpg 2x" src="/images/author_bw_40.jpg" class="d-inline-block rounded-circle border border-2 border-light-subtle me-2"/>{{ .Site.Title }}</span>
+    {{- $img := resources.Get "images/author.jpg" -}}
+    {{ with $img }}
+        {{ $regular := .Resize "40x" }}
+        {{ $double := .Resize "80x" }}
+        <span class="navbar-brand fs-3"><img srcset="{{ $regular.RelPermalink }} 1x, {{ $double.RelPermalink }} 2x" src="{{ $regular.RelPermalink }}" class="d-inline-block rounded-circle border border-2 border-light-subtle me-2"/>{{ $.Site.Title }}</span>
+    {{ end }}
     <ul class="navbar-nav nav-underline flex-row">
         {{ $currentPage := . }}
         {{ $menuitems := (.Site.Menus.main) }}
