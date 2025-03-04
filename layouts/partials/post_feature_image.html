@@ -2,7 +2,7 @@
 {{if or (.Params.feature_image) ($img) }}
 <figure class="figure feature-figure">
     {{ if .Params.feature_image }}
-    <img alt="Page Feature Image" class="feature-image img-fluid" style="aspect-ratio: 16/9;" src="{{ .Params.feature_image }}">
+    <img alt="Page Feature Image" class="feature-image img-fluid" src="{{ .Params.feature_image }}">
     {{ end }}
     {{ with $img }}
     {{ $regular := .Resize "900x" }}
