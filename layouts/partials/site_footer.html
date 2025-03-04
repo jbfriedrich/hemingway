@@ -1,6 +1,6 @@
 <footer class="footer navbar border-top py-3 mt-5 small">
     <ul class="navbar-nav nav-underline flex-row align-items-center justify-content-start justify-content-sm-between flex-grow-1">
-        <li class="nav-item d-none d-sm-inline-block me-auto">{{ .Site.Params.copyright }}</li>
+        <li class="nav-item d-none d-sm-inline-block me-auto">&copy; {{ time.Now.Year }} {{ .Site.Params.author.display_name }}</li>
         {{ $currentPage := . }}
         {{ $menuitems := (.Site.Menus.footer) }}
         {{ $len := (len $menuitems) }}
