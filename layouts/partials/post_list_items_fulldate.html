@@ -2,5 +2,5 @@
     <span class="post-title order-2 order-md-1 mb-3 mb-md-0">
         <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="post-title-link link-offset-3 link-underline link-underline-opacity-25">{{ if eq .Section "posts" }}{{ .Title }}{{ else if eq .Section "status" }}{{ .Content | truncate 70 | plainify | htmlUnescape}}{{end}}</a>
     </span>
-    <span class="post-date text-secondary order-1 order-md-2">{{ .Date.Format "January 1, 2006 " }}</span>
+    <span class="post-date text-secondary-emphasis order-1 order-md-2">{{ .Date.Format "January 1, 2006 " }}</span>
 </article>
