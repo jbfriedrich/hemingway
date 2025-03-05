@@ -118,7 +118,7 @@ blockquote > p:last-of-type {
 .tagcloud-item {
     color: rgba(var(--tag-color-rgb), 1);
     border-width: 1px;
-    border-color: rgba(var(--tag-color-rgb), 0.25);
+    border-color: rgba(var(--tag-color-rgb), 0.5);
     border-style: solid;
     border-radius: 0.375rem;
     text-decoration: none;
@@ -129,7 +129,7 @@ blockquote > p:last-of-type {
 .tag-link:active,
 .tagcloud-item:active {
     color: var(--tag-hover-color) !important;
-    border-color: rgba(var(--tag-hover-color-rgb), 0.25) !important;
+    border-color: rgba(var(--tag-hover-color-rgb), 0.5) !important;
 }
 
 .pagination {
