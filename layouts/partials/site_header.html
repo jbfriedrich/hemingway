@@ -3,7 +3,7 @@
     {{ with $img }}
         {{ $regular := .Resize "40x" }}
         {{ $double := .Resize "80x" }}
-        <span class="navbar-brand fs-3"><img srcset="{{ $regular.RelPermalink }} 1x, {{ $double.RelPermalink }} 2x" src="{{ $regular.RelPermalink }}" class="d-inline-block rounded-circle border border-2 border-light-subtle me-2"/>{{ $.Site.Title }}</span>
+        <span class="navbar-brand fs-3"><img srcset="{{ $regular.RelPermalink }} 1x, {{ $double.RelPermalink }} 2x" src="{{ $regular.RelPermalink }}" alt="Blog logo" class="d-inline-block rounded-circle border border-2 border-light-subtle me-2"/>{{ $.Site.Title }}</span>
     {{ end }}
     <ul class="navbar-nav nav-underline flex-row">
         {{ $currentPage := . }}
