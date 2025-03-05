@@ -12,7 +12,7 @@
   <generator>Hugo -- gohugo.io</generator>{{ range where .Site.RegularPages ".Params.type" "!=" "page"  }}
   {{ if eq .Section "status" }}
   <entry>
-    <title>{{ htmlUnescape .Summary | truncate 60 }}</title>
+    <title>{{ .Summary | truncate 70 | plainify | htmlUnescape }}</title>
     <link rel="related" href="{{ .Permalink }}"/>
     <id>{{ .Permalink }}</id>{{ with $.Site.Params.author.display_name }}
     <author>
