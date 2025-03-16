@@ -4,9 +4,9 @@
 {{ define "main" }}
 {{ $pages := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
 {{ $paginator := .Paginate $pages }}
-    <div class="author-intro mb-5 py-2">
+    <div class="author-intro mb-5 p-5 rounded-3 bg-body-tertiary">
         <h2 class="fw-bold pb-3">Hi, I'm <a href="{{ site.Params.author.website }}" class="link-offset-3 link-underline link-underline-opacity-25">{{ site.Params.author.given_name }}</a>.</h2>
-        <div class="lead fw-normal">
+        <div class="fs-5">
             {{ .Content }}
         </div>
     </div>
