@@ -1,20 +1,27 @@
-<header class="navbar flex-column flex-md-row justify-content-center justify-content-md-between border-bottom py-3 mb-5">
-    {{- $img := resources.Get "images/author.jpg" -}}
-    {{ with $img }}
-        {{ $regular := .Resize "40x" }}
-        {{ $double := .Resize "80x" }}
-        <span class="navbar-brand fs-3"><img srcset="{{ $regular.RelPermalink }} 1x, {{ $double.RelPermalink }} 2x" src="{{ $regular.RelPermalink }}" alt="Blog logo" class="d-inline-block rounded-circle border border-2 border-light-subtle me-2"/>{{ $.Site.Title }}</span>
-    {{ end }}
-    <ul class="navbar-nav nav-underline flex-row">
-        {{ $currentPage := . }}
-        {{ $menuitems := (.Site.Menus.main) }}
-        {{ $len := (len $menuitems) }}
-        {{ range $index, $element := $menuitems }}
-        {{ $id := .Identifier }}
-        {{ $entryno :=add $index 1 }}
-        <li class="nav-item">
-            <a class="nav-link{{if ($currentPage.IsMenuCurrent "main" .) }} active{{end}}{{if not (eq $entryno $len)}}{{end}}" {{if eq $id "mastodon"}}rel="me" {{end}}title="{{ .Name }}" href="{{ .URL }}">{{ .Name }}</a>
-        </li>
-        {{ end }}
-    </ul>
+<header>
+    <nav>
+        <ul>
+            <li>
+                {{- $img := resources.Get "images/author.jpg" -}}
+                {{ with $img }}
+                    {{ $regular := .Resize "40x" }}
+                    {{ $double := .Resize "80x" }}
+                    <strong>
+                        <img srcset="{{ $regular.RelPermalink }} 1x, {{ $double.RelPermalink }} 2x"
+                             src="{{ $regular.RelPermalink }}"
+                             alt="Blog logo"
+                             style="width: 40px; height: 40px; border-radius: 50%; vertical-align: middle; margin-right: 0.5rem;"/>{{ $.Site.Title }}
+                    </strong>
+                {{ end }}
+            </li>
+        </ul>
+        <ul>
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+            <li>
+                <a href="{{ .URL }}"{{if $currentPage.IsMenuCurrent "main" . }} aria-current="page"{{end}}{{if eq .Identifier "mastodon"}} rel="me"{{end}}>{{ .Name }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </nav>
 </header>

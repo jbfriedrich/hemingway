@@ -1,10 +1,8 @@
 <!-- This is a full page -->
-<article class="full-page">
-    <header class="page-header mb-4">
-        <h2 class="page-title text-body-emphasis">{{ .Title }}</h2>
+<article>
+    <header>
+        <h2>{{ .Title }}</h2>
         {{ partial "post_feature_image.html" . }}
     </header>
-    <main class="post-content page-content mb-5">
-        {{ .Content }}
-    </main>
+    {{ .Content }}
 </article>

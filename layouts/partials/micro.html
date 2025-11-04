@@ -1,10 +1,8 @@
 <!-- This is a status post -->
-<article class="full-post status-post">
-    <header class="post-header mb-4">
-        <h4 class="post-date status-date text-body-emphasis">{{ .Page.Date.Format "January 2, 2006" }}</h4>
+<article>
+    <header>
+        <p><small>{{ .Page.Date.Format "January 2, 2006" }}</small></p>
     </header>
-    <main class="post-content status-content mb-5">
-        {{ .Content }}
-    </main>
+    {{ .Content }}
     {{ partial "taglist.html" . }}
 </article>
