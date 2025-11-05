@@ -1,33 +1,25 @@
 <footer>
     <nav>
         <ul>
-            <li><small>&copy; {{ time.Now.Year }} {{ .Site.Params.author.display_name }}</small></li>
-        </ul>
-        <ul>
             {{ $currentPage := . }}
-            {{ range .Site.Menus.footer }}
+            {{/* Main navigation */}}
+            {{ range .Site.Menus.main }}
             <li>
-                <a href="{{ .URL }}"{{if $currentPage.IsMenuCurrent "footer" . }} aria-current="page"{{end}}{{if eq .Identifier "mastodon"}} rel="me"{{end}}><small>{{ .Name }}</small></a>
+                <a href="{{ .URL }}"{{if $currentPage.IsMenuCurrent "main" . }} aria-current="page"{{end}}{{if eq .Identifier "mastodon"}} rel="me"{{end}}>{{ .Name }}</a>
             </li>
             {{ end }}
+            {{/* Footer navigation */}}
+            {{ range .Site.Menus.footer }}
             <li>
-                <details role="list" dir="rtl">
-                    <summary aria-haspopup="listbox" role="button">
-                        <svg width="1em" height="1em"><use href="#circle-half"></use></svg>
-                    </summary>
-                    <ul role="listbox">
-                        <li><a href="#" data-theme-value="light">
-                            <svg width="1em" height="1em"><use href="#sun-fill"></use></svg> Light
-                        </a></li>
-                        <li><a href="#" data-theme-value="dark">
-                            <svg width="1em" height="1em"><use href="#moon-stars-fill"></use></svg> Dark
-                        </a></li>
-                        <li><a href="#" data-theme-value="auto">
-                            <svg width="1em" height="1em"><use href="#circle-half"></use></svg> Auto
-                        </a></li>
-                    </ul>
-                </details>
+                <a href="{{ .URL }}"{{if $currentPage.IsMenuCurrent "footer" . }} aria-current="page"{{end}}{{if eq .Identifier "mastodon"}} rel="me"{{end}}>{{ .Name }}</a>
             </li>
+            {{ end }}
+            {{/* Theme toggle */}}
+            <li style="margin-top: 1rem;">
+                <a href="#" id="theme-toggle" role="button" class="contrast">Theme</a>
+            </li>
+            {{/* Copyright */}}
+            <li style="margin-top: 2rem;"><small>&copy; {{ time.Now.Year }} {{ .Site.Params.author.display_name }}</small></li>
         </ul>
     </nav>
 </footer>
