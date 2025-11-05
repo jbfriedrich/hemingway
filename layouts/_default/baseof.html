@@ -22,23 +22,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fuchsia.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
-    <link rel="stylesheet" href="/css/custom.css">
+    <style>
+        /* Theme toggle icons */
+        #theme-toggle {
+            /*  display: inline-flex;
+            align-items: center;
+            justify-content: center;  */
+            display: inline-block;
+        }
+        
+        /*  #theme-toggle svg {
+            vertical-align: middle;
+        }  */
+        
+        /* Hide both icons by default to prevent flash */
+        .sun-icon,
+        .moon-icon {
+            display: none;
+        }
+        
+        /* Show sun icon in dark mode (to switch to light) */
+        html[data-theme="dark"] .sun-icon {
+            display: inline-block;
+        }
+        
+        /* Show moon icon in light mode (to switch to dark) */
+        html[data-theme="light"] .moon-icon {
+            display: inline-block;
+        }
+    </style>
     <!-- Favicon -->
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
 </head>
-<body id="top">
-    <div class="site-container">
-        <aside class="site-sidebar">
-            {{ partial "site_header.html" . }}
-            {{ partial "site_footer.html" . }}
-        </aside>
-        <main class="site-content">
-            {{- block "main" . }}{{- end }}
-        </main>
-    </div>
+<body id="top" style="max-width: 50rem; margin: 0 auto;">
+    <header class="container">
+        {{ partial "site_header.html" . }}
+    </header>
+    <main class="container">
+        {{- block "main" . }}{{- end }}
+    </main>
+    <footer class="container">
+        {{ partial "site_footer.html" . }}
+    </footer>
     <script src="/js/toggle.min.js"></script>
 </body>
 </html>
