@@ -78,3 +78,30 @@ body {
     width: 100%;
     text-align: center;
 }
+
+/* Theme toggle icons */
+#theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#theme-toggle svg {
+    vertical-align: middle;
+}
+
+/* Hide both icons by default to prevent flash */
+.sun-icon,
+.moon-icon {
+    display: none;
+}
+
+/* Show sun icon in dark mode (to switch to light) */
+html[data-theme="dark"] .sun-icon {
+    display: inline-block;
+}
+
+/* Show moon icon in light mode (to switch to dark) */
+html[data-theme="light"] .moon-icon {
+    display: inline-block;
+}
