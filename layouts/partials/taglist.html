@@ -1,9 +1,10 @@
 {{ if .Params.tags }}
-<aside style="margin-top: 2rem;">
-    <p><small>
+<p>
+<small>
     {{ range $key, $value := .Params.tags }}
-    <a href="/tags/{{ . | urlize }}" title="Posts tagged with {{ . }}">#{{ . }}</a>{{ if ne $key (sub (len $.Page.Params.tags) 1) }}, {{ end }}
+    {{/*  <a href="/tags/{{ . | urlize }}" title="Posts tagged with {{ . }}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg> {{ . }}</a>{{ if ne $key (sub (len $.Page.Params.tags) 1) }} • {{ end }}  */}}
+    <a href="/tags/{{ . | urlize }}" title="Posts tagged with {{ . }}" style="{{ if ne $key (sub (len $.Page.Params.tags) 1) }}margin-right: .5rem;{{ end }}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg> {{ . }}</a>
     {{ end }}
-    </small></p>
-</aside>
+</small>
+</p>
 {{ end }}

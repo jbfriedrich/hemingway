@@ -2,13 +2,17 @@
 {{ $img := (.Resources.ByType "image").GetMatch "images/feature*" }}
 <article>
     <header>
-        <p><small>{{ .Page.Date.Format "January 2, 2006" }}</small></p>
-        <h1>{{ .Title }}</h1>
+        <hgroup>
+            <h1>{{ .Title }}</h1>
+            <h2>{{ .Page.Date.Format "January 2, 2006" }}</h2>
+        </hgroup>
         {{ if .Params.summary }}
         <p><em>{{ .Params.summary }}</em></p>
         {{ end }}
         {{ partial "post_feature_image.html" . }}
     </header>
     {{ .Content }}
-    {{ partial "taglist.html" . }}
+    <footer>
+        {{ partial "taglist.html" . }}
+    </footer>
 </article>

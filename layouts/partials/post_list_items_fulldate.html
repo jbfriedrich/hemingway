@@ -1,6 +1,7 @@
-<article style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.5rem;">
-    <span style="flex: 1;">
-        <a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ if eq .Section "posts" }}{{ .Title }}{{ else if eq .Section "status" }}{{ .Content | truncate 70 | plainify | htmlUnescape}}{{end}}</a>
+<article>
+    <a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ if eq .Section "posts" }}{{ .Title }}{{ else if eq .Section "status" }}{{ .Content | truncate 70 | plainify | htmlUnescape}}{{end}}</a>
     </span>
-    <span style="white-space: nowrap;"><small>{{ .Date.Format "January 1, 2006" }}</small></span>
+    <footer>
+        <small>{{ .Date.Format "January 1, 2006" }}</small>
+    </footer>
 </article>

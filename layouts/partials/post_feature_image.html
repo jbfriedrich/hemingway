@@ -1,14 +1,14 @@
-{{ $img := (.Resources.ByType "image").GetMatch "images/*feature*" }}
+{{ $img := (.Resources.ByType "image").GetMatch "*feature*" }}
 {{if or (.Params.feature_image) ($img) }}
-<figure class="figure feature-figure">
+<figure style="margin-bottom: var(--pico-spacing);">
     {{ if .Params.feature_image }}
-    <img alt="Page Feature Image" class="feature-image img-fluid" src="{{ .Params.feature_image }}">
+    <img alt="Feature image" class="feature-image" src="{{ .Params.feature_image }}">
     {{ end }}
     {{ with $img }}
     {{ $regular := .Resize "900x" }}
     {{ $mid := .Resize "1400x" }}
     {{ $big := .Resize "1800x" }}
-    <img class="feature-image img-fluid ratio-16x9 border border-secondary-subtle border-1 rounded-3" style="aspect-ratio: 16/9;"
+    <img class="feature-image" style="aspect-ratio: 16/9;"
          srcset="{{ $regular.RelPermalink }},
                  {{ $mid.RelPermalink }} 1.5x,
                  {{ $big.RelPermalink }} 2x"
